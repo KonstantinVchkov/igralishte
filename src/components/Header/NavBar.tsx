@@ -34,7 +34,7 @@ const NavBar = ({ hambMenu, searchFilter, toggleHamMenu }: INavbar) => {
       />
 
       <div className="hamMenu" onClick={handleToggleHamMenu}>
-        <Image src={hambMenu} alt="Hamburger Menu" width={50} height={30} />
+        <Image src={hambMenu} alt="Hamburger Menu" width={50} height={30} layout="responsive"/>
       </div>
 
       <LogoComponent />
@@ -42,7 +42,7 @@ const NavBar = ({ hambMenu, searchFilter, toggleHamMenu }: INavbar) => {
       <div className="searchIcon" onClick={toggleSearch}>
         {" "}
         {/* Changed this line */}
-        <Image src={searchFilter} alt="searchIcon" width={50} height={30} />
+        <Image src={searchFilter} alt="searchIcon" width={150} height={130} layout="responsive"/>
       </div>
 
       <SearchFilter

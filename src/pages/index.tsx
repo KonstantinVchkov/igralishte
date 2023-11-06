@@ -7,7 +7,7 @@ interface IHome {
 }
 
 export default function Home({responseData}:IHome) {
-  console.log(responseData)
+  // console.log(responseData)
   return (
     <div className={styleHome.HomePage}>
       
@@ -18,7 +18,7 @@ export default function Home({responseData}:IHome) {
 
 export const getStaticProps:GetStaticProps = async () => {
  const responseData = await axios.get("http://localhost:3001/products")
- console.log(responseData)
+//  console.log(responseData)
   return{
     props:{
       responseData:responseData.data
