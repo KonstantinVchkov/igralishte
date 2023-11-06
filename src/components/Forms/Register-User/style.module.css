@@ -1,5 +1,6 @@
 .firstSideReg,
-.registerPage {
+.registerPage,
+.ProfileSetup {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,10 +35,12 @@
 }
 
 .registerPage p span {
-    margin-left: 5px;
-    color: #8A8328;
-    text-decoration: underline;
+  margin-left: 5px;
+  color: #8a8328;
+  text-decoration: underline;
 }
 .dispNone {
-    display: none;
+  display: none;
 }
+
+

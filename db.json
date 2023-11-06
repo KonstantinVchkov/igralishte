@@ -33,44 +33,20 @@
   ],
   "profile": [
     {
-      "id": "1",
-      "name": "Dijana",
-      "lastname": "Preshaska",
-      "email": "dpreshaska@gmail.com"
+      "firstName": "Daniel",
+      "lastName": "Lepiot",
+      "email": "l@gmail.com",
+      "password": "Trista123!",
+      "repeatPassword": "Trista123!",
+      "id": 1
     },
     {
-      "id": "2",
-      "name": "Dijana",
-      "lastname": "Preshaska",
-      "email": "dpreshaska@gmail.com"
-    },
-    {
-      "id": "3",
-      "name": "Dejana",
-      "lastname": "Preshaski",
-      "email": "dshaska@gmail.com"
-    },
-    {
-      "id": "4",
-      "name": "Mario",
-      "lastname": "Preshaski",
-      "email": "mario@gmail.com"
-    },
-    {
-      "firstName": "Mario",
+      "firstName": "Konstantin",
       "lastName": "Vchkov",
-      "email": "mario@gmail.com",
-      "password": "123123",
-      "repeatPassword": "123123",
-      "id": "5FydjUu"
-    },
-    {
-      "firstName": "Olivera",
-      "lastName": "Vckova",
-      "email": "o@gmail.com",
-      "password": "123123",
-      "repeatPassword": "123123",
-      "id": "sm9Kyy4"
+      "email": "kvckov@yahoo.com",
+      "password": "Samsung231!",
+      "repeatPassword": "Samsung231!",
+      "id": 2
     }
   ],
   "products": [
