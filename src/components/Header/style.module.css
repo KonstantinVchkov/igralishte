@@ -1,0 +1,66 @@
+.NavBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px 10px;
+}
+.NavBar img {
+  cursor: pointer;
+}
+/* Menu.css */
+.menuContainer {
+  position: fixed;
+  left: 0;
+  transform: translateX(100%);
+  width: 100%;
+  height: 100%;
+  background: rgb(236, 234, 234);
+  z-index: 999;
+  transition: transform 0.55s ease-in-out;
+  top: 0px;
+}
+
+.menuContainer.open {
+  transform: translateX(0);
+}
+.menuContainer.close {
+  transform: translateX(100%);
+  transition: transform 0.55s ease-in-out;
+}
+.menu-content {
+  padding: 20px;
+  color: white;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 998; /* Below the menu but above everything else */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Or any other color for the backdrop */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.backdrop.open {
+  opacity: 1;
+  display: block;
+}
+.backdrop.close {
+  opacity: 0;
+  transition: transform 0.55s ease-in-out;
+}
+.menu {
+  cursor: pointer;
+}
+.fullWidthOffcanvas {
+  width: 100%!important; 
+  --bs-offcanvas-border-width: 0 !important;
+}

@@ -1,0 +1,72 @@
+{
+  "giftCards": [
+    {
+      "id": "1",
+      "title": "Сино Небо Маица",
+      "body": "Подарете ја оваа удобна и стилска маица во сино, идеална за секојдневни прилики или лежерни викенди.",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Празнична Изненадување Картичка",
+      "body": "Изненадете го некој со оваа мистериозна гифт картичка што носи вредност и можност за избор на совршен подарок.",
+      "postId": "1"
+    },
+    {
+      "id": "3",
+      "title": "Вечер под Ѕвездите",
+      "body": "Оваа гифт картичка е вашиот избор за подарување на посебна вечер. Поклонете ја за незаборавни моменти.",
+      "postId": "1"
+    },
+    {
+      "id": "4",
+      "title": "Авантуристички Дух",
+      "body": "Поклонете авантура со оваа гифт картичка, идеална за љубителите на отворено и нови искуства.",
+      "postId": "1"
+    },
+    {
+      "id": "5",
+      "title": "Гурманско Уживање",
+      "body": "Испратете вкусен поздрав со оваа гифт картичка која нуди уникатно кулинарско искуство.",
+      "postId": "1"
+    }
+  ],
+    "profile": {
+      "id":"1",
+      "name": "Dijana",
+      "lastname": "Preshaska",
+      "email": "dpreshaska@gmail.com"
+    },
+    "products": [
+      { "id": "1", "name": "Azure Summer Tee","image":"https://unsplash.com/photos/man-in-white-dress-shirt-wearing-black-sunglasses-npyWFYpHQ94", "category": "shirt", "color": "blue", "size": "M" },
+      { "id": "2", "name": "Crimson Polo Classic","image":"", "category": "shirt", "color": "red", "size": "L" },
+      { "id": "3", "name": "Vintage Denim Jacket","image":"https://unsplash.com/photos/black-leather-zip-up-jacket-on-white-textile-nsRBbE6-YLs", "category": "jacket", "color": "denim", "size": "XL" },
+      { "id": "4", "name": "Elegant Silk Blouse", "image":"https://unsplash.com/photos/woman-in-white-long-sleeve-shirt-WQgvRkmqRrg","category": "blouse", "color": "white", "size": "S" },
+      { "id": "5", "name": "Rugged Outback Pants","image":"https://unsplash.com/photos/person-in-pink-pants-and-white-shoes-5raPrOhbKQo", "category": "pants", "color": "khaki", "size": "M" },
+      { "id": "6", "name": "Jet Black Skinny Jeans","image":"https://unsplash.com/photos/person-wears-blue-jeans-BciCcl8tjVU", "category": "jeans", "color": "black", "size": "L" },
+      { "id": "7", "name": "Classic Leather Belt", "image":"https://unsplash.com/photos/clear-glass-fragrance-bottle-and-black-makeup-brush-on-white-textile-69k_XrqCRuQ","category": "accessory", "color": "brown", "size": "One Size" },
+      { "id": "8", "name": "Evening Velvet Dress", "image":"https://unsplash.com/photos/woman-in-red-sleeveless-dress-standing-on-gray-concrete-floor-during-daytime-tyfqOL1FAQc","category": "dress", "color": "maroon", "size": "M" },
+      { "id": "9", "name": "Charcoal Suit Trousers", "image":"https://unsplash.com/photos/blue-denim-jeans-on-white-textile-YeGao3uk8kI","category": "trousers", "color": "charcoal", "size": "32" },
+      { "id": "10", "name": "Cotton Linen Scarf","image":"https://unsplash.com/photos/person-wearing-silver-necklace-with-silver-pendant-3_XeNGVbTQA", "category": "accessory", "color": "olive", "size": "One Size" },
+      { "id": "11", "name": "Nautical Stripes Sweater","image":"https://unsplash.com/photos/woman-in-blue-sweater-covering-her-face-with-her-hand-mcdao5RP4hI", "category": "sweater", "color": "navy/white", "size": "M" },
+      { "id": "12", "name": "Ultimate White Sneakers", "image":"https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-blue-denim-shorts-standing-on-road-during-daytime-pWTSPGQtyZY","category": "footwear", "color": "white", "size": "42" },
+      { "id": "13", "name": "Explorer Cargo Shorts","image":"https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-black-and-white-striped-skirt-zU8hYK_yWLI", "category": "shorts", "color": "green", "size": "M" },
+      { "id": "14", "name": "Bohemian Rhapsody Skirt","image":"https://unsplash.com/photos/woman-in-black-and-white-striped-long-sleeve-dress-WLSiDqaBeuc", "category": "skirt", "color": "multicolor", "size": "S" },
+      { "id": "15", "name": "Twilight Velvet Blazer", "image":"https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-blue-denim-shorts-standing-on-road-during-daytime-pWTSPGQtyZY","category": "blazer", "color": "navy", "size": "38" },
+      { "id": "16", "name": "Athletic Training Tights","image":"https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-blue-denim-shorts-standing-on-road-during-daytime-pWTSPGQtyZY", "category": "sportswear", "color": "black", "size": "S" },
+      { "id": "17", "name": "Gym Muscle Tank Top","image":"https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-blue-denim-shorts-standing-on-road-during-daytime-pWTSPGQtyZY", "category": "sportswear", "color": "gray", "size": "L" },
+      { "id": "18", "name": "Misty Morning Cardigan","image":"https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-blue-denim-shorts-standing-on-road-during-daytime-pWTSPGQtyZY", "category": "cardigan", "color": "light blue", "size": "M" },
+      { "id": "19", "name": "Professional Laptop Bag","image":"https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-blue-denim-shorts-standing-on-road-during-daytime-pWTSPGQtyZY", "category": "accessory", "color": "black", "size": "One Size" },
+      { "id": "20", "name": "Sunset Orange Cap", "image":"https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-blue-denim-shorts-standing-on-road-during-daytime-pWTSPGQtyZY","category": "accessory", "color": "orange", "size": "Adjustable" },
+      { "id": "21", "name": "Rainforest Green Tee","image":"https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-blue-denim-shorts-standing-on-road-during-daytime-pWTSPGQtyZY", "category": "shirt", "color": "green", "size": "M" },
+      { "id": "22", "name": "Desert Sand Chinos","image":"https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-blue-denim-shorts-standing-on-road-during-daytime-pWTSPGQtyZY", "category": "trousers", "color": "beige", "size": "34" },
+      { "id": "23", "name": "High Seas Waterproof Watch","image":"https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-blue-denim-shorts-standing-on-road-during-daytime-pWTSPGQtyZY", "category": "accessory", "color": "blue", "size": "One Size" },
+      { "id": "24", "name": "Trekker Thermal Jacket","image":"https://unsplash.com/photos/black-leather-zip-up-jacket-on-white-textile-nsRBbE6-YLs", "category": "jacket", "color": "orange", "size": "XL" },
+      { "id": "25", "name": "Midnight Wool Overcoat","image":"https://unsplash.com/photos/man-in-elegant-formal-wear-and-with-shopping-packages-is-outside-against-modern-building-bbdiL-a6In0", "category": "coat", "color": "black", "size": "L" },
+      { "id": "26", "name": "Classic Canvas Sneakers", "image":"https://unsplash.com/photos/pair-of-gray-running-shoes-Y4fKN-RlMV4","category": "footwear", "color": "white", "size": "39" },
+      { "id": "27", "name": "Ballet Flats Essentials","image":"https://unsplash.com/photos/white-nike-air-force-1-low-r3rbIwZ9DJc", "category": "footwear", "color": "nude", "size": "40" },
+      { "id": "28", "name": "Artisan Leather Wallet", "image":"https://unsplash.com/photos/gold-and-silver-beaded-necklace-uf_IDewI6iQ","category": "accessory", "color": "tan", "size": "One Size" },
+      { "id": "29", "name": "Islander Board Shorts","image":"https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-black-and-white-striped-skirt-zU8hYK_yWLI", "category": "shorts", "color": "blue", "size": "L" },
+      { "id": "30", "name": "Weekender Duffel Bag","image":"https://unsplash.com/photos/womens-sunglasses-and-black-bag-with-watch-and-iphone-6-D4jRahaUaIc", "category": "accessory", "color": "gray", "size": "One Size" }
+    ]
+  }
