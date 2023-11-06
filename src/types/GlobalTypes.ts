@@ -35,3 +35,15 @@ export interface ReturnType<T> {
   data: T[];
   loading: boolean;
 }
+
+export interface IFormInput {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  repeatPassword: string;
+}
+
+export interface IFormData {
+  data: IFormInput;
+}
