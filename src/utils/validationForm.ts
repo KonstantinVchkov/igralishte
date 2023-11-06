@@ -22,7 +22,7 @@ export const schema = yup
       .required("Лозинка е задолжителна"),
     repeatPassword: yup
       .string()
-      .oneOf([yup.ref("password"), "null"], "Лозинките мора да се совпаѓаат")
+      .oneOf([yup.ref("password")], "Лозинките мора да се совпаѓаат")
       .required("Потврда на лозинка е задолжителна"),
   })
   .required();

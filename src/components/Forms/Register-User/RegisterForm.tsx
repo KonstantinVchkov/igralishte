@@ -1,17 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import style from "./style.module.css";
 import LogoComponent from "@/components/Header/logo";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { IFormData, IFormInput } from "@/types/GlobalTypes";
 import axios from "axios";
-import { useRouter } from "next/router";
 import { schema } from "@/utils/validationForm";
 interface IRegisterForm {
-  onRegisterSuccess:() => void;
+  onRegisterSuccess: () => void;
 }
-const RegisterForm = ({onRegisterSuccess}:IRegisterForm) => {
-  const router = useRouter();
+const RegisterForm = ({ onRegisterSuccess }: IRegisterForm) => {
   const {
     register,
     handleSubmit,
@@ -20,24 +18,24 @@ const RegisterForm = ({onRegisterSuccess}:IRegisterForm) => {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const [isRegistered, setIsRegistered] = useState(false);
   const onSubmit = async (formData: any) => {
+    localStorage.setItem(
+      "user",
+      JSON.stringify({ name:formData.firstName,lastname:formData.lastName,email: formData.email, })
+    );
     try {
       await axios.post("http://localhost:3001/profile", formData, {
         headers: {
           "Content-Type": "application/json",
         },
       });
-      setIsRegistered(true);
     } catch (error) {
       console.error("the api has crashed", error);
     }
     reset();
-    onRegisterSuccess()
+    onRegisterSuccess();
   };
-  if (isRegistered) {
-    console.log("Се Регистриравте,продолжете кон сетирање на профилот!")
-  }
+
   return (
     <div className={style.firstSideReg}>
       <LogoComponent />
@@ -48,6 +46,7 @@ const RegisterForm = ({onRegisterSuccess}:IRegisterForm) => {
             {...register("firstName")}
             placeholder="Име"
             className={errors.firstName ? style.errorInput : ""}
+            required
           />
           {errors.firstName && (
             <p className={style.errorText}>{errors.firstName.message}</p>
@@ -61,6 +60,7 @@ const RegisterForm = ({onRegisterSuccess}:IRegisterForm) => {
             {...register("lastName")}
             placeholder="Презиме"
             className={errors.lastName ? style.errorInput : ""}
+            required
           />
           {errors.lastName && (
             <p className={style.errorText}>{errors.lastName.message}</p>
@@ -74,6 +74,7 @@ const RegisterForm = ({onRegisterSuccess}:IRegisterForm) => {
             {...register("email")}
             placeholder="Емаил адреса"
             className={errors.email ? style.errorInput : ""}
+            required
           />
           {errors.email && (
             <p className={style.errorText}>{errors.email.message}</p>
@@ -87,6 +88,7 @@ const RegisterForm = ({onRegisterSuccess}:IRegisterForm) => {
             {...register("password")}
             placeholder="Лозинка"
             className={errors.password ? style.errorInput : ""}
+            required
           />
           {errors.password && (
             <p className={style.errorText}>{errors.password.message}</p>
@@ -100,6 +102,7 @@ const RegisterForm = ({onRegisterSuccess}:IRegisterForm) => {
             {...register("repeatPassword")}
             placeholder="Повтори лозинка"
             className={errors.repeatPassword ? style.errorInput : ""}
+            required
           />
           {errors.repeatPassword && (
             <p className={style.errorText}>{errors.repeatPassword.message}</p>
@@ -111,7 +114,6 @@ const RegisterForm = ({onRegisterSuccess}:IRegisterForm) => {
             type="submit"
             className={style.submitButton}
             disabled={isSubmitting}
-            onClick={onRegisterSuccess}
           >
             Регистрирај се
           </button>
