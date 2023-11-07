@@ -36,14 +36,16 @@ export interface ReturnType<T> {
   loading: boolean;
 }
 
-export interface IFormInput {
+export interface FormValues {
   firstName: string;
-  lastName: string;
+  lastName?: string;
   email: string;
   password: string;
   repeatPassword: string;
 }
 
-export interface IFormData {
-  data: IFormInput;
+export interface IProfileForm {
+  img:string;
+  adress:string;
+  biography:string;
 }

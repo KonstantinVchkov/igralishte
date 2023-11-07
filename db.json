@@ -33,11 +33,11 @@
   ],
   "profile": [
     {
-      "firstName": "Daniel",
-      "lastName": "Lepiot",
-      "email": "l@gmail.com",
-      "password": "Trista123!",
-      "repeatPassword": "Trista123!",
+      "firstName": "Konstantin",
+      "lastName": "Vchkov",
+      "email": "kvckov@yahoo.com",
+      "password": "Samsung231!",
+      "repeatPassword": "Samsung231!",
       "id": 1
     },
     {
@@ -47,54 +47,6 @@
       "password": "Samsung231!",
       "repeatPassword": "Samsung231!",
       "id": 2
-    },
-    {
-      "firstName": "Konstantin",
-      "lastName": "Vchkov",
-      "email": "kvckov@yahoo.com",
-      "password": "Samsung231!",
-      "repeatPassword": "Samsung231!",
-      "id": 3
-    },
-    {
-      "firstName": "Konstantin",
-      "lastName": "Vchkov",
-      "email": "kvckov@yahoo.com",
-      "password": "Samsung231!",
-      "repeatPassword": "Samsung231!",
-      "id": 4
-    },
-    {
-      "firstName": "Konstantin",
-      "lastName": "Vchkov",
-      "email": "kvckov@yahoo.com",
-      "password": "Samsung231!",
-      "repeatPassword": "Samsung231!",
-      "id": 5
-    },
-    {
-      "firstName": "Konstantin",
-      "lastName": "Vchkov",
-      "email": "kvckov@yahoo.com",
-      "password": "Samsung231!",
-      "repeatPassword": "Samsung231!",
-      "id": 6
-    },
-    {
-      "firstName": "Konstantin",
-      "lastName": "Vchkov",
-      "email": "kvckov@yahoo.com",
-      "password": "Samsung231!",
-      "repeatPassword": "Samsung231!",
-      "id": 7
-    },
-    {
-      "firstName": "Konstantin",
-      "lastName": "Vchkov",
-      "email": "kvckov@yahoo.com",
-      "password": "Samsung231!",
-      "repeatPassword": "Samsung231!",
-      "id": 8
     }
   ],
   "products": [

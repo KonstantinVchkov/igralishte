@@ -1,9 +1,9 @@
 import { useState } from "react";
 import style from "./style.module.css";
 import LogoComponent from "@/components/Header/logo";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { IFormData, IFormInput } from "@/types/GlobalTypes";
+import { FormValues } from "@/types/GlobalTypes";
 import axios from "axios";
 import { schema } from "@/utils/validationForm";
 interface IRegisterForm {
@@ -18,10 +18,14 @@ const RegisterForm = ({ onRegisterSuccess }: IRegisterForm) => {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onSubmit = async (formData: any) => {
+  const onSubmit:SubmitHandler<FormValues> = async (formData) => {
     localStorage.setItem(
       "user",
-      JSON.stringify({ name:formData.firstName,lastname:formData.lastName,email: formData.email, })
+      JSON.stringify({
+        name: formData.firstName,
+        lastname: formData.lastName,
+        email: formData.email,
+      })
     );
     try {
       await axios.post("http://localhost:3001/profile", formData, {
@@ -53,7 +57,6 @@ const RegisterForm = ({ onRegisterSuccess }: IRegisterForm) => {
           )}
         </div>
 
-        {/* Repeat for each form field */}
         <div className={style.formGroup}>
           <label htmlFor="lastName">Презиме</label>
           <input
