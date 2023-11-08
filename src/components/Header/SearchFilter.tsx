@@ -20,7 +20,7 @@ const SearchFilter = ({ show, handleClose }: ISearchMenu) => {
               <FontAwesomeIcon
                 onClick={handleClose}
                 icon={faChevronLeft}
-                style={{ color: "#c9cfd9" }}
+                style={{ color: "#c9cfd9",width:"20px" }}
                 className="mr-2"
               />
               <Form.Control
