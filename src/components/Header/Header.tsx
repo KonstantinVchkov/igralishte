@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavBar from "./NavBar";
 import HamburgerMenu from "./hamburgerMenu";
 import style from "./style.module.css"
+import AnnouncementBar from "./AnnouncementBar";
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const toggleHamMenu = () => {
@@ -16,6 +17,9 @@ const Header = () => {
       />
       <div className={`${style.transition}`}>
         <HamburgerMenu open={openMenu} toggleHamMenu={toggleHamMenu} />
+      </div>
+      <div>
+        <AnnouncementBar newColl={"Нова Колекција"} vintageColl={"Vintage - Kolekcija"} discount={"Попусти"} img={""} />
       </div>
     </div>
   );

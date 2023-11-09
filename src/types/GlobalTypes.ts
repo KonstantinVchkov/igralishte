@@ -49,3 +49,9 @@ export interface IProfileForm {
   adress:string;
   biography:string;
 }
+export interface IAnnonce {
+  newColl: string;
+  vintageColl: string;
+  discount: string;
+  img:string
+}

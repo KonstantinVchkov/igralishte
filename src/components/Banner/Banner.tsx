@@ -1,8 +1,10 @@
 import React from 'react'
-
+import style from "./style.module.css"
 const Banner = () => {
   return (
-    <div>Banner</div>
+    <div className={style.HomePage}>
+        
+    </div>
   )
 }
 
