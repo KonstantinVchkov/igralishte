@@ -19,7 +19,7 @@ const Header = () => {
         <HamburgerMenu open={openMenu} toggleHamMenu={toggleHamMenu} />
       </div>
       <div>
-        <AnnouncementBar newColl={"Нова Колекција"} vintageColl={"Vintage - Kolekcija"} discount={"Попусти"} img={""} />
+        <AnnouncementBar newColl={"Нова Колекција"} vintageColl={"Vintage - Kolekcija"} discount={"Попусти"} img={"/images/icons/star-icon.png"} />
       </div>
     </div>
   );
