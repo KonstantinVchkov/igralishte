@@ -47,16 +47,30 @@
       "password": "Samsung231!",
       "repeatPassword": "Samsung231!",
       "id": 2
+    },
+    {
+      "firstName": "Konstantin",
+      "lastName": "Vchkov",
+      "email": "kvckov@yahoo.com",
+      "password": "Samsung231!",
+      "repeatPassword": "Samsung231!",
+      "id": 3
     }
   ],
   "products": [
     {
       "id": "1",
       "name": "Azure Summer Tee",
-      "image": "https://unsplash.com/photos/man-in-white-dress-shirt-wearing-black-sunglasses-npyWFYpHQ94",
       "category": "shirt",
       "color": "blue",
-      "size": "M"
+      "size": "M",
+      "sizeDescription": "Large - Chest: 42-44 inches, Length: 30 inches. Suitable for a muscular build.",
+      "price": "$35.99",
+      "discount": "50%",
+      "material": ["Polo Cotton", "Elastane"],
+      "condition": "New",
+      "odrzuvanje": ["Machine wash", "Iron low"],
+      "tags": ["polo", "elegant", "durable"]
     },
     {
       "id": "2",
@@ -64,231 +78,538 @@
       "image": "",
       "category": "shirt",
       "color": "red",
-      "size": "L"
+      "size": "L",
+      "sizeDescription": "Small - Bust: 34-36 inches, Length: 26 inches. Slim fit.",
+      "price": "$42.99",
+      "discount": "50%",
+      "material": ["100% Silk"],
+      "condition": "New",
+      "odrzuvanje": ["Dry clean only"],
+      "tags": ["luxury", "silk", "formal"]
     },
     {
       "id": "3",
       "name": "Vintage Denim Jacket",
-      "image": "https://unsplash.com/photos/black-leather-zip-up-jacket-on-white-textile-nsRBbE6-YLs",
       "category": "jacket",
       "color": "denim",
-      "size": "XL"
+      "size": "XL",
+      "sizeDescription": "Extra Large - Chest: 46-48 inches, Shoulder: 19 inches. Comfort fit.",
+      "price": "$49.99",
+      "discount": "50%",
+      "material": ["Denim", "Metal Buttons"],
+      "condition": "New",
+      "odrzuvanje": ["Hand wash", "Hang dry", "Do not iron"],
+      "tags": ["vintage", "denim", "trendy"]
+
     },
     {
       "id": "4",
       "name": "Elegant Silk Blouse",
-      "image": "https://unsplash.com/photos/woman-in-white-long-sleeve-shirt-WQgvRkmqRrg",
       "category": "blouse",
       "color": "white",
-      "size": "S"
+      "size": "S",
+      "sizeDescription": "Medium - Waist: 32-34 inches, Inseam: 32 inches. Relaxed fit.",
+      "price": "$39.99",
+      "discount": "50%",
+      "material": ["Cotton", "Polyester"],
+      "condition": "New",
+      "odrzuvanje": ["Machine wash", "Tumble dry"],
+      "tags": ["durable", "outdoor", "comfort"]
+
     },
     {
       "id": "5",
       "name": "Rugged Outback Pants",
-      "image": "https://unsplash.com/photos/person-in-pink-pants-and-white-shoes-5raPrOhbKQo",
       "category": "pants",
       "color": "khaki",
-      "size": "M"
+      "size": "M",
+      "sizeDescription": "Large - Waist: 34-36 inches, Length: 32 inches. Slim fit.",
+      "price": "$34.99",
+      "discount": "50%",
+      "material": ["Stretch Denim"],
+      "condition": "New",
+      "odrzuvanje": ["Machine wash cold", "Hang to dry"],
+      "tags": ["fashion", "denim", "slim"]
     },
     {
       "id": "6",
       "name": "Jet Black Skinny Jeans",
-      "image": "https://unsplash.com/photos/person-wears-blue-jeans-BciCcl8tjVU",
       "category": "jeans",
       "color": "black",
-      "size": "L"
+      "size": "L",
+      "sizeDescription": "Extra Large - Chest: 46-48 inches, Shoulder: 19 inches. Comfort fit.",
+      "price": "$49.99",
+      "discount": "50%",
+      "material": ["Denim", "Metal Buttons"],
+      "condition": "New",
+      "odrzuvanje": ["Hand wash", "Hang dry", "Do not iron"],
+      "tags": ["vintage", "denim", "trendy"]
     },
     {
       "id": "7",
       "name": "Classic Leather Belt",
-      "image": "https://unsplash.com/photos/clear-glass-fragrance-bottle-and-black-makeup-brush-on-white-textile-69k_XrqCRuQ",
       "category": "accessory",
       "color": "brown",
-      "size": "One Size"
+      "size": "One Size",
+      "sizeDescription": "Extra Large - Chest: 46-48 inches, Shoulder: 19 inches. Comfort fit.",
+      "price": "$49.99",
+      "discount": "50%",
+      "material": ["Denim", "Metal Buttons"],
+      "condition": "New",
+      "odrzuvanje": ["Hand wash", "Hang dry", "Do not iron"],
+      "tags": ["vintage", "denim", "trendy"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA-Yzbqy7PY",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
     },
     {
       "id": "8",
       "name": "Evening Velvet Dress",
-      "image": "https://unsplash.com/photos/woman-in-red-sleeveless-dress-standing-on-gray-concrete-floor-during-daytime-tyfqOL1FAQc",
       "category": "dress",
       "color": "maroon",
-      "size": "M"
+      "size": "M",
+      "sizeDescription": "Large - Waist: 34-36 inches, Length: 32 inches. Slim fit.",
+      "price": "$34.99",
+      "discount": "50%",
+      "material": ["Stretch Denim"],
+      "condition": "New",
+      "odrzuvanje": ["Machine wash cold", "Hang to dry"],
+      "tags": ["fashion", "denim", "slim"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA-HvE0jFE"
+      ]
     },
     {
       "id": "9",
       "name": "Charcoal Suit Trousers",
-      "image": "https://unsplash.com/photos/blue-denim-jeans-on-white-textile-YeGao3uk8kI",
       "category": "trousers",
       "color": "charcoal",
-      "size": "32"
+      "size": "32",
+      "sizeDescription": "Medium - Bust: 36-38 inches, Waist: 28-30 inches, Length: 40 inches.",
+      "price": "$59.99",
+      "discount": "50%",
+      "material": ["Velvet"],
+      "condition": "New",
+      "odrzuvanje": ["Dry clean only"],
+      "tags": ["elegant", "velvet", "evening"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
     },
     {
       "id": "10",
       "name": "Cotton Linen Scarf",
-      "image": "https://unsplash.com/photos/person-wearing-silver-necklace-with-silver-pendant-3_XeNGVbTQA",
       "category": "accessory",
       "color": "olive",
-      "size": "One Size"
+      "size": "One Size",
+      "sizeDescription": "Medium - Bust: 36-38 inches, Waist: 28-30 inches, Length: 40 inches.",
+      "price": "$59.99",
+      "discount": "50%",
+      "material": ["Velvet"],
+      "condition": "New",
+      "odrzuvanje": ["Dry clean only"],
+      "tags": ["elegant", "velvet", "evening"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA-fOTYs4",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA-lnR90uM",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
     },
     {
       "id": "11",
       "name": "Nautical Stripes Sweater",
-      "image": "https://unsplash.com/photos/woman-in-blue-sweater-covering-her-face-with-her-hand-mcdao5RP4hI",
       "category": "sweater",
       "color": "navy/white",
-      "size": "M"
+      "size": "M",
+      "sizeDescription": "Length: 60 inches, Width: 20 inches.",
+      "price": "$24.99",
+      "discount": "50%",
+      "material": ["Cotton", "Linen"],
+      "condition": "New",
+      "odrzuvanje": ["Hand wash", "Air dry"],
+      "tags": ["scarf", "lightweight", "stylish"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://images.unsplash.com/photo-1584998316204-3b1e3b1895ae?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ]
     },
     {
       "id": "12",
       "name": "Ultimate White Sneakers",
-      "image": "https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-blue-denim-shorts-standing-on-road-during-daytime-pWTSPGQtyZY",
       "category": "footwear",
+      "size": "42",
+      "sizeDescription": "EU Size 42 - Fits US Men's 9.",
+      "price": "$49.99",
+      "discount": "50%",
       "color": "white",
-      "size": "42"
+      "material": ["Leather", "Rubber Sole"],
+      "condition": "New",
+      "odrzuvanje": ["Wipe with a damp cloth", "Use shoe cleaner"],
+      "tags": ["sneakers", "casual", "durable"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
     },
     {
       "id": "13",
       "name": "Explorer Cargo Shorts",
-      "image": "https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-black-and-white-striped-skirt-zU8hYK_yWLI",
       "category": "shorts",
+      "size": "M",
+      "sizeDescription": "Medium - Waist: 32-34 inches, Length: 21 inches.",
+      "price": "$29.99",
+      "discount": "50%",
       "color": "green",
-      "size": "M"
+      "material": ["Cotton", "Polyester Blend"],
+      "condition": "New",
+      "odrzuvanje": ["Machine wash", "Tumble dry"],
+      "tags": ["cargo", "outdoor", "practical"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
+  
     },
     {
       "id": "14",
       "name": "Bohemian Rhapsody Skirt",
-      "image": "https://unsplash.com/photos/woman-in-black-and-white-striped-long-sleeve-dress-WLSiDqaBeuc",
       "category": "skirt",
+      "size": "S",
+      "sizeDescription": "Small - Waist: 26-28 inches, Length: 32 inches. Flowy fit.",
+      "price": "$34.99",
+      "discount": "50%",
       "color": "multicolor",
-      "size": "S"
+      "material": ["Rayon", "Spandex"],
+      "condition": "New",
+      "odrzuvanje": ["Hand wash", "Hang to dry"],
+      "tags": ["bohemian", "colorful", "comfortable"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA-oJxIE",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
     },
     {
       "id": "15",
       "name": "Twilight Velvet Blazer",
-      "image": "https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-blue-denim-shorts-standing-on-road-during-daytime-pWTSPGQtyZY",
       "category": "blazer",
+      "size": "38",
+      "sizeDescription": "Size 38 - Chest: 38 inches, Length: 30 inches. Slim fit.",
+      "price": "$59.99",
+      "discount": "50%",
       "color": "navy",
-      "size": "38"
+      "material": ["Velvet", "Polyester Lining"],
+      "condition": "New",
+      "odrzuvanje": ["Dry clean only"],
+      "tags": ["elegant", "blazer", "velvet"],
+      "images": [
+        "https://unsplash.com/photos/a-woman-in-a-dress-and-boots-is-walking-down-a-set-of-stairs-VvezsaGkYZw",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
     },
     {
       "id": "16",
       "name": "Athletic Training Tights",
-      "image": "https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-blue-denim-shorts-standing-on-road-during-daytime-pWTSPGQtyZY",
       "category": "sportswear",
+      "size": "S",
+      "sizeDescription": "Small - Waist: 26-28 inches, Length: 34 inches. Stretch fit.",
+      "price": "$29.99",
+      "discount": "50%",
       "color": "black",
-      "size": "S"
+      "material": ["Polyester", "Elastane"],
+      "condition": "New",
+      "odrzuvanje": ["Machine wash", "Hang to dry"],
+      "tags": ["athletic", "flexible", "durable"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA-oJxIE",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
     },
     {
       "id": "17",
       "name": "Gym Muscle Tank Top",
-      "image": "https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-blue-denim-shorts-standing-on-road-during-daytime-pWTSPGQtyZY",
       "category": "sportswear",
+      "size": "L",
+      "sizeDescription": "Large - Chest: 42-44 inches, Length: 28 inches. Relaxed fit.",
+      "price": "$19.99",
+      "discount": "50%",
       "color": "gray",
-      "size": "L"
+      "material": ["Cotton Blend"],
+      "condition": "New",
+      "odrzuvanje": ["Machine wash cold", "Tumble dry low"],
+      "tags": ["gym", "breathable", "comfort"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
     },
     {
       "id": "18",
       "name": "Misty Morning Cardigan",
-      "image": "https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-blue-denim-shorts-standing-on-road-during-daytime-pWTSPGQtyZY",
       "category": "cardigan",
+      "size": "M",
+      "sizeDescription": "Medium - Chest: 38-40 inches, Length: 29 inches. Cozy fit.",
+      "price": "$39.99",
+      "discount": "50%",
       "color": "light blue",
-      "size": "M"
+      "material": ["Wool", "Acrylic"],
+      "condition": "New",
+      "odrzuvanje": ["Hand wash", "Lay flat to dry"],
+      "tags": ["cardigan", "warm", "knit"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA-oJxIE",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
     },
     {
       "id": "19",
-      "name": "Professional Laptop Bag",
-      "image": "https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-blue-denim-shorts-standing-on-road-during-daytime-pWTSPGQtyZY",
-      "category": "accessory",
-      "color": "black",
-      "size": "One Size"
+    "name": "Professional Laptop Bag",
+    "category": "accessory",
+    "size": "One Size",
+    "sizeDescription": "Fits laptops up to 15 inches, Multiple compartments.",
+    "price": "$49.99",
+    "discount": "50%",
+    "color": "black",
+    "material": ["Polyester", "Leather Accents"],
+    "condition": "New",
+    "odrzuvanje": ["Wipe with a damp cloth"],
+    "tags": ["professional", "durable", "spacious"],
+    "images": [
+      "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+      "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+      "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+      "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+    ]
     },
     {
       "id": "20",
       "name": "Sunset Orange Cap",
-      "image": "https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-blue-denim-shorts-standing-on-road-during-daytime-pWTSPGQtyZY",
       "category": "accessory",
+      "size": "Adjustable",
+      "sizeDescription": "One size fits all, adjustable strap.",
+      "price": "$14.99",
+      "discount": "50%",
       "color": "orange",
-      "size": "Adjustable"
+      "material": ["Cotton"],
+      "condition": "New",
+      "odrzuvanje": ["Hand wash", "Air dry"],
+      "tags": ["casual", "sun protection", "vibrant"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA-lnR90uM",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
     },
     {
       "id": "21",
-      "name": "Rainforest Green Tee",
-      "image": "https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-blue-denim-shorts-standing-on-road-during-daytime-pWTSPGQtyZY",
-      "category": "shirt",
-      "color": "green",
-      "size": "M"
+    "name": "Rainforest Green Tee",
+    "category": "shirt",
+    "size": "M",
+    "sizeDescription": "Medium - Chest: 38-40 inches, Length: 28 inches. Comfortable fit.",
+    "price": "$24.99",
+    "discount": "50%",
+    "color": "green",
+    "material": ["Cotton Blend"],
+    "condition": "New",
+    "odrzuvanje": ["Machine wash warm", "Tumble dry medium"],
+    "tags": ["comfortable", "everyday", "durable"],
+    "images": [
+      "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+      "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+      "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+      "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+    ]
     },
     {
       "id": "22",
       "name": "Desert Sand Chinos",
-      "image": "https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-blue-denim-shorts-standing-on-road-during-daytime-pWTSPGQtyZY",
       "category": "trousers",
+      "size": "34",
+      "sizeDescription": "Size 34 - Waist: 34 inches, Inseam: 32 inches. Straight fit.",
+      "price": "$39.99",
+      "discount": "50%",
       "color": "beige",
-      "size": "34"
+      "material": ["Cotton", "Spandex"],
+      "condition": "New",
+      "odrzuvanje": ["Machine wash cold", "Iron on medium"],
+      "tags": ["classic", "comfortable", "versatile"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA-aA2Fadydc",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
     },
     {
       "id": "23",
       "name": "High Seas Waterproof Watch",
-      "image": "https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-blue-denim-shorts-standing-on-road-during-daytime-pWTSPGQtyZY",
       "category": "accessory",
+      "size": "One Size",
+      "sizeDescription": "Adjustable wristband, fits wrists 6-8 inches in circumference.",
+      "price": "$99.99",
+      "discount": "50%",
       "color": "blue",
-      "size": "One Size"
+      "material": ["Stainless Steel", "Waterproof Materials"],
+      "condition": "New",
+      "odrzuvanje": ["Wipe with a soft cloth", "Avoid extreme temperatures"],
+      "tags": ["luxury", "durable", "waterproof"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA-4BPZL7g",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
     },
     {
       "id": "24",
       "name": "Trekker Thermal Jacket",
-      "image": "https://unsplash.com/photos/black-leather-zip-up-jacket-on-white-textile-nsRBbE6-YLs",
       "category": "jacket",
+      "size": "XL",
+      "sizeDescription": "Extra Large - Chest: 46-48 inches, Length: 30 inches. Insulated fit.",
+      "price": "$79.99",
+      "discount": "50%",
       "color": "orange",
-      "size": "XL"
+      "material": ["Polyester", "Thermal Insulation"],
+      "condition": "New",
+      "odrzuvanje": ["Machine wash cold", "Tumble dry low"],
+      "tags": ["outdoor", "thermal", "rugged"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
+  
     },
     {
       "id": "25",
       "name": "Midnight Wool Overcoat",
-      "image": "https://unsplash.com/photos/man-in-elegant-formal-wear-and-with-shopping-packages-is-outside-against-modern-building-bbdiL-a6In0",
       "category": "coat",
+      "size": "L",
+      "sizeDescription": "Large - Chest: 42-44 inches, Length: 35 inches. Tailored fit.",
+      "price": "$119.99",
+      "discount": "50%",
       "color": "black",
-      "size": "L"
+      "material": ["Wool", "Polyester Lining"],
+      "condition": "New",
+      "odrzuvanje": ["Dry clean only"],
+      "tags": ["elegant", "wool", "winter"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
     },
     {
       "id": "26",
       "name": "Classic Canvas Sneakers",
-      "image": "https://unsplash.com/photos/pair-of-gray-running-shoes-Y4fKN-RlMV4",
       "category": "footwear",
+      "size": "39",
+      "sizeDescription": "EU Size 39 - Fits US Women's 8.",
+      "price": "$44.99",
+      "discount": "50%",
       "color": "white",
-      "size": "39"
+      "material": ["Canvas", "Rubber Sole"],
+      "condition": "New",
+      "odrzuvanje": ["Wipe with a damp cloth", "Air dry"],
+      "tags": ["casual", "comfortable", "canvas"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
     },
     {
       "id": "27",
       "name": "Ballet Flats Essentials",
-      "image": "https://unsplash.com/photos/white-nike-air-force-1-low-r3rbIwZ9DJc",
       "category": "footwear",
+      "size": "40",
+      "sizeDescription": "EU Size 40 - Fits US Women's 9. Comfortable fit.",
+      "price": "$34.99",
+      "discount": "50%",
       "color": "nude",
-      "size": "40"
+      "material": ["Leather", "Rubber Sole"],
+      "condition": "New",
+      "odrzuvanje": ["Wipe clean", "Polish as needed"],
+      "tags": ["elegant", "flat shoes", "versatile"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA-xLucM",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
     },
     {
       "id": "28",
       "name": "Artisan Leather Wallet",
-      "image": "https://unsplash.com/photos/gold-and-silver-beaded-necklace-uf_IDewI6iQ",
       "category": "accessory",
+      "size": "One Size",
+      "sizeDescription": "Standard size, fits all currencies, multiple card slots.",
+      "price": "$49.99",
+      "discount": "50%",
       "color": "tan",
-      "size": "One Size"
+      "material": ["Genuine Leather"],
+      "condition": "New",
+      "odrzuvanje": ["Wipe with leather cleaner", "Keep dry"],
+      "tags": ["artisan", "leather", "wallet"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA-q6uKlIc",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
     },
     {
       "id": "29",
       "name": "Islander Board Shorts",
-      "image": "https://unsplash.com/photos/woman-in-white-crew-neck-t-shirt-and-black-and-white-striped-skirt-zU8hYK_yWLI",
       "category": "shorts",
+      "size": "L",
+      "sizeDescription": "Large - Waist: 34-36 inches, Length: 20 inches. Quick-dry fabric.",
+      "price": "$24.99",
+      "discount": "50%",
       "color": "blue",
-      "size": "L"
+      "material": ["Polyester", "Spandex"],
+      "condition": "New",
+      "odrzuvanje": ["Machine wash", "Hang to dry"],
+      "tags": ["beach", "comfortable", "quick-dry"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
     },
     {
       "id": "30",
       "name": "Weekender Duffel Bag",
-      "image": "https://unsplash.com/photos/womens-sunglasses-and-black-bag-with-watch-and-iphone-6-D4jRahaUaIc",
       "category": "accessory",
+      "size": "One Size",
+      "sizeDescription": "Large capacity, dimensions: 22 x 12 x 10 inches.",
+      "price": "$59.99",
+      "discount": "50%",
       "color": "gray",
-      "size": "One Size"
+      "material": ["Canvas", "Leather Accents"],
+      "condition": "New",
+      "odrzuvanje": ["Spot clean", "Do not machine wash"],
+      "tags": ["travel", "spacious", "duffel"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA-1697477564565-2a95d76e921a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
     }
   ]
 }

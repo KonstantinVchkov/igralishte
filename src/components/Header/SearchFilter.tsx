@@ -32,6 +32,8 @@ const SearchFilter = ({ show, handleClose }: ISearchMenu) => {
           </Form>
         </Offcanvas.Body>
       </Offcanvas>
+
+    
     </>
   );
 };
