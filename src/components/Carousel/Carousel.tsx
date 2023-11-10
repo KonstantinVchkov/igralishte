@@ -1,9 +1,7 @@
-import React from 'react'
-
+import React from "react";
+import style from "./style.module.css";
 const Carousel = () => {
-  return (
-    <div>Carousel</div>
-  )
-}
+  return <div className={style.HomeCarousel}></div>;
+};
 
-export default Carousel
+export default Carousel;

@@ -1,5 +1,5 @@
 .HomePage {
     background: linear-gradient(180deg, #FFDBDB 0.05%, #FDFDFD 93.1%, #FDFDFD 110.6%, #8A8328 152.03%);
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
 }
