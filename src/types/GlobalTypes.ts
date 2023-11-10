@@ -55,3 +55,13 @@ export interface IAnnonce {
   discount: string;
   img:string
 }
+
+export interface IBannerTop {
+  img: string;
+  imgText?: string;
+  vectorIcon: string;
+  bottom?: boolean;
+  midSection?: boolean;
+  infoCircleTitle?: string; 
+  infoCircleParagraph?: string;
+}

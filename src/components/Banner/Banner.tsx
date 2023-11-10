@@ -1,22 +1,34 @@
 import React from "react";
 import style from "./style.module.css";
-import BannerTopSection from "./BannerTopSection";
-import { Carousel } from "react-bootstrap";
+import BannerBlock from "./BannerBlock";
+import  Carousel  from "../Carousel/Carousel";
 const Banner = () => {
   return (
     <div className={style.HomePage}>
-      <BannerTopSection
+      <BannerBlock
         img={"/images/banner-images/girl-top-banner.jpg"}
         imgText={"/images/icons/Ново.png"}
         vectorIcon="/images/icons/Vector.png"
       />
-      <BannerTopSection
+      <Carousel />
+      <BannerBlock
         img={"/images/banner-images/girl-top-banner.jpg"}
         vectorIcon="/images/icons/Vector.png"
+        midSection={true}
+        infoCircleParagraph="Погледни ги свежите љубовни парчиња"
+        infoCircleTitle="Козметика & Aксесоари"
       />
-      <Carousel />
+      <BannerBlock
+        img={"/images/banner-images/girl-top-banner.jpg"}
+        vectorIcon="/images/icons/Vector.png"
+        bottom={true}
+        infoCircleParagraph="Избери уникатен подарок за твоите најблиски со нашиот избор на ultra fancy картички за подарок."
+        infoCircleTitle="GIFT CARDS"
+      />
     </div>
   );
 };
 
+
 export default Banner;
+

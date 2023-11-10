@@ -1,34 +1,61 @@
 .HomePage {
-    
 }
 
-.TopSection{
-position: relative;
-width: 100%;
-height: 650px;
+.TopSection {
+  position: relative;
+  width: 100%;
+  height: 650px;
 }
 
 .bgImage {
-    width: 425px;
-    height: 350px;
-    margin-left: auto;
-    padding-top: 15px;
-}   
+  width: 425px;
+  height: 350px;
+  margin-left: auto;
+  padding-top: 15px;
+}
 
 .InfoCircle {
-    position: absolute;
-    top: 34%;
-    left: 5px;
+  position: absolute;
+  top: 34%;
+  left: 5px;
 }
 
 .imgText {
-    position: absolute;
-    z-index: 1;
-    top: 44%;
-    left: 33px;
+  position: absolute;
+  z-index: 1;
+  top: 44%;
+  left: 33px;
 }
 
 .vector {
-    position: absolute;
-    bottom: 0;
+  position: absolute;
+  bottom: 0;
+}
+.bottomBgSection {
+  /* width: 466.21px
+    height: 257.76px
+    top: 1844px
+    left: 538px
+    border-radius: 128.88px
+    border: 1.34px
+    angle: -180 deg */
+}
+.bottomBgSection img {
+  /* width: 465.68px;
+  height: 257.76px;
+  position: absolute;
+  top: 1852.04px;
+  left: 537.46px;
+  border-radius: 131.83px; */
+  /* view-angle: -180 deg; */
+}
+.midSection {
+  width: 425px;
+  height: 350px;
+  margin-right: auto;
+  margin-left: 0;
+  padding-top: 15px;
+}
+.midSection img {
+  border-radius: 50px;
 }
