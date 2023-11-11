@@ -11,11 +11,6 @@ const NavBar = ({ hambMenu, searchFilter, toggleHamMenu }: INavbar) => {
   const [openMenu, setOpenMenu] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
 
-  // const toggleHamMenu = (e:React.FormEvent) => {
-  //   e.stopPropagation()
-  //   console.log("Toggling menu: current state is", openMenu); // Debug log
-  //   setOpenMenu(!openMenu);
-  // };
   const handleToggleHamMenu = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
     toggleHamMenu();
@@ -33,16 +28,16 @@ const NavBar = ({ hambMenu, searchFilter, toggleHamMenu }: INavbar) => {
         }}
       />
 
-      <div className="hamMenu" onClick={handleToggleHamMenu}>
-        <Image src={hambMenu} alt="Hamburger Menu" width={50} height={30} layout="responsive"/>
+      <div className={style.hambMenu} onClick={handleToggleHamMenu}>
+        <Image src={hambMenu} alt="Hamburger Menu" width={400} height={30} />
       </div>
 
       <LogoComponent />
 
-      <div className="searchIcon" onClick={toggleSearch}>
+      <div className={style.searchIcon} onClick={toggleSearch}>
         {" "}
         {/* Changed this line */}
-        <Image src={searchFilter} alt="searchIcon" width={150} height={130} layout="responsive"/>
+        <Image src={searchFilter} alt="searchIcon" width={150} height={130} />
       </div>
 
       <SearchFilter

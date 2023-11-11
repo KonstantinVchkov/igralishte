@@ -1,13 +1,8 @@
-.circleInfo {
+/* .circleInfo {
   width: 280px;
   height: 260px;
-  /* position: absolute;
- */
-  border-radius: 50%;
-  border: 1px solid black;
-  background: linear-gradient(#ffdbdb, #fdfdfd, #fdfdfd);
-  text-align: center;
-}
+   text-align: center;
+} */
 
 .text {
   position: absolute;

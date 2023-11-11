@@ -23,7 +23,12 @@
   transition: transform 0.55s ease-in-out;
   top: 0px;
 }
-
+.searchIcon img,.hambMenu img{
+  max-width: 40px;
+}
+/* .hamb-menu img{
+  max-width: 40px;
+} */
 .menuContainer.open {
   transform: translateX(0);
 }
