@@ -70,7 +70,11 @@
       "material": ["Polo Cotton", "Elastane"],
       "condition": "New",
       "odrzuvanje": ["Machine wash", "Iron low"],
-      "tags": ["polo", "elegant", "durable"]
+      "tags": ["polo", "elegant", "durable"],
+      "images": [
+        "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1994&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
+    ]
     },
     {
       "id": "2",
@@ -85,7 +89,11 @@
       "material": ["100% Silk"],
       "condition": "New",
       "odrzuvanje": ["Dry clean only"],
-      "tags": ["luxury", "silk", "formal"]
+      "tags": ["luxury", "silk", "formal"],
+      "images": [
+        "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
+    ]
     },
     {
       "id": "3",
@@ -99,7 +107,11 @@
       "material": ["Denim", "Metal Buttons"],
       "condition": "New",
       "odrzuvanje": ["Hand wash", "Hang dry", "Do not iron"],
-      "tags": ["vintage", "denim", "trendy"]
+      "tags": ["vintage", "denim", "trendy"],
+      "images": [
+        "https://images.unsplash.com/photo-1526413425697-1d271fdbe7a9?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
+    ]
 
     },
     {
@@ -114,7 +126,11 @@
       "material": ["Cotton", "Polyester"],
       "condition": "New",
       "odrzuvanje": ["Machine wash", "Tumble dry"],
-      "tags": ["durable", "outdoor", "comfort"]
+      "tags": ["durable", "outdoor", "comfort"],
+      "images": [
+        "https://images.unsplash.com/photo-1519211777646-3a7ccf759b64?q=80&w=1970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
+    ]
 
     },
     {
@@ -129,7 +145,10 @@
       "material": ["Stretch Denim"],
       "condition": "New",
       "odrzuvanje": ["Machine wash cold", "Hang to dry"],
-      "tags": ["fashion", "denim", "slim"]
+      "tags": ["fashion", "denim", "slim"],
+      "images": [
+        "https://images.unsplash.com/photo-1638394440667-aa54a7c0a703?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    ]
     },
     {
       "id": "6",
@@ -143,7 +162,11 @@
       "material": ["Denim", "Metal Buttons"],
       "condition": "New",
       "odrzuvanje": ["Hand wash", "Hang dry", "Do not iron"],
-      "tags": ["vintage", "denim", "trendy"]
+      "tags": ["vintage", "denim", "trendy"],
+      "images": [
+        "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1994&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
+    ]
     },
     {
       "id": "7",
@@ -159,10 +182,9 @@
       "odrzuvanje": ["Hand wash", "Hang dry", "Do not iron"],
       "tags": ["vintage", "denim", "trendy"],
       "images": [
-        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA-Yzbqy7PY",
-        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
-        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
-      ]
+        "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1994&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
+    ]
     },
     {
       "id": "8",
@@ -178,9 +200,8 @@
       "odrzuvanje": ["Machine wash cold", "Hang to dry"],
       "tags": ["fashion", "denim", "slim"],
       "images": [
-        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
-        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
-        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA-HvE0jFE"
+          "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?q=80&w=1994&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
       ]
     },
     {

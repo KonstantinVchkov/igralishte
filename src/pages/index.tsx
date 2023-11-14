@@ -4,15 +4,16 @@ import { GetStaticProps } from "next";
 import styleHome from "../styles/styleHome.module.css";
 // import Banner from "@/components/Banner/Banner";
 import BannerBlock from "@/components/Banner/BannerBlock";
-import HomeCarousel from "@/components/Carousel/Carousel";
+import HomeCarousel, { IHomeCarousel } from "@/components/Carousel/Carousel";
 // import style from "../components/Banner/style.module.css";
 // import Banner from "@/components/Banner/Banner";
-interface IHome {
-  responseData: [];
+
+interface IHomeData {
+  responseData: IHomeCarousel[];
 }
 
-export default function Home({ responseData }: IHome) {
-  // console.log(responseData)
+export default function Home({ responseData }: IHomeData) {
+  console.log(responseData)
   return (
     <div className={styleHome.HomePage}>
            <BannerBlock
@@ -20,7 +21,7 @@ export default function Home({ responseData }: IHome) {
           imgText={"/images/icons/Ново.png"}
           vectorIcon="/images/icons/Vector.png"
         />
-        <HomeCarousel />
+        <HomeCarousel products={responseData} />
         <BannerBlock
           img={"/images/banner-images/girl-top-banner.jpg"}
           vectorIcon="/images/icons/Vector.png"
@@ -39,12 +40,12 @@ export default function Home({ responseData }: IHome) {
   );
 }
 
-// export const getStaticProps:GetStaticProps = async () => {
-//  const responseData = await axios.get("http://localhost:3001/products")
-// //  console.log(responseData)
-//   return{
-//     props:{
-//       responseData:responseData.data
-//     }
-//   }
-// }
+export const getStaticProps:GetStaticProps = async () => {
+ const responseData = await axios.get("http://localhost:3001/products")
+ console.log(responseData.data)
+  return{
+    props:{
+      responseData:responseData.data
+    }
+  }
+}

@@ -1,30 +1,35 @@
 import React from "react";
-import style from "./style.module.css";
 import Carousel from "react-bootstrap/Carousel";
-// import ExampleCarouselImage from '';
-interface IHomeCarousel {
-  img: string;
-  title: string;
+import style from "./style.module.css";
+export interface IHomeCarousel {
+  images: string;
+  name: string;
   price: string;
 }
-const HomeCarousel = ({ img, title, price }: IHomeCarousel) => {
+export interface ICarouselData {
+  products: IHomeCarousel[];
+}
+const HomeCarousel = ({ products }: ICarouselData) => {
+  console.log(products);
+  const trendyProducts = products.slice(0, 6);
+  
   return (
-    <Carousel fade>
-      <Carousel.Item>
-        <img src={img} alt="" />
-        <Carousel.Caption></Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img src={img} alt="" />
+    <div className={style.HomeCarousel}>
+      <Carousel fade indicators={false} nextIcon={<span aria-hidden="true" className={`${style.customNextIcon} carousel-control-next-icon .carousel-control-next .carousel-control-prev`} />}
+      prevIcon={<span aria-hidden="true" className={`${style.customPrevIcon} carousel-control-prev-icon`} />}
+      >
+        {trendyProducts.map((product, index) => (
+          <Carousel.Item key={index}>
+            <img src={product.images} alt={product.name} />
 
-        <Carousel.Caption></Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img src={img} alt="" />
-
-        <Carousel.Caption></Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
+            <Carousel.Caption className={style.text}>
+              <h2>{product.name}</h2>
+              <h2>{product.price}</h2>
+            </Carousel.Caption>
+          </Carousel.Item>
+        ))}
+      </Carousel>
+    </div>
   );
 };
 
