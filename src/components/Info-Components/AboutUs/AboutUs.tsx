@@ -24,15 +24,15 @@ const AboutUsInfo = ({
   const [ourWork, setOurWork] = useState(false);
   const [aboutUs, setAboutUs] = useState(true);
   const storyClick = () => {
-    setOurStory(true);
-    setAboutUs(false);
+    setOurStory(!ourStory);
+    setAboutUs(ourStory);
     setOurWork(false);
-
   };
+
   const workClick = () => {
-    setOurWork(true);
-    setAboutUs(false);
-    setOurStory(false)
+    setOurWork(!ourWork);
+    setAboutUs(ourWork);
+    setOurStory(false);
   };
   return (
     <div className={style.AboutSection}>
