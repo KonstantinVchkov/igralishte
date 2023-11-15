@@ -3,7 +3,9 @@ import React from 'react'
 
 const AboutUs:NextPage = () => {
   return (
-    <div>AboutUs</div>
+    <div>
+      <h1>This is about us page!</h1>
+    </div>
   )
 }
 

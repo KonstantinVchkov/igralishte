@@ -25,7 +25,7 @@ const Footer = () => {
       <div className="lists">
         <ul>
           <Link href={"/AboutUs"}>
-            <li>lorem ipsum</li>
+                <li>За нас</li>
           </Link>
           <li>lorem ipsum</li>
           <li>lorem ipsum</li>

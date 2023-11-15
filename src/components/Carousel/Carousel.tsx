@@ -15,7 +15,7 @@ const HomeCarousel = ({ products }: ICarouselData) => {
   
   return (
     <div className={style.HomeCarousel}>
-      <Carousel fade indicators={false} nextIcon={<span aria-hidden="true" className={`${style.customNextIcon} carousel-control-next-icon .carousel-control-next .carousel-control-prev`} />}
+      <Carousel fade indicators={false}  nextIcon={<span aria-hidden="true" className={`${style.customNextIcon} carousel-control-next-icon .carousel-control-next .carousel-control-prev`} />}
       prevIcon={<span aria-hidden="true" className={`${style.customPrevIcon} carousel-control-prev-icon`} />}
       >
         {trendyProducts.map((product, index) => (

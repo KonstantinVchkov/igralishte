@@ -64,4 +64,6 @@ export interface IBannerTop {
   midSection?: boolean;
   infoCircleTitle?: string; 
   infoCircleParagraph?: string;
+  onClick: () => void;
+  style:any
 }

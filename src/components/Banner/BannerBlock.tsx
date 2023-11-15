@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./style.module.css";
 import InfoCircle from "../InfoCircle/InfoCircle";
 
 import { IBannerTop } from "@/types/GlobalTypes";
-
 const BannerBlock = ({
   img,
   imgText,
@@ -11,18 +10,11 @@ const BannerBlock = ({
   bottom = false,
   infoCircleParagraph = `Погледни ги свежите љубовни парчиња`,
   infoCircleTitle = `Valentines gal Колекција`,
+  onClick,
+  style: bannerStyle,
 }: IBannerTop) => {
-  const [changeBg, setChangeBg] = useState("InfoCircle");
-
-  const circleClick = () => {
-    if (changeBg === "InfoCircle") {
-      setChangeBg("bg-gold");
-    } else {
-      setChangeBg("InfoCircle");
-    }
-  };
   return (
-    <div className={style.TopSection}>
+    <div className={style.TopSection} onClick={onClick}>
       <div
         className={`${style.bgImage} ${
           midSection ? `${style.midSection}` : ""
@@ -59,22 +51,13 @@ const BannerBlock = ({
               <stop offset="0.0389507" stopColor="#FFF0BF" />
               <stop offset="0.289254" stopColor="#EFC990" />
               <stop offset="0.512668" stopColor="#FDD292" />
-              <stop
-                offset="0.836534"
-                stopColor="#F0C749"
-                stopOpacity="0.42"
-              />
+              <stop offset="0.836534" stopColor="#F0C749" stopOpacity="0.42" />
               <stop offset="1" stopColor="#D4AF37" />
             </linearGradient>
           </defs>
         </svg>
       </div>
-      <div
-        onClick={circleClick}
-        className={`${style[changeBg]} ${
-          bottom ? style.bottomInfoCircle : ""
-        } ${midSection ? style.midSectionInfoCircle : ""}`}
-      >
+      <div  className={`${style[bannerStyle]}`}>
         <InfoCircle
           title={infoCircleTitle}
           paragraph={infoCircleParagraph}
