@@ -1,17 +1,20 @@
 import AboutUsInfo, {
   IAboutUs,
 } from "@/components/Info-Components/AboutUs/AboutUs";
-import OurStory from "@/components/Info-Components/AboutUs/OurStory";
-import OurWork from "@/components/Info-Components/AboutUs/OurWork";
 import { GetStaticProps, NextPage } from "next";
-import React, { useState } from "react";
 import axios from "axios";
+import { useRouter } from "next/router";
+import BreadCrumbs from "@/components/Local-Designer-Info/Cookie-Trail_BreadCrumbs/BreadCrumbs";
 interface IAboutPage {
   responseData: IAboutUs;
 }
 const AboutUs: NextPage<IAboutPage> = ({ responseData }) => {
+  const asPathRoute = useRouter();
+  const exactRoute = asPathRoute.pathname
+  // console.log(asPath);
   return (
     <>
+    <BreadCrumbs route={exactRoute} separator={">"} />
       <AboutUsInfo
         title={"За нас"}
         img={responseData.img}
@@ -19,7 +22,11 @@ const AboutUs: NextPage<IAboutPage> = ({ responseData }) => {
         aboutText={responseData.aboutText}
         aboutStoryTitle={responseData.aboutStoryTitle}
         aboutStoryText={responseData.aboutStoryText}
-        imgStory={responseData.imgStory} aboutWorkTitle={responseData.aboutWorkTitle} aboutWorkText={responseData.aboutWorkText} imgWork={responseData.imgWork}      />
+        imgStory={responseData.imgStory}
+        aboutWorkTitle={responseData.aboutWorkTitle}
+        aboutWorkText={responseData.aboutWorkText}
+        imgWork={responseData.imgWork}
+      />
     </>
   );
 };

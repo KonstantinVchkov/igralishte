@@ -1,0 +1,5 @@
+.customBreadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    content: attr(data-separator); /* Dynamic separator */
+    padding: 0 5px;
+    color: #6c757d; /* Default color for Bootstrap breadcrumbs */
+}

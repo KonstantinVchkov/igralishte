@@ -3,7 +3,7 @@ import React from 'react'
 
 const LocalDesigner:NextPage = () => {
   return (
-    <div>LocalDesigner</div>
+    <div></div>
   )
 }
 
