@@ -1,33 +1,46 @@
 .AboutSection {
-    width: 360px;
-    margin: 10px auto;
-    background-color: #FFFFFF;
+  width: 360px;
+  margin: 10px auto;
+  background-color: #ffffff;
 }
 
 .title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 15px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0px;
 }
 .buttons {
-    background-color: pink;
-    width: 300px;
-    padding: 10px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 15px auto;
-    font-family: Cormorant Infant;
+  background: linear-gradient(#c2c2c2, #fff6f6);
+  width: 300px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 15px auto;
+  font-family: Cormorant Infant;
+  box-shadow: 0px 0px 2.5714282989501953px 0px #c2c2c2;
+  border-radius: 10px;
 }
 
+.buttons button {
+  cursor: pointer;
+  width: 100%;
+}
+.buttons button:first-child {
+  border-right: 1px solid black;
+}
 .secondSection img {
-    max-width: 300px;
-    height: 334px;
-    border: 1px solid #FFDBDB;
-    margin: 10px auto;
+  max-width: 300px;
+  height: 334px;
+  border: 1px solid #ffdbdb;
+  margin: 10px auto;
 }
 
 .secondSection p {
-    margin: 15px 0px;
+  margin: 15px 0px;
+}
+
+.textBold {
+  font-weight: bold;
 }

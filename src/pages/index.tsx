@@ -20,7 +20,6 @@ export default function Home({ responseData }: IHomeData) {
   const [bottomSectionStyle, setBottomSectionStyle] = useState("bottomCircleI");
 // Dokolku ima nekakov problem vo idnina,da znam deka e od ovde,bidejki na klik se povikuvaat poveke pati 
   const handleInfoCircleClick = () => {
-    console.log("first section clicked")
     setInfoCircleStyle(prevStyle => prevStyle === "InfoCircle" ? "orange" : "InfoCircle");
   };
 
@@ -65,7 +64,7 @@ export default function Home({ responseData }: IHomeData) {
 
 export const getStaticProps:GetStaticProps = async () => {
  const responseData = await axios.get("http://localhost:3001/products")
- console.log(responseData.data)
+ 
   return{
     props:{
       responseData:responseData.data

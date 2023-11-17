@@ -1,0 +1,16 @@
+.ContactInfo{
+    width: 360px;
+    margin: 0px auto;
+    background-color: #FFFFFF;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.secondSection{
+    width: 300px;
+    margin: 15px auto;
+}

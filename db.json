@@ -640,11 +640,26 @@
    "aboutStoryTitle": "Ова е нашата историја:",
    "aboutStoryText":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, incidunt eligendi impedit voluptatum veritatis aliquid deleniti perspiciatis ipsa aut? Nulla, sequi, maiores possimus tempora praesentium provident expedita deleniti animi itaque voluptates alias sit aperiam corrupti, dolore at consectetur obcaecati laboriosam libero vero minus eum dolorem. Consequatur fuga nostrum, beatae, eos voluptas quas deleniti autem qui, ipsam sunt voluptatum minus adipisci facilis debitis voluptatibus molestiae dicta error repudiandae corrupti provident est alias aliquid excepturi officia. Voluptates ea sunt blanditiis nesciunt nemo recusandae adipisci nisi a molestiae dicta perspiciatis excepturi, explicabo nam suscipit doloribus? Provident earum sed nulla optio quaerat natus asperiores eos culpa officiis laboriosam obcaecati autem iste ab ipsam laudantium fugiat, excepturi facere explicabo. Voluptates a animi saepe in accusantium est neque dolor perspiciatis laboriosam! Ipsa obcaecati sint ipsam laudantium soluta cumque nemo. Provident aliquid excepturi maxime assumenda voluptatem expedita pariatur ad harum cupiditate tenetur nisi fuga fugit nulla, magni ullam? Vitae perspiciatis facere quas repudiandae quasi! Ad, veritatis dolorem! Quidem porro asperiores quod dolore sit dolorem vero molestiae accusamus voluptatem cupiditate unde libero, eligendi quia maxime adipisci fugiat eaque nesciunt?Consequatur fuga nostrum, beatae, eos voluptas quas deleniti autem qui, ipsam sunt voluptatum minus adipisci facilis debitis voluptatibus molestiae dicta error repudiandae corrupti provident est alias aliquid excepturi officia. Voluptates ea sunt blanditiis nesciunt nemo recusandae adipisci nisi a molestiae dicta perspiciatis excepturi, explicabo nam suscipit doloribus? Provident earum sed nulla optio quaerat natus asperiores eos culpa officiis laboriosam obcaecati autem iste ab ipsam laudantium fugiat, excepturi facere explicabo. Voluptates a animi saepe in accusantium est neque dolor perspiciatis laboriosam! Ipsa obcaecati sint ipsam laudantium soluta cumque nemo. Provident aliquid excepturi maxime assumenda voluptatem expedita pariatur ad harum cupiditate tenetur nisi fuga fugit nulla, magni ullam? Vitae perspiciatis facere quas repudiandae quasi! Ad, veritatis dolorem! Quidem porro asperiores quod dolore sit dolorem vero molestiae accusamus voluptatem cupiditate unde libero, eligendi quia maxime adipisci fugiat eaque nesciunt?",     
    "imgStory":"https://imgstaticcontent.lbb.in/lbbnew/wp-content/uploads/2018/02/05115808/story.jpg",
-   "aboutWork": "Ова е се што имаме направено:",
+   "aboutWorkTitle": "Ова е се што имаме направено:",
    "aboutWorkText":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, incidunt eligendi impedit voluptatum veritatis aliquid deleniti perspiciatis ipsa aut? Nulla, sequi, maiores possimus tempora praesentium provident expedita deleniti animi itaque voluptates alias sit aperiam corrupti, dolore at consectetur obcaecati laboriosam libero vero minus eum dolorem. Consequatur fuga nostrum, beatae, eos voluptas quas deleniti autem qui, ipsam sunt voluptatum minus adipisci facilis debitis voluptatibus molestiae dicta error repudiandae corrupti provident est alias aliquid excepturi officia. Voluptates ea sunt blanditiis nesciunt nemo recusandae adipisci nisi a molestiae dicta perspiciatis excepturi, explicabo nam suscipit doloribus? Provident earum sed nulla optio quaerat natus asperiores eos culpa officiis laboriosam obcaecati autem iste ab ipsam laudantium fugiat, excepturi facere explicabo. Voluptates a animi saepe in accusantium est neque dolor perspiciatis laboriosam! Ipsa obcaecati sint ipsam laudantium soluta cumque nemo. Provident aliquid excepturi maxime assumenda voluptatem expedita pariatur ad harum cupiditate tenetur nisi fuga fugit nulla, magni ullam? Vitae perspiciatis facere quas repudiandae quasi! Ad, veritatis dolorem! Quidem porro asperiores quod dolore sit dolorem vero molestiae accusamus voluptatem cupiditate unde libero, eligendi quia maxime adipisci fugiat eaque nesciunt?Consequatur fuga nostrum, beatae, eos voluptas quas deleniti autem qui, ipsam sunt voluptatum minus adipisci facilis debitis voluptatibus molestiae dicta error repudiandae corrupti provident est alias aliquid excepturi officia. Voluptates ea sunt blanditiis nesciunt nemo recusandae adipisci nisi a molestiae dicta perspiciatis excepturi, explicabo nam suscipit doloribus? Provident earum sed nulla optio quaerat natus asperiores eos culpa officiis laboriosam obcaecati autem iste ab ipsam laudantium fugiat, excepturi facere explicabo. Voluptates a animi saepe in accusantium est neque dolor perspiciatis laboriosam! Ipsa obcaecati sint ipsam laudantium soluta cumque nemo. Provident aliquid excepturi maxime assumenda voluptatem expedita pariatur ad harum cupiditate tenetur nisi fuga fugit nulla, magni ullam? Vitae perspiciatis facere quas repudiandae quasi! Ad, veritatis dolorem! Quidem porro asperiores quod dolore sit dolorem vero molestiae accusamus voluptatem cupiditate unde libero, eligendi quia maxime adipisci fugiat eaque nesciunt?",     
    "imgWork":"https://portret.digital/wp-content/uploads/2023/09/img_9013.jpeg"
+  },
+   "ContactUs":{
+    "PageTitle":"Контакт",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/da/Campbell_County_Rockpile_Museum_gift_shop_in_Gillette%2C_Wyoming.jpg",
+    "title": "Игралиште Дебар Маало",
+   "subtitle": "Откриј ги нашите останати модни парчиња и колекции кои ги немаме изложено на нашата страна!",
+    "contactInfo": "Костурски Херои бр.6/14 Дебар Маало, Скопје",
+    "number":"Телефон за контакт:",
+    "mobNumber":"+ 389 078 380 406",
+    "workTime":"Работно Време: Понеделник - Петок 12:00 - 19:00. Сабота 12:00 - 17:00"
+  },
+  "Faq":{
+   "PageTitle":"FAQ",
+   "firstQuestion":"Прашање број еден?",
+   "secondQuestion":"Прашање број два?",
+   "thirdQuestion":"Прашање ",
+   "fourthQuestion":"Прашање "
+  } 
    
-  }
- 
-  
 }

@@ -25,12 +25,15 @@ const Footer = () => {
       <div className="lists">
         <ul>
           <Link href={"/AboutUs"}>
-                <li>За нас</li>
+            <li>За нас</li>
           </Link>
-          <li>lorem ipsum</li>
-          <li>lorem ipsum</li>
-          <li>lorem ipsum</li>
-          <li></li>
+          <Link href={"/ContactUs"}>
+            <li>Контакт</li>
+          </Link>
+          <li>Локатор на Продавницата</li>
+          <Link href={"/FAQ"}>
+            <li>Често поставувани Прашања(FAQ)</li>
+          </Link>
           <li>
             <Link href={"/register"}>Регистрирај се</Link>/
             <Link href={"/login"}>логирај се</Link>

@@ -10,20 +10,16 @@ interface IAboutPage {
   responseData: IAboutUs;
 }
 const AboutUs: NextPage<IAboutPage> = ({ responseData }) => {
-
   return (
     <>
-      {/* {aboutUs && ( */}
-        <AboutUsInfo
+      <AboutUsInfo
         title={"За нас"}
         img={responseData.img}
         aboutTitle={responseData.aboutTitle}
         aboutText={responseData.aboutText}
-        aboutStoryTitle={responseData.aboutStoryTitle} aboutStoryText={responseData.aboutStoryText} imgStory={responseData.imgStory}          // handleStoryClick={storyClick}
-          // handleWorkClick={workClick}
-        />
-      {/* // )} */}
- 
+        aboutStoryTitle={responseData.aboutStoryTitle}
+        aboutStoryText={responseData.aboutStoryText}
+        imgStory={responseData.imgStory} aboutWorkTitle={responseData.aboutWorkTitle} aboutWorkText={responseData.aboutWorkText} imgWork={responseData.imgWork}      />
     </>
   );
 };
