@@ -10,11 +10,11 @@ interface IAboutPage {
 }
 const AboutUs: NextPage<IAboutPage> = ({ responseData }) => {
   const asPathRoute = useRouter();
-  const exactRoute = asPathRoute.pathname
+  const exactRoute = asPathRoute.pathname;
   // console.log(asPath);
   return (
     <>
-    <BreadCrumbs route={exactRoute} separator={">"} />
+      <BreadCrumbs route={exactRoute} />
       <AboutUsInfo
         title={"За нас"}
         img={responseData.img}

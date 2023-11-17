@@ -1,25 +1,28 @@
 import React from "react";
-import { Breadcrumb } from "react-bootstrap";
-import "./style.module.css"; // Adjust the import based on how you've set up CSS modules
+import "./style.module.css";
+import style from "./style.module.css";
+import Link from "next/link";
 
 export interface IBCrumbProps {
   route: string;
-  separator: string;
+  //   separator: string;
 }
 
-const BreadCrumbs = ({ route, separator = ">" }: IBCrumbProps) => {
-  const routeItems = route.split(">"); // Split the route into items
+const BreadCrumbs = ({ route }: IBCrumbProps) => {
+  const routeItems = route.split("/").filter((item) => item);
 
   return (
     <div>
-      <Breadcrumb className="customBreadcrumb" data-separator={separator}>
-        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+      <div>
         {routeItems.map((item, index) => (
-          <Breadcrumb.Item key={index} href={`/${item}`}>
-            {item}
-          </Breadcrumb.Item>
+          <div key={index}>
+            <Link href={"/"}>Home</Link>
+            <Link className={style.customBreadcrumb} href={`/${item}`}>
+              {item}
+            </Link>
+          </div>
         ))}
-      </Breadcrumb>
+      </div>
     </div>
   );
 };
