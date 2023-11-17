@@ -11,6 +11,7 @@ interface IAboutPage {
 const AboutUs: NextPage<IAboutPage> = ({ responseData }) => {
   const asPathRoute = useRouter();
   const exactRoute = asPathRoute.pathname;
+  
   // console.log(asPath);
   return (
     <>

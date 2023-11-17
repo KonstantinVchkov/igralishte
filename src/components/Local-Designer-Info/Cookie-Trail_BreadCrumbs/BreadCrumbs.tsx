@@ -2,10 +2,14 @@ import React from "react";
 import "./style.module.css";
 import style from "./style.module.css";
 import Link from "next/link";
-
+const routeNameMapping: { [key: string]: string } = {
+  AboutUs: "За нас",
+  ContactUs: "Контакт",
+  FAQ: "Често поставувани прашања",
+  local_designers:"Локални Брендови"
+};
 export interface IBCrumbProps {
   route: string;
-  //   separator: string;
 }
 
 const BreadCrumbs = ({ route }: IBCrumbProps) => {
@@ -16,9 +20,9 @@ const BreadCrumbs = ({ route }: IBCrumbProps) => {
       <div>
         {routeItems.map((item, index) => (
           <div key={index}>
-            <Link href={"/"}>Home</Link>
+            <Link href={"/"}>Почетна</Link>
             <Link className={style.customBreadcrumb} href={`/${item}`}>
-              {item}
+              {routeNameMapping[item] || item}
             </Link>
           </div>
         ))}
