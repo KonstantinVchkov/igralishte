@@ -7,10 +7,11 @@ export interface ILDesignerProps{
   brandAnswer?:string;
   brandImage:string;
   brandDescription:string;
+  detailClick?:() => void;
 }
-const LocalDesignerComponent = ({id,brandName,brandImage,brandDescription,brandAnswer,brandConcept}:ILDesignerProps) => {
+const LocalDesignerComponent = ({id,brandName,brandImage,brandDescription,brandAnswer,brandConcept,detailClick}:ILDesignerProps) => {
   return (
-    <div className={style.LocalDesigner} >
+    <div className={style.LocalDesigner} onClick={detailClick}>
       <div className={style.textTitle}>
         <h1>{brandName}</h1>
         <img src="/images/icons/sparks-elements-icon.png" alt="spark-icon" />

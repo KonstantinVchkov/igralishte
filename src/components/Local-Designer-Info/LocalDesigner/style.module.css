@@ -1,16 +1,17 @@
-.LocalDesigner {
-  width: 360px;
-  /* margin: 0px auto; */
+.designers_page{
+  width: 380px;
+  margin: 0px auto;
 }
-
-.text,
-.brand {
+.LocalDesigner {
   width: 300px;
   margin: 0px auto;
 }
-.brand{
-    
+.LocalDesigner:hover{
+  cursor: pointer;
+  text-decoration: underline;
 }
+
+
 .textTitle {
   display: flex;
   align-items: center;

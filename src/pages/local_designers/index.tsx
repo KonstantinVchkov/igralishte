@@ -6,6 +6,9 @@ import axios from "axios";
 import { GetServerSideProps, NextPage } from "next";
 import { useRouter } from "next/router";
 import React from "react";
+import style from "../../components/Local-Designer-Info/LocalDesigner/style.module.css";
+import Link from "next/link";
+
 export interface ILDesignerPageProps {
   brandData: ILDesignerProps[];
 }
@@ -13,23 +16,34 @@ const LocalDesigner: NextPage<ILDesignerPageProps> = ({ brandData }) => {
   console.log(brandData);
   const router = useRouter();
   const exactRoute = router.pathname;
-  const handleFilter = () => {
+  // const handleFilter = (id:string) => {
+  //   router.push({
+  //     pathname:exactRoute,
+  //     query:id
+  //   })
+  // }
+  const handleFilter = ( value: string) => {
     router.push({
-      
-    })
-  }
+      pathname: exactRoute,
+      query: value,
+    });
+  };
+
+
   return (
-    <div>
+    <div className={style.designers_page}>
       <BreadCrumbs route={exactRoute} />
 
       {brandData.map((brand, index) => (
+        <Link key={brand.id || index} href={`http://localhost:3000/local_designers/${brand.id}`}>
         <LocalDesignerComponent
-          key={brand.id || index}
+          detailClick={() => handleFilter(`${brand.id}`)}
           brandName={brand.brandName}
           brandDescription={brand.brandDescription}
           id={brand.id}
           brandImage={brand.brandImage}
         />
+        </Link>
       ))}
     </div>
   );
