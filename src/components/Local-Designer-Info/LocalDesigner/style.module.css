@@ -1,0 +1,18 @@
+.LocalDesigner {
+  width: 360px;
+  /* margin: 0px auto; */
+}
+
+.text,
+.brand {
+  width: 300px;
+  margin: 0px auto;
+}
+.brand{
+    
+}
+.textTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

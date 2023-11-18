@@ -665,71 +665,95 @@
       "id": 1,
       "brandName": "Pinc Partywear",
       "brandImage": "https://onecms-res.cloudinary.com/image/upload/s--a04qSXI0--/c_crop,h_1125,w_1500,x_0,y_1/c_fill,g_auto,h_622,w_830/f_auto,q_auto/v1/mediacorp/cna/image/2023/07/14/how-do-you-shop-for-vintage-clothings_Frecklesaisvintage%20and%20Huntstreet.png?itok=3oKskHHZ",
+      "brandConcept":"Pink Partywear се базира врз основа на неколку прашања:",
       "brandDescription": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."
     },
     {
       "id": 2,
       "brandName": "Factory Girl",
       "brandImage": "https://cdn.shopify.com/s/files/1/0305/7100/4043/files/Vintage_Fashion_Style_1024x1024.jpg?v=1654538650",
+      "brandConcept":"Factory Girl се базира врз основа на неколку прашања:",
+      "brandAnswer":"Velit id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in?",
       "brandDescription": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."
     },
     {
       "id": 3,
       "brandName": "Main Days",
       "brandImage": "https://cdn.cliqueinc.com/posts/281395/everyday-italian-fashion-281395-1698437138703-main.700x0c.jpg",
+      "brandConcept":"Main Days се базира врз основа на неколку прашања:",
+      "brandAnswer":"Velit id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in?",
       "brandDescription": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."
     },
     {
       "id": 4,
       "brandName": "Нежно",
       "brandImage": "https://inthewash.co.uk/wp-content/uploads/2017/10/Delicate-materials.jpg",
+      "brandConcept":"Нежно се базира врз основа на неколку прашања:",
+      "brandAnswer":"Velit id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in?",
       "brandDescription": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."
     },
     {
       "id": 5,
       "brandName": "Ред",
+      "brandConcept":"Ред се базира врз основа на неколку прашања:",
+      "brandAnswer":"Velit id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in?",
+
       "brandImage": "https://cdn.vox-cdn.com/thumbor/rFI2aCZ1BwcL4wLJ159v720k7_I=/0x177:2121x1238/fit-in/1200x600/cdn.vox-cdn.com/uploads/chorus_asset/file/9934399/GettyImages_118993965.jpg",
       "brandDescription": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."
     },
     {
       "id": 6,
       "brandName": "Наш",
+      "brandConcept":"Наш се базира врз основа на неколку прашања:",
+      "brandAnswer":"Velit id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in?",
       "brandImage": "https://people.com/thmb/k6PDVhcuu7CtqigpeN8Tll7NT04=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Best-Cooling-Clothes-on-Amazon-of-2023-tout-02cbad36896540c4b949106f0f6ba43b.jpg",
       "brandDescription": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."
     },
     {
       "id": 7,
       "brandName": "Зш да не",
+      "brandConcept":"Зш да не се базира врз основа на неколку прашања:",
       "brandImage": "https://i.ibb.co/6sL5RF8/zshdane-1.png",
+      "brandAnswer":"Velit id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in?",
       "brandDescription": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."
     },
     {
       "id": 8,
       "brandName": "Fraeil",
+      "brandConcept":"Fraeil се базира врз основа на неколку прашања:",
+      "brandAnswer":"Velit id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in?",
       "brandImage": "https://www.thespruce.com/thmb/tafFWeEWcJqDsj4rRybGfYwvSmQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/wash-new-clothes-before-wearing-2146345-03-999483b3d51a435ba53c8d9ef5c2d5c4.jpg",
       "brandDescription": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."
     },
     {
       "id": 9,
       "brandName": "Urma",
+      "brandConcept":"Urma се базира врз основа на неколку прашања:",
+      "brandAnswer":"Velit id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in?",
       "brandImage": "https://cdn.vox-cdn.com/thumbor/rFI2aCZ1BwcL4wLJ159v720k7_I=/0x177:2121x1238/fit-in/1200x600/cdn.vox-cdn.com/uploads/chorus_asset/file/9934399/GettyImages_118993965.jpg",
       "brandDescription": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."
     },
     {
       "id": 10,
       "brandName": "Candle nest",
+      "brandConcept":"Candle nest се базира врз основа на неколку прашања:",
+      "brandAnswer":"Velit id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in?",
       "brandImage": "https://cdn.shopify.com/s/files/1/0305/7100/4043/files/Vintage_Fashion_Style_1024x1024.jpg?v=1654538650",
       "brandDescription": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."
     },
     {
       "id": 11,
       "brandName": "Beyond green",
+      "brandConcept":"Beyond green се базира врз основа на неколку прашања:",
+      "brandAnswer":"Velit id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in?",
       "brandImage": "https://cdn.vox-cdn.com/thumbor/rFI2aCZ1BwcL4wLJ159v720k7_I=/0x177:2121x1238/fit-in/1200x600/cdn.vox-cdn.com/uploads/chorus_asset/file/9934399/GettyImages_118993965.jpg",
       "brandDescription": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."
     },
     {
       "id": 12,
       "brandName": "Gatta",
+      "brandConcept":"Gatta се базира врз основа на неколку прашања:",
+      "brandAnswer":"Velit id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in?",
       "brandImage": "https://people.com/thmb/k6PDVhcuu7CtqigpeN8Tll7NT04=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Best-Cooling-Clothes-on-Amazon-of-2023-tout-02cbad36896540c4b949106f0f6ba43b.jpg",
       "brandDescription": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."
     }
