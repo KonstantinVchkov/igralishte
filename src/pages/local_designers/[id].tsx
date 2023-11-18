@@ -10,7 +10,8 @@ const LocalDesignerDetail:NextPage<IBrandDetail> = ({brandDetail}) => {
   console.log(brandDetail)
   return (
   <div className={style.detailPage}>
-    {/* <LocalDesignerComponent id={""} brandName={""} brandImage={""} brandDescription={""} /> */}
+    
+    <LocalDesignerComponent {...brandDetail} />
   </div>
   )
 };

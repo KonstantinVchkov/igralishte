@@ -10,9 +10,10 @@ const routeNameMapping: { [key: string]: string } = {
 };
 export interface IBCrumbProps {
   route: string;
+  destination?:string;
 }
 
-const BreadCrumbs = ({ route }: IBCrumbProps) => {
+const BreadCrumbs = ({ route,destination }: IBCrumbProps) => {
   const routeItems = route.split("/").filter((item) => item);
 
   return (
