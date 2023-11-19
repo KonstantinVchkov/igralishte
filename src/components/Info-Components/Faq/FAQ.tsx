@@ -1,15 +1,8 @@
 import React from "react";
 import style from "./style.module.css"
+import { IFaqComp } from "@/types/GlobalTypes";
 
-export interface IFaqComp {
-  PageTitle:string;
-  firstQuestion:string;
-  firstAnswer?:string;
-  secondAnswer?:string;
-  secondQuestion:string;
-  thirdQuestion?:string;
-  fourthQuestion?:string;
-}
+
 
 const FaQInfo = ({PageTitle,firstQuestion,secondQuestion,thirdQuestion,fourthQuestion}:IFaqComp) => {
   return (

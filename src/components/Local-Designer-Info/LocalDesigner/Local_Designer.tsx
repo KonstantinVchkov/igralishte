@@ -1,14 +1,6 @@
 import React from 'react'
 import style from "./style.module.css"
-export interface ILDesignerProps{
-  id:string;
-  brandName:string;
-  brandConcept?:string;
-  brandAnswer?:string;
-  brandImage:string;
-  brandDescription:string;
-  detailClick?:() => void;
-}
+import { ILDesignerProps } from '@/types/GlobalTypes'
 const LocalDesignerComponent = ({id,brandName,brandImage,brandDescription,brandAnswer,brandConcept,detailClick}:ILDesignerProps) => {
   return (
     <div className={style.LocalDesigner} onClick={detailClick}>

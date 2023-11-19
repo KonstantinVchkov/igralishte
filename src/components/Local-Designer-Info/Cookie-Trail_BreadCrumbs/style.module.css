@@ -1,5 +1,7 @@
-.customBreadcrumb::before {
-  content: ">"; 
-  padding: 0 5px;
-  color: #6c757d; 
+.containerClass {
+    display: flex;
+}
+
+.containerClass span {
+  margin: 0px 10px;
 }

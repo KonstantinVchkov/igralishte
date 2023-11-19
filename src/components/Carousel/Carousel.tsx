@@ -1,14 +1,8 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import style from "./style.module.css";
-export interface IHomeCarousel {
-  images: string;
-  name: string;
-  price: string;
-}
-export interface ICarouselData {
-  products: IHomeCarousel[];
-}
+import { ICarouselData } from "@/types/GlobalTypes";
+
 const HomeCarousel = ({ products }: ICarouselData) => {
   console.log(products);
   const trendyProducts = products.slice(0, 6);

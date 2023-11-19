@@ -1,17 +1,13 @@
-import { useFetch } from "@/hooks/useFetch";
 import axios from "axios";
 import { GetStaticProps } from "next";
 import styleHome from "../styles/styleHome.module.css";
-// import Banner from "@/components/Banner/Banner";
 import BannerBlock from "@/components/Banner/BannerBlock";
-import HomeCarousel, { IHomeCarousel } from "@/components/Carousel/Carousel";
+import HomeCarousel from "@/components/Carousel/Carousel";
 import { useState } from "react";
-// import style from "../components/Banner/style.module.css";
-// import Banner from "@/components/Banner/Banner";
+import { IHomeData } from "@/types/GlobalTypes";
 
-interface IHomeData {
-  responseData: IHomeCarousel[];
-}
+
+
 
 export default function Home({ responseData }: IHomeData) {
   console.log(responseData)

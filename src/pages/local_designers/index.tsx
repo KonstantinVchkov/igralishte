@@ -1,37 +1,25 @@
-import BreadCrumbs from "@/components/Local-Designer-Info/Cookie-Trail_BreadCrumbs/BreadCrumbs";
-import LocalDesignerComponent, {
-  ILDesignerProps,
-} from "@/components/Local-Designer-Info/LocalDesigner/Local_Designer";
+import LocalDesignerComponent from "@/components/Local-Designer-Info/LocalDesigner/Local_Designer";
 import axios from "axios";
 import { GetServerSideProps, NextPage } from "next";
-import { useRouter } from "next/router";
-import React from "react";
+import router from "next/router";
 import style from "../../components/Local-Designer-Info/LocalDesigner/style.module.css";
 import Link from "next/link";
+import { ILDesignerProps } from "@/types/GlobalTypes";
 
 export interface ILDesignerPageProps {
   brandData: ILDesignerProps[];
 }
 const LocalDesigner: NextPage<ILDesignerPageProps> = ({ brandData }) => {
-  console.log(brandData);
-  const router = useRouter();
-  
-  const exactRoute = router.pathname;
-  console.log(exactRoute);
   const handleFilter = (value: string) => {
-    router.push({
-      pathname: exactRoute,
-      query: value,
-    });
+    // console.log(`Attempting to navigate to: ${value}`);
+    router.push(`/local_designers/${value}`);
   };
 
   return (
     <div className={style.designers_page}>
-      <BreadCrumbs route={exactRoute} />
-
-      {brandData.map((brand, index) => (
+      {brandData.map((brand) => (
         <Link
-          key={brand.id || index}
+          key={brand.id}
           href={`http://localhost:3000/local_designers/${brand.id}`}
         >
           <LocalDesignerComponent

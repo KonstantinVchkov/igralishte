@@ -2,18 +2,8 @@ import React, { useState } from "react";
 import style from "./style.module.css";
 import OurStory from "./OurStory";
 import OurWork from "./OurWork";
-export interface IAboutUs {
-  title?: string;
-  img: string;
-  aboutTitle: string;
-  aboutText: string;
-  aboutStoryTitle: string;
-  aboutStoryText: string;
-  imgStory: string;
-  aboutWorkTitle: string;
-  aboutWorkText: string;
-  imgWork: string;
-}
+import { IAboutUs } from "@/types/GlobalTypes";
+
 const AboutUsInfo = ({
   title,
   img,

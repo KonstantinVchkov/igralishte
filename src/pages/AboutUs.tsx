@@ -1,21 +1,11 @@
-import AboutUsInfo, {
-  IAboutUs,
-} from "@/components/Info-Components/AboutUs/AboutUs";
+import AboutUsInfo from "@/components/Info-Components/AboutUs/AboutUs";
 import { GetStaticProps, NextPage } from "next";
 import axios from "axios";
-import { useRouter } from "next/router";
-import BreadCrumbs from "@/components/Local-Designer-Info/Cookie-Trail_BreadCrumbs/BreadCrumbs";
-interface IAboutPage {
-  responseData: IAboutUs;
-}
+import { IAboutPage } from "@/types/GlobalTypes";
+
 const AboutUs: NextPage<IAboutPage> = ({ responseData }) => {
-  const asPathRoute = useRouter();
-  const exactRoute = asPathRoute.pathname;
-  
-  // console.log(asPath);
   return (
     <>
-      <BreadCrumbs route={exactRoute} />
       <AboutUsInfo
         title={"За нас"}
         img={responseData.img}
