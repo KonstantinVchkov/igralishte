@@ -3,7 +3,7 @@ import style from "./style.module.css";
 import LogoComponent from "@/components/Header/logo";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { FormValues } from "@/types/GlobalTypes";
+import { FormValues } from "@/types/ProjectTypes";
 import axios from "axios";
 import { schema } from "@/utils/validationForm";
 interface IRegisterForm {
@@ -18,7 +18,7 @@ const RegisterForm = ({ onRegisterSuccess }: IRegisterForm) => {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onSubmit:SubmitHandler<FormValues> = async (formData) => {
+  const onSubmit: SubmitHandler<FormValues> = async (formData) => {
     localStorage.setItem(
       "user",
       JSON.stringify({

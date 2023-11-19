@@ -4,7 +4,7 @@ import LocalDesignerComponent from "@/components/Local-Designer-Info/LocalDesign
 import { GetServerSideProps, NextPage } from "next";
 import axios from "axios";
 import NextBreadcrumb from "@/components/Local-Designer-Info/Cookie-Trail_BreadCrumbs/NextBreadcrumb";
-import { ILDesignerProps } from "@/types/GlobalTypes";
+import { ILDesignerProps } from "@/types/ProjectTypes";
 interface IBrandDetail {
   brandDetail: ILDesignerProps;
 }
@@ -24,9 +24,11 @@ export default LocalDesignerDetail;
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const queryBrand = query.id as string;
-  const res = await axios.get(`http://localhost:3001/brands/${queryBrand}?brandName_like=${queryBrand}`);
-  console.log("this is the end point from detail",res)
-  const brandDetail = res.data; 
+  const res = await axios.get(
+    `http://localhost:3001/brands/${queryBrand}?brandName_like=${queryBrand}`
+  );
+  console.log("this is the end point from detail", res);
+  const brandDetail = res.data;
   return {
     props: {
       brandDetail,

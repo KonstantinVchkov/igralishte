@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ReturnType } from "@/types/GlobalTypes";
+import { ReturnType } from "@/types/ProjectTypes";
 
 export const useFetch = <T>(url: string): ReturnType<T> => {
   const [data, setData] = useState<T[]>([]);

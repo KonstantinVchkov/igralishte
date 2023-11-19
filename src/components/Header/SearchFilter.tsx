@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import style from "./style.module.css";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import FontAwesomeIcon
-import { ISearchMenu } from "@/types/GlobalTypes";
+import { ISearchMenu } from "@/types/ProjectTypes";
 const SearchFilter = ({ show, handleClose }: ISearchMenu) => {
   return (
     <>
@@ -20,7 +20,7 @@ const SearchFilter = ({ show, handleClose }: ISearchMenu) => {
               <FontAwesomeIcon
                 onClick={handleClose}
                 icon={faChevronLeft}
-                style={{ color: "#c9cfd9",width:"20px" }}
+                style={{ color: "#c9cfd9", width: "20px" }}
                 className="mr-2"
               />
               <Form.Control
@@ -32,8 +32,6 @@ const SearchFilter = ({ show, handleClose }: ISearchMenu) => {
           </Form>
         </Offcanvas.Body>
       </Offcanvas>
-
-    
     </>
   );
 };

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import style from "./style.module.css";
 import OurStory from "./OurStory";
 import OurWork from "./OurWork";
-import { IAboutUs } from "@/types/GlobalTypes";
+import { IAboutUs } from "@/types/ProjectTypes";
 
 const AboutUsInfo = ({
   title,
@@ -12,10 +12,9 @@ const AboutUsInfo = ({
   aboutStoryTitle: aboutStoryTitle,
   aboutStoryText: aboutStoryText,
   imgStory: imgStory,
-  aboutWorkText:aboutWorkText,
-  aboutWorkTitle:aboutWorkTitle,
-  imgWork:imgWork
-
+  aboutWorkText: aboutWorkText,
+  aboutWorkTitle: aboutWorkTitle,
+  imgWork: imgWork,
 }: IAboutUs) => {
   const [ourStory, setOurStory] = useState(false);
   const [ourWork, setOurWork] = useState(false);
@@ -27,7 +26,7 @@ const AboutUsInfo = ({
     setOurStory(!ourStory);
     setAboutUs(ourStory);
     setOurWork(false);
-    setButtonStoryText(ourStory ? "" : "textBold")
+    setButtonStoryText(ourStory ? "" : "textBold");
     // setStoryButtonText(ourStory ? "Нашата Приказна" : "За нас");
     // setWorkButtonText("Нашата Работа");
   };
@@ -36,7 +35,7 @@ const AboutUsInfo = ({
     setOurWork(!ourWork);
     setAboutUs(ourWork);
     setOurStory(false);
-    setButtonWorkText(ourWork ? "" : "textBold")
+    setButtonWorkText(ourWork ? "" : "textBold");
 
     // setWorkButtonText(ourWork ? "Нашата Работа" : "За нас");
     // setStoryButtonText("Нашата Приказна");
@@ -48,8 +47,12 @@ const AboutUsInfo = ({
         <h1>{title}</h1>
       </div>
       <div className={style.buttons}>
-        <button onClick={storyClick} className={`${style[buttonStoryText]}` }>Нашата Приказна</button>
-        <button onClick={workClick} className={style[ButtonWorkText]}>Нашата Работа</button>
+        <button onClick={storyClick} className={`${style[buttonStoryText]}`}>
+          Нашата Приказна
+        </button>
+        <button onClick={workClick} className={style[ButtonWorkText]}>
+          Нашата Работа
+        </button>
       </div>
       {aboutUs && (
         <div className={style.secondSection}>
@@ -67,7 +70,11 @@ const AboutUsInfo = ({
         />
       )}
       {ourWork && (
-        <OurWork aboutWorkTitle={aboutWorkTitle} aboutWorkText={aboutWorkText} imgWork={imgWork} />
+        <OurWork
+          aboutWorkTitle={aboutWorkTitle}
+          aboutWorkText={aboutWorkText}
+          imgWork={imgWork}
+        />
       )}
     </div>
   );

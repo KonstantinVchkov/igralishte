@@ -1,9 +1,8 @@
 import FaQInfo from "@/components/Info-Components/Faq/FAQ";
-import { IFaqPage } from "@/types/GlobalTypes";
+import { IFaqPage } from "@/types/ProjectTypes";
 import axios from "axios";
 import { GetStaticProps, NextPage } from "next";
 import React from "react";
-
 
 const FAQ: NextPage<IFaqPage> = ({ responseData }) => {
   return (

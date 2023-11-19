@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import style from "./style.module.css";
 import InfoCircle from "../InfoCircle/InfoCircle";
 
-import { IBannerTop } from "@/types/GlobalTypes";
+import { IBannerTop } from "@/types/ProjectTypes";
 const BannerBlock = ({
   img,
   imgText,
@@ -57,7 +57,7 @@ const BannerBlock = ({
           </defs>
         </svg>
       </div>
-      <div  className={`${style[bannerStyle]}`}>
+      <div className={`${style[bannerStyle]}`}>
         <InfoCircle
           title={infoCircleTitle}
           paragraph={infoCircleParagraph}

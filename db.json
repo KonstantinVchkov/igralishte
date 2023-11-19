@@ -60,6 +60,7 @@
   "products": [
     {
       "id": "1",
+      "brand":"Pinc Partywear",
       "name": "Azure Summer Tee",
       "category": "shirt",
       "color": "blue",
@@ -78,6 +79,7 @@
     },
     {
       "id": "2",
+      "brand":"Pinc Partywear",
       "name": "Crimson Polo Classic",
       "image": "",
       "category": "shirt",
@@ -97,6 +99,7 @@
     },
     {
       "id": "3",
+      "brand":"Pinc Partywear",
       "name": "Vintage Denim Jacket",
       "category": "jacket",
       "color": "denim",
@@ -116,6 +119,7 @@
     },
     {
       "id": "4",
+      "brand":"Pinc Partywear",
       "name": "Elegant Silk Blouse",
       "category": "blouse",
       "color": "white",
@@ -134,6 +138,7 @@
 },
     {
       "id": "5",
+      "brand":"Pinc Partywear",
       "name": "Rugged Outback Pants",
       "category": "pants",
       "color": "khaki",
@@ -151,6 +156,7 @@
     },
     {
       "id": "6",
+      "brand":"Pinc Partywear",
       "name": "Jet Black Skinny Jeans",
       "category": "jeans",
       "color": "black",
@@ -169,6 +175,7 @@
     },
     {
       "id": "7",
+      "brand":"Зш да не",
       "name": "Classic Leather Belt",
       "category": "accessory",
       "color": "brown",
@@ -187,6 +194,8 @@
     },
     {
       "id": "8",
+      "brand":"Зш да не",
+
       "name": "Evening Velvet Dress",
       "category": "dress",
       "color": "maroon",
@@ -206,6 +215,7 @@
     {
       "id": "9",
       "name": "Charcoal Suit Trousers",
+      "brand":"Зш да не",
       "category": "trousers",
       "color": "charcoal",
       "size": "32",
@@ -225,6 +235,7 @@
     {
       "id": "10",
       "name": "Cotton Linen Scarf",
+      "brand":"Зш да не",
       "category": "accessory",
       "color": "olive",
       "size": "One Size",
@@ -245,6 +256,7 @@
     {
       "id": "11",
       "name": "Nautical Stripes Sweater",
+      "brand":"Factory Girl",
       "category": "sweater",
       "color": "navy/white",
       "size": "M",
@@ -265,6 +277,7 @@
       "id": "12",
       "name": "Ultimate White Sneakers",
       "category": "footwear",
+      "brand":"Factory Girl",
       "size": "42",
       "sizeDescription": "EU Size 42 - Fits US Men's 9.",
       "price": "$49.99",
@@ -284,6 +297,7 @@
     {
       "id": "13",
       "name": "Explorer Cargo Shorts",
+      "brand":"Factory Girl",
       "category": "shorts",
       "size": "M",
       "sizeDescription": "Medium - Waist: 32-34 inches, Length: 21 inches.",
@@ -304,6 +318,7 @@
     {
       "id": "14",
       "name": "Bohemian Rhapsody Skirt",
+      "brand":"Factory Girl",
       "category": "skirt",
       "size": "S",
       "sizeDescription": "Small - Waist: 26-28 inches, Length: 32 inches. Flowy fit.",
@@ -323,6 +338,7 @@
     {
       "id": "15",
       "name": "Twilight Velvet Blazer",
+      "brand":"Main Days",
       "category": "blazer",
       "size": "38",
       "sizeDescription": "Size 38 - Chest: 38 inches, Length: 30 inches. Slim fit.",
@@ -342,6 +358,7 @@
     {
       "id": "16",
       "name": "Athletic Training Tights",
+      "brand":"Main Days",
       "category": "sportswear",
       "size": "S",
       "sizeDescription": "Small - Waist: 26-28 inches, Length: 34 inches. Stretch fit.",
@@ -361,6 +378,7 @@
     {
       "id": "17",
       "name": "Gym Muscle Tank Top",
+      "brand":"Main Days",
       "category": "sportswear",
       "size": "L",
       "sizeDescription": "Large - Chest: 42-44 inches, Length: 28 inches. Relaxed fit.",
@@ -381,6 +399,7 @@
     {
       "id": "18",
       "name": "Misty Morning Cardigan",
+      "brand":"Main Days",
       "category": "cardigan",
       "size": "M",
       "sizeDescription": "Medium - Chest: 38-40 inches, Length: 29 inches. Cozy fit.",
@@ -439,6 +458,7 @@
     {
       "id": "21",
     "name": "Rainforest Green Tee",
+    "brand":"Нежно",
     "category": "shirt",
     "size": "M",
     "sizeDescription": "Medium - Chest: 38-40 inches, Length: 28 inches. Comfortable fit.",
@@ -459,6 +479,7 @@
     {
       "id": "22",
       "name": "Desert Sand Chinos",
+    "brand":"Нежно",
       "category": "trousers",
       "size": "34",
       "sizeDescription": "Size 34 - Waist: 34 inches, Inseam: 32 inches. Straight fit.",
@@ -478,6 +499,7 @@
     {
       "id": "23",
       "name": "High Seas Waterproof Watch",
+    "brand":"Нежно",
       "category": "accessory",
       "size": "One Size",
       "sizeDescription": "Adjustable wristband, fits wrists 6-8 inches in circumference.",
@@ -497,6 +519,8 @@
     },
     {
       "id": "24",
+    "brand":"Ред",
+
       "name": "Trekker Thermal Jacket",
       "category": "jacket",
       "size": "XL",
@@ -518,6 +542,7 @@
     {
       "id": "25",
       "name": "Midnight Wool Overcoat",
+    "brand":"Ред",
       "category": "coat",
       "size": "L",
       "sizeDescription": "Large - Chest: 42-44 inches, Length: 35 inches. Tailored fit.",
@@ -537,6 +562,7 @@
     {
       "id": "26",
       "name": "Classic Canvas Sneakers",
+      "brand":"Наш",
       "category": "footwear",
       "size": "39",
       "sizeDescription": "EU Size 39 - Fits US Women's 8.",
@@ -557,6 +583,7 @@
     {
       "id": "27",
       "name": "Ballet Flats Essentials",
+      "brand":"Наш",
       "category": "footwear",
       "size": "40",
       "sizeDescription": "EU Size 40 - Fits US Women's 9. Comfortable fit.",
@@ -575,6 +602,7 @@
     },
     {
       "id": "28",
+      "brand":"Fraeil",
       "name": "Artisan Leather Wallet",
       "category": "accessory",
       "size": "One Size",
@@ -595,6 +623,7 @@
     {
       "id": "29",
       "name": "Islander Board Shorts",
+      "brand":"Urma",
       "category": "shorts",
       "size": "L",
       "sizeDescription": "Large - Waist: 34-36 inches, Length: 20 inches. Quick-dry fabric.",
@@ -614,7 +643,68 @@
     },
     {
       "id": "30",
+      "brand":"Candle nest",
       "name": "Weekender Duffel Bag",
+      "category": "accessory",
+      "size": "One Size",
+      "sizeDescription": "Large capacity, dimensions: 22 x 12 x 10 inches.",
+      "price": "$59.99",
+      "discount": "50%",
+      "color": "gray",
+      "material": ["Canvas", "Leather Accents"],
+      "condition": "New",
+      "odrzuvanje": ["Spot clean", "Do not machine wash"],
+      "tags": ["travel", "spacious", "duffel"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA-1697477564565-2a95d76e921a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
+    },
+    {
+      "id": "31",
+      "brand":"Beyond green",
+      "name": "Weekender Duffel Bag",
+      "category": "accessory",
+      "size": "One Size",
+      "sizeDescription": "Large capacity, dimensions: 22 x 12 x 10 inches.",
+      "price": "$59.99",
+      "discount": "50%",
+      "color": "gray",
+      "material": ["Canvas", "Leather Accents"],
+      "condition": "New",
+      "odrzuvanje": ["Spot clean", "Do not machine wash"],
+      "tags": ["travel", "spacious", "duffel"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA-1697477564565-2a95d76e921a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
+    },
+    {
+      "id": "32",
+      "brand":"Gatta",
+      "name": "A great Socies",
+      "category": "accessory",
+      "size": "One Size",
+      "sizeDescription": "Large capacity, dimensions: 22 x 12 x 10 inches.",
+      "price": "$59.99",
+      "discount": "50%",
+      "color": "gray",
+      "material": ["Canvas", "Leather Accents"],
+      "condition": "New",
+      "odrzuvanje": ["Spot clean", "Do not machine wash"],
+      "tags": ["travel", "spacious", "duffel"],
+      "images": [
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA-1697477564565-2a95d76e921a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://unsplash.com/photos/woman-in-white-mini-skirt-JWZe-4hg9aA"
+      ]
+    },
+    {
+      "id": "33",
+      "brand":"Candle nest",
+      "name": "Black bag",
       "category": "accessory",
       "size": "One Size",
       "sizeDescription": "Large capacity, dimensions: 22 x 12 x 10 inches.",

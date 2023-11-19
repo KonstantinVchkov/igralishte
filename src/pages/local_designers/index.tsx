@@ -4,7 +4,7 @@ import { GetServerSideProps, NextPage } from "next";
 import router from "next/router";
 import style from "../../components/Local-Designer-Info/LocalDesigner/style.module.css";
 import Link from "next/link";
-import { ILDesignerProps } from "@/types/GlobalTypes";
+import { ILDesignerProps } from "@/types/ProjectTypes";
 
 export interface ILDesignerPageProps {
   brandData: ILDesignerProps[];

@@ -1,4 +1,4 @@
-import { IAnnonce } from "@/types/GlobalTypes";
+import { IAnnonce } from "@/types/ProjectTypes";
 import style from "./style.module.css";
 
 const AnnouncementBar = ({ newColl, vintageColl, discount, img }: IAnnonce) => {

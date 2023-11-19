@@ -1,7 +1,7 @@
 import AboutUsInfo from "@/components/Info-Components/AboutUs/AboutUs";
 import { GetStaticProps, NextPage } from "next";
 import axios from "axios";
-import { IAboutPage } from "@/types/GlobalTypes";
+import { IAboutPage } from "@/types/ProjectTypes";
 
 const AboutUs: NextPage<IAboutPage> = ({ responseData }) => {
   return (

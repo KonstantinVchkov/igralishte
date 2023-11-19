@@ -4,66 +4,83 @@ import styleHome from "../styles/styleHome.module.css";
 import BannerBlock from "@/components/Banner/BannerBlock";
 import HomeCarousel from "@/components/Carousel/Carousel";
 import { useState } from "react";
-import { IHomeData } from "@/types/GlobalTypes";
-
-
-
+import { IHomeData } from "@/types/ProjectTypes";
 
 export default function Home({ responseData }: IHomeData) {
-  console.log(responseData)
-  const [infoCircleStyle, setInfoCircleStyle] = useState("InfoCircle");
-  const [midSectionStyle, setMidSectionStyle] = useState("midCircleI");
-  const [bottomSectionStyle, setBottomSectionStyle] = useState("bottomCircleI");
-// Dokolku ima nekakov problem vo idnina,da znam deka e od ovde,bidejki na klik se povikuvaat poveke pati 
-  const handleInfoCircleClick = () => {
-    setInfoCircleStyle(prevStyle => prevStyle === "InfoCircle" ? "orange" : "InfoCircle");
+  const [sectionStyles, setSectionStyles] = useState({
+    infoCircle: "InfoCircle",
+    midSection: "midCircleI",
+    bottomSection: "bottomCircleI",
+  });
+
+  const handleStyleClick = (section: string) => {
+    if (section === "bottomCircleI") {
+      setSectionStyles((prevStyles) => ({
+        ...prevStyles,
+        bottomSection:
+          prevStyles.bottomSection === "bottomCircleI"
+            ? "dark"
+            : "bottomCircleI",
+      }));
+    } else if (section === "midSection") {
+      setSectionStyles((prevStyles) => ({
+        ...prevStyles,
+        midSection:
+          prevStyles.midSection === "midCircleI" ? "purple" : "midCircleI",
+      }));
+    } else {
+      setSectionStyles((prevStyles) => ({
+        ...prevStyles,
+        infoCircle:
+          prevStyles.infoCircle === "InfoCircle" ? "orange" : "InfoCircle",
+      }));
+    }
   };
 
-  const handleMidSectionClick = () => {
-    setMidSectionStyle(prevStyle => prevStyle === "midCircleI" ? "purple" : "midCircleI");
-  };
-
-  const handleBottomSectionClick = () => {
-    setBottomSectionStyle(prevStyle => prevStyle === "bottomCircleI" ? "dark" : "bottomCircleI");
-  };
   return (
     <div className={styleHome.HomePage}>
-     <BannerBlock
+      <BannerBlock
         img={"/images/banner-images/girl-top-banner.jpg"}
         imgText={"/images/icons/Ново.png"}
         vectorIcon="/images/icons/Vector.png"
-        onClick={handleInfoCircleClick}
-        style={infoCircleStyle}
+        onClick={() => {
+          handleStyleClick("InfoCircle");
+        }}
+        style={sectionStyles.infoCircle}
       />
-        <HomeCarousel products={responseData} />
-        <BannerBlock
-          img={"/images/banner-images/girl-top-banner.jpg"}
-          vectorIcon="/images/icons/Vector.png"
-          midSection={true}
-          infoCircleParagraph="Погледни ги свежите љубовни парчиња"
-          infoCircleTitle="Козметика & Aксесоари"
-          onClick={handleMidSectionClick}
-          style={midSectionStyle}
-        />
-        <BannerBlock
-          img={"/images/banner-images/girl-top-banner.jpg"}
-          vectorIcon="/images/icons/Vector.png"
-          bottom={true}
-          infoCircleParagraph="Избери уникатен подарок за твоите најблиски со нашиот избор на ultra fancy картички за подарок."
-          infoCircleTitle="GIFT CARDS"
-          onClick={handleBottomSectionClick}
-          style={bottomSectionStyle}
-        />
+      <HomeCarousel products={responseData} />
+      <BannerBlock
+        img={"/images/banner-images/girl-top-banner.jpg"}
+        vectorIcon="/images/icons/Vector.png"
+        midSection={true}
+        infoCircleParagraph="Погледни ги свежите љубовни парчиња"
+        infoCircleTitle="Козметика & Aксесоари"
+        onClick={() => {
+          handleStyleClick("midSection");
+        }}
+        style={sectionStyles.midSection}
+      />
+      <BannerBlock
+        img={"/images/banner-images/girl-top-banner.jpg"}
+        vectorIcon="/images/icons/Vector.png"
+        bottom={true}
+        infoCircleParagraph="Избери уникатен подарок за твоите најблиски со нашиот избор на ultra fancy картички за подарок."
+        infoCircleTitle="GIFT CARDS"
+        onClick={() => {
+          handleStyleClick("bottomCircleI");
+        }}
+        style={sectionStyles.bottomSection}
+      />
     </div>
   );
 }
 
-export const getStaticProps:GetStaticProps = async () => {
- const responseData = await axios.get("http://localhost:3001/products")
- 
-  return{
-    props:{
-      responseData:responseData.data
-    }
-  }
-}
+export const getStaticProps: GetStaticProps = async () => {
+  const responseData = await axios.get("http://localhost:3001/products");
+
+  return {
+    props: {
+      responseData: responseData.data,
+    },
+  };
+};

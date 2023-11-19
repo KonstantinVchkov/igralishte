@@ -1,16 +1,28 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import style from "./style.module.css";
-import { ICarouselData } from "@/types/GlobalTypes";
+import { ICarouselData } from "@/types/ProjectTypes";
 
 const HomeCarousel = ({ products }: ICarouselData) => {
-  console.log(products);
   const trendyProducts = products.slice(0, 6);
-  
+
   return (
     <div className={style.HomeCarousel}>
-      <Carousel fade indicators={false}  nextIcon={<span aria-hidden="true" className={`${style.customNextIcon} carousel-control-next-icon .carousel-control-next .carousel-control-prev`} />}
-      prevIcon={<span aria-hidden="true" className={`${style.customPrevIcon} carousel-control-prev-icon`} />}
+      <Carousel
+        fade
+        indicators={false}
+        nextIcon={
+          <span
+            aria-hidden="true"
+            className={`${style.customNextIcon} carousel-control-next-icon .carousel-control-next .carousel-control-prev`}
+          />
+        }
+        prevIcon={
+          <span
+            aria-hidden="true"
+            className={`${style.customPrevIcon} carousel-control-prev-icon`}
+          />
+        }
       >
         {trendyProducts.map((product, index) => (
           <Carousel.Item key={index}>

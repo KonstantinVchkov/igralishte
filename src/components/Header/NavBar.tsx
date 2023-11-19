@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from "./style.module.css";
 import Image from "next/image";
-import { INavbar } from "@/types/GlobalTypes";
+import { INavbar } from "@/types/ProjectTypes";
 import Link from "next/link";
 import HamburgerMenu from "./hamburgerMenu";
 import SearchFilter from "./SearchFilter";

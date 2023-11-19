@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import style from "./style.module.css";
-import { IHamMenu } from "@/types/GlobalTypes";
+import { IHamMenu } from "@/types/ProjectTypes";
 import NavBar from "./NavBar";
 import { Offcanvas } from "react-bootstrap";
 import { toggleDropItems } from "./menuItemsData";
