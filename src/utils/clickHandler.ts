@@ -1,17 +1,21 @@
-// Assuming you are using TypeScript, you can define types for the parameters.
-// If you are using JavaScript, you can omit the types.
-
-// import router from "next/router";
-
-// export const handleFilter = (
-//   pathname: string,
-//   queryParameters: Record<string, any>
-// ) => {
-//   router.push({
-//     pathname, // Use the passed pathname
-//     query: queryParameters, // Use the passed query parameters
-//   });
-// };
-
-// Usage example:
-// handleFilter("/some-path", { key1: "value1", key2: "value2" });
+// export const renderSizeSection = (productSize: string) => {
+//     if (productSize.length === 1) {
+//       return productSize.map((size, index) => ({ key: index, text: `од посакуваниот производ е останато само уште едно парче: ${size}` }));
+//     } else if (productSize.length > 1) {
+//       return productSize.map((size, index) => ({ key: index, text: size }));
+//     } else {
+//       return [{ key: 0, text: "Немаме повеќе од посакуваниот производ" }];
+//     }
+//   };
+export const renderSizeSection = (productSizes: string[]): { key: number; text: string }[] => {
+  // If there's only one size, return a special message
+  if (productSizes.length === 1) {
+    return [{ key: 1, text: `од посакуваниот производ е останато само уште едно парче: ${productSizes[0]}` }];
+  // If there are no sizes, return a message that there are no more products
+  } else if (productSizes.length === 0) {
+    return [{ key: 3, text: "Немаме повеќе од посакуваниот производ" }];
+  // Otherwise, return the list of sizes
+  } else {
+    return productSizes.map((size, index) => ({ key: index, text: size }));
+  }
+};
