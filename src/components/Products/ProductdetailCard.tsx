@@ -8,11 +8,11 @@ export interface IProductCardProps {
   id: string;
   brand: string;
   name: string;
-  velicina:string;
+  velicina: string;
   category: string;
   color: string;
   description: string;
-  sizeDescription?: string;
+  sizeDescription: string;
   price: string;
   discount: string;
   condition: string;
@@ -73,9 +73,12 @@ const ProductDetailCard = ({
         <h1>{name}</h1>
         {images.length > 0 && (
           <div className={style.ImagesSection}>
-            {images.map((img, index) => (
-              <img key={index} src={img} alt="" />
-            ))}
+            <img src={images[0]} alt="" />
+            <div className={style.miniCarousel}>
+              {images.map((img, index) => (
+                <img key={index} src={img} alt="" />
+              ))}
+            </div>
           </div>
         )}
         <div className={style.secondSection}>

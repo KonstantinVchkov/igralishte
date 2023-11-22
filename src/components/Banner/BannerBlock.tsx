@@ -14,7 +14,7 @@ const BannerBlock = ({
   style: bannerStyle,
 }: IBannerTop) => {
   return (
-    <div className={style.TopSection} onClick={onClick}>
+    <div className={style.TopSection}>
       <div
         className={`${style.bgImage} ${
           midSection ? `${style.midSection}` : ""
@@ -57,7 +57,7 @@ const BannerBlock = ({
           </defs>
         </svg>
       </div>
-      <div className={`${style[bannerStyle]}`}>
+      <div onClick={onClick} className={`${style[bannerStyle]}`}>
         <InfoCircle
           title={infoCircleTitle}
           paragraph={infoCircleParagraph}

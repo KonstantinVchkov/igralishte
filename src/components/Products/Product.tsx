@@ -5,10 +5,11 @@ export interface IProductProps {
   images: string[];
   price: string;
   name: string;
+  click:() => void;
 }
-const Product = ({ images, price, name }: IProductProps) => {
+const Product = ({ images, price, name,click }: IProductProps) => {
   return (
-    <div className={style.Product}>
+    <div onClick={click} className={style.Product}>
       <img src={images[0]} alt="product-img" />
       <p>{name}</p>
       <p>{price}</p>

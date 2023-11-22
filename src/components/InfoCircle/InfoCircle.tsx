@@ -9,13 +9,11 @@ interface IInfoCircle {
 
 const InfoCircle = ({ title, paragraph, arrowImg }: IInfoCircle) => {
   return (
-    // <div className={style.circleInfo}>
-      <div className={style.text}>
-        <h3>{title}</h3>
-        <p>{paragraph}</p>
-        <img src={arrowImg} alt="black-arrow-icon" />
-      </div>
-    // </div>
+    <div className={style.text}>
+      <h3>{title}</h3>
+      <p>{paragraph}</p>
+      <img src={arrowImg} alt="black-arrow-icon" />
+    </div>
   );
 };
 

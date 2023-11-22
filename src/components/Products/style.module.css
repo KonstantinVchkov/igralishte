@@ -1,4 +1,13 @@
-.ProductsPage {
+.ProductPage {
     width: 380px;
     margin: 0px auto;
+}
+.miniCarousel {
+    display: flex;
+    width: 70px;
+    margin: 10px 0px;
+}
+.miniCarousel img {
+    width: 100%;
+    margin: 0px 10px;
 }
