@@ -1,6 +1,3 @@
-import ProductDetailCard, {
-  IProductCardProps,
-} from "@/components/Products/ProductdetailCard";
 import axios from "axios";
 import { GetServerSideProps, NextPage } from "next";
 import React from "react";
