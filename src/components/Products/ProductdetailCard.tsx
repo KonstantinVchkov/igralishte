@@ -2,26 +2,27 @@ import React from "react";
 import style from "./style.module.css";
 import { renderSizeSection } from "@/utils/clickHandler";
 import Link from "next/link";
+import Boxes from "./Boxes";
 
 export interface IProductCardProps {
   id: string;
-  brand?: string;
+  brand: string;
   name: string;
-  velicina?:string;
-  category?: string;
-  color?: string;
-  description?: string;
+  velicina:string;
+  category: string;
+  color: string;
+  description: string;
   sizeDescription?: string;
   price: string;
-  discount?: string;
-  condition?: string;
-  size?: string[];
-  material?: string[];
-  odrzuvanje?: string[];
-  tags?: string[];
+  discount: string;
+  condition: string;
+  size: string[];
+  material: string[];
+  odrzuvanje: string[];
+  tags: string[];
   images: string[];
 }
-const ProductCard = ({
+const ProductDetailCard = ({
   brand,
   name,
   category,
@@ -38,7 +39,6 @@ const ProductCard = ({
   tags,
   images,
 }: IProductCardProps) => {
-  console.log(tags);
   const quantityClick = (value: string) => {
     if (value === "minus") {
       console.log("ova e minus buttonce");
@@ -82,7 +82,7 @@ const ProductCard = ({
           <h2>{price}</h2>
           <p>{description}</p>
           <p>
-            Количина{" "}
+            Количина
             <span
               onClick={() => {
                 quantityClick("minus");
@@ -150,6 +150,7 @@ const ProductCard = ({
           </div>
           <div className={style.boxes}>
             {/* here will be another boxes component with buttons */}
+            <Boxes />
           </div>
         </div>
       </div>
@@ -157,4 +158,4 @@ const ProductCard = ({
   );
 };
 
-export default ProductCard;
+export default ProductDetailCard;
