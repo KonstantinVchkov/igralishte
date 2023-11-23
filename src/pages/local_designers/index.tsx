@@ -11,7 +11,6 @@ export interface ILDesignerPageProps {
 }
 const LocalDesigner: NextPage<ILDesignerPageProps> = ({ brandData }) => {
   const handleFilter = (value: string) => {
-    // console.log(`Attempting to navigate to: ${value}`);
     router.push(`/local_designers/${value}`);
   };
 
@@ -37,7 +36,15 @@ const LocalDesigner: NextPage<ILDesignerPageProps> = ({ brandData }) => {
 
 export default LocalDesigner;
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+  // const resDetail = query.brandName;
+  // // console.log("OVA E OD SAMATA LOCAL DESIGNERS PAGE", resDetail);
+  // const brandDetail = await axios.get(
+  //   `http://localhost:3001/brands/${resDetail}`
+  // );
+  // console.log("OVA E OD SAMATA LOCAL DESIGNERS PAGE",brandDetail)
+  // const { brandName } = query;
+  // console.log("", brandName);
   const resData = await axios.get("http://localhost:3001/brands");
   const brandData = resData.data;
   return {

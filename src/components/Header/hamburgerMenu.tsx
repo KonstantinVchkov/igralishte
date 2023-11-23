@@ -6,6 +6,8 @@ import { Offcanvas } from "react-bootstrap";
 import { toggleDropItems } from "./menuItemsData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import router from "next/router";
+import Link from "next/link";
 type OpenSections = {
   Vintage?: boolean;
   Brands?: boolean;
@@ -21,7 +23,37 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
       [section]: !prev[section],
     }));
   };
+  // const handleFilter = (value: string) => {
+  //   console.log("ova ",value)
+  //   // if(value === "Види ги сите"){
+  //   //   router.push(`/products`);
+  //   // } else {
 
+  //   // }
+  //   // router.push({
+  //   //   pathname:`/local_designers?`,
+  //   //   query: value
+  //   // })
+  //   // console.log(`Navigating to: /local_designers/?brandName=${value}`);
+  //   router.push(`/local_designers?brandName=${value}`);
+
+  //   // router.push(`/local_designers/?brandName_like=${value}`);
+  // }
+  const handleFilter = (brand: any) => {
+    if (brand.name === "Види ги сите") {
+      router.push(`/local_designers`);
+    } else {
+      console.log("Selected brand:", brand.name);
+      router.push(`/local_designers/${brand.id}?brandName=${brand.name}`);
+    }
+  };
+  const handleCategory = (category: any) => {
+    if (category.category === "Види ги сите") {
+      router.push(`/products`);
+    } else {
+      router.push(`/products?category=${encodeURIComponent(category.category)}`);
+    }
+  }
   return (
     <Offcanvas
       show={open}
@@ -58,13 +90,20 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
               <div>
                 <ul>
                   {/* {toggleDropItems.vintage.map((dropItem, index) => (
-                    <li key={index}>{dropItem}</li>
+                    <li
+                      onClick={() => {
+                        handleFilter(dropItem);
+                      }}
+                      key={index}
+                    >
+                      {dropItem}
+                    </li>
                   ))} */}
-                  <li>lorem ipsum</li>
-                  <li>lorem ipsum</li>
-                  <li>lorem ipsum</li>
-                  <li>lorem ipsum</li>
-                  <li>lorem ipsum</li>
+               {toggleDropItems.vintage.map((category, index) => (
+                  <li onClick={() => handleCategory(category)} key={index}>
+                    {category.category}
+                  </li>
+                ))}
                 </ul>
               </div>
             )}
@@ -88,14 +127,11 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
             {openSections.Brands && (
               <div>
                 <ul>
-                  {/* {toggleDropItems.brands.map((dropItem, index) => (
-                    <li key={index}>{dropItem}</li>
-                  ))} */}
-                  <li>lorem ipsum</li>
-                  <li>lorem ipsum</li>
-                  <li>lorem ipsum</li>
-                  <li>lorem ipsum</li>
-                  <li>lorem ipsum</li>
+                  {toggleDropItems.brands.map((brand, index) => (
+                    <li onClick={() => handleFilter(brand)} key={index}>
+                      {brand.name}
+                    </li>
+                  ))}
                 </ul>
               </div>
             )}
@@ -119,14 +155,9 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
             {openSections.Accessories && (
               <div>
                 <ul>
-                  {/* {toggleDropItems.accessories.map((dropItem, index) => (
+                  {toggleDropItems.accessories.map((dropItem, index) => (
                     <li key={index}>{dropItem}</li>
-                  ))} */}
-                  <li>lorem ipsum</li>
-                  <li>lorem ipsum</li>
-                  <li>lorem ipsum</li>
-                  <li>lorem ipsum</li>
-                  <li>lorem ipsum</li>
+                  ))}
                 </ul>
               </div>
             )}

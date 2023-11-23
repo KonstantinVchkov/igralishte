@@ -8,7 +8,6 @@ export interface IProductDetailProp {
   detailProduct:IProductCardProps
 }
 const ProductDetail: NextPage<IProductDetailProp> = ({detailProduct}) => {
-  console.log(detailProduct)
   return (
     <div className={style.ProductPage}>
       <NextBreadcrumb  separator={<span> {">"} </span>} brandName={detailProduct.name} />

@@ -2,7 +2,7 @@
   "giftCards": [
     {
       "id": "1",
-      "title": "Сино Небо Маица",
+      "title": "Сино Небо Фустани",
       "body": "Подарете ја оваа удобна и стилска маица во сино, идеална за секојдневни прилики или лежерни викенди.",
       "postId": "1"
     },
@@ -68,9 +68,9 @@
   "products": [
     {
       "id": "1",
-      "brand": "Pinc Partywear",
+      "brand": "PincPartywear",
       "name": "Azure Summer Tee",
-      "category": "shirt",
+      "category": "Фустани",
       "color": "blue",
       "size": [
         "S",
@@ -105,7 +105,7 @@
       "id": "2",
       "brand": "Pinc Partywear",
       "name": "Crimson Polo Classic",
-      "category": "shirt",
+      "category": "Фустани",
       "color": "red",
       "sizeDescription": "Small - Bust: 34-36 inches, Length: 26 inches. Slim fit.",
       "price": "$42.99",
@@ -205,7 +205,7 @@
       "id": "5",
       "brand": "Pinc Partywear",
       "name": "Rugged Outback Pants",
-      "category": "pants",
+      "category": "Панталони",
       "color": "khaki",
       "size": [
         "S",
@@ -237,7 +237,7 @@
       "id": "6",
       "brand": "Pinc Partywear",
       "name": "Jet Black Skinny Jeans",
-      "category": "jeans",
+      "category": "Панталони",
       "color": "black",
       "size": [
         "S",
@@ -467,7 +467,7 @@
       "id": "13",
       "name": "Explorer Cargo Shorts",
       "brand": "Factory Girl",
-      "category": "shorts",
+      "category": "Шорцеви",
       "size": [
         "S",
         "M",
@@ -729,7 +729,7 @@
       "id": "21",
       "name": "Rainforest Green Tee",
       "brand": "Нежно",
-      "category": "shirt",
+      "category": "Фустани",
       "size": [
         "S",
         "M",
@@ -993,7 +993,7 @@
       "id": "29",
       "name": "Islander Board Shorts",
       "brand": "Urma",
-      "category": "shorts",
+      "category": "Шорцеви",
       "size": [
         "L"
       ],
@@ -1025,7 +1025,7 @@
     {
       "id": "30",
       "brand": "Candle nest",
-      "name": "Weekender Duffel Bag",
+      "name": "Панталони",
       "category": "accessory",
       "size": [
         "One Size"
@@ -1057,7 +1057,7 @@
     {
       "id": "31",
       "brand": "Beyond green",
-      "name": "Weekender Duffel Bag",
+      "name": "Панталони",
       "category": "accessory",
       "size": [
         "One Size"
@@ -1182,7 +1182,7 @@
   "brands": [
     {
       "id": 1,
-      "brandName": "Pinc Partywear",
+      "brandName": "PincPartywear",
       "brandImage": "https://onecms-res.cloudinary.com/image/upload/s--a04qSXI0--/c_crop,h_1125,w_1500,x_0,y_1/c_fill,g_auto,h_622,w_830/f_auto,q_auto/v1/mediacorp/cna/image/2023/07/14/how-do-you-shop-for-vintage-clothings_Frecklesaisvintage%20and%20Huntstreet.png?itok=3oKskHHZ",
       "brandConcept": "Pink Partywear се базира врз основа на неколку прашања:",
       "brandDescription": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."

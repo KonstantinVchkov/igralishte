@@ -23,11 +23,16 @@ const LocalDesignerDetail: NextPage<IBrandDetail> = ({ brandDetail }) => {
 export default LocalDesignerDetail;
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+    // console.log("ova e od detail", query);
+    const { brandName } = query;
+    console.log("Brand Name on detail page:", brandName);
+
+    // console.log("query params:",query.brandName)
   const queryBrand = query.id as string;
+  // console.log("query params od id:",queryBrand)
   const res = await axios.get(
     `http://localhost:3001/brands/${queryBrand}?brandName_like=${queryBrand}`
   );
-  console.log("this is the end point from detail", res);
   const brandDetail = res.data;
   return {
     props: {
