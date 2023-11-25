@@ -6,6 +6,7 @@ import Product, { IProductProps } from "@/components/Products/Product";
 // import Link from "next/link";
 import router from "next/router";
 import FilterProducts from "@/components/FilterMenuProducts/FilterProducts";
+import AnnouncementBar from "@/components/Header/AnnouncementBar";
 interface IProductsPage {
   productsData: IProductProps[];
   filteredCategory: IProductProps[];
@@ -22,9 +23,8 @@ const Products = ({ productsData, filteredCategory }: IProductsPage) => {
   };
 
   const renderProduct = (product: IProductProps, index: number) => {
-    // Determine the layout for the product based on its index
-    const isSingle = index % 7 === 2; // For the second position
-    const isFourGrid = index > 2 && (index - 3) % 7 >= 0 && (index - 3) % 7 < 4; // For the third row and every four after
+    const isSingle = index % 7 === 2; 
+    const isFourGrid = index > 2 && (index - 3) % 7 >= 0 && (index - 3) % 7 < 4; 
     // const fourth = (index % 7 === 2);
     let productComponent = (
       <Product
@@ -34,7 +34,6 @@ const Products = ({ productsData, filteredCategory }: IProductsPage) => {
       />
     );
 
-    // Apply layout classes based on index
     if (isSingle) {
       return (
         <div
@@ -45,7 +44,6 @@ const Products = ({ productsData, filteredCategory }: IProductsPage) => {
         </div>
       );
     } else if (isFourGrid) {
-      // Start a new grid container for the first product of the four
       if ((index - 3) % 7 === 0) {
         return (
           <div
@@ -65,47 +63,22 @@ const Products = ({ productsData, filteredCategory }: IProductsPage) => {
 
   return (
     <>
-    <FilterProducts />
-    <div className={style.ProductsPage}>
-      {displayProducts.map(renderProduct)}
-    </div>
+      <AnnouncementBar
+        newColl={"Нова Колекција"}
+        vintageColl={"Vintage - Kolekcija"}
+        discount={"Попусти"}
+        img={"/images/icons/star-icon.png"}
+      />
+      <FilterProducts data={productsData}/>
+      <div className={style.ProductsPage}>
+        {displayProducts.map(renderProduct)}
+      </div>
     </>
   );
 };
 
 export default Products;
 
-// const Products: NextPage<IProductsPage> = ({
-//   productsData,
-//   filteredCategory,
-// }) => {
-//   console.log(filteredCategory);
-//   const handleFilter = (value: string) => {
-//     router.push(`/products/${value}`);
-//   };
-//   return (
-//     <div className={style.ProductsPage}>
-//       {filteredCategory && filteredCategory.length > 0
-//         ? filteredCategory.map((selectedCategory) => (
-//             <Product
-//               key={selectedCategory.id}
-//               {...selectedCategory}
-//               click={() => handleFilter(`${selectedCategory.id}`)}
-
-//             />
-//           ))
-//         : productsData.map((eachProduct) => (
-//             <Product
-//               key={eachProduct.id}
-//               {...eachProduct}
-//               click={() => handleFilter(`${eachProduct.id}`)}
-//             />
-//           ))}
-//     </div>
-//   );
-// };
-
-// export default Products;
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   try {

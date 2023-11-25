@@ -6,6 +6,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  width: 380px;
+  margin: 0 auto;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,8 +20,10 @@
 
 body {
   box-sizing: border-box;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  width: 380px;
+  /* margin: ; */
 }
 
 h1,
@@ -36,8 +40,18 @@ a {
   margin-top: 0;
 }
 
-.carousel-control-prev,.carousel-control-next{
+.carousel-control-prev,
+.carousel-control-next {
   top: initial !important;
   bottom: initial !important;
   width: 80% !important;
-  }
+}
+
+.offcanvas,
+.offcanvas-header {
+  width: 100% !important;
+}
+
+.offcanvas.offcanvas-end {
+  border: none;
+}

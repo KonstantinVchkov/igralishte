@@ -9,7 +9,6 @@ const AnnouncementBar = ({ newColl, vintageColl, discount, img }: IAnnonce) => {
         <img src={img} alt="star-icon" />
         <span>{vintageColl}</span>
         <span>{discount}</span>
-        {/* <!-- Repeat the content --> */}
         <span>{newColl}</span>
         <img src={img} alt="star-icon" />
         <span>{vintageColl}</span>

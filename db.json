@@ -172,7 +172,7 @@
       "id": "4",
       "brand": "Pinc Partywear",
       "name": "Elegant Silk Blouse",
-      "category": "blouse",
+      "category": "Блузи",
       "color": "white",
       "size": [
         "S",
@@ -271,7 +271,8 @@
       "id": "7",
       "brand": "Зш да не",
       "name": "Classic Leather Belt",
-      "category": "accessory",
+      "category": "Блузи",
+      "accessory":"Каиш",
       "color": "brown",
       "size": [
         "S",
@@ -307,6 +308,7 @@
       "name": "Evening Velvet Dress",
       "category": "dress",
       "color": "maroon",
+      "accessory":"Накит",
       "size": [
         "S",
         "M",
@@ -367,7 +369,7 @@
       "id": "10",
       "name": "Cotton Linen Scarf",
       "brand": "Зш да не",
-      "category": "accessory",
+      "category": "Блузи",
       "color": "olive",
       "size": [
         "30"
@@ -665,7 +667,8 @@
     {
       "id": "19",
       "name": "Professional Laptop Bag",
-      "category": "accessory",
+      "accessory":"Ташни",
+      "category": "Блузи",
       "size": [
         "One Size"
       ],
@@ -697,7 +700,7 @@
     {
       "id": "20",
       "name": "Sunset Orange Cap",
-      "category": "accessory",
+      "category": "Блузи",
       "size": [
         "Adjustable"
       ],
@@ -796,7 +799,7 @@
       "id": "23",
       "name": "High Seas Waterproof Watch",
       "brand": "Нежно",
-      "category": "accessory",
+      "category": "Блузи",
       "size": [
         "One Size"
       ],
@@ -961,7 +964,7 @@
       "id": "28",
       "brand": "Fraeil",
       "name": "Artisan Leather Wallet",
-      "category": "accessory",
+      "category": "Блузи",
       "size": [
         "One Size"
       ],
@@ -1026,7 +1029,7 @@
       "id": "30",
       "brand": "Candle nest",
       "name": "Панталони",
-      "category": "accessory",
+      "category": "Блузи",
       "size": [
         "One Size"
       ],
@@ -1058,7 +1061,7 @@
       "id": "31",
       "brand": "Beyond green",
       "name": "Панталони",
-      "category": "accessory",
+      "category": "Блузи",
       "size": [
         "One Size"
       ],
@@ -1090,7 +1093,7 @@
       "id": "32",
       "brand": "Gatta",
       "name": "A great Socies",
-      "category": "accessory",
+      "category": "Блузи",
       "size": [
         "One Size"
       ],
@@ -1122,7 +1125,7 @@
       "id": "33",
       "brand": "Candle nest",
       "name": "Black bag",
-      "category": "accessory",
+      "category": "Блузи",
       "size": [
         "One Size"
       ],

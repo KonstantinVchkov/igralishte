@@ -5,6 +5,10 @@ export interface IProductProps {
   images: string[];
   price: string;
   name: string;
+  category:string;
+  brand:string;
+  accessory:string;
+  size:string;
   click:() => void;
 }
 const Product = ({ images, price, name,click }: IProductProps) => {
