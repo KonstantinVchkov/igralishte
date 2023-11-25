@@ -26,7 +26,6 @@ export interface INavbar {
 export interface IHamMenu {
   open: boolean;
   toggleHamMenu: () => void;
-  // onClose: () => void;
 }
 
 export interface ISearchMenu {

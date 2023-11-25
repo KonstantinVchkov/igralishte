@@ -7,38 +7,29 @@ import { toggleDropItems } from "./menuItemsData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import router from "next/router";
-import Link from "next/link";
 type OpenSections = {
-  Vintage?: boolean;
-  Brands?: boolean;
-  Accessories?: boolean;
+  Vintage: string;
+  Brands: string;
+  Accessories: string;
 };
 
 const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
-  const [openSections, setOpenSections] = useState<OpenSections>({});
+  const initialOpenSections: OpenSections = {
+    Vintage: "",
+    Brands: "",
+    Accessories: "",
+  };
 
-  const toggleSection = (section: string) => {
-    setOpenSections((prev: any) => ({
+  const [openSections, setOpenSections] =
+    useState<OpenSections>(initialOpenSections);
+
+  const toggleSection = (section: keyof OpenSections) => {
+    setOpenSections((prev) => ({
       ...prev,
-      [section]: !prev[section],
+      [section]: prev[section] === "" ? "active" : "",
     }));
   };
-  // const handleFilter = (value: string) => {
-  //   console.log("ova ",value)
-  //   // if(value === "Види ги сите"){
-  //   //   router.push(`/products`);
-  //   // } else {
 
-  //   // }
-  //   // router.push({
-  //   //   pathname:`/local_designers?`,
-  //   //   query: value
-  //   // })
-  //   // console.log(`Navigating to: /local_designers/?brandName=${value}`);
-  //   router.push(`/local_designers?brandName=${value}`);
-
-  //   // router.push(`/local_designers/?brandName_like=${value}`);
-  // }
   const handleFilter = (brand: any) => {
     if (brand.name === "Види ги сите") {
       router.push(`/local_designers`);
@@ -51,9 +42,11 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
     if (category.category === "Види ги сите") {
       router.push(`/products`);
     } else {
-      router.push(`/products?category=${encodeURIComponent(category.category)}`);
+      router.push(
+        `/products?category=${encodeURIComponent(category.category)}`
+      );
     }
-  }
+  };
   return (
     <Offcanvas
       show={open}
@@ -89,21 +82,11 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
             {openSections.Vintage && (
               <div>
                 <ul>
-                  {/* {toggleDropItems.vintage.map((dropItem, index) => (
-                    <li
-                      onClick={() => {
-                        handleFilter(dropItem);
-                      }}
-                      key={index}
-                    >
-                      {dropItem}
+                  {toggleDropItems.vintage.map((category, index) => (
+                    <li onClick={() => handleCategory(category)} key={index}>
+                      {category.category}
                     </li>
-                  ))} */}
-               {toggleDropItems.vintage.map((category, index) => (
-                  <li onClick={() => handleCategory(category)} key={index}>
-                    {category.category}
-                  </li>
-                ))}
+                  ))}
                 </ul>
               </div>
             )}

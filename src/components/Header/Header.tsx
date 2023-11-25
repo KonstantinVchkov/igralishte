@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import NavBar from "./NavBar";
 import HamburgerMenu from "./hamburgerMenu";
-import style from "./style.module.css"
+import style from "./style.module.css";
 import AnnouncementBar from "./AnnouncementBar";
+import { useRouter } from "next/router";
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const toggleHamMenu = () => {
     setOpenMenu(!openMenu);
   };
+  const router = useRouter();
+  const { pathname } = router;
+  const showOnRoute = "/";
+  const showAnouncementBar = showOnRoute.includes(pathname);
+
   return (
     <div>
       <NavBar
@@ -19,7 +25,14 @@ const Header = () => {
         <HamburgerMenu open={openMenu} toggleHamMenu={toggleHamMenu} />
       </div>
       <div>
-        <AnnouncementBar newColl={"Нова Колекција"} vintageColl={"Vintage - Kolekcija"} discount={"Попусти"} img={"/images/icons/star-icon.png"} />
+        {showAnouncementBar && (
+          <AnnouncementBar
+            newColl={"Нова Колекција"}
+            vintageColl={"Vintage - Kolekcija"}
+            discount={"Попусти"}
+            img={"/images/icons/star-icon.png"}
+          />
+        )}{" "}
       </div>
     </div>
   );
