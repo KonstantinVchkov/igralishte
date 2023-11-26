@@ -1,11 +1,11 @@
 export const toggleDropItems = {
   vintage: [
-    {category:"Види ги сите"},
-    {category:"Панталони"},
-    {category:"Здолништа / Шорцеви"},
-    {category:"Фустани"},
-    {category:"Палта и јакни"},
-    {category:"Долна облека"},
+    { category: "Види ги сите" },
+    { category: "Панталони" },
+    { category: "Здолништа / Шорцеви" },
+    { category: "Фустани" },
+    { category: "Палта и јакни" },
+    { category: "Долна облека" },
   ],
   brands: [
     { id: "0", name: "Види ги сите" },
@@ -20,8 +20,9 @@ export const toggleDropItems = {
     { id: "9", name: "Urma" },
     { id: "10", name: "Candle nest" },
     { id: "11", name: "Beyond green" },
-    { id: "12", name: "Gatta" }
+    { id: "12", name: "Gatta" },
   ],
   accessories: ["Види ги сите", "Ташни", "Накит"],
+  sizes: ["XS","S", "M", "L", "XL"],
   other: ["LifeStyle", "Подари Картичка*", "Попуст"],
 };
