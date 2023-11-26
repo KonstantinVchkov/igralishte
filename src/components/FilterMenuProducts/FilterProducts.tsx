@@ -12,6 +12,7 @@ interface IFilteredData {
   data: IProductProps[];
 }
 const FilterProducts = ({ data }: IFilteredData) => {
+
   const [show, setShow] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   const toggleHamMenu = () => {
@@ -24,14 +25,11 @@ const FilterProducts = ({ data }: IFilteredData) => {
   const categoryCounts = getUniquePropertyCounts(data, "category");
   const brandCounts = getUniquePropertyCounts(data, "brand");
   const uniqueAccessories = getUniquePropertyCounts(data, "accessory");
-  const sizes = getUniquePropertyCounts(data, "size")
-  const handleFiltering = (e:any) => {
-    console.log(e.target)
-  }
-  // console.log("ova e od accessory",uniqueAccessories)
-  sizes.map((category) => (
-    console.log(category.name)
-  ))
+  // const sizes = getUniquePropertyCounts(uniqueSizes, "size");
+
+  const handleFiltering = (e: any) => {
+    console.log(e.target);
+  };
   return (
     <div className={style.FilteredMenu}>
       <img
@@ -52,36 +50,37 @@ const FilterProducts = ({ data }: IFilteredData) => {
           <Offcanvas.Body>
             <p>Категорија</p>
             <ul>
-              {categoryCounts.map((category) => (
-                <li key={category.name}>
+              {categoryCounts.map((category, idx) => (
+                <li key={idx}>
                   {category.name} <span>({category.count})</span>
                 </li>
               ))}
             </ul>
             <p>Брендови</p>
             <ul>
-              {brandCounts.map((category) => (
-                <li key={category.name}>
+              {brandCounts.map((category, idx) => (
+                <li key={idx}>
                   {category.name} <span>({category.count})</span>
                 </li>
               ))}
             </ul>
             <p>Аксесоари</p>
             <ul>
-              {uniqueAccessories.map((category) => (
-                <li onClick={(e) => {
-                  handleFiltering(e)
-                }} key={category.name}>{category.name}</li>
+              {uniqueAccessories.map((category, idx) => (
+                <li
+                  onClick={(e) => {
+                    handleFiltering(e);
+                  }}
+                  key={idx}
+                >
+                  {category.name}
+                </li>
               ))}
             </ul>
-            <p>Аксесоари</p>
-            {/* <ul>
-              {sizes.map((category,idx) => (
-                <li onClick={(e) => {
-                  handleFiltering(e)
-                }} key={idx}>{category.name}</li>
-              ))}
-            </ul> */}
+            <p>Големини</p>
+            <ul>
+              {/* {uniqueSizes} */}
+            </ul>
           </Offcanvas.Body>
           <button onClick={filterSideBar}>otkazi</button>
         </Offcanvas>

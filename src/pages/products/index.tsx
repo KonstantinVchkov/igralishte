@@ -13,11 +13,11 @@ interface IProductsPage {
 }
 const Products = ({ productsData, filteredCategory }: IProductsPage) => {
   // Decide which list of products to display
+  console.log("Products page",productsData)
   const displayProducts =
     filteredCategory && filteredCategory.length > 0
       ? filteredCategory
       : productsData;
-
   const handleFilter = (value: string) => {
     router.push(`/products/${value}`);
   };
