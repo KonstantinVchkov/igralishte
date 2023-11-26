@@ -22,7 +22,13 @@ export const toggleDropItems = {
     { id: "11", name: "Beyond green" },
     { id: "12", name: "Gatta" },
   ],
+  priceRange: [
+    { label: "500 - 1000 Ден.", min: 500, max: 1000 },
+    { label: "1500 - 2000 Ден.", min: 1500, max: 2000 },
+    { label: "2000 - 2500 ден.", min: 2000, max: 2500 },
+    { label: "Над 2500 Ден" },
+  ],
   accessories: ["Види ги сите", "Ташни", "Накит"],
-  sizes: ["XS","S", "M", "L", "XL"],
+  sizes: ["XS", "S", "M", "L", "XL"],
   other: ["LifeStyle", "Подари Картичка*", "Попуст"],
 };

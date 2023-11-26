@@ -1,4 +1,14 @@
-
+.ColorPallete {
+  display: flex;
+  flex-wrap: wrap;
+  width: 171px;
+}
+.colorSquare {
+  width: 20.14px;
+  height: 20.14px;
+  margin: 5px;
+  border: 1px solid #000;
+}
 
 /* .filteredBody{
     width: 100%;

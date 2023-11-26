@@ -6,7 +6,7 @@ import NavBar from "../Header/NavBar";
 import { IProductProps } from "../Products/Product";
 import { getUniquePropertyCounts } from "@/utils/uniqueProducts";
 import { toggleDropItems } from "../Header/menuItemsData";
-
+import ColorPallete from "./ColorPallete";
 interface IFilteredData {
   data: IProductProps[];
 }
@@ -24,13 +24,12 @@ const FilterProducts = ({ data }: IFilteredData) => {
   const categoryCounts = getUniquePropertyCounts(data, "category");
   const brandCounts = getUniquePropertyCounts(data, "brand");
   const uniqueAccessories = getUniquePropertyCounts(data, "accessory");
-  const prices = getUniquePropertyCounts(data, "price");
-  console.log();
+  // const prices = getUniquePropertyCounts(data, "price");
 
-  const sortedPrices = prices.sort(
-    (a, b) => parseFloat(a.name.substring(1)) - parseFloat(b.name.substring(1))
-  );
-  // console.log(sortedPrices)
+  // const sortedPrices = prices.sort(
+  //   (a, b) => parseFloat(a.name.substring(1)) - parseFloat(b.name.substring(1))
+  // );
+
   const handleFiltering = (e: any) => {
     console.log(e.target);
   };
@@ -56,7 +55,8 @@ const FilterProducts = ({ data }: IFilteredData) => {
             <ul>
               {categoryCounts.map((category, idx) => (
                 <li key={idx}>
-                  {category.name} <span>({category.count})</span>
+                  <input type="checkbox" /> {category.name}{" "}
+                  <span>({category.count})</span>
                 </li>
               ))}
             </ul>
@@ -64,7 +64,8 @@ const FilterProducts = ({ data }: IFilteredData) => {
             <ul>
               {brandCounts.map((category, idx) => (
                 <li key={idx}>
-                  {category.name} <span>({category.count})</span>
+                  <input type="checkbox" /> {category.name}{" "}
+                  <span>({category.count})</span>
                 </li>
               ))}
             </ul>
@@ -77,7 +78,7 @@ const FilterProducts = ({ data }: IFilteredData) => {
                   }}
                   key={idx}
                 >
-                  {category.name}
+                  <input type="checkbox" /> {category.name}
                 </li>
               ))}
             </ul>
@@ -87,15 +88,21 @@ const FilterProducts = ({ data }: IFilteredData) => {
                 .slice()
                 .reverse()
                 .map((productSize, idx) => {
-                  return <li key={idx}>{productSize}</li>;
+                  return (
+                    <li key={idx}>
+                      <input type="checkbox" /> {productSize}
+                    </li>
+                  );
                 })}
             </ul>
+            <p>Боја</p>
+            <ColorPallete />
             <p>Цена</p>
             <ul>
               <li>На попуст</li>
-              {sortedPrices.map((price, idx) => (
+              {toggleDropItems.priceRange.map((range, idx) => (
                 <li key={idx}>
-                  {price.name} 
+                  <input type="checkbox" /> {range.label}
                 </li>
               ))}
             </ul>
