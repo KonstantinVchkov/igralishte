@@ -9,22 +9,29 @@ import FilterProducts from "@/components/FilterMenuProducts/FilterProducts";
 import AnnouncementBar from "@/components/Header/AnnouncementBar";
 interface IProductsPage {
   productsData: IProductProps[];
-  filteredCategory: IProductProps[];
+  filteredCatFromHamMenu: IProductProps[];
+  productsFiltered: IProductProps[];
+
 }
-const Products = ({ productsData, filteredCategory }: IProductsPage) => {
-  // Decide which list of products to display
-  console.log("Products page",productsData)
+const Products = ({
+  productsData,
+  filteredCatFromHamMenu,
+  productsFiltered,
+}: IProductsPage) => {
+  // console.log("isfiltrirani produkti", productsFiltered);
   const displayProducts =
-    filteredCategory && filteredCategory.length > 0
-      ? filteredCategory
+    productsFiltered && productsFiltered.length > 0
+      ? productsFiltered
+      : filteredCatFromHamMenu && filteredCatFromHamMenu.length > 0
+      ? filteredCatFromHamMenu
       : productsData;
   const handleFilter = (value: string) => {
     router.push(`/products/${value}`);
   };
 
   const renderProduct = (product: IProductProps, index: number) => {
-    const isSingle = index % 7 === 2; 
-    const isFourGrid = index > 2 && (index - 3) % 7 >= 0 && (index - 3) % 7 < 4; 
+    const isSingle = index % 7 === 2;
+    const isFourGrid = index > 2 && (index - 3) % 7 >= 0 && (index - 3) % 7 < 4;
     // const fourth = (index % 7 === 2);
     let productComponent = (
       <Product
@@ -69,7 +76,7 @@ const Products = ({ productsData, filteredCategory }: IProductsPage) => {
         discount={"Попусти"}
         img={"/images/icons/star-icon.png"}
       />
-      <FilterProducts data={productsData}/>
+      <FilterProducts data={productsData} />
       <div className={style.ProductsPage}>
         {displayProducts.map(renderProduct)}
       </div>
@@ -79,17 +86,23 @@ const Products = ({ productsData, filteredCategory }: IProductsPage) => {
 
 export default Products;
 
-
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   try {
+    console.log("all queries:", query);
     const res = await axios.get("http://localhost:3001/products");
     const productsData = res.data;
     const categoryUrl = `http://localhost:3001/products?category=${query.category}`;
-    const filteredCategory = await axios.get(categoryUrl);
+    const filteredCatFromHamMenu = (await axios.get(categoryUrl)).data
+    const categoryProducts = `http://localhost:3001/products?category_like=${query.category_like}`;
+    const filterProduct = await axios.get(categoryProducts);
+    const productsFiltered = filterProduct.data;
+    // console.log("query category:",categoryUrl)
+    console.log("ova e od filter menito od products", productsFiltered);
     return {
       props: {
         productsData,
-        filteredCategory: filteredCategory.data,
+        productsFiltered,
+        filteredCatFromHamMenu
       },
     };
   } catch (error) {
@@ -98,7 +111,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     return {
       props: {
         productsData: [],
-        filteredCategory: null,
+        filteredCatFromHamMenu: null,
         error: "Failed to fetch data",
       },
     };

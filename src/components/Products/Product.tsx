@@ -9,6 +9,7 @@ export interface IProductProps {
   brand:string;
   accessory:string;
   size:string;
+  color:string;
   click:() => void;
 }
 const Product = ({ images, price, name,click }: IProductProps) => {

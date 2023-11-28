@@ -139,7 +139,7 @@
       "brand": "Pinc Partywear",
       "name": "Vintage Denim Jacket",
       "category": "jacket",
-      "color": "denim",
+      "color": "yellow",
       "size": [
         "S",
         "M",
@@ -206,7 +206,7 @@
       "brand": "Pinc Partywear",
       "name": "Rugged Outback Pants",
       "category": "Панталони",
-      "color": "khaki",
+      "color": "orange",
       "size": [
         "S",
         "M",
@@ -238,7 +238,7 @@
       "brand": "Pinc Partywear",
       "name": "Jet Black Skinny Jeans",
       "category": "Панталони",
-      "color": "black",
+      "color": "pink",
       "size": [
         "XS",
         "S",
@@ -274,7 +274,7 @@
       "name": "Classic Leather Belt",
       "category": "Блузи",
       "accessory":"Каиш",
-      "color": "brown",
+      "color": "lightblue",
       "size": [
         "S",
         "M",
@@ -308,7 +308,7 @@
       "brand": "Зш да не",
       "name": "Evening Velvet Dress",
       "category": "dress",
-      "color": "maroon",
+      "color": "orange",
       "accessory":"Накит",
       "size": [
         "S",
@@ -341,7 +341,7 @@
       "name": "Charcoal Suit Trousers",
       "brand": "Зш да не",
       "category": "trousers",
-      "color": "charcoal",
+      "color": "green",
       "size": [
         "32"
       ],
@@ -371,7 +371,7 @@
       "name": "Cotton Linen Scarf",
       "brand": "Зш да не",
       "category": "Блузи",
-      "color": "olive",
+      "color": "pink",
       "size": [
         "30"
       ],
@@ -402,7 +402,7 @@
       "name": "Nautical Stripes Sweater",
       "brand": "Factory Girl",
       "category": "sweater",
-      "color": "navy/white",
+      "color": "lightblue",
       "size": [
         "S",
         "M",
@@ -470,7 +470,7 @@
       "id": "13",
       "name": "Explorer Cargo Shorts",
       "brand": "Factory Girl",
-      "category": "Шорцеви",
+      "category": "Здолништа / Шорцеви",
       "size": [
         "S",
         "M",
@@ -515,7 +515,7 @@
       "sizeDescription": "Small - Waist: 26-28 inches, Length: 32 inches. Flowy fit.",
       "price": "$34.99",
       "discount": "50%",
-      "color": "multicolor",
+      "color": "yellow",
       "material": [
         "Rayon",
         "Spandex"
@@ -549,7 +549,7 @@
       "sizeDescription": "Size 38 - Chest: 38 inches, Length: 30 inches. Slim fit.",
       "price": "$59.99",
       "discount": "50%",
-      "color": "navy",
+      "color": "white",
       "material": [
         "Velvet",
         "Polyester Lining"
@@ -644,7 +644,7 @@
       "sizeDescription": "Medium - Chest: 38-40 inches, Length: 29 inches. Cozy fit.",
       "price": "$39.99",
       "discount": "50%",
-      "color": "light blue",
+      "color": "lightblue",
       "material": [
         "Wool",
         "Acrylic"
@@ -775,7 +775,7 @@
       "sizeDescription": "Size 34 - Waist: 34 inches, Inseam: 32 inches. Straight fit.",
       "price": "$39.99",
       "discount": "50%",
-      "color": "beige",
+      "color": "pink",
       "material": [
         "Cotton",
         "Spandex"
@@ -873,7 +873,7 @@
       "sizeDescription": "Large - Chest: 42-44 inches, Length: 35 inches. Tailored fit.",
       "price": "$119.99",
       "discount": "50%",
-      "color": "black",
+      "color": "pink",
       "material": [
         "Wool",
         "Polyester Lining"
@@ -940,7 +940,7 @@
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, repellendus!",
       "price": "$34.99",
       "discount": "50%",
-      "color": "nude",
+      "color": "red",
       "material": [
         "Leather",
         "Rubber Sole"
@@ -973,7 +973,7 @@
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, repellendus!",
       "price": "$49.99",
       "discount": "50%",
-      "color": "tan",
+      "color": "orange",
       "material": [
         "Genuine Leather"
       ],

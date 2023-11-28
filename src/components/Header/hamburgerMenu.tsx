@@ -12,7 +12,14 @@ type OpenSections = {
   Brands: string;
   Accessories: string;
 };
-
+interface IBrand {
+  id: string;
+  name: string;
+  // category:string;
+}
+interface Icategory {
+  category: string;
+}
 const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
   const initialOpenSections: OpenSections = {
     Vintage: "",
@@ -30,23 +37,48 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
     }));
   };
 
-  const handleFilter = (brand: any) => {
-    if (brand.name === "Види ги сите") {
-      router.push(`/local_designers`);
+  // const handleFilter = (brand: IBrand) => {
+  //   if (brand.name === "Види ги сите") {
+  //     router.push(`/local_designers`);
+  //   } else {
+  //     console.log("Selected brand:", brand.name);
+  //     router.push(`/local_designers/${brand.id}?brandName=${brand.name}`);
+  //   }
+  // };
+    // const handleCategory = (category: Icategory) => {
+  //   if (category.category === "Види ги сите") {
+  //     router.push(`/products`);
+  //   } else {
+  //     router.push(
+  //       `/products?category=${encodeURIComponent(category.category)}`
+  //     );
+  //   }
+  // };
+  const handleNavigation = (
+    type: "brand" | "category",
+    item: { name?: string; category?: string; id?: string }
+  ) => {
+    const itemName = item.name ?? "";
+    const itemCategory = item.category ?? "";
+    const itemId = item.id ?? "";
+
+    const basePath = type === "brand" ? "/local_designers" : "/products";
+    const allItemsPath = basePath;
+
+    const itemPath =
+      type === "brand"
+        ? `${basePath}/${encodeURIComponent(
+            itemId
+          )}?brandName=${encodeURIComponent(itemName)}`
+        : `${basePath}?category=${encodeURIComponent(itemCategory)}`;
+
+    if (itemName === "Види ги сите" || itemCategory === "Види ги сите") {
+      router.push(allItemsPath);
     } else {
-      console.log("Selected brand:", brand.name);
-      router.push(`/local_designers/${brand.id}?brandName=${brand.name}`);
+      router.push(itemPath);
     }
   };
-  const handleCategory = (category: any) => {
-    if (category.category === "Види ги сите") {
-      router.push(`/products`);
-    } else {
-      router.push(
-        `/products?category=${encodeURIComponent(category.category)}`
-      );
-    }
-  };
+
   return (
     <Offcanvas
       show={open}
@@ -83,7 +115,14 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
               <div>
                 <ul>
                   {toggleDropItems.vintage.map((category, index) => (
-                    <li onClick={() => handleCategory(category)} key={index}>
+                    <li
+                      onClick={() =>
+                        handleNavigation("category", {
+                          category: category.category,
+                        })
+                      }
+                      key={index}
+                    >
                       {category.category}
                     </li>
                   ))}
@@ -111,7 +150,15 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
               <div>
                 <ul>
                   {toggleDropItems.brands.map((brand, index) => (
-                    <li onClick={() => handleFilter(brand)} key={index}>
+                    <li
+                      onClick={() =>
+                        handleNavigation("brand", {
+                          name: brand.name,
+                          id: brand.id,
+                        })
+                      }
+                      key={index}
+                    >
                       {brand.name}
                     </li>
                   ))}
