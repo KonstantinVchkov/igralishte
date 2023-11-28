@@ -11,14 +11,12 @@ interface IProductsPage {
   productsData: IProductProps[];
   filteredCatFromHamMenu: IProductProps[];
   productsFiltered: IProductProps[];
-
 }
 const Products = ({
   productsData,
   filteredCatFromHamMenu,
   productsFiltered,
 }: IProductsPage) => {
-  // console.log("isfiltrirani produkti", productsFiltered);
   const displayProducts =
     productsFiltered && productsFiltered.length > 0
       ? productsFiltered
@@ -88,21 +86,24 @@ export default Products;
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   try {
-    console.log("all queries:", query);
+    console.log("Query parameters:", query);
+
     const res = await axios.get("http://localhost:3001/products");
     const productsData = res.data;
     const categoryUrl = `http://localhost:3001/products?category=${query.category}`;
-    const filteredCatFromHamMenu = (await axios.get(categoryUrl)).data
-    const categoryProducts = `http://localhost:3001/products?category_like=${query.category_like}`;
-    const filterProduct = await axios.get(categoryProducts);
-    const productsFiltered = filterProduct.data;
+    const categoryLikeQuery = Array.isArray(query.category_like) ? query.category_like.join('&category_like=') : query.category_like;
+
+    const filteredCatFromHamMenu = (await axios.get(categoryUrl)).data;
+    const categoryProducts = `http://localhost:3001/products?category_like=${categoryLikeQuery}`;
+    const productsFiltered = (await axios.get(categoryProducts)).data;
+    // const productsFiltered = filterProduct.data;
     // console.log("query category:",categoryUrl)
     console.log("ova e od filter menito od products", productsFiltered);
     return {
       props: {
         productsData,
         productsFiltered,
-        filteredCatFromHamMenu
+        filteredCatFromHamMenu,
       },
     };
   } catch (error) {

@@ -15,16 +15,12 @@ const FilterProducts = ({ data }: IFilteredData) => {
   const [show, setShow] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  useEffect(() => {
-    console.log("Selected categories:", selectedCategories);
-  }, [selectedCategories]);
+  const [brandSelectedCategories, setBrandSelectedCategories] = useState<string[]>([]);
   const toggleHamMenu = () => {
-    // console.log("ham menu clicked");
     setOpenMenu(!openMenu);
   };
   const filterSideBar = () => {
     setShow(!show);
-    setSelectedCategories([])
   };
   const categoryCounts = getUniquePropertyCounts(data, "category");
   const brandCounts = getUniquePropertyCounts(data, "brand");
@@ -37,20 +33,47 @@ const FilterProducts = ({ data }: IFilteredData) => {
   // );
   const handleCategoryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const category = e.target.value;
-    console.log("Checkbox value:", category);
     if (selectedCategories.includes(category)) {
       setSelectedCategories(selectedCategories.filter((c) => c !== category));
     } else {
       setSelectedCategories([...selectedCategories, category]);
     }
   };
+  const handleBrandCategoryChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const category = e.target.value;
+    if (brandSelectedCategories.includes(category)) {
+      setBrandSelectedCategories(
+        brandSelectedCategories.filter((c) => c !== category)
+      );
+    } else {
+      setBrandSelectedCategories([...brandSelectedCategories, category]);
+    }
+  };
   const handleFiltering = () => {
     const categoryQuery = selectedCategories.join("&category_like=");
-    console.log('sending second query', categoryQuery)
-    router.push(`/products?category_like=${categoryQuery}`);
-    setSelectedCategories([])
-    setShow(!show)
+    const brandCategoryQuery = brandSelectedCategories.join("&brand_like=")
+    if (categoryQuery) {
+      router.push(`/products?category_like=${categoryQuery}`);
+    setShow(false);
+
+    } else if(brandCategoryQuery) {
+      router.push(`/products?brand_like=${brandCategoryQuery}`)
+    setShow(false);
+
+    }
+    // console.log('Sending query:', categoryQuery);
+    // setSelectedCategories([])
+    // setShow(false);
   };
+  // const handleFilteringBrand = () => {
+  //   const categoryQuery = brandSelectedCategories.join("&category_like=");
+  //   // console.log('Sending query:', categoryQuery);
+  //   router.push(`/products?category_like=${categoryQuery}`);
+  //   // setSelectedCategories([])
+  //   setShow(false);
+  // };
   const chooseColor = (e: React.MouseEvent<HTMLLIElement>) => {
     const target = e.target as HTMLElement;
     const color = target.getAttribute("data-color");
@@ -92,17 +115,20 @@ const FilterProducts = ({ data }: IFilteredData) => {
             <ul>
               {brandCounts.map((category, idx) => (
                 <li key={idx}>
-                  <input type="checkbox" /> {category.name}{" "}
-                  <span>({category.count})</span>
+                  <input
+                    type="checkbox"
+                    value={category.name}
+                    onChange={handleBrandCategoryChange}
+                    checked={brandSelectedCategories.includes(category.name)}
+                  />{" "}
+                  {category.name} <span>({category.count})</span>
                 </li>
               ))}
             </ul>
             <p>Аксесоари</p>
             <ul>
               {uniqueAccessories.map((category, idx) => (
-                <li
-                  key={idx}
-                >
+                <li key={idx}>
                   <input type="checkbox" /> {category.name}
                 </li>
               ))}
