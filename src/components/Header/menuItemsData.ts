@@ -23,9 +23,9 @@ export const toggleDropItems = {
     { id: "12", name: "Gatta" },
   ],
   priceRange: [
-    { label: "500 - 1000 Ден.", min: '10$', max: '20$' },
-    { label: "1500 - 2000 Ден.", min: '20$', max: '35$' },
-    { label: "2000 - 2500 ден.", min: '35$', max: '70$' },
+    { label: "500 - 1000 Ден.", min: '$10.99', max: '$44.99' },
+    { label: "1500 - 2000 Ден.", min: '$79.99', max: '$100' },
+    { label: "2000 - 2500 ден.", min: '$100', max: '$119.99' },
     { label: "Над 80$ Ден", max:'300$'},
   ],
   accessories: ["Види ги сите", "Ташни", "Накит"],

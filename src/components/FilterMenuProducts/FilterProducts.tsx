@@ -23,28 +23,21 @@ const FilterProducts = ({ data }: IFilteredData) => {
   const [sizesCategories, setSizesCategories] = useState<string[]>([]);
   const [colorPickCat, setColorPickCat] = useState<string[]>([]);
   const [pricePickCat, setPricePickCat] = useState<string[]>([]);
-  const [isPriceRangeSelected, setIsPriceRangeSelected] = useState(false);
+  const [selectedPriceRange, setSelectedPriceRange] = useState("");
   useEffect(() => {
-    console.log("all selected colors", pricePickCat);
-  }, [pricePickCat]);
+    console.log("all selected prices", selectedPriceRange);
+  }, [selectedPriceRange]);
   const toggleHamMenu = () => {
     setOpenMenu(!openMenu);
   };
   const filterSideBar = () => {
     setShow(!show);
   };
-  const handlePriceRangeCheckboxChange = () => {
-    setIsPriceRangeSelected(!isPriceRangeSelected);
-  };
+
   const categoryCounts = getUniquePropertyCounts(data, "category");
   const brandCounts = getUniquePropertyCounts(data, "brand");
   const uniqueAccessories = getUniquePropertyCounts(data, "accessory");
   const colors = getUniquePropertyCounts(data, "color");
-  // const prices = getUniquePropertyCounts(data, "price");
-
-  // const sortedPrices = prices.sort(
-  //   (a, b) => parseFloat(a.name.substring(1)) - parseFloat(b.name.substring(1))
-  // );
   const handleCategoryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const category = e.target.value;
     if (selectedCategories.includes(category)) {
@@ -98,40 +91,28 @@ const FilterProducts = ({ data }: IFilteredData) => {
       }
       console.log("Picked up color:", color);
     } else {
-      // Handle the case when color is null, if needed
       console.log("Color attribute not found");
     }
   };
-  const handlePrice = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const target = e.target.value;
-    if (pricePickCat.includes(target)) {
-      setPricePickCat(pricePickCat.filter((c) => c !== target));
+  // const handlePrice = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const target = e.target.value;
+  //   if (pricePickCat.includes(target)) {
+  //     setPricePickCat(pricePickCat.filter((c) => c >= target));
+  //   } else {
+  //     setPricePickCat([...pricePickCat, target]);
+  //   }
+  // };
+  const handlePriceRangeCheckboxChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    if (e.target.checked) {
+      setSelectedPriceRange(e.target.value);
     } else {
-      setPricePickCat([...pricePickCat,target])
+      setSelectedPriceRange("");
     }
   };
+
   const handleFiltering = () => {
-    // const categoryQuery = selectedCategories.join("&category_like=");
-    // const brandCategoryQuery = brandSelectedCategories.join("&brand_like=");
-    // const accessoriesCategoryQuery =
-    //   accessoriesSelectedCategories.join("&accessory_like=");
-    // const sizeCategoryQuery = sizesCategories.join("&size_like=");
-    // setShow(false);
-    // const colorCategoryQuery = colorPickCat.join("&color_like=");
-    // console.log(colorCategoryQuery)
-    // if (categoryQuery) {
-    //   router.push(`/products?category_like=${categoryQuery}`);
-    // } else if (brandCategoryQuery) {
-    //   router.push(`/products?brand_like=${brandCategoryQuery}`);
-    //   // setShow(false);
-    // } else if (accessoriesCategoryQuery) {
-    //   router.push(`/products?accessory_like=${accessoriesCategoryQuery}`);
-    //   // setShow(false);
-    // } else if (sizesCategories) {
-    //   router.push(`/products?size_like=${sizeCategoryQuery}`);
-    // } else if (colorCategoryQuery) {
-    //   router.push(`/products?color_like=${colorCategoryQuery}`);
-    // }
     let queryParams = [];
 
     if (selectedCategories.length) {
@@ -157,9 +138,14 @@ const FilterProducts = ({ data }: IFilteredData) => {
     if (colorPickCat.length) {
       queryParams.push(`color_like=${colorPickCat.join("&color_like=")}`);
     }
-    if (pricePickCat.length) {
-      queryParams.push(`price_like=${pricePickCat.join("&price_like=")}`);
+    // if (pricePickCat.length) {
+    //   queryParams.push(`price_like=${pricePickCat.join("&price_like=")}`);
+    // }
+    if (selectedPriceRange) {
+      const [minPrice, maxPrice] = selectedPriceRange.split("-").map(String);
+      queryParams.push(`price_gte=${minPrice}&price_lte=${maxPrice}`);
     }
+
     const queryString = queryParams.join("&");
     if (queryString) {
       router.push(`/products?${queryString}`);
@@ -266,9 +252,9 @@ const FilterProducts = ({ data }: IFilteredData) => {
                 <li key={idx}>
                   <input
                     type="checkbox"
-                    value={`${range.max}`}
-                    checked={pricePickCat.includes(`${range.max}`)}
-                    onChange={handlePrice}
+                    value={`${range.min}-${range.max}`}
+                    checked={selectedPriceRange === `${range.min}-${range.max}`}
+                    onChange={handlePriceRangeCheckboxChange}
                   />{" "}
                   {range.label}
                 </li>
