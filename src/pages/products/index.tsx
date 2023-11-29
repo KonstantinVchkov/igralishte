@@ -11,14 +11,34 @@ interface IProductsPage {
   productsData: IProductProps[];
   filteredCatFromHamMenu: IProductProps[];
   productsFiltered: IProductProps[];
+  brandProductsFiltered: IProductProps[];
+  accessoryProductsFiltered: IProductProps[];
+  sizeProductsFiltered: IProductProps[];
+  colorFilteredProducts: IProductProps[];
+  priceProductsFiltered:IProductProps[]
 }
 const Products = ({
   productsData,
   filteredCatFromHamMenu,
   productsFiltered,
+  brandProductsFiltered,
+  accessoryProductsFiltered,
+  sizeProductsFiltered,
+  colorFilteredProducts,
+  priceProductsFiltered
 }: IProductsPage) => {
+  // console.log("brand products", brandProductsFiltered);
+  console.log("price range products", priceProductsFiltered);
   const displayProducts =
-    productsFiltered && productsFiltered.length > 0
+    colorFilteredProducts && colorFilteredProducts.length > 0
+      ? colorFilteredProducts
+      : sizeProductsFiltered && sizeProductsFiltered.length > 0
+      ? sizeProductsFiltered
+      : accessoryProductsFiltered && accessoryProductsFiltered.length > 0
+      ? accessoryProductsFiltered
+      : brandProductsFiltered && brandProductsFiltered.length > 0
+      ? brandProductsFiltered
+      : productsFiltered && productsFiltered.length > 0
       ? productsFiltered
       : filteredCatFromHamMenu && filteredCatFromHamMenu.length > 0
       ? filteredCatFromHamMenu
@@ -91,18 +111,48 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     const res = await axios.get("http://localhost:3001/products");
     const productsData = res.data;
     const categoryUrl = `http://localhost:3001/products?category=${query.category}`;
-    const categoryLikeQuery = Array.isArray(query.category_like) ? query.category_like.join('&category_like=') : query.category_like;
+    const categoryLikeQuery = Array.isArray(query.category_like)
+      ? query.category_like.join("&category_like=")
+      : query.category_like;
+    const brandLikeQuery = Array.isArray(query.brand_like)
+      ? query.brand_like.join("&brand_like=")
+      : query.brand_like;
 
+    const accessoryCategoryQuery = Array.isArray(query.accessory_like)
+      ? query.accessory_like.join("&accessory_like=")
+      : query.accessory_like;
+    const sizesQuery = Array.isArray(query.size_like)
+      ? query.size_like.join("&size_like=")
+      : query.size_like;
+    const colorQuery = Array.isArray(query.color_like)
+      ? query.color_like.join("&color_like=")
+      : query.color_like;
+    const priceQuery = Array.isArray(query.price_like) ? query.price_like.join('&price_like=') : query.price_like
     const filteredCatFromHamMenu = (await axios.get(categoryUrl)).data;
     const categoryProducts = `http://localhost:3001/products?category_like=${categoryLikeQuery}`;
+    const brandProducts = `http://localhost:3001/products?brand_like=${brandLikeQuery}`;
+    const accessoryProductsUrl = `http://localhost:3001/products?accessory_like=${accessoryCategoryQuery}`;
+    const sizeProductsUrl = `http://localhost:3001/products?size_like=${sizesQuery}`;
+    const colorPickUrl = `http://localhost:3001/products?color_like=${colorQuery}`;
+    const pricePickUrl = `http://localhost:3001/products?price_like=${priceQuery}`;
+    const priceFilteredProducts = (await axios.get(pricePickUrl)).data
+    const colorFilteredProducts = (await axios.get(colorPickUrl)).data;
+    const sizeProductsFiltered = (await axios.get(sizeProductsUrl)).data;
+    const brandProductsFiltered = (await axios.get(brandProducts)).data;
+    const accessoryProductsFiltered = (await axios.get(accessoryProductsUrl))
+      .data;
+    console.log("exact query params", priceFilteredProducts);
     const productsFiltered = (await axios.get(categoryProducts)).data;
-    // const productsFiltered = filterProduct.data;
-    // console.log("query category:",categoryUrl)
-    console.log("ova e od filter menito od products", productsFiltered);
+
     return {
       props: {
         productsData,
         productsFiltered,
+        brandProductsFiltered,
+        sizeProductsFiltered,
+        colorFilteredProducts,
+        priceFilteredProducts,
+        accessoryProductsFiltered,
         filteredCatFromHamMenu,
       },
     };
