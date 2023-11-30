@@ -33,6 +33,11 @@
   top: 5px;
   left: 88%;
 }
+.sortFilter select{
+  border: 1px solid #c2c2c2;
+  border-radius: 7px;
+  padding: 2px 2px;
+}
 /* .filteredBody{
     width: 100%;
 } */

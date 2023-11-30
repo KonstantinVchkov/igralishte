@@ -1,17 +1,22 @@
 import React, { useState } from "react";
-
-const SortFilter = () => {
-    const [sortNew,setSortNew] = useState('')
-    console.log(sortNew)
+import style from './style.module.css'
+import { IProductProps } from "../Products/Product";
+interface ISortFilter{
+    handleChange:(e:React.ChangeEvent<HTMLSelectElement>) => void;
+    valueTake:string   
+}
+const SortFilter = ({handleChange,valueTake}:ISortFilter) => {
+    // const [sortNew,setSortNew] = useState('')
+    // console.log(sortNew)
   return (
-    <div>
+    <div className={style.sortFilter}>
       {" "}
+      <span>Подреди според:</span>
       <select
-        value={sortNew}
-        onChange={(e:React.ChangeEvent<HTMLSelectElement>) => {
-          setSortNew(e.target.value)
-        }}
+        value={valueTake}
+        onChange={handleChange}
       >
+        <option value="default">Селектирај</option>
         <option value="New">Најново</option>
         <option value="Old">Најстаро</option>
       </select>

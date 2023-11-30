@@ -24,11 +24,10 @@ const FilterProducts = ({ data }: IFilteredData) => {
     useState<string[]>([]);
   const [sizesCategories, setSizesCategories] = useState<string[]>([]);
   const [colorPickCat, setColorPickCat] = useState<string[]>([]);
-  const [pricePickCat, setPricePickCat] = useState<string[]>([]);
+  // const [pricePickCat, setPricePickCat] = useState<string[]>([]);
   const [selectedPriceRange, setSelectedPriceRange] = useState("");
-  useEffect(() => {
-    console.log("all selected prices", selectedPriceRange);
-  }, [selectedPriceRange]);
+  const [sortNew, setSortNew] = useState("");
+  console.log('value from the select',sortNew)
   const toggleHamMenu = () => {
     setOpenMenu(!openMenu);
   };
@@ -132,9 +131,6 @@ const FilterProducts = ({ data }: IFilteredData) => {
     if (colorPickCat.length) {
       queryParams.push(`color_like=${colorPickCat.join("&color_like=")}`);
     }
-    // if (pricePickCat.length) {
-    //   queryParams.push(`price_like=${pricePickCat.join("&price_like=")}`);
-    // }
     if (selectedPriceRange) {
       const [minPrice, maxPrice] = selectedPriceRange.split("-").map(String);
       queryParams.push(`price_gte=${minPrice}&price_lte=${maxPrice}`);
@@ -150,6 +146,9 @@ const FilterProducts = ({ data }: IFilteredData) => {
   const openSearch = () => {
     console.log("search values searched");
   };
+  const sortItems = (e:React.ChangeEvent<HTMLSelectElement>) => {
+    setSortNew(e.target.value)
+  };
   return (
     <div className={style.FilteredMenu}>
       <div className={style.firstSection}>
@@ -161,7 +160,7 @@ const FilterProducts = ({ data }: IFilteredData) => {
           />
         </div>
         <div className={style.sortFilter}>
-          <SortFilter />
+          <SortFilter handleChange={(e) => sortItems(e)} valueTake={sortNew} />
         </div>
       </div>
 
