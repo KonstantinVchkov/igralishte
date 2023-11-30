@@ -12,14 +12,14 @@ type OpenSections = {
   Brands: string;
   Accessories: string;
 };
-interface IBrand {
-  id: string;
-  name: string;
-  // category:string;
-}
-interface Icategory {
-  category: string;
-}
+// interface IBrand {
+//   id: string;
+//   name: string;
+//   // category:string;
+// }
+// interface Icategory {
+//   category: string;
+// }
 const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
   const initialOpenSections: OpenSections = {
     Vintage: "",

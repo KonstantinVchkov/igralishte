@@ -8,6 +8,8 @@ import { getUniquePropertyCounts } from "@/utils/uniqueProducts";
 import { toggleDropItems } from "../Header/menuItemsData";
 import ColorPallete from "./ColorPallete";
 import router from "next/router";
+import SearchFilter from "../Header/SearchFilter";
+import SortFilter from "./SortFilter";
 interface IFilteredData {
   data: IProductProps[];
 }
@@ -94,14 +96,6 @@ const FilterProducts = ({ data }: IFilteredData) => {
       console.log("Color attribute not found");
     }
   };
-  // const handlePrice = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const target = e.target.value;
-  //   if (pricePickCat.includes(target)) {
-  //     setPricePickCat(pricePickCat.filter((c) => c >= target));
-  //   } else {
-  //     setPricePickCat([...pricePickCat, target]);
-  //   }
-  // };
   const handlePriceRangeCheckboxChange = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -153,14 +147,24 @@ const FilterProducts = ({ data }: IFilteredData) => {
 
     setShow(false);
   };
-
+  const openSearch = () => {
+    console.log("search values searched");
+  };
   return (
     <div className={style.FilteredMenu}>
-      <img
-        src={`/images/group-55.svg`}
-        alt="Filter Products"
-        onClick={filterSideBar}
-      />
+      <div className={style.firstSection}>
+        <div className={style.searchFilterMenu}>
+          <img
+            src={`/images/group-55.svg`}
+            alt="Filter Products"
+            onClick={filterSideBar}
+          />
+        </div>
+        <div className={style.sortFilter}>
+          <SortFilter />
+        </div>
+      </div>
+
       <HamburgerMenu open={openMenu} toggleHamMenu={toggleHamMenu} />
       <div className={style.filteredBody}>
         <Offcanvas placement="end" show={show}>
@@ -172,6 +176,29 @@ const FilterProducts = ({ data }: IFilteredData) => {
             }}
           />
           <Offcanvas.Body>
+            <div className={style.searchBar}>
+              <div className={style.SearchInputs}>
+                <input
+                  type="text"
+                  placeholder="Пребарувај..."
+                  onChange={(e: any) => {
+                    console.log(e.target.value);
+                  }}
+                />
+                <img
+                  src={`/images/fluent_search.svg`}
+                  alt="search-icon"
+                  onClick={openSearch}
+                />
+
+                <SearchFilter
+                  show={false}
+                  handleClose={function (): void {
+                    throw new Error("Function not implemented.");
+                  }}
+                />
+              </div>
+            </div>
             <p>Категорија</p>
             <ul>
               {categoryCounts.map((category, idx) => (

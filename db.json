@@ -187,7 +187,7 @@
         "Cotton",
         "Polyester"
       ],
-      "condition": "New",
+      "condition": "Old",
       "odrzuvanje": [
         "Machine wash",
         "Tumble dry"
@@ -219,7 +219,7 @@
       "material": [
         "Stretch Denim"
       ],
-      "condition": "New",
+      "condition": "Old",
       "odrzuvanje": [
         "Machine wash cold",
         "Hang to dry"
@@ -616,7 +616,7 @@
       "material": [
         "Cotton Blend"
       ],
-      "condition": "New",
+      "condition": "Old",
       "odrzuvanje": [
         "Machine wash cold",
         "Tumble dry low"
@@ -747,7 +747,7 @@
       "material": [
         "Cotton Blend"
       ],
-      "condition": "New",
+      "condition": "Old",
       "odrzuvanje": [
         "Machine wash warm",
         "Tumble dry medium"
@@ -780,7 +780,7 @@
         "Cotton",
         "Spandex"
       ],
-      "condition": "New",
+      "condition": "Old",
       "odrzuvanje": [
         "Machine wash cold",
         "Iron on medium"
@@ -813,7 +813,7 @@
         "Stainless Steel",
         "Waterproof Materials"
       ],
-      "condition": "New",
+      "condition": "Old",
       "odrzuvanje": [
         "Wipe with a soft cloth",
         "Avoid extreme temperatures"
@@ -846,7 +846,7 @@
         "Polyester",
         "Thermal Insulation"
       ],
-      "condition": "New",
+      "condition": "Old",
       "odrzuvanje": [
         "Machine wash cold",
         "Tumble dry low"
@@ -879,7 +879,7 @@
         "Polyester Lining"
       ],
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, repellendus!",
-      "condition": "New",
+      "condition": "Old",
       "odrzuvanje": [
         "Dry clean only"
       ],
@@ -911,7 +911,7 @@
         "Canvas",
         "Rubber Sole"
       ],
-      "condition": "New",
+      "condition": "Old",
       "odrzuvanje": [
         "Wipe with a damp cloth",
         "Air dry"
@@ -945,7 +945,7 @@
         "Leather",
         "Rubber Sole"
       ],
-      "condition": "New",
+      "condition": "Old",
       "odrzuvanje": [
         "Wipe clean",
         "Polish as needed"
@@ -977,7 +977,7 @@
       "material": [
         "Genuine Leather"
       ],
-      "condition": "New",
+      "condition": "Old",
       "odrzuvanje": [
         "Wipe with leather cleaner",
         "Keep dry"

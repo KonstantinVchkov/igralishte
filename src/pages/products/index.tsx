@@ -7,6 +7,8 @@ import Product, { IProductProps } from "@/components/Products/Product";
 import router from "next/router";
 import FilterProducts from "@/components/FilterMenuProducts/FilterProducts";
 import AnnouncementBar from "@/components/Header/AnnouncementBar";
+import Pagination from "@/components/Pagination/Pagination";
+import { getPaginatedProducts } from "@/utils/paginationFunction";
 interface IProductsPage {
   productsData: IProductProps[];
   filteredCatFromHamMenu: IProductProps[];
@@ -27,13 +29,15 @@ const Products = ({
   colorFilteredProducts,
   priceFilteredProducts,
 }: IProductsPage) => {
-  // console.log("brand products", brandProductsFiltered);
-  console.log("price range products", );
-  useEffect(() => {
-    console.log("price range products (on mount)", priceFilteredProducts);
-  }, [priceFilteredProducts]);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 12;
+
+  // Function to change page
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+
   const displayProducts =
-  priceFilteredProducts && priceFilteredProducts.length > 0
+    priceFilteredProducts && priceFilteredProducts.length > 0
       ? priceFilteredProducts
       : colorFilteredProducts && colorFilteredProducts.length > 0
       ? colorFilteredProducts
@@ -51,11 +55,15 @@ const Products = ({
   const handleFilter = (value: string) => {
     router.push(`/products/${value}`);
   };
+  const paginatedDisplayProducts = getPaginatedProducts(
+    displayProducts,
+    currentPage,
+    itemsPerPage
+  );
 
   const renderProduct = (product: IProductProps, index: number) => {
     const isSingle = index % 7 === 2;
     const isFourGrid = index > 2 && (index - 3) % 7 >= 0 && (index - 3) % 7 < 4;
-    // const fourth = (index % 7 === 2);
     let productComponent = (
       <Product
         key={product.id}
@@ -101,7 +109,15 @@ const Products = ({
       />
       <FilterProducts data={productsData} />
       <div className={style.ProductsPage}>
-        {displayProducts.map(renderProduct)}
+        {paginatedDisplayProducts.map(renderProduct)}
+      </div>
+      <div className={style.paginationProductsPage}>
+        <Pagination
+          itemsPerPage={itemsPerPage}
+          totalItems={productsData.length}
+          paginate={paginate}
+          currentPage={currentPage}
+        />
       </div>
     </>
   );
@@ -132,9 +148,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     const colorQuery = Array.isArray(query.color_like)
       ? query.color_like.join("&color_like=")
       : query.color_like;
-    // const priceQuery = Array.isArray(query.price_like)
-    //   ? query.price_like.join("&price_lte=")
-    //   : query.price_like;
+
     const priceGteQuery = query.price_gte;
     const priceLteQuery = query.price_lte;
 
@@ -152,8 +166,6 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     const accessoryProductsUrl = `http://localhost:3001/products?accessory_like=${accessoryCategoryQuery}`;
     const sizeProductsUrl = `http://localhost:3001/products?size_like=${sizesQuery}`;
     const colorPickUrl = `http://localhost:3001/products?color_like=${colorQuery}`;
-    // const pricePickUrl = `http://localhost:3001/products?price_gte=${priceQuery}`;
-    // const priceFilteredProducts = (await axios.get(pricePickUrl)).data;
     const colorFilteredProducts = (await axios.get(colorPickUrl)).data;
     const sizeProductsFiltered = (await axios.get(sizeProductsUrl)).data;
     const brandProductsFiltered = (await axios.get(brandProducts)).data;
@@ -163,7 +175,6 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 
     const productsFiltered = (await axios.get(categoryProducts)).data;
     console.log("exact query params", priceFilteredProducts);
-
 
     return {
       props: {

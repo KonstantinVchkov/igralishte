@@ -1,0 +1,15 @@
+.Pagination {
+  display: flex;
+  margin: 10px 0px;
+  font-family: "Cormorant", serif;
+}
+.Pagination span {
+  margin-right: 15px;
+}
+.active{
+  color: red;
+}
+.Pagination li {
+  list-style: disc;
+  margin: 0px 10px;
+}
