@@ -3,7 +3,7 @@ import style from './style.module.css'
 import { IProductProps } from "../Products/Product";
 interface ISortFilter{
     handleChange:(e:React.ChangeEvent<HTMLSelectElement>) => void;
-    valueTake:string   
+    valueTake?:string   
 }
 const SortFilter = ({handleChange,valueTake}:ISortFilter) => {
     // const [sortNew,setSortNew] = useState('')

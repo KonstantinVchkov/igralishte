@@ -18,6 +18,7 @@ interface IProductsPage {
   sizeProductsFiltered: IProductProps[];
   colorFilteredProducts: IProductProps[];
   priceFilteredProducts: IProductProps[];
+  sortingProducts: IProductProps[];
 }
 const Products = ({
   productsData,
@@ -28,16 +29,18 @@ const Products = ({
   sizeProductsFiltered,
   colorFilteredProducts,
   priceFilteredProducts,
+  sortingProducts,
 }: IProductsPage) => {
-
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
-
+  console.log("condition products", sortingProducts);
   // Function to change page
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   const displayProducts =
-    priceFilteredProducts && priceFilteredProducts.length > 0
+    sortingProducts && sortingProducts.length > 0
+      ? sortingProducts
+      : priceFilteredProducts && priceFilteredProducts.length > 0
       ? priceFilteredProducts
       : colorFilteredProducts && colorFilteredProducts.length > 0
       ? colorFilteredProducts
@@ -125,13 +128,40 @@ const Products = ({
 
 export default Products;
 
+// export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+//   try {
+//     let queryString = Object.entries(query)
+//       .map(([key, value]) => {
+//         if (Array.isArray(value)) {
+//           return value.map((v) => `${key}=${v}`).join("&");
+//         }
+//         return `${key}=${value}`;
+//       })
+//       .join("&");
+
+//     const url = `http://localhost:3001/products?${queryString}`;
+//     const res = await axios.get(url);
+//     const productsData = res.data;
+
+//     return {
+//       props: { productsData },
+//     };
+//   } catch (error) {
+//     console.error("Error fetching data:", error);
+//     return {
+//       props: { productsData: [], error: "Failed to fetch data" },
+//     };
+//   }
+// };
+
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   try {
-    console.log("Query parameters:", query.price_like);
+    console.log("Query parameters:", query.condition_like);
 
     const res = await axios.get("http://localhost:3001/products");
     const productsData = res.data;
     const categoryUrl = `http://localhost:3001/products?category=${query.category}`;
+    const sortQuery = query.condition_like;
     const categoryLikeQuery = Array.isArray(query.category_like)
       ? query.category_like.join("&category_like=")
       : query.category_like;
@@ -161,20 +191,22 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
       ? (await axios.get(pricePickUrl)).data
       : [];
 
-    const categoryProducts = `http://localhost:3001/products?category_like=${categoryLikeQuery}`;
-    const brandProducts = `http://localhost:3001/products?brand_like=${brandLikeQuery}`;
+    const categoryProductsUrl = `http://localhost:3001/products?category_like=${categoryLikeQuery}`;
+    const brandProductsUrl = `http://localhost:3001/products?brand_like=${brandLikeQuery}`;
     const accessoryProductsUrl = `http://localhost:3001/products?accessory_like=${accessoryCategoryQuery}`;
     const sizeProductsUrl = `http://localhost:3001/products?size_like=${sizesQuery}`;
     const colorPickUrl = `http://localhost:3001/products?color_like=${colorQuery}`;
+    const sortProductsUrl = `http://localhost:3001/products?condition_like=${sortQuery}`;
+    const sortingProducts = (await axios.get(sortProductsUrl)).data;
+    console.log(sortingProducts);
     const colorFilteredProducts = (await axios.get(colorPickUrl)).data;
     const sizeProductsFiltered = (await axios.get(sizeProductsUrl)).data;
-    const brandProductsFiltered = (await axios.get(brandProducts)).data;
+    const brandProductsFiltered = (await axios.get(brandProductsUrl)).data;
     const accessoryProductsFiltered = (await axios.get(accessoryProductsUrl))
       .data;
     const filteredCatFromHamMenu = (await axios.get(categoryUrl)).data;
 
-    const productsFiltered = (await axios.get(categoryProducts)).data;
-    console.log("exact query params", priceFilteredProducts);
+    const productsFiltered = (await axios.get(categoryProductsUrl)).data;
 
     return {
       props: {
@@ -184,6 +216,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
         sizeProductsFiltered,
         colorFilteredProducts,
         priceFilteredProducts,
+        sortingProducts,
         accessoryProductsFiltered,
         filteredCatFromHamMenu,
       },

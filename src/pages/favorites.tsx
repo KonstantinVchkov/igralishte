@@ -1,10 +1,11 @@
-import { NextPage } from 'next'
-import React from 'react'
-
-const favorites:NextPage = () => {
+import { NextPage } from "next";
+import FavoritesList from "@/components/FavoritesList/FavoritesList";
+const Favorites: NextPage = () => {
   return (
-    <div>favorites</div>
-  )
-}
+    <>
+      <FavoritesList />
+    </>
+  );
+};
 
-export default favorites
+export default Favorites;

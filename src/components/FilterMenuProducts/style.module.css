@@ -1,4 +1,4 @@
-.ColorPallete {
+.colorPaletteContainer  {
   display: flex;
   flex-wrap: wrap;
   width: 171px;
@@ -8,7 +8,7 @@
   justify-content: space-between;
   margin: 10px 5px;
 }
-.colorSquare {
+.colorPaletteContainer .colorSquare {
   width: 20.14px;
   height: 20.14px;
   margin: 5px;

@@ -10,144 +10,121 @@ import ColorPallete from "./ColorPallete";
 import router from "next/router";
 import SearchFilter from "../Header/SearchFilter";
 import SortFilter from "./SortFilter";
+import { FilterCheckbox } from "./FilterCheckBox";
 interface IFilteredData {
   data: IProductProps[];
+}
+interface FiltersState {
+  category: string[];
+  brand: string[];
+  accessory: string[];
+  size: string[];
+  color: string[];
+  priceRange: string;
+  // Add other filters as needed
 }
 const FilterProducts = ({ data }: IFilteredData) => {
   const [show, setShow] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [brandSelectedCategories, setBrandSelectedCategories] = useState<
-    string[]
-  >([]);
-  const [accessoriesSelectedCategories, setAccessoriesSelectedCategories] =
-    useState<string[]>([]);
-  const [sizesCategories, setSizesCategories] = useState<string[]>([]);
-  const [colorPickCat, setColorPickCat] = useState<string[]>([]);
-  // const [pricePickCat, setPricePickCat] = useState<string[]>([]);
-  const [selectedPriceRange, setSelectedPriceRange] = useState("");
-  const [sortNew, setSortNew] = useState("");
-  console.log('value from the select',sortNew)
-  const toggleHamMenu = () => {
-    setOpenMenu(!openMenu);
-  };
-  const filterSideBar = () => {
-    setShow(!show);
-  };
+  const [filters, setFilters] = useState<FiltersState>({
+    category: [],
+    brand: [],
+    accessory: [],
+    size: [],
+    color: [],
+    priceRange: "",
+  });
 
-  const categoryCounts = getUniquePropertyCounts(data, "category");
-  const brandCounts = getUniquePropertyCounts(data, "brand");
-  const uniqueAccessories = getUniquePropertyCounts(data, "accessory");
-  const colors = getUniquePropertyCounts(data, "color");
-  const handleCategoryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const category = e.target.value;
-    if (selectedCategories.includes(category)) {
-      setSelectedCategories(selectedCategories.filter((c) => c !== category));
-    } else {
-      setSelectedCategories([...selectedCategories, category]);
-    }
-  };
-  const handleBrandCategoryChange = (
-    e: React.ChangeEvent<HTMLInputElement>
+  const toggleHamMenu = () => setOpenMenu(!openMenu);
+  const filterSideBar = () => setShow(!show);
+
+  const handleFilterChange = (
+    filterType: keyof FiltersState,
+    value: string,
+    checked: boolean
   ) => {
-    const category = e.target.value;
-    if (brandSelectedCategories.includes(category)) {
-      setBrandSelectedCategories(
-        brandSelectedCategories.filter((c) => c !== category)
-      );
-    } else {
-      setBrandSelectedCategories([...brandSelectedCategories, category]);
-    }
-  };
-  const handleAccessoryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const category = e.target.value;
-    if (accessoriesSelectedCategories.includes(category)) {
-      setAccessoriesSelectedCategories(
-        accessoriesSelectedCategories.filter((c) => c !== category)
-      );
-    } else {
-      setAccessoriesSelectedCategories([
-        ...accessoriesSelectedCategories,
-        category,
-      ]);
-    }
-  };
-  const handleSizeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const category = e.target.value;
-    if (sizesCategories.includes(category)) {
-      setSizesCategories(sizesCategories.filter((c) => c !== category));
-    } else {
-      setSizesCategories([...sizesCategories, category]);
-    }
-  };
-  const chooseColor = (e: React.MouseEvent<HTMLLIElement>) => {
-    const target = e.target as HTMLElement;
-    const color = target.getAttribute("data-color");
-
-    if (color !== null) {
-      if (colorPickCat.includes(color)) {
-        setColorPickCat(colorPickCat.filter((c) => c !== color));
+    setFilters((prevFilters) => {
+      if (filterType !== "priceRange") {
+        const updatedArray = checked
+          ? [...prevFilters[filterType], value]
+          : prevFilters[filterType].filter((v) => v !== value);
+        return { ...prevFilters, [filterType]: updatedArray };
       } else {
-        setColorPickCat([...colorPickCat, color]);
+        return { ...prevFilters, priceRange: checked ? value : "" };
       }
-      console.log("Picked up color:", color);
-    } else {
-      console.log("Color attribute not found");
-    }
+    });
   };
-  const handlePriceRangeCheckboxChange = (
-    e: React.ChangeEvent<HTMLInputElement>
+  const applyFilters = (
+    productsData: IProductProps[],
+    filters: FiltersState
   ) => {
-    if (e.target.checked) {
-      setSelectedPriceRange(e.target.value);
-    } else {
-      setSelectedPriceRange("");
-    }
+    let filteredProducts = productsData;
+
+    Object.entries(filters).forEach(([filterType, filterValues]) => {
+      if (filterType !== "priceRange" && filterValues.length > 0) {
+        // For categories, brands, accessories, sizes, and colors
+        filteredProducts = filteredProducts.filter((product: any) =>
+          filterValues.includes(product[filterType])
+        );
+      } else if (filterType === "priceRange" && filterValues) {
+        // For price range
+        const [minPrice, maxPrice] = filterValues.split("-").map(Number);
+        filteredProducts = filteredProducts.filter(
+          (product) => product.price >= minPrice && product.price <= maxPrice
+        );
+      }
+    });
+
+    return filteredProducts;
   };
+  const chooseColor = (color: string) => {
+    setFilters((prevFilters) => {
+      // Check if the color is already in the filter; if so, remove it, otherwise add it
+      const isColorSelected = prevFilters.color.includes(color);
+      const updatedColors = isColorSelected
+        ? prevFilters.color.filter((c) => c !== color) // Remove color
+        : [...prevFilters.color, color]; // Add color
 
+      return { ...prevFilters, color: updatedColors };
+    });
+  };
   const handleFiltering = () => {
-    let queryParams = [];
+    let queryParams = Object.entries(filters)
+      .map(([key, value]) => {
+        if (Array.isArray(value) && value.length > 0) {
+          return `${key}_like=${value.join("&" + key + "_like=")}`;
+        } else if (key === "priceRange" && typeof value === "string" && value) {
+          const [minPrice, maxPrice] = value.split("-");
+          return `price_gte=${minPrice}&price_lte=${maxPrice}`;
+        }
+        return "";
+      })
+      .filter((param) => param)
+      .join("&");
 
-    if (selectedCategories.length) {
-      queryParams.push(
-        `category_like=${selectedCategories.join("&category_like=")}`
-      );
-    }
-    if (brandSelectedCategories.length) {
-      queryParams.push(
-        `brand_like=${brandSelectedCategories.join("&brand_like=")}`
-      );
-    }
-    if (accessoriesSelectedCategories.length) {
-      queryParams.push(
-        `accessory_like=${accessoriesSelectedCategories.join(
-          "&accessory_like="
-        )}`
-      );
-    }
-    if (sizesCategories.length) {
-      queryParams.push(`size_like=${sizesCategories.join("&size_like=")}`);
-    }
-    if (colorPickCat.length) {
-      queryParams.push(`color_like=${colorPickCat.join("&color_like=")}`);
-    }
-    if (selectedPriceRange) {
-      const [minPrice, maxPrice] = selectedPriceRange.split("-").map(String);
-      queryParams.push(`price_gte=${minPrice}&price_lte=${maxPrice}`);
+    if (queryParams) {
+      router.push(`/products?${queryParams}`);
     }
 
-    const queryString = queryParams.join("&");
-    if (queryString) {
-      router.push(`/products?${queryString}`);
-    }
-
+    // Apply filters to the product data
+    const filteredProducts = applyFilters(data, filters);
     setShow(false);
   };
-  const openSearch = () => {
-    console.log("search values searched");
+
+  const filterCategories = {
+    category: getUniquePropertyCounts(data, "category"),
+    brand: getUniquePropertyCounts(data, "brand"),
+    accessory: getUniquePropertyCounts(data, "accessory"),
+    size: toggleDropItems.sizes.map((size) => ({ name: size, count: 0 })),
+    color: getUniquePropertyCounts(data, "color"),
   };
-  const sortItems = (e:React.ChangeEvent<HTMLSelectElement>) => {
-    setSortNew(e.target.value)
+  const sortItems = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    e.preventDefault();
+    const value = e.target.value;
+    if (value === "default") {
+      router.push({});
+    }
+    router.push(`/products?condition_like=${value}`);
   };
   return (
     <div className={style.FilteredMenu}>
@@ -160,7 +137,7 @@ const FilterProducts = ({ data }: IFilteredData) => {
           />
         </div>
         <div className={style.sortFilter}>
-          <SortFilter handleChange={(e) => sortItems(e)} valueTake={sortNew} />
+          <SortFilter handleChange={(e) => sortItems(e)} />
         </div>
       </div>
 
@@ -187,7 +164,7 @@ const FilterProducts = ({ data }: IFilteredData) => {
                 <img
                   src={`/images/fluent_search.svg`}
                   alt="search-icon"
-                  onClick={openSearch}
+                  // onClick={openSearch}
                 />
 
                 <SearchFilter
@@ -198,7 +175,7 @@ const FilterProducts = ({ data }: IFilteredData) => {
                 />
               </div>
             </div>
-            <p>Категорија</p>
+            {/* <p>Категорија</p>
             <ul>
               {categoryCounts.map((category, idx) => (
                 <li key={idx}>
@@ -210,6 +187,21 @@ const FilterProducts = ({ data }: IFilteredData) => {
                   />
                   {category.name} <span>({category.count})</span>
                 </li>
+              ))}
+              {filterData.categories.map((category) => (
+                <FilterCheckbox
+                key={category}
+                  label={category.name}
+                  count={category.count}
+                  onChange={(e) =>
+                    handleFilterChange(
+                      "category",
+                      category.name,
+                      e.target.checked
+                    )
+                  }
+                  checked={filters.category.includes(category.name)}
+                />
               ))}
             </ul>
             <p>Брендови</p>
@@ -285,7 +277,44 @@ const FilterProducts = ({ data }: IFilteredData) => {
                   {range.label}
                 </li>
               ))}
-            </ul>
+            </ul> */}
+{Object.entries(filterCategories).map(([filterType, filterOptions]) => (
+  <div className={style.FilterType} key={filterType}>
+    <p>
+      {filterType.charAt(0).toUpperCase() + filterType.slice(1)}
+    </p>
+    {filterType !== 'color' ? (
+      <ul>
+        {filterOptions.map((option, idx) => (
+          <FilterCheckbox
+            key={idx}
+            label={option.name}
+            count={option.count}
+            onChange={(e) =>
+              handleFilterChange(
+                filterType as keyof FiltersState,
+                option.name,
+                e.target.checked
+              )
+            }
+            checked={filters[filterType as keyof FiltersState].includes(option.name)}
+          />
+        ))}
+      </ul>
+    ) : (
+      <div className={style.colorPaletteContainer}>
+        {filterOptions.map((option, idx) => (
+          <ColorPallete
+            key={idx}
+            color={option.name}
+            colorPicker={() => chooseColor(option.name)}
+          />
+        ))}
+      </div>
+    )}
+  </div>
+))}
+
           </Offcanvas.Body>
           <button onClick={handleFiltering}>Филтрирај</button>
           <button onClick={filterSideBar}>Откажи</button>

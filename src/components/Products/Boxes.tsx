@@ -4,7 +4,7 @@ import { Accordion } from "react-bootstrap";
 const Boxes = () => {
   return (
     <div className={style.Accordion}>
-      <Accordion defaultActiveKey="0">
+      <Accordion >
         <Accordion.Item eventKey="0">
           <Accordion.Header>
             <svg
