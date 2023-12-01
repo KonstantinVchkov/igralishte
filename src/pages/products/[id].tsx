@@ -11,23 +11,30 @@ export interface IProductDetailProp {
 }
 const ProductDetail: NextPage<IProductDetailProp> = ({ detailProduct }) => {
   const [isFavorite, setIsFavorite] = useState(false);
-  useEffect(() => {
-    const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
-    setIsFavorite(favorites.includes(detailProduct));
-  }, [detailProduct]);
+  const [secondBtnFavorite, setIsSecondBtnFavorite] = useState(false);
 
-  const sendToFavorite = () => {
+  const sendToFavorite = (type: string) => {
     let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+    const productIndex = favorites.findIndex(
+      (item: any) => item.id === detailProduct.id
+    );
 
-    if (!favorites.includes(detailProduct)) {
+    if (productIndex === -1) {
       favorites.push(detailProduct);
-      setIsFavorite(true);
+      if (type === "handleFavorite") {
+        setIsFavorite(true);
+      } else if (type === "secondFavorite") {
+        setIsSecondBtnFavorite(true);
+      }
     } else {
-      favorites = favorites.filter(
-        (favId: string) => favId !== detailProduct.id
-      );
-      setIsFavorite(false);
+      favorites.splice(productIndex, 1);
+      if (type === "handleFavorite") {
+        setIsFavorite(false);
+      } else if (type === "secondFavorite") {
+        setIsSecondBtnFavorite(false);
+      }
     }
+
     localStorage.setItem("favorites", JSON.stringify(favorites));
   };
   return (
@@ -37,9 +44,15 @@ const ProductDetail: NextPage<IProductDetailProp> = ({ detailProduct }) => {
         brandName={detailProduct.name}
       />
       <ProductDetailCard
-        {...detailProduct} 
-        favorite={isFavorite}
-        handleFavorite={sendToFavorite}
+        {...detailProduct}
+        firstFavorite={isFavorite}
+        secondBolFavorite={secondBtnFavorite}
+        handleFavorite={() => {
+          sendToFavorite("handleFavorite");
+        }}
+        secondFavorite={() => {
+          sendToFavorite("secondFavorite");
+        }}
       />
     </div>
   );
