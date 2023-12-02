@@ -12,14 +12,6 @@ type OpenSections = {
   Brands: string;
   Accessories: string;
 };
-// interface IBrand {
-//   id: string;
-//   name: string;
-//   // category:string;
-// }
-// interface Icategory {
-//   category: string;
-// }
 const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
   const initialOpenSections: OpenSections = {
     Vintage: "",
@@ -37,23 +29,6 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
     }));
   };
 
-  // const handleFilter = (brand: IBrand) => {
-  //   if (brand.name === "Види ги сите") {
-  //     router.push(`/local_designers`);
-  //   } else {
-  //     console.log("Selected brand:", brand.name);
-  //     router.push(`/local_designers/${brand.id}?brandName=${brand.name}`);
-  //   }
-  // };
-    // const handleCategory = (category: Icategory) => {
-  //   if (category.category === "Види ги сите") {
-  //     router.push(`/products`);
-  //   } else {
-  //     router.push(
-  //       `/products?category=${encodeURIComponent(category.category)}`
-  //     );
-  //   }
-  // };
   const handleNavigation = (
     type: "brand" | "category",
     item: { name?: string; category?: string; id?: string }
@@ -77,6 +52,7 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
     } else {
       router.push(itemPath);
     }
+    toggleHamMenu();
   };
 
   return (

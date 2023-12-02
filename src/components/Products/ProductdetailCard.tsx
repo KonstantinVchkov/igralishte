@@ -24,9 +24,9 @@ export interface IProductCardProps {
   handleFavorite?: () => void;
   secondFavorite?: () => void;
   firstFavorite: boolean;
-  secondBolFavorite:boolean;
+  secondBolFavorite: boolean;
   addToCart: boolean;
-  handleShopping:() => void;
+  handleShopping: () => void;
 }
 const ProductDetailCard = ({
   name,
@@ -44,7 +44,8 @@ const ProductDetailCard = ({
   firstFavorite,
   secondFavorite,
   secondBolFavorite,
-  handleShopping
+  handleShopping,
+  addToCart,
 }: IProductCardProps) => {
   const quantityClick = (value: string) => {
     if (value === "minus") {
@@ -205,8 +206,15 @@ const ProductDetailCard = ({
               </defs>
             </svg>
           </span>
-          <span>
-            img
+          <span onClick={handleShopping}>
+            <img
+              src={`${
+                addToCart
+                  ? "/images/icons/Check-floating-icon.png"
+                  : "/images/icons/shop-cart-icon.png"
+              }`}
+              alt=""
+            />
           </span>
         </div>
         <div className={style.BoxElements}>

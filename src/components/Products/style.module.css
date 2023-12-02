@@ -1,34 +1,38 @@
 /* style.module.css */
 .ProductsPage {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    width: 380px;
-    margin:0px auto;
-  }
-  
-  /* Specific styles for the single and four products layout */
-  .SingleProduct {
-    grid-column: span 2;
-  }
-  
-  .FourProductsGrid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-  }
-  
-  
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 380px;
+  margin: 0px auto;
+}
+
+/* Specific styles for the single and four products layout */
+.SingleProduct {
+  grid-column: span 2;
+}
+
+.FourProductsGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
 .miniCarousel {
-    display: flex;
-    width: 70px;
-    margin: 10px 0px;
+  display: flex;
+  width: 70px;
+  margin: 10px 0px;
 }
 .miniCarousel img {
-    width: 100%;
-    margin: 0px 10px;
+  width: 100%;
+  margin: 0px 10px;
 }
-.paginationProductsPage{
+.paginationProductsPage {
   display: flex;
   justify-content: center;
 }
-
+.addContainer {
+  position: fixed;
+  z-index: 1;
+  top: 70%;
+  left: 85%;
+}

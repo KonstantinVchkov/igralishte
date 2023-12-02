@@ -12,7 +12,7 @@ export interface IProductDetailProp {
 const ProductDetail: NextPage<IProductDetailProp> = ({ detailProduct }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [secondBtnFavorite, setIsSecondBtnFavorite] = useState(false);
-
+  const [isAddToCart, setIsAddToCart] = useState(false);
   const sendToFavorite = (type: string) => {
     let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
     const productIndex = favorites.findIndex(
@@ -37,6 +37,20 @@ const ProductDetail: NextPage<IProductDetailProp> = ({ detailProduct }) => {
 
     localStorage.setItem("favorites", JSON.stringify(favorites));
   };
+  const inShop = () => {
+    let buyProduct = JSON.parse(localStorage.getItem("addToCart") || "[]");
+    const productIndex = buyProduct.findIndex(
+      (item: any) => item.id === detailProduct.id
+    );
+    if (productIndex === -1) {
+      buyProduct.push(detailProduct);
+      setIsAddToCart(true);
+    } else {
+      buyProduct.splice(productIndex,1)
+      setIsAddToCart(false);
+    }
+    localStorage.setItem("addToCart", JSON.stringify(buyProduct));
+  };
   return (
     <div className={style.ProductPage}>
       <NextBreadcrumb
@@ -47,6 +61,8 @@ const ProductDetail: NextPage<IProductDetailProp> = ({ detailProduct }) => {
         {...detailProduct}
         firstFavorite={isFavorite}
         secondBolFavorite={secondBtnFavorite}
+        addToCart={isAddToCart}
+        handleShopping={inShop}
         handleFavorite={() => {
           sendToFavorite("handleFavorite");
         }}

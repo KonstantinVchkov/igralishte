@@ -1,0 +1,13 @@
+.CustomerBar {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid yellow;
+  width: 300px;
+  margin: 0px auto;
+}
+.Amount {
+  display: flex;
+}
+.Amount span {
+  margin-left: 10px;
+}
