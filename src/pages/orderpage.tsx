@@ -1,13 +1,20 @@
-import ShopCart from '@/components/ShopComponent/ShopCart'
-import { NextPage } from 'next'
-import React from 'react'
-
-const ShoppingCart:NextPage = () => {
+import ShopCart from "@/components/ShopComponent/ShopCart";
+import { NextPage } from "next";
+import React, { useState } from "react";
+import OrderForm from "./Orders/OrderForm";
+type props = {
+  searchParams: Record<string, string> | null | undefined;
+};
+const ShoppingCart: NextPage<props> = ({searchParams}) => {
+  // const [showHide,setShowHide] = useState()
+  const showModal = searchParams?.modal;
   return (
     <div>
-        <ShopCart />
+      <ShopCart />
+      
+      {/* <OrderForm  /> */}
     </div>
-  )
-}
+  );
+};
 
-export default ShoppingCart
+export default ShoppingCart;
