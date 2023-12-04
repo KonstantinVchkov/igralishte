@@ -1,6 +1,23 @@
-.Footer{
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
+.Footer {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin: 0px auto;
+  background: linear-gradient(
+    180deg,
+    #ffdbdb -52.68%,
+    #fdfdfd 68.98%,
+    #fdfdfd 91.87%
+  );
+  height: 870px;
+  width: 380px;
 }
-
+.Footer div:not(:last-child) {
+  width: 360px;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+}
+.goldenBtn {
+    width: 100%;
+}

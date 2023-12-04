@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./style.module.css";
 import Link from "next/link";
+import ButtonComp from "../ButtonComponent/ButtonComp";
 
 const Footer = () => {
   const handleJoin = () => {
@@ -8,19 +9,19 @@ const Footer = () => {
   };
   return (
     <div className={style.Footer}>
-      <div className="text">
+      <div className={style.textSection}>
         <h3>Следете ги нашите новости!</h3>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos fugiat
           amet quia possimus recusandae quisquam.
         </p>
       </div>
-      <div>
+      <div className={style.infoSection}>
         <label htmlFor="email">E-mail Адреса</label>
         <input type="text" />
-        <button type="button" onClick={handleJoin}>
-          Зачлени се
-        </button>
+        <div className={style.goldenBtn}>
+          <ButtonComp text={"Зачлени се"} handleClick={handleJoin} />
+        </div>
       </div>
       <div className="lists">
         <ul>
