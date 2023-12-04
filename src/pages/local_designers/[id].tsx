@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "../../components/Local-Designer-Info/LocalDesigner/style.module.css";
 import LocalDesignerComponent from "@/components/Local-Designer-Info/LocalDesigner/Local_Designer";
 import { GetServerSideProps, NextPage } from "next";
 import axios from "axios";
 import NextBreadcrumb from "@/components/Local-Designer-Info/Cookie-Trail_BreadCrumbs/NextBreadcrumb";
 import { ILDesignerProps } from "@/types/ProjectTypes";
+import { getPaginatedProducts } from "@/utils/paginationFunction";
+import Product, { IProductProps } from "@/components/Products/Product";
+
+import Pagination from "@/components/Pagination/Pagination";
+
 interface IBrandDetail {
   brandDetail: ILDesignerProps;
+  otherProducts: IProductProps[];
 }
-const LocalDesignerDetail: NextPage<IBrandDetail> = ({ brandDetail }) => {
+const LocalDesignerDetail: NextPage<IBrandDetail> = ({
+  brandDetail,
+  otherProducts,
+}) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  const paginatedProducts = getPaginatedProducts(
+    otherProducts,
+    currentPage,
+    itemsPerPage
+  );
   return (
     <div className={style.detailPage}>
       <NextBreadcrumb
@@ -16,6 +33,19 @@ const LocalDesignerDetail: NextPage<IBrandDetail> = ({ brandDetail }) => {
         brandName={brandDetail.brandName}
       />
       <LocalDesignerComponent {...brandDetail} />
+      <div className={style.paginatedContainer}>
+        {paginatedProducts.map((product) => (
+          <div className={style.paginatedProduct} key={product.id}>
+            <Product {...product} />
+          </div>
+        ))}
+        <Pagination
+          itemsPerPage={itemsPerPage}
+          totalItems={otherProducts.length}
+          paginate={paginate}
+          currentPage={currentPage}
+        />
+      </div>
     </div>
   );
 };
@@ -23,19 +53,16 @@ const LocalDesignerDetail: NextPage<IBrandDetail> = ({ brandDetail }) => {
 export default LocalDesignerDetail;
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
-    // console.log("ova e od detail", query);
-    const { brandName } = query;
-    console.log("Brand Name on detail page:", brandName);
-
-    // console.log("query params:",query.brandName)
   const queryBrand = query.id as string;
-  // console.log("query params od id:",queryBrand)
   const res = await axios.get(
     `http://localhost:3001/brands/${queryBrand}?brandName_like=${queryBrand}`
   );
+  const otherProductsRes = await axios.get("http://localhost:3001/products");
+  const otherProducts = otherProductsRes.data;
   const brandDetail = res.data;
   return {
     props: {
+      otherProducts,
       brandDetail,
     },
   };

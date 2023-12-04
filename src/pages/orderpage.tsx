@@ -1,20 +1,52 @@
 import ShopCart from "@/components/ShopComponent/ShopCart";
-import { NextPage } from "next";
+import { GetServerSideProps, NextPage } from "next";
 import React, { useState } from "react";
-import OrderForm from "./Orders/OrderForm";
-type props = {
-  searchParams: Record<string, string> | null | undefined;
-};
-const ShoppingCart: NextPage<props> = ({searchParams}) => {
-  // const [showHide,setShowHide] = useState()
-  const showModal = searchParams?.modal;
+import axios from "axios";
+import Product, { IProductProps } from "@/components/Products/Product";
+import { getPaginatedProducts } from "@/utils/paginationFunction";
+import style from "../components/Products/style.module.css";
+import Pagination from "@/components/Pagination/Pagination";
+
+interface IShopCart {
+  otherProducts:IProductProps[]
+}
+const ShoppingCart: NextPage<IShopCart> = ({otherProducts}) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  const paginatedProducts = getPaginatedProducts(
+    otherProducts,
+    currentPage,
+    itemsPerPage
+  );
   return (
     <div>
       <ShopCart />
-      
-      {/* <OrderForm  /> */}
+      <div className={style.paginatedContainer}>
+        {paginatedProducts.map((product) => (
+          <div className={style.paginatedProduct} key={product.id}>
+            <Product {...product} />
+          </div>
+        ))}
+        <Pagination
+          itemsPerPage={itemsPerPage}
+          totalItems={otherProducts.length}
+          paginate={paginate}
+          currentPage={currentPage}
+        />
+      </div>
     </div>
   );
 };
 
 export default ShoppingCart;
+export const getServerSideProps: GetServerSideProps = async () => {
+  const otherProductsRes = await axios.get("http://localhost:3001/products");
+  const otherProducts = otherProductsRes.data;
+
+  return {
+    props: {
+      otherProducts,
+    },
+  };
+};

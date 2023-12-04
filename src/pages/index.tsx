@@ -36,7 +36,7 @@ export default function Home({ responseData }: IHomeData) {
       }));
     }
   };
-
+  
   return (
     <div className={styleHome.HomePage}>
       <BannerBlock

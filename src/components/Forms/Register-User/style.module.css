@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 800px;
   flex-direction: column;
   background-color: #fff6f6;
 }
@@ -12,6 +12,14 @@
   display: flex;
   flex-direction: column;
   margin: 5px 5px;
+  width: 380px;
+}
+.firstSideReg form div {
+  margin: 5px auto;
+  width: 300px;
+}
+.firstSideReg form label {
+  padding-left: 17px;
 }
 .firstSideReg form input {
   border: 1px solid #a9a9a9;
@@ -54,4 +62,3 @@
 .ProfileSetup form input textarea {
   width: 50%;
 }
-

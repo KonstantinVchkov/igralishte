@@ -63,6 +63,14 @@
       "password": "Samsung231!",
       "repeatPassword": "Samsung231!",
       "id": 4
+    },
+    {
+      "firstName": "Konstantin",
+      "lastName": "Vckov",
+      "email": "kvckov@yahoo.com",
+      "password": "Cipiripilusijana22!",
+      "repeatPassword": "Cipiripilusijana22!",
+      "id": 5
     }
   ],
   "products": [
@@ -273,7 +281,7 @@
       "brand": "Зш да не",
       "name": "Classic Leather Belt",
       "category": "Блузи",
-      "accessory":"Каиш",
+      "accessory": "Каиш",
       "color": "lightblue",
       "size": [
         "S",
@@ -309,7 +317,7 @@
       "name": "Evening Velvet Dress",
       "category": "dress",
       "color": "orange",
-      "accessory":"Накит",
+      "accessory": "Накит",
       "size": [
         "S",
         "M",
@@ -668,7 +676,7 @@
     {
       "id": "19",
       "name": "Professional Laptop Bag",
-      "accessory":"Ташни",
+      "accessory": "Ташни",
       "category": "Блузи",
       "size": [
         "One Size"

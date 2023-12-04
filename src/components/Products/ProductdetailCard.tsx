@@ -227,6 +227,9 @@ const ProductDetailCard = ({
             <Boxes />
           </div>
         </div>
+        <div className="lastDiv">
+          <h1>Други парчиња</h1>          
+        </div>
       </div>
     </div>
   );

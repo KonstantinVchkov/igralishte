@@ -9,11 +9,10 @@ const ShopCart = () => {
   const [favorites, setFavorites] = useState<IProductProps[]>([]);
   const [modal, setIsModalVisible] = useState(false);
   const totalPrice = cartItems.reduce((accumulatedTotal, cartItem) => {
-    const price = parseFloat(cartItem.price); // Convert string to number
+    const price = parseFloat(cartItem.price); 
     return accumulatedTotal + price;
   }, 0);
   const removeAllProducts = () => {
-    console.log("removing button clicked");
     setCartItems([]);
   };
   const handleOrder = () => {

@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./style.module.css";
 import { IHamMenu } from "@/types/ProjectTypes";
 import NavBar from "./NavBar";
 import { Offcanvas } from "react-bootstrap";
 import { toggleDropItems } from "./menuItemsData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronDown,
+  faChevronUp,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 import router from "next/router";
+import Link from "next/link";
 type OpenSections = {
   Vintage: string;
   Brands: string;
@@ -18,7 +23,7 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
     Brands: "",
     Accessories: "",
   };
-
+  const [loggedIn, setLoggedIn] = useState(false);
   const [openSections, setOpenSections] =
     useState<OpenSections>(initialOpenSections);
 
@@ -30,30 +35,49 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
   };
 
   const handleNavigation = (
-    type: "brand" | "category",
-    item: { name?: string; category?: string; id?: string }
+    type: "brand" | "category" | "accessory",
+    item: { name?: string; category?: string; accessory?:string; id?: string }
   ) => {
     const itemName = item.name ?? "";
     const itemCategory = item.category ?? "";
     const itemId = item.id ?? "";
-
-    const basePath = type === "brand" ? "/local_designers" : "/products";
-    const allItemsPath = basePath;
-
-    const itemPath =
-      type === "brand"
-        ? `${basePath}/${encodeURIComponent(
-            itemId
-          )}?brandName=${encodeURIComponent(itemName)}`
-        : `${basePath}?category=${encodeURIComponent(itemCategory)}`;
-
+    const itemAccessory = item.accessory ?? ''
+  
+    // Initialize basePath with a default value to ensure it's never undefined
+    let basePath = "/";
+  
+    if (type === "brand") {
+      basePath = "/local_designers";
+    } else if (type === "category" || type === "accessory") {
+      basePath = "/products";
+    }
+  
+    let itemPath = basePath; // Default to basePath
+  
+    if (type === "brand") {
+      itemPath = `${basePath}/${encodeURIComponent(itemId)}?brandName=${encodeURIComponent(itemName)}`;
+    } else if (type === "category") {
+      itemPath = `${basePath}?category=${encodeURIComponent(itemCategory)}`;
+    } else if(type === 'accessory'){
+      itemPath = `${basePath}?accessory=${encodeURIComponent(itemAccessory)}`
+    }
+  
     if (itemName === "Види ги сите" || itemCategory === "Види ги сите") {
-      router.push(allItemsPath);
+      router.push(basePath); // basePath is now always defined
     } else {
-      router.push(itemPath);
+      router.push(itemPath); // itemPath is based on defined basePath
     }
     toggleHamMenu();
   };
+  
+  
+  const checkLoginStatus = () => {
+    const isUserLoggedIn = JSON.parse(localStorage.getItem("user") || "false");
+    setLoggedIn(isUserLoggedIn);
+  };
+  useEffect(() => {
+    checkLoginStatus();
+  }, []);
 
   return (
     <Offcanvas
@@ -162,7 +186,16 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
               <div>
                 <ul>
                   {toggleDropItems.accessories.map((dropItem, index) => (
-                    <li key={index}>{dropItem}</li>
+                    <li
+                      onClick={() =>
+                        handleNavigation("accessory", {
+                          accessory: dropItem.accessory,
+                        })
+                      }
+                      key={index}
+                    >
+                      {dropItem.accessory}
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -175,6 +208,38 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
           </div>
         </div>
       </Offcanvas.Body>
+      <div className={style.offCanvasFooter}>
+        <div className={style.hamMenu_ShopCart} onClick={toggleHamMenu}>
+          <img src="/images/icons/shop-cart-icon.png" alt="" />
+          <Link href={"http://localhost:3000/orderpage"}>
+            <span>Кошничка</span>
+          </Link>
+        </div>
+        <div className={style.hamMenu_favorites} onClick={toggleHamMenu}>
+          <img src="/images/icons/Vector.png" alt="" />
+          <Link href={"http://localhost:3000/favorites"}>
+            <span>Омилени</span>
+          </Link>
+        </div>
+        <div className={style.ClientProfile} onClick={toggleHamMenu}>
+          <FontAwesomeIcon icon={faUser} style={{ width: "30px" }} />
+          <Link
+            href={
+              loggedIn
+                ? "http://localhost:3000/profile_setup"
+                : "http://localhost:3000/register"
+            }
+          >
+            {loggedIn ? <span>Мој Профил</span> : <span>Регистрирај се</span>}
+          </Link>
+          {!loggedIn && <span> / </span>}
+          {!loggedIn && (
+            <Link href="http://localhost:3000/login">
+              <span>Логирај се</span>
+            </Link>
+          )}
+        </div>
+      </div>
     </Offcanvas>
   );
 };

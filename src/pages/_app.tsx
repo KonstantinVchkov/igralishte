@@ -1,15 +1,24 @@
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import NextBreadcrumb from "@/components/Local-Designer-Info/Cookie-Trail_BreadCrumbs/NextBreadcrumb";
+import { IProductProps } from "@/components/Products/Product";
 import "@/styles/globals.css";
+import axios from "axios";
+import { GetServerSideProps } from "next";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps, }: AppProps) {
   const router = useRouter();
   const { pathname } = router;
-  const hideOnRoutes = ["/login", "/register"];
-  const breadCrumbPages = ["/AboutUs","/FAQ","/ContactUs","/local_designers","/products"]
+  const hideOnRoutes = ["/login", "/register", "profile_setup"];
+  const breadCrumbPages = [
+    "/AboutUs",
+    "/FAQ",
+    "/ContactUs",
+    "/local_designers",
+    "/products",
+  ];
   const showHeaderAndFooter = !hideOnRoutes.includes(pathname);
   const showBreadCrumb = breadCrumbPages.includes(pathname);
 
@@ -17,8 +26,10 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       {showHeaderAndFooter && <Header />}
       {showBreadCrumb && <NextBreadcrumb separator={<span>{">"}</span>} />}
-      <Component {...pageProps} />
+      <Component {...pageProps}  />
       {showHeaderAndFooter && <Footer />}
     </>
   );
 }
+
+

@@ -6,13 +6,29 @@ import ProductDetailCard, {
 } from "@/components/Products/ProductdetailCard";
 import axios from "axios";
 import NextBreadcrumb from "@/components/Local-Designer-Info/Cookie-Trail_BreadCrumbs/NextBreadcrumb";
+import Pagination from "@/components/Pagination/Pagination";
+import Product, { IProductProps } from "@/components/Products/Product";
+import { getPaginatedProducts } from "@/utils/paginationFunction";
 export interface IProductDetailProp {
   detailProduct: IProductCardProps;
+  otherProducts: IProductProps[];
 }
-const ProductDetail: NextPage<IProductDetailProp> = ({ detailProduct }) => {
+const ProductDetail: NextPage<IProductDetailProp> = ({
+  detailProduct,
+  otherProducts,
+}) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [secondBtnFavorite, setIsSecondBtnFavorite] = useState(false);
   const [isAddToCart, setIsAddToCart] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
+  const paginatedProducts = getPaginatedProducts(
+    otherProducts,
+    currentPage,
+    itemsPerPage
+  );
+
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
   const sendToFavorite = (type: string) => {
     let favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
     const productIndex = favorites.findIndex(
@@ -37,6 +53,7 @@ const ProductDetail: NextPage<IProductDetailProp> = ({ detailProduct }) => {
 
     localStorage.setItem("favorites", JSON.stringify(favorites));
   };
+
   const inShop = () => {
     let buyProduct = JSON.parse(localStorage.getItem("addToCart") || "[]");
     const productIndex = buyProduct.findIndex(
@@ -46,7 +63,7 @@ const ProductDetail: NextPage<IProductDetailProp> = ({ detailProduct }) => {
       buyProduct.push(detailProduct);
       setIsAddToCart(true);
     } else {
-      buyProduct.splice(productIndex,1)
+      buyProduct.splice(productIndex, 1);
       setIsAddToCart(false);
     }
     localStorage.setItem("addToCart", JSON.stringify(buyProduct));
@@ -70,6 +87,19 @@ const ProductDetail: NextPage<IProductDetailProp> = ({ detailProduct }) => {
           sendToFavorite("secondFavorite");
         }}
       />
+      <div className={style.paginatedContainer}>
+        {paginatedProducts.map((product) => (
+          <div className={style.paginatedProduct} key={product.id}>
+            <Product {...product} />
+          </div>
+        ))}
+        <Pagination
+          itemsPerPage={itemsPerPage}
+          totalItems={otherProducts.length}
+          paginate={paginate}
+          currentPage={currentPage}
+        />
+      </div>
     </div>
   );
 };
@@ -78,10 +108,14 @@ export default ProductDetail;
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const productId = query.id as string;
   const res = await axios.get(`http://localhost:3001/products/${productId}`);
+  const otherProductsRes = await axios.get("http://localhost:3001/products");
+  const otherProducts = otherProductsRes.data; // Assuming this is an array
+
   const detailProduct = res.data;
   return {
     props: {
       detailProduct,
+      otherProducts,
     },
   };
 };

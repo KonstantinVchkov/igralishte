@@ -11,7 +11,15 @@
   text-decoration: underline;
 }
 
-
+.paginatedContainer {
+  width: 380px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.paginatedProduct{
+  width: 140px;
+  margin: 10px auto;
+}
 .textTitle {
   display: flex;
   align-items: center;
