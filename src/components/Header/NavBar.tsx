@@ -15,7 +15,9 @@ const NavBar = ({ hambMenu, searchFilter, toggleHamMenu }: INavbar) => {
     e.stopPropagation();
     toggleHamMenu();
   };
-
+  const searchProducts = (e:React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value)
+  }
   const toggleSearch = () => {
     setShowSearch(!showSearch);
   };
@@ -36,7 +38,6 @@ const NavBar = ({ hambMenu, searchFilter, toggleHamMenu }: INavbar) => {
 
       <div className={style.searchIcon} onClick={toggleSearch}>
         {" "}
-        {/* Changed this line */}
         <Image src={searchFilter} alt="searchIcon" width={150} height={130} />
       </div>
 

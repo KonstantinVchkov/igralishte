@@ -43,7 +43,6 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
     const itemId = item.id ?? "";
     const itemAccessory = item.accessory ?? ''
   
-    // Initialize basePath with a default value to ensure it's never undefined
     let basePath = "/";
   
     if (type === "brand") {
@@ -63,9 +62,9 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
     }
   
     if (itemName === "Види ги сите" || itemCategory === "Види ги сите") {
-      router.push(basePath); // basePath is now always defined
+      router.push(basePath); 
     } else {
-      router.push(itemPath); // itemPath is based on defined basePath
+      router.push(itemPath); 
     }
     toggleHamMenu();
   };

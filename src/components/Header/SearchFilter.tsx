@@ -5,7 +5,16 @@ import style from "./style.module.css";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import FontAwesomeIcon
 import { ISearchMenu } from "@/types/ProjectTypes";
+import router from "next/router";
 const SearchFilter = ({ show, handleClose }: ISearchMenu) => {
+  const [searchedProduct, setSearchProducts] = useState<string>("");
+  const searchProducts = (e:React.ChangeEvent<HTMLInputElement>) => {
+      setSearchProducts(e.target.value)
+  }
+  const submitSearchproducts = (e:any) => {
+    e.preventDefault()
+    router.push(`http://localhost:3000/searchProducts?category=${searchedProduct}`)
+  }
   return (
     <>
       <Offcanvas
@@ -15,7 +24,7 @@ const SearchFilter = ({ show, handleClose }: ISearchMenu) => {
         className={style.fullWidthOffcanvas}
       >
         <Offcanvas.Body>
-          <Form>
+          <Form onSubmit={submitSearchproducts}>
             <Form.Group className="d-flex align-items-center justify-content-center">
               <FontAwesomeIcon
                 onClick={handleClose}
@@ -26,6 +35,8 @@ const SearchFilter = ({ show, handleClose }: ISearchMenu) => {
               <Form.Control
                 type="search"
                 placeholder="Пребарувај..."
+                value={searchedProduct}
+                onChange={searchProducts}
                 autoFocus
               />
             </Form.Group>

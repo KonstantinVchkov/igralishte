@@ -30,6 +30,7 @@ export interface IHamMenu {
 
 export interface ISearchMenu {
   show: boolean;
+  // handleChange:(e:React.ChangeEvent<HTMLInputElement>) => void;
   handleClose: () => void;
 }
 export interface ReturnType<T> {

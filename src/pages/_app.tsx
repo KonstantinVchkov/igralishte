@@ -1,10 +1,7 @@
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import NextBreadcrumb from "@/components/Local-Designer-Info/Cookie-Trail_BreadCrumbs/NextBreadcrumb";
-import { IProductProps } from "@/components/Products/Product";
 import "@/styles/globals.css";
-import axios from "axios";
-import { GetServerSideProps } from "next";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 
