@@ -46,9 +46,16 @@ a {
   width: 80% !important;
 }
 
+/* .offcanvas{
+  width: 380px !important;
+
+} */
 .offcanvas,
 .offcanvas-header {
-  width: 100% !important;
+  width: 380px !important;
+  left: 0 !important;
+  /* right: 0 !important; */
+  margin: 0px auto;
 }
 
 .offcanvas.offcanvas-end {

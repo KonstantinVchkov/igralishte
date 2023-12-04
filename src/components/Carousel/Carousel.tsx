@@ -3,9 +3,9 @@ import Carousel from "react-bootstrap/Carousel";
 import style from "./style.module.css";
 import { ICarouselData } from "@/types/ProjectTypes";
 
-const HomeCarousel = ({ products }: ICarouselData) => {
+const HomeCarousel = ({ products,handleClick }: ICarouselData) => {
   const trendyProducts = products.slice(0, 6);
-
+  
   return (
     <div className={style.HomeCarousel}>
       <Carousel
@@ -25,7 +25,9 @@ const HomeCarousel = ({ products }: ICarouselData) => {
         }
       >
         {trendyProducts.map((product, index) => (
-          <Carousel.Item key={index}>
+          <Carousel.Item onClick={() => {
+            handleClick(product.id)
+          }} key={index}>
             <img src={product.images} alt={product.name} />
 
             <Carousel.Caption className={style.text}>

@@ -5,6 +5,7 @@ import BannerBlock from "@/components/Banner/BannerBlock";
 import HomeCarousel from "@/components/Carousel/Carousel";
 import { useState } from "react";
 import { IHomeData } from "@/types/ProjectTypes";
+import router from "next/router";
 
 export default function Home({ responseData }: IHomeData) {
   const [sectionStyles, setSectionStyles] = useState({
@@ -12,7 +13,7 @@ export default function Home({ responseData }: IHomeData) {
     midSection: "midCircleI",
     bottomSection: "bottomCircleI",
   });
-
+  const findId = responseData.find(productid => productid.id)
   const handleStyleClick = (section: string) => {
     if (section === "bottomCircleI") {
       setSectionStyles((prevStyles) => ({
@@ -36,7 +37,10 @@ export default function Home({ responseData }: IHomeData) {
       }));
     }
   };
-  
+  const itemChoosed = (productId:string) => {
+
+      router.push(`http://localhost:3000/products/${productId}`);
+    }  
   return (
     <div className={styleHome.HomePage}>
       <BannerBlock
@@ -48,7 +52,7 @@ export default function Home({ responseData }: IHomeData) {
         }}
         style={sectionStyles.infoCircle}
       />
-      <HomeCarousel products={responseData} />
+      <HomeCarousel handleClick={itemChoosed} products={responseData} />
       <BannerBlock
         img={"/images/banner-images/girl-top-banner.jpg"}
         vectorIcon="/images/icons/Vector.png"

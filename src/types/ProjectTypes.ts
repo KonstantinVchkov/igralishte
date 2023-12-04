@@ -58,12 +58,14 @@ export interface IAnnonce {
   img:string
 }
 export interface IHomeCarousel {
+  id:string
   images: string;
   name: string;
   price: string;
 }
 export interface ICarouselData {
   products: IHomeCarousel[];
+  handleClick:(productId:string) => void;
 }
 export interface IHomeData {
   responseData: IHomeCarousel[];

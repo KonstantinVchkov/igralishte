@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./style.module.css";
+import Link from "next/link";
 
 interface IInfoCircle {
   title: string;
@@ -12,7 +13,9 @@ const InfoCircle = ({ title, paragraph, arrowImg }: IInfoCircle) => {
     <div className={style.text}>
       <h3>{title}</h3>
       <p>{paragraph}</p>
-      <img src={arrowImg} alt="black-arrow-icon" />
+      <Link href={`http://localhost:3000/products`}>
+        <img src={arrowImg} alt="black-arrow-icon" />
+      </Link>
     </div>
   );
 };
