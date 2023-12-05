@@ -27,7 +27,7 @@ const BannerBlock = ({
           <img src={imgText} alt="image-text" />
         </div>
       )}
-      <div className={style.sparkle}>
+      <div className={`${style.sparkle} ${midSection || bottom ? `${style.noneSParkle}` : ''}`}>
         <svg
           width="22"
           height="22"
@@ -58,6 +58,10 @@ const BannerBlock = ({
         </svg>
       </div>
       <div onClick={onClick} className={`${style[bannerStyle]}`}>
+        <div className={style.sparkImg}>
+        <img src={midSection || bottom ? `/images/icons/star-icon.png` : ''} className={style.sparkleImg} alt="" />
+
+        </div>
         <InfoCircle
           title={infoCircleTitle}
           paragraph={infoCircleParagraph}

@@ -1,4 +1,4 @@
-.colorPaletteContainer  {
+.colorPaletteContainer {
   display: flex;
   flex-wrap: wrap;
   width: 171px;
@@ -13,6 +13,9 @@
   height: 20.14px;
   margin: 5px;
   border: 1px solid #000;
+}
+.closeBtn {
+  text-decoration: underline;
 }
 .searchBar {
   margin-left: auto;
@@ -33,11 +36,41 @@
   top: 5px;
   left: 88%;
 }
-.sortFilter select{
+.sortFilter select {
   border: 1px solid #c2c2c2;
   border-radius: 7px;
   padding: 2px 2px;
 }
-/* .filteredBody{
-    width: 100%;
-} */
+
+.FilterType p {
+  margin: 10px 5px;
+  position: relative;
+  font-family: Cormorant Infant;
+  font-size: 25px;
+}
+.FilterType ul li {
+  margin: 10px 5px;
+  font-family: Cormorant Garamond;
+  font-size: 20px;
+  padding: 0px 5px;
+}
+.FilterType ul li input {
+  margin-right: 10px;
+}
+.FilterType p::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 150px;
+  border-radius: 0.85px;
+  height: 1.5px; 
+  background: linear-gradient(
+    99.4deg,
+    #fff0bf -10.68%,
+    #efc990 18.14%,
+    #fdd292 43.87%,
+    rgba(240, 199, 73, 0.42) 81.17%,
+    #d4af37 100%
+  );
+}

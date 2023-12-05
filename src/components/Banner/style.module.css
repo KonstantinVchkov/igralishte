@@ -10,7 +10,8 @@
   margin-left: auto;
   padding-top: 15px;
 }
-.InfoCircle,.midCircleI {
+.InfoCircle,
+.midCircleI {
   background: linear-gradient(#ffdbdb, #fdfdfd, #fdfdfd);
 }
 
@@ -34,21 +35,34 @@
   text-align: center;
   cursor: pointer;
 }
+.purple,
+.midCircleI {
+  left: inherit;
+  right: 0%;
+}
 .sparkle {
   z-index: 1;
   position: absolute;
   top: 44%;
   left: 5%;
 }
+.noneSParkle {
+  display: none;
+}
+.sparkImg {
+  width: 40px;
+  margin: 20px auto;
+}
 .orange {
   background: orange;
+  color: white;
 }
 .purple {
   background: pink;
   color: white;
 }
 .dark {
-  background: black;
+  background: #aa336a;
   color: white;
 }
 

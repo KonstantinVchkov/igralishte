@@ -11,7 +11,7 @@
   display: flex;
   flex-wrap: wrap;
 }
-.paginatedProduct{
+.paginatedProduct {
   width: 140px;
   margin: 10px auto;
 }
@@ -24,15 +24,78 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr);
 }
-
+.ImagesSection {
+  height: 200px; /* Fixed height for the image container */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+}
+.ImagesSection img{
+  max-height: 150px; /* Maximum height for images */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: cover;
+  margin: auto; /* Center images horizontally */
+}
 .miniCarousel {
   display: flex;
-  width: 70px;
-  margin: 10px 0px;
+  align-items: center;
+  overflow: auto;
+  width: 300px;
+  margin: auto;
 }
+
 .miniCarousel img {
-  width: 100%;
-  margin: 0px 10px;
+  max-width: 50px;
+  max-height: 50px;
+  object-fit: cover;
+  margin-left: 5px;
+}
+.NextPrevBtn{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 300px; /* Match the width of the miniCarousel */
+  margin: auto;
+}
+.next,
+.prev {
+  position: absolute;
+  z-index: 1;
+  font-size: 25px;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+.next {
+  right: 0;
+}
+
+.prev {
+  left: 0;
+}
+.miniCarousel img.active {
+  border: 2px solid black;
+}
+.ImgContainerOne{
+  width: 300px;
+  margin: 10px auto;
+  height: 400px;
+}
+.ImgContainerOne img{
+  width: 250px;
+  margin: 5px auto;
+  height: 100%;
+}
+.addCartBtn{
+  background-color: pink;
+  width: 155px;
+  height: 41.1px;
+  border: 1.21px solid #C2C2C2;
+  border-radius: 12px;
+}
+.miniCarousel button {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 .paginationProductsPage {
   display: flex;

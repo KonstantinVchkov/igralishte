@@ -94,7 +94,7 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
           />
           <div className={style.menuContent}>
             <div
-              className="d-flex justify-content-between"
+              className={`d-flex justify-content-between m-2`}
               onClick={() => toggleSection("Vintage")}
             >
               Vintage Облека
@@ -114,7 +114,7 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
               <div>
                 <ul>
                   {toggleDropItems.vintage.map((category, index) => (
-                    <li
+                    <li className="m-2"
                       onClick={() =>
                         handleNavigation("category", {
                           category: category.category,
@@ -129,7 +129,7 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
               </div>
             )}
             <div
-              className="d-flex justify-content-between"
+              className={`d-flex justify-content-between m-2`}
               onClick={() => toggleSection("Brands")}
             >
               Брендови
@@ -149,7 +149,7 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
               <div>
                 <ul>
                   {toggleDropItems.brands.map((brand, index) => (
-                    <li
+                    <li className="m-2"
                       onClick={() =>
                         handleNavigation("brand", {
                           name: brand.name,
@@ -165,7 +165,7 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
               </div>
             )}
             <div
-              className="d-flex justify-content-between"
+              className={`d-flex justify-content-between m-2`}
               onClick={() => toggleSection("Accessories")}
             >
               Аксесоари
@@ -185,7 +185,7 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
               <div>
                 <ul>
                   {toggleDropItems.accessories.map((dropItem, index) => (
-                    <li
+                    <li className="m-2"
                       onClick={() =>
                         handleNavigation("accessory", {
                           accessory: dropItem.accessory,
@@ -201,7 +201,7 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
             )}
             <ul>
               {toggleDropItems.other.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li className="m-2" key={index}>{item}</li>
               ))}
             </ul>
           </div>

@@ -3,7 +3,9 @@ import React from 'react'
 
 const Gifts:NextPage = () => {
   return (
-    <div>Gifts</div>
+    <div>
+      
+    </div>
   )
 }
 

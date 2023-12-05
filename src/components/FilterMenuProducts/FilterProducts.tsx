@@ -11,6 +11,7 @@ import router from "next/router";
 import SearchFilter from "../Header/SearchFilter";
 import SortFilter from "./SortFilter";
 import { FilterCheckbox } from "./FilterCheckBox";
+import ButtonComp from "../ButtonComponent/ButtonComp";
 interface IFilteredData {
   data: IProductProps[];
 }
@@ -62,7 +63,6 @@ const FilterProducts = ({ data }: IFilteredData) => {
 
     Object.entries(filters).forEach(([filterType, filterValues]) => {
       if (filterType !== "priceRange" && filterValues.length > 0) {
-        // For categories, brands, accessories, sizes, and colors
         filteredProducts = filteredProducts.filter((product: any) =>
           filterValues.includes(product[filterType])
         );
@@ -79,11 +79,10 @@ const FilterProducts = ({ data }: IFilteredData) => {
   };
   const chooseColor = (color: string) => {
     setFilters((prevFilters) => {
-      // Check if the color is already in the filter; if so, remove it, otherwise add it
       const isColorSelected = prevFilters.color.includes(color);
       const updatedColors = isColorSelected
-        ? prevFilters.color.filter((c) => c !== color) // Remove color
-        : [...prevFilters.color, color]; // Add color
+        ? prevFilters.color.filter((c) => c !== color)
+        : [...prevFilters.color, color];
 
       return { ...prevFilters, color: updatedColors };
     });
@@ -105,10 +104,6 @@ const FilterProducts = ({ data }: IFilteredData) => {
     if (queryParams) {
       router.push(`/products?${queryParams}`);
     }
-
-    // Apply filters to the product data
-    const filteredProducts = applyFilters(data, filters);
-    setShow(false);
   };
 
   const filterCategories = {
@@ -175,149 +170,52 @@ const FilterProducts = ({ data }: IFilteredData) => {
                 />
               </div>
             </div>
-            {/* <p>Категорија</p>
-            <ul>
-              {categoryCounts.map((category, idx) => (
-                <li key={idx}>
-                  <input
-                    type="checkbox"
-                    value={category.name}
-                    onChange={handleCategoryChange}
-                    checked={selectedCategories.includes(category.name)}
-                  />
-                  {category.name} <span>({category.count})</span>
-                </li>
-              ))}
-              {filterData.categories.map((category) => (
-                <FilterCheckbox
-                key={category}
-                  label={category.name}
-                  count={category.count}
-                  onChange={(e) =>
-                    handleFilterChange(
-                      "category",
-                      category.name,
-                      e.target.checked
-                    )
-                  }
-                  checked={filters.category.includes(category.name)}
-                />
-              ))}
-            </ul>
-            <p>Брендови</p>
-            <ul>
-              {brandCounts.map((category, idx) => (
-                <li key={idx}>
-                  <input
-                    type="checkbox"
-                    value={category.name}
-                    onChange={handleBrandCategoryChange}
-                    checked={brandSelectedCategories.includes(category.name)}
-                  />{" "}
-                  {category.name} <span>({category.count})</span>
-                </li>
-              ))}
-            </ul>
-            <p>Аксесоари</p>
-            <ul>
-              {uniqueAccessories.map((category, idx) => (
-                <li key={idx}>
-                  <input
-                    type="checkbox"
-                    value={category.name}
-                    onChange={handleAccessoryChange}
-                    checked={accessoriesSelectedCategories.includes(
-                      category.name
-                    )}
-                  />{" "}
-                  {category.name}
-                </li>
-              ))}
-            </ul>
-            <p>Големини</p>
-            <ul>
-              {toggleDropItems.sizes
-                .slice()
-                .reverse()
-                .map((productSize, idx) => {
-                  return (
-                    <li key={idx}>
-                      <input
-                        type="checkbox"
-                        value={productSize}
-                        onChange={handleSizeChange}
-                        checked={sizesCategories.includes(productSize)}
-                      />{" "}
-                      {productSize}
-                    </li>
-                  );
-                })}
-            </ul>
-            <p>Боја</p>
-            <div className={style.ColorPallete}>
-              {colors.map((color, idx) => (
-                <ColorPallete
-                  key={idx}
-                  color={color.name}
-                  colorPicker={(e) => chooseColor(e)}
-                />
-              ))}
-            </div>
-            <p>Цена</p>
-            <ul>
-              <li>На попуст</li>
-              {toggleDropItems.priceRange.map((range, idx) => (
-                <li key={idx}>
-                  <input
-                    type="checkbox"
-                    value={`${range.min}-${range.max}`}
-                    checked={selectedPriceRange === `${range.min}-${range.max}`}
-                    onChange={handlePriceRangeCheckboxChange}
-                  />{" "}
-                  {range.label}
-                </li>
-              ))}
-            </ul> */}
-{Object.entries(filterCategories).map(([filterType, filterOptions]) => (
-  <div className={style.FilterType} key={filterType}>
-    <p>
-      {filterType.charAt(0).toUpperCase() + filterType.slice(1)}
-    </p>
-    {filterType !== 'color' ? (
-      <ul>
-        {filterOptions.map((option, idx) => (
-          <FilterCheckbox
-            key={idx}
-            label={option.name}
-            count={option.count}
-            onChange={(e) =>
-              handleFilterChange(
-                filterType as keyof FiltersState,
-                option.name,
-                e.target.checked
+            {Object.entries(filterCategories).map(
+              ([filterType, filterOptions]) => (
+                <div className={style.FilterType} key={filterType}>
+                  <p>
+                    {filterType.charAt(0).toUpperCase() + filterType.slice(1)}
+                  </p>
+                  
+                  {filterType !== "color" ? (
+                    <ul>
+                      {filterOptions.map((option, idx) => (
+                        <FilterCheckbox
+                          key={idx}
+                          label={option.name}
+                          count={option.count}
+                          onChange={(e) =>
+                            handleFilterChange(
+                              filterType as keyof FiltersState,
+                              option.name,
+                              e.target.checked
+                            )
+                          }
+                          checked={filters[
+                            filterType as keyof FiltersState
+                          ].includes(option.name)}
+                        />
+                      ))}
+                    </ul>
+                  ) : (
+                    <div className={style.colorPaletteContainer}>
+                      {filterOptions.map((option, idx) => (
+                        <ColorPallete
+                          key={idx}
+                          color={option.name}
+                          colorPicker={() => chooseColor(option.name)}
+                        />
+                      ))}
+                    </div>
+                  )}
+                </div>
               )
-            }
-            checked={filters[filterType as keyof FiltersState].includes(option.name)}
-          />
-        ))}
-      </ul>
-    ) : (
-      <div className={style.colorPaletteContainer}>
-        {filterOptions.map((option, idx) => (
-          <ColorPallete
-            key={idx}
-            color={option.name}
-            colorPicker={() => chooseColor(option.name)}
-          />
-        ))}
-      </div>
-    )}
-  </div>
-))}
-
+            )}
           </Offcanvas.Body>
-          <button onClick={handleFiltering}>Филтрирај</button>
-          <button onClick={filterSideBar}>Откажи</button>
+          <ButtonComp text={"Филтрирај"} handleClick={handleFiltering} />
+          <button onClick={filterSideBar} className={style.closeBtn}>
+            Откажи
+          </button>
         </Offcanvas>
       </div>
     </div>

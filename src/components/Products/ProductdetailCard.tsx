@@ -54,18 +54,48 @@ const ProductDetailCard = ({
       console.log("ova e buttonce za dodavanje");
     }
   };
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  const goToPrevImage = () => {
+    setActiveImageIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNextImage = () => {
+    setActiveImageIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
   const sizeSection = renderSizeSection(size || []);
   return (
     <div className={style.ProductCard}>
       <div className={style.firstSection}>
         <h1>{name}</h1>
+        <div className={style.ImgContainerOne}>
+          <img src={images[activeImageIndex]} alt="" />
+        </div>
         {images.length > 0 && (
           <div className={style.ImagesSection}>
-            <img src={images[0]} alt="" />
             <div className={style.miniCarousel}>
               {images.map((img, index) => (
-                <img key={index} src={img} alt="" />
+                <img
+                  key={index}
+                  src={img}
+                  alt=""
+                  onClick={() => setActiveImageIndex(index)}
+                  className={index === activeImageIndex ? style.active : ""}
+                />
               ))}
+            </div>
+            <div className={style.NextPrevBtn}>
+              <button className={style.prev} onClick={goToPrevImage}>
+                &lt;
+              </button>
+
+              <button className={style.next} onClick={goToNextImage}>
+                &gt;
+              </button>
             </div>
           </div>
         )}
@@ -90,7 +120,7 @@ const ProductDetailCard = ({
               +
             </span>
           </p>
-          <button>Додај во Кошничка</button>
+          <button className={style.addCartBtn}>Додај во Кошничка</button>
           <span onClick={handleFavorite}>
             <svg
               width="27"
@@ -228,7 +258,7 @@ const ProductDetailCard = ({
           </div>
         </div>
         <div className="lastDiv">
-          <h1>Други парчиња</h1>          
+          <h1>Други парчиња</h1>
         </div>
       </div>
     </div>

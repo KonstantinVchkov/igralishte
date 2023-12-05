@@ -65,6 +65,7 @@ export interface IHomeCarousel {
 }
 export interface ICarouselData {
   products: IHomeCarousel[];
+  // interval?:number
   handleClick:(productId:string) => void;
 }
 export interface IHomeData {

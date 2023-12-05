@@ -5,21 +5,12 @@
   margin: 5px 10px;
   width: 100%;
 }
-/* .offCanvasFooter {
-  position: fixed;
-  bottom: -100%;
-  left: 0;
-  right: 0;
-  background-color: #f1f1f1;
-  transition: bottom 0.3s;
-  margin: 0px auto;
-} */
+
 .offCanvasFooter img {
   width: 30px;
 }
 .offCanvasFooter div{
   width: 264px;
-  /* height: 45px; */
   display: flex;
   align-items: center;
   margin: 10px auto;
@@ -109,7 +100,6 @@
   color: #000000;
   border-top: 0.65px solid #232221;
   border-bottom: 0.65px solid #232221;
-  /* height: 44.78px; */
 }
 
 .marqueeContent {
@@ -125,6 +115,7 @@
     transform: translateX(-50%);
   }
 }
+
 
 .marqueeContent span {
   font-family: Cormorant Infant;
