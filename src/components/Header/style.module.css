@@ -15,6 +15,9 @@
   align-items: center;
   margin: 10px auto;
 }
+.offCanvasFooter span {
+  margin-left: 10px;
+}
 .NavBar img {
   cursor: pointer;
 }
@@ -125,6 +128,7 @@
   letter-spacing: -0.011em;
   text-align: center;
   margin: 5px 10px;
+  
 }
 .marqueeContent img  {
   max-width: 50px;

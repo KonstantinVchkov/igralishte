@@ -127,3 +127,30 @@ export type TBreadCrumbProps = {
   capitalizeLinks?: boolean
   brandName?:string;
 }
+export interface IProductCardProps {
+  id: string;
+  brand: string;
+  name: string;
+  velicina: string;
+  category: string;
+  color: string;
+  description: string;
+  sizeDescription: string;
+  price: string;
+  discount: string;
+  condition: string;
+  size: string[];
+  material: string[];
+  odrzuvanje: string[];
+  tags: string[];
+  images: string[];
+  handleFavorite?: () => void;
+  secondFavorite?: () => void;
+  firstFavorite: boolean;
+  secondBolFavorite: boolean;
+  addToCart: boolean;
+  btnChangeColor:boolean;
+  firstAddToCart?:() => void;
+  handleShopping: () => void;
+  
+}

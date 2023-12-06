@@ -234,7 +234,7 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
           {!loggedIn && <span> / </span>}
           {!loggedIn && (
             <Link href="http://localhost:3000/login">
-              <span>Логирај се</span>
+              <span className="mr-2">Логирај се</span>
             </Link>
           )}
         </div>

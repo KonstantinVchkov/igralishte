@@ -1,14 +1,13 @@
 import { GetServerSideProps, NextPage } from "next";
 import React, { useEffect, useState } from "react";
 import style from "../../components/Products/style.module.css";
-import ProductDetailCard, {
-  IProductCardProps,
-} from "@/components/Products/ProductdetailCard";
+import ProductDetailCard from "@/components/Products/ProductdetailCard";
 import axios from "axios";
 import NextBreadcrumb from "@/components/Local-Designer-Info/Cookie-Trail_BreadCrumbs/NextBreadcrumb";
 import Pagination from "@/components/Pagination/Pagination";
 import Product, { IProductProps } from "@/components/Products/Product";
 import { getPaginatedProducts } from "@/utils/paginationFunction";
+import { IProductCardProps } from "@/types/ProjectTypes";
 export interface IProductDetailProp {
   detailProduct: IProductCardProps;
   otherProducts: IProductProps[];
@@ -19,6 +18,7 @@ const ProductDetail: NextPage<IProductDetailProp> = ({
 }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [secondBtnFavorite, setIsSecondBtnFavorite] = useState(false);
+  const [addToCartBtn, setAddToCartBtn] = useState(false);
   const [isAddToCart, setIsAddToCart] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
@@ -54,19 +54,34 @@ const ProductDetail: NextPage<IProductDetailProp> = ({
     localStorage.setItem("favorites", JSON.stringify(favorites));
   };
 
-  const inShop = () => {
-    let buyProduct = JSON.parse(localStorage.getItem("addToCart") || "[]");
-    const productIndex = buyProduct.findIndex(
-      (item: any) => item.id === detailProduct.id
-    );
-    if (productIndex === -1) {
-      buyProduct.push(detailProduct);
-      setIsAddToCart(true);
-    } else {
-      buyProduct.splice(productIndex, 1);
-      setIsAddToCart(false);
+  const inShop = (type: string) => {
+    if (type === "firstShopBtn") {
+      let buyProduct = JSON.parse(localStorage.getItem("addToCart") || "[]");
+      const productIndex = buyProduct.findIndex(
+        (item: any) => item.id === detailProduct.id
+      );
+      if (productIndex === -1) {
+        buyProduct.push(detailProduct);
+        setAddToCartBtn(true);
+      } else {
+        buyProduct.splice(productIndex, 1);
+        setAddToCartBtn(false);
+      }
+      localStorage.setItem("addToCart", JSON.stringify(buyProduct));
+    } else if (type === "secondShopBtn") {
+      let buyProduct = JSON.parse(localStorage.getItem("addToCart") || "[]");
+      const productIndex = buyProduct.findIndex(
+        (item: any) => item.id === detailProduct.id
+      );
+      if (productIndex === -1) {
+        buyProduct.push(detailProduct);
+        setIsAddToCart(true);
+      } else {
+        buyProduct.splice(productIndex, 1);
+        setIsAddToCart(false);
+      }
+      localStorage.setItem("addToCart", JSON.stringify(buyProduct));
     }
-    localStorage.setItem("addToCart", JSON.stringify(buyProduct));
   };
   return (
     <div className={style.ProductPage}>
@@ -75,11 +90,17 @@ const ProductDetail: NextPage<IProductDetailProp> = ({
         brandName={detailProduct.name}
       />
       <ProductDetailCard
+        firstAddToCart={() => {
+          inShop("firstShopBtn");
+        }}
         {...detailProduct}
         firstFavorite={isFavorite}
         secondBolFavorite={secondBtnFavorite}
         addToCart={isAddToCart}
-        handleShopping={inShop}
+        btnChangeColor={addToCartBtn}
+        handleShopping={() => {
+          inShop("secondShopBtn");
+        }}
         handleFavorite={() => {
           sendToFavorite("handleFavorite");
         }}
