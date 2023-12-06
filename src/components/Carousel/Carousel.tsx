@@ -28,7 +28,7 @@ const HomeCarousel = ({ products,handleClick }: ICarouselData) => {
           <Carousel.Item onClick={() => {
             handleClick(product.id)
           }} key={index}>
-            <img src={product.images} alt={product.name} />
+            <img src={product.images[0]} alt={product.name} />
 
             <Carousel.Caption className={style.text}>
               <h2>{product.name}</h2>

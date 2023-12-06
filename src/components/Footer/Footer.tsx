@@ -10,20 +10,20 @@ const Footer = () => {
   return (
     <div className={style.Footer}>
       <div className={style.textSection}>
-        <h3>Следете ги нашите новости!</h3>
+        <h1>Следете ги нашите новости!</h1>
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos fugiat
-          amet quia possimus recusandae quisquam.
+          Биди дел од нашиот newsletter и дознавај прва за промоции, попусти и
+          нови колекции.
         </p>
       </div>
       <div className={style.infoSection}>
-        <label htmlFor="email">E-mail Адреса</label>
+        <label htmlFor="email">E-mail Адреса:</label>
         <input type="text" />
         <div className={style.goldenBtn}>
           <ButtonComp text={"Зачлени се"} handleClick={handleJoin} />
         </div>
       </div>
-      <div className="lists">
+      <div className={style.footerLists}>
         <ul>
           <Link href={"/AboutUs"}>
             <li>За нас</li>
@@ -31,7 +31,12 @@ const Footer = () => {
           <Link href={"/ContactUs"}>
             <li>Контакт</li>
           </Link>
-          <li>Локатор на Продавницата</li>
+          <Link
+            href={"https://maps.app.goo.gl/2mmoSKcZ1tLgW95T8"}
+            target="_blank"
+          >
+            <li>Локатор на Продавницата</li>
+          </Link>
           <Link href={"/FAQ"}>
             <li>Често поставувани Прашања(FAQ)</li>
           </Link>
@@ -41,21 +46,25 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <div className="socialMedia">
-        <div className="instagram d-flex">
+      <div className={style.footerSocialMedia}>
+        <span className={style.FollowUs}>Следете не на:</span>
+        <div className={`${style.instagram} d-flex`}>
           <img
             src="/images/icons/instagram-icon.png"
             alt="instagram-social-media"
           />{" "}
-          <span className="ml-2">igralishte.sk</span>
+          <Link href={"https://www.instagram.com/igraliste.sk/"} target="_blank">
+            <span className="ml-2">igralishte.sk</span>
+          </Link>
         </div>
-        <br />
         <div className="tikTok d-flex">
           <img
             src="/images/icons/tik-tok-icon.png"
             alt="instagram-social-media"
           />{" "}
-          <span className="ml-2">igralishte.sk</span>
+          <Link href={""} target="_blank">
+            <span className="ml-2">igralishte.sk</span>
+          </Link>
         </div>
       </div>
     </div>

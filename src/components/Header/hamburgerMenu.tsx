@@ -51,7 +51,7 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
       basePath = "/products";
     }
   
-    let itemPath = basePath; // Default to basePath
+    let itemPath = basePath; 
   
     if (type === "brand") {
       itemPath = `${basePath}/${encodeURIComponent(itemId)}?brandName=${encodeURIComponent(itemName)}`;
@@ -94,19 +94,19 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
           />
           <div className={style.menuContent}>
             <div
-              className={`d-flex justify-content-between m-2`}
+              className={`d-flex cursor-pointer justify-content-between m-2`}
               onClick={() => toggleSection("Vintage")}
             >
               Vintage Облека
               {openSections.Vintage ? (
                 <FontAwesomeIcon
                   icon={faChevronUp}
-                  style={{ color: "#919397", width: "20px" }}
+                  style={{ color: "#919397", width: "20px",cursor:'pointer' }}
                 />
               ) : (
                 <FontAwesomeIcon
                   icon={faChevronDown}
-                  style={{ color: "#919397", width: "20px" }}
+                  style={{ color: "#919397", width: "20px",cursor:'pointer' }}
                 />
               )}
             </div>
@@ -114,7 +114,7 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
               <div>
                 <ul>
                   {toggleDropItems.vintage.map((category, index) => (
-                    <li className="m-2"
+                    <li className="m-2 cursor-pointer"
                       onClick={() =>
                         handleNavigation("category", {
                           category: category.category,
@@ -129,19 +129,19 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
               </div>
             )}
             <div
-              className={`d-flex justify-content-between m-2`}
+              className={`d-flex cursor-pointer justify-content-between m-2`}
               onClick={() => toggleSection("Brands")}
             >
               Брендови
               {openSections.Brands ? (
                 <FontAwesomeIcon
                   icon={faChevronUp}
-                  style={{ color: "#919397", width: "20px" }}
+                  style={{ color: "#919397", width: "20px",cursor:'pointer' }}
                 />
               ) : (
                 <FontAwesomeIcon
                   icon={faChevronDown}
-                  style={{ color: "#919397", width: "20px" }}
+                  style={{ color: "#919397", width: "20px",cursor:"pointer" }}
                 />
               )}
             </div>
@@ -149,7 +149,7 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
               <div>
                 <ul>
                   {toggleDropItems.brands.map((brand, index) => (
-                    <li className="m-2"
+                    <li className="m-2 cursor-pointer"
                       onClick={() =>
                         handleNavigation("brand", {
                           name: brand.name,
@@ -165,14 +165,14 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
               </div>
             )}
             <div
-              className={`d-flex justify-content-between m-2`}
+              className={`d-flex cursor-pointer justify-content-between m-2`}
               onClick={() => toggleSection("Accessories")}
             >
               Аксесоари
               {openSections.Accessories ? (
                 <FontAwesomeIcon
                   icon={faChevronUp}
-                  style={{ color: "#919397", width: "20px" }}
+                  style={{ color: "#919397", width: "20px",cursor:'pointer' }}
                 />
               ) : (
                 <FontAwesomeIcon
@@ -185,7 +185,7 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
               <div>
                 <ul>
                   {toggleDropItems.accessories.map((dropItem, index) => (
-                    <li className="m-2"
+                    <li className="m-2 cursor-pointer"
                       onClick={() =>
                         handleNavigation("accessory", {
                           accessory: dropItem.accessory,
@@ -201,7 +201,7 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
             )}
             <ul>
               {toggleDropItems.other.map((item, index) => (
-                <li className="m-2" key={index}>{item}</li>
+                <li className="m-2 cursor-pointer" key={index}>{item}</li>
               ))}
             </ul>
           </div>

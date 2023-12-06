@@ -33,25 +33,6 @@ const Products = ({
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
-
-  // const displayProducts =
-  //   sortingProducts && sortingProducts.length > 0
-  //     ? sortingProducts
-  //     : priceFilteredProducts && priceFilteredProducts.length > 0
-  //     ? priceFilteredProducts
-  //     : colorFilteredProducts && colorFilteredProducts.length > 0
-  //     ? colorFilteredProducts
-  //     : sizeProductsFiltered && sizeProductsFiltered.length > 0
-  //     ? sizeProductsFiltered
-  //     : accessoryProductsFiltered && accessoryProductsFiltered.length > 0
-  //     ? accessoryProductsFiltered
-  //     : brandProductsFiltered && brandProductsFiltered.length > 0
-  //     ? brandProductsFiltered
-  //     : productsFiltered && productsFiltered.length > 0
-  //     ? productsFiltered
-  //     : filteredCatFromHamMenu && filteredCatFromHamMenu.length > 0
-  //     ? filteredCatFromHamMenu
-  //     : productsData;
   const productLists = [
     sortingProducts,
     priceFilteredProducts,

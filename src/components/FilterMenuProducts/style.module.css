@@ -13,6 +13,7 @@
   height: 20.14px;
   margin: 5px;
   border: 1px solid #000;
+  cursor: pointer;
 }
 .closeBtn {
   text-decoration: underline;
@@ -53,9 +54,11 @@
   font-family: Cormorant Garamond;
   font-size: 20px;
   padding: 0px 5px;
+  cursor: pointer;
 }
 .FilterType ul li input {
   margin-right: 10px;
+  cursor: pointer;
 }
 .FilterType p::after{
   content: '';
