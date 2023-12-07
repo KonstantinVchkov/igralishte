@@ -21,6 +21,7 @@ const FilterProducts = ({ data }: IFilteredData) => {
     useState<string[]>([]);
   const [sizesCategories, setSizesCategories] = useState<string[]>([]);
   const [colorPickCat, setColorPickCat] = useState<string[]>([]);
+  const [isColorPicked, setIsColorPicked] = useState(false);
   const [selectedPriceRange, setSelectedPriceRange] = useState("");
   const resetFilters = () => {
     setSelectedCategories([]);
@@ -105,12 +106,14 @@ const FilterProducts = ({ data }: IFilteredData) => {
     if (color !== null) {
       if (colorPickCat.includes(color)) {
         setColorPickCat(colorPickCat.filter((c) => c !== color));
+        setIsColorPicked(true);
       } else {
         setColorPickCat([...colorPickCat, color]);
+        setIsColorPicked(false);
       }
     } else {
       console.log("Color attribute not found");
-      setColorPickCat(['color not found'])
+      setColorPickCat(["color not found"]);
     }
   };
   const handlePriceRangeCheckboxChange = (
@@ -212,7 +215,7 @@ const FilterProducts = ({ data }: IFilteredData) => {
               handleBrandCategoryChange={(e) => filterChoose("brand", e)}
               handleAccessoryChange={(e) => filterChoose("accessory", e)}
               handleSizeChange={(e) => filterChoose("size", e)}
-            />
+                          />
           </Offcanvas.Body>
           <ButtonComp text={"Филтрирај"} handleClick={handleFiltering} />
 

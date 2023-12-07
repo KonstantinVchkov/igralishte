@@ -7,7 +7,7 @@ const ColorPallete = ({ color, colorPicker }: IColors) => {
     <div
       data-color={color}
       onClick={colorPicker}
-      className={style.colorSquare}
+      className={`${style.colorSquare} `}
       style={{ backgroundColor: color }}
     ></div>
   );

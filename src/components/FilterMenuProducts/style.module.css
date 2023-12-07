@@ -8,6 +8,9 @@
   justify-content: space-between;
   margin: 10px 5px;
 }
+.borderSquare{
+  border: 1px solid gold;
+}
 .colorPaletteContainer .colorSquare {
   width: 20.14px;
   height: 20.14px;

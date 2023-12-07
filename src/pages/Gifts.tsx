@@ -1,7 +1,7 @@
 import { NextPage } from 'next'
 import React from 'react'
 
-const Gifts:NextPage = () => {
+const gifts:NextPage = () => {
   return (
     <div>
       
@@ -9,4 +9,4 @@ const Gifts:NextPage = () => {
   )
 }
 
-export default Gifts
+export default gifts

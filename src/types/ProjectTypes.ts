@@ -190,16 +190,18 @@ export interface IBrandDetail {
   otherProducts: IProductProps[];
 }
 export interface IColors {
+  colorPicked:boolean;
   color: string;
   colorPicker: (e: any) => void;
 }
 export interface IFilterCheckbox {
-  label: string; // For the label of the checkbox
-  count: number; // For the count to be displayed next to the label
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void; // For the change event handler
-  checked: boolean; // For the checkbox state
+  label: string; 
+  count: number; 
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void; 
+  checked: boolean; 
 }
 export interface IFilterNames {
+  // colorPicked:boolean;
   categoryCounts: Array<{ name: string; count: number }>;
   brandCounts: Array<{ name: string; count: number }>;
   uniqueAccessories: Array<{ name: string }>;

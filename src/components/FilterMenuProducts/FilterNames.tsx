@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./style.module.css";
 import SearchFilter from "../Header/SearchFilter";
 import ColorPallete from "./ColorPallete";
@@ -22,6 +22,15 @@ const FilterNames = ({
   handleSizeChange,
   chooseColor,
 }: IFilterNames) => {
+  const [selectedColor, setSelectedColor] = useState("");
+
+  const highlightColorDiv = (color: string) => {
+    if (selectedColor === color) {
+      setSelectedColor("");
+    } else {
+      setSelectedColor(color);
+    }
+  };
   return (
     <>
       <div className={style.searchBar}>
@@ -56,7 +65,7 @@ const FilterNames = ({
                 type="checkbox"
                 value={category.name}
                 onChange={(e) => {
-                    handleCategoryChange(e)
+                  handleCategoryChange(e);
                 }}
                 checked={selectedCategories.includes(category.name)}
               />
@@ -72,7 +81,7 @@ const FilterNames = ({
                 type="checkbox"
                 value={category.name}
                 onChange={(e) => {
-                    handleBrandCategoryChange(e)
+                  handleBrandCategoryChange(e);
                 }}
                 checked={brandSelectedCategories.includes(category.name)}
               />{" "}
@@ -116,11 +125,23 @@ const FilterNames = ({
         <p>Боја</p>
         <div className={style.colorPaletteContainer}>
           {colors.map((color, idx) => (
-            <ColorPallete
-              key={idx}
-              color={color.name}
-              colorPicker={(e) => chooseColor(e)}
-            />
+            <>
+              <div
+                key={idx}
+                className={
+                  selectedColor === color.name ? `${style.borderSquare}` : ""
+                }
+                onClick={() => {
+                  highlightColorDiv(color.name);
+                }}
+              >
+                <ColorPallete
+                  color={color.name}
+                  colorPicker={(e) => chooseColor(e)}
+                  colorPicked={selectedColor === color.name}
+                />
+              </div>
+            </>
           ))}
         </div>
         <p>Цена</p>
