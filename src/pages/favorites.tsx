@@ -2,10 +2,11 @@ import { GetServerSideProps, NextPage } from "next";
 import FavoritesList from "@/components/FavoritesList/FavoritesList";
 import { getPaginatedProducts } from "@/utils/paginationFunction";
 import { useState } from "react";
-import Product, { IProductProps } from "@/components/Products/Product";
+import Product from "@/components/Products/Product";
 import axios from "axios";
 import Pagination from "@/components/Pagination/Pagination";
 import style from "../components/Products/style.module.css";
+import { IProductProps } from "@/types/ProjectTypes";
 
 interface IFavorites {
   otherProducts: IProductProps[];

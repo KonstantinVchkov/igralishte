@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "./style.module.css";
-import { IHamMenu } from "@/types/ProjectTypes";
+import { IHamMenu, OpenSections } from "@/types/ProjectTypes";
 import NavBar from "./NavBar";
 import { Offcanvas } from "react-bootstrap";
 import { toggleDropItems } from "./menuItemsData";
@@ -12,11 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import router from "next/router";
 import Link from "next/link";
-type OpenSections = {
-  Vintage: string;
-  Brands: string;
-  Accessories: string;
-};
+
 const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
   const initialOpenSections: OpenSections = {
     Vintage: "",
@@ -36,40 +32,41 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
 
   const handleNavigation = (
     type: "brand" | "category" | "accessory",
-    item: { name?: string; category?: string; accessory?:string; id?: string }
+    item: { name?: string; category?: string; accessory?: string; id?: string }
   ) => {
     const itemName = item.name ?? "";
     const itemCategory = item.category ?? "";
     const itemId = item.id ?? "";
-    const itemAccessory = item.accessory ?? ''
-  
+    const itemAccessory = item.accessory ?? "";
+
     let basePath = "/";
-  
+
     if (type === "brand") {
       basePath = "/local_designers";
     } else if (type === "category" || type === "accessory") {
       basePath = "/products";
     }
-  
-    let itemPath = basePath; 
-  
+
+    let itemPath = basePath;
+
     if (type === "brand") {
-      itemPath = `${basePath}/${encodeURIComponent(itemId)}?brandName=${encodeURIComponent(itemName)}`;
+      itemPath = `${basePath}/${encodeURIComponent(
+        itemId
+      )}?brandName=${encodeURIComponent(itemName)}`;
     } else if (type === "category") {
       itemPath = `${basePath}?category=${encodeURIComponent(itemCategory)}`;
-    } else if(type === 'accessory'){
-      itemPath = `${basePath}?accessory=${encodeURIComponent(itemAccessory)}`
+    } else if (type === "accessory") {
+      itemPath = `${basePath}?accessory=${encodeURIComponent(itemAccessory)}`;
     }
-  
+
     if (itemName === "Види ги сите" || itemCategory === "Види ги сите") {
-      router.push(basePath); 
+      router.push(basePath);
     } else {
-      router.push(itemPath); 
+      router.push(itemPath);
     }
     toggleHamMenu();
   };
-  
-  
+
   const checkLoginStatus = () => {
     const isUserLoggedIn = JSON.parse(localStorage.getItem("user") || "false");
     setLoggedIn(isUserLoggedIn);
@@ -94,27 +91,28 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
           />
           <div className={style.menuContent}>
             <div
-              className={`d-flex cursor-pointer justify-content-between m-2`}
+              className={`d-flex cursor-pointer justify-content-between m-2 `}
               onClick={() => toggleSection("Vintage")}
             >
               Vintage Облека
               {openSections.Vintage ? (
                 <FontAwesomeIcon
                   icon={faChevronUp}
-                  style={{ color: "#919397", width: "20px",cursor:'pointer' }}
+                  style={{ color: "#919397", width: "20px", cursor: "pointer" }}
                 />
               ) : (
                 <FontAwesomeIcon
                   icon={faChevronDown}
-                  style={{ color: "#919397", width: "20px",cursor:'pointer' }}
+                  style={{ color: "#919397", width: "20px", cursor: "pointer" }}
                 />
               )}
             </div>
             {openSections.Vintage && (
-              <div>
+              <div className={style.DropedItems}>
                 <ul>
                   {toggleDropItems.vintage.map((category, index) => (
-                    <li className="m-2 cursor-pointer"
+                    <li
+                      className="m-2 cursor-pointer"
                       onClick={() =>
                         handleNavigation("category", {
                           category: category.category,
@@ -136,12 +134,12 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
               {openSections.Brands ? (
                 <FontAwesomeIcon
                   icon={faChevronUp}
-                  style={{ color: "#919397", width: "20px",cursor:'pointer' }}
+                  style={{ color: "#919397", width: "20px", cursor: "pointer" }}
                 />
               ) : (
                 <FontAwesomeIcon
                   icon={faChevronDown}
-                  style={{ color: "#919397", width: "20px",cursor:"pointer" }}
+                  style={{ color: "#919397", width: "20px", cursor: "pointer" }}
                 />
               )}
             </div>
@@ -149,7 +147,8 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
               <div>
                 <ul>
                   {toggleDropItems.brands.map((brand, index) => (
-                    <li className="m-2 cursor-pointer"
+                    <li
+                      className="m-2 cursor-pointer"
                       onClick={() =>
                         handleNavigation("brand", {
                           name: brand.name,
@@ -172,7 +171,7 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
               {openSections.Accessories ? (
                 <FontAwesomeIcon
                   icon={faChevronUp}
-                  style={{ color: "#919397", width: "20px",cursor:'pointer' }}
+                  style={{ color: "#919397", width: "20px", cursor: "pointer" }}
                 />
               ) : (
                 <FontAwesomeIcon
@@ -185,7 +184,8 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
               <div>
                 <ul>
                   {toggleDropItems.accessories.map((dropItem, index) => (
-                    <li className="m-2 cursor-pointer"
+                    <li
+                      className="m-2 cursor-pointer"
                       onClick={() =>
                         handleNavigation("accessory", {
                           accessory: dropItem.accessory,
@@ -201,7 +201,9 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
             )}
             <ul>
               {toggleDropItems.other.map((item, index) => (
-                <li className="m-2 cursor-pointer" key={index}>{item}</li>
+                <li className="m-2 cursor-pointer" key={index}>
+                  {item}
+                </li>
               ))}
             </ul>
           </div>

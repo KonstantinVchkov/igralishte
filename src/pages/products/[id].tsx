@@ -5,9 +5,10 @@ import ProductDetailCard from "@/components/Products/ProductdetailCard";
 import axios from "axios";
 import NextBreadcrumb from "@/components/Local-Designer-Info/Cookie-Trail_BreadCrumbs/NextBreadcrumb";
 import Pagination from "@/components/Pagination/Pagination";
-import Product, { IProductProps } from "@/components/Products/Product";
+import Product from "@/components/Products/Product";
 import { getPaginatedProducts } from "@/utils/paginationFunction";
 import { IProductCardProps } from "@/types/ProjectTypes";
+import { IProductProps } from "@/types/ProjectTypes";
 export interface IProductDetailProp {
   detailProduct: IProductCardProps;
   otherProducts: IProductProps[];

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import style from "./style.module.css";
-import Product, { IProductProps } from "../Products/Product";
+import Product from "../Products/Product";
 import CustomerInteractionBar from "../ShoppingControlsMenu/CustomerInteractionBar";
 import Boxes from "../Products/Boxes";
 import OrderForm from "../Forms/OrderFormFol/OrderForm";
+import { IProductProps } from "@/types/ProjectTypes";
 const ShopCart = () => {
   const [cartItems, setCartItems] = useState<IProductProps[]>([]);
   const [favorites, setFavorites] = useState<IProductProps[]>([]);

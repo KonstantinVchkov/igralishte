@@ -3,18 +3,13 @@ import style from "./style.module.css";
 import { Offcanvas } from "react-bootstrap";
 import HamburgerMenu from "../Header/hamburgerMenu";
 import NavBar from "../Header/NavBar";
-import { IProductProps } from "../Products/Product";
 import { getUniquePropertyCounts } from "@/utils/uniqueProducts";
-
 import router from "next/router";
 import SortFilter from "./SortFilter";
-
 import ButtonComp from "../ButtonComponent/ButtonComp";
 import FilterNames from "./FilterNames";
+import { IFilteredData } from "@/types/ProjectTypes";
 
-interface IFilteredData {
-  data: IProductProps[];
-}
 const FilterProducts = ({ data }: IFilteredData) => {
   const [show, setShow] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
@@ -97,21 +92,7 @@ const FilterProducts = ({ data }: IFilteredData) => {
         } else {
           setSizesCategories([...sizesCategories, value]);
         }
-        break;
-      case "color":
-        const target = e.target as HTMLElement;
-        const color = target.getAttribute("data-color");
-
-        if (color !== null) {
-          if (colorPickCat.includes(color)) {
-            setColorPickCat(colorPickCat.filter((c) => c !== color));
-          } else {
-            setColorPickCat([...colorPickCat, color]);
-          }
-          console.log("Picked up color:", color);
-        } else {
-          console.log("Color attribute not found");
-        }
+      // break;
       default:
         break;
     }
@@ -127,9 +108,9 @@ const FilterProducts = ({ data }: IFilteredData) => {
       } else {
         setColorPickCat([...colorPickCat, color]);
       }
-      console.log("Picked up color:", color);
     } else {
       console.log("Color attribute not found");
+      setColorPickCat(['color not found'])
     }
   };
   const handlePriceRangeCheckboxChange = (
@@ -206,7 +187,6 @@ const FilterProducts = ({ data }: IFilteredData) => {
             }}
           />
           <Offcanvas.Body>
-           
             <FilterNames
               categoryCounts={categoryCounts}
               brandCounts={brandCounts}

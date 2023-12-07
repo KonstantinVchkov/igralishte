@@ -1,9 +1,4 @@
-interface IFilterCheckbox {
-  label: string; // For the label of the checkbox
-  count: number; // For the count to be displayed next to the label
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void; // For the change event handler
-  checked: boolean; // For the checkbox state
-}
+import { IFilterCheckbox } from "@/types/ProjectTypes";
 
 export const FilterCheckbox: React.FC<IFilterCheckbox> = ({
   label,

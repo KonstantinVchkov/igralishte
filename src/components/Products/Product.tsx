@@ -1,17 +1,7 @@
 import React from "react";
 import style from "./style.module.css";
-export interface IProductProps {
-  id: string;
-  images: string[];
-  price: string;
-  name: string;
-  category:string;
-  brand:string;
-  accessory:string;
-  size:string;
-  color:string;
-  click:() => void;
-}
+import { IProductProps } from "@/types/ProjectTypes";
+
 const Product = ({ images, price, name,click }: IProductProps) => {
   return (
     <div onClick={click} className={style.Product}>

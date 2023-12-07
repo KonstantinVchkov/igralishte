@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./style.module.css";
 import { ILDesignerProps } from "@/types/ProjectTypes";
+import { useRouter } from "next/router";
 const LocalDesignerComponent = ({
   id,
   brandName,
@@ -10,6 +11,8 @@ const LocalDesignerComponent = ({
   brandConcept,
   detailClick,
 }: ILDesignerProps) => {
+  const router = useRouter();
+  const isBrandDetailRoute = router.asPath === `/local_designers/${id}`;
   return (
     <div className={style.LocalDesigner} onClick={detailClick}>
       <div className={style.textTitle}>
@@ -19,12 +22,14 @@ const LocalDesignerComponent = ({
       <div className={style.brand}>
         <img src={brandImage} alt="" />
         <p>{brandConcept}</p>
-        <ul>
-          <li>{brandAnswer}</li>
-          <li>{brandAnswer}</li>
-          <li>{brandAnswer}</li>
-          <li>{brandAnswer}</li>
-        </ul>
+        {isBrandDetailRoute && (
+          <ul>
+            <li>{brandAnswer}</li>
+            <li>{brandAnswer}</li>
+            <li>{brandAnswer}</li>
+            <li>{brandAnswer}</li>
+          </ul>
+        )}
         <p>{brandDescription}</p>
       </div>
     </div>

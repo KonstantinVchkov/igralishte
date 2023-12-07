@@ -1,24 +1,15 @@
 import axios from "axios";
 import { GetServerSideProps } from "next";
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import style from "../../components/Products/style.module.css";
-import Product, { IProductProps } from "@/components/Products/Product";
+import Product from "@/components/Products/Product";
+import { IProductProps } from "@/types/ProjectTypes";
 import router from "next/router";
 import FilterProducts from "@/components/FilterMenuProducts/FilterProducts";
 import AnnouncementBar from "@/components/Header/AnnouncementBar";
 import Pagination from "@/components/Pagination/Pagination";
 import { getPaginatedProducts } from "@/utils/paginationFunction";
-interface IProductsPage {
-  productsData: IProductProps[];
-  filteredCatFromHamMenu: IProductProps[];
-  productsFiltered: IProductProps[];
-  brandProductsFiltered: IProductProps[];
-  accessoryProductsFiltered: IProductProps[];
-  sizeProductsFiltered: IProductProps[];
-  colorFilteredProducts: IProductProps[];
-  priceFilteredProducts: IProductProps[];
-  sortingProducts: IProductProps[];
-}
+import { IProductsPage } from "@/types/ProjectTypes";
 const Products = ({
   productsData,
   filteredCatFromHamMenu,

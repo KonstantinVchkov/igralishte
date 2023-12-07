@@ -67,6 +67,9 @@ const Footer = () => {
           </Link>
         </div>
       </div>
+      <div className={style.copyRight}>
+        <p>Сите права задржани © 2023 igralishtesk.mk</p>
+      </div>
     </div>
   );
 };

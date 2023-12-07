@@ -37,6 +37,7 @@ const ProductDetailCard = ({
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   const goToPrevImage = () => {
+    // za da se naprai genericka samo se stava tuka eden tip vnatre vo zagradite i se prai genericka funkcijata i vo odnos na logikata,i isto taka dokolku se raboti za next se koristi logikata za next,dokolku e za prev se koristi logikata za prev
     setActiveImageIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
@@ -103,11 +104,9 @@ const ProductDetailCard = ({
           <div className="d-flex align-items-center">
             <button
               onClick={firstAddToCart}
-              className={` ${
-                btnChangeColor ? `${style.bgWhite}` : `${style.addCartBtn}`
-              }`}
+              className={style.addCartBtn}
             >
-              Додај во Кошничка
+             {btnChangeColor ? <img className={style.btnKosnicka} src="/images/icons/btn-kosnicka.png" alt="" /> : 'Додади во Кошничка'}
             </button>
             <span className="ml-2" onClick={handleFavorite}>
               <img

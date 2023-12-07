@@ -87,11 +87,9 @@
 }
 
 .AnnouncementBar {
-
   width: 100%;
   display: flex;
   justify-content: center;
-
   position: relative;
 }
 
@@ -118,7 +116,11 @@
     transform: translateX(-50%);
   }
 }
+.menuContent ul li:first-child {
+  /* background: ; */
+  color: #8A8328;
 
+}
 
 .marqueeContent span {
   font-family: Cormorant Infant;

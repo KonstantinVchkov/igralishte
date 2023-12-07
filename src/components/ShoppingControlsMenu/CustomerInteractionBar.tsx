@@ -1,11 +1,7 @@
 import React from 'react'
 import style from './style.module.css'
-interface ICustomerBar{
-    cartAmount:number;
-    favAmount:number;
-    imgCart:string;
-    favHeartImg:string;
-}
+import { ICustomerBar } from '@/types/ProjectTypes'
+
 const CustomerInteractionBar = ({cartAmount,favAmount,imgCart,favHeartImg}:ICustomerBar) => {
   return (
     <div className={style.CustomerBar}>

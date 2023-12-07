@@ -4,16 +4,11 @@ import LocalDesignerComponent from "@/components/Local-Designer-Info/LocalDesign
 import { GetServerSideProps, NextPage } from "next";
 import axios from "axios";
 import NextBreadcrumb from "@/components/Local-Designer-Info/Cookie-Trail_BreadCrumbs/NextBreadcrumb";
-import { ILDesignerProps } from "@/types/ProjectTypes";
+import { IBrandDetail } from "@/types/ProjectTypes";
 import { getPaginatedProducts } from "@/utils/paginationFunction";
-import Product, { IProductProps } from "@/components/Products/Product";
-
+import Product from "@/components/Products/Product";
 import Pagination from "@/components/Pagination/Pagination";
 
-interface IBrandDetail {
-  brandDetail: ILDesignerProps;
-  otherProducts: IProductProps[];
-}
 const LocalDesignerDetail: NextPage<IBrandDetail> = ({
   brandDetail,
   otherProducts,

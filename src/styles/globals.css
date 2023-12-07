@@ -46,10 +46,7 @@ a {
   width: 80% !important;
 }
 
-/* .offcanvas{
-  width: 380px !important;
 
-} */
 .offcanvas,
 .offcanvas-header {
   width: 380px !important;
@@ -81,3 +78,4 @@ a {
 .modal-content {
   height: 100%;
 }
+

@@ -1,4 +1,4 @@
-.designers_page{
+.designers_page {
   width: 380px;
   margin: 0px auto;
 }
@@ -6,19 +6,40 @@
   width: 300px;
   margin: 0px auto;
 }
-.LocalDesigner:hover{
+.LocalDesigner:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+.brand {
+  width: 300px;
+  margin: 10px auto;
+  font-family: Cormorant Garamond;
+  font-synthesis-weight: 500;
+  size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -1.1%;
+  color: black;
+}
+.brand ul li {
+  list-style-type: disc;
+  width: 250px;
+  margin: 10px auto;
+  line-height: 24px;
 }
 
 .paginatedContainer {
   width: 380px;
   display: flex;
   flex-wrap: wrap;
+  margin: 0px auto;
 }
-.paginatedProduct{
+.paginatedProduct {
   width: 140px;
   margin: 10px auto;
+}
+.paginatedContainer nav{
+  margin: 5px auto;
 }
 .textTitle {
   display: flex;

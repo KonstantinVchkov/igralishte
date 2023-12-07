@@ -2,29 +2,8 @@ import React from "react";
 import style from "./style.module.css";
 import SearchFilter from "../Header/SearchFilter";
 import ColorPallete from "./ColorPallete";
-interface IFilterNames {
-  categoryCounts: Array<{ name: string; count: number }>;
-  brandCounts: Array<{ name: string; count: number }>;
-  uniqueAccessories: Array<{ name: string }>;
-  toggleDropItems: {
-    sizes: string[];
-    priceRange: Array<{ min?: number; max: number; label: string }>;
-  };
-  colors: Array<{ name: string }>;
-  selectedCategories: string[];
-  brandSelectedCategories: string[];
-  accessoriesSelectedCategories: string[];
-  sizesCategories: string[];
-  selectedPriceRange: string;
-  handleCategoryChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  handleBrandCategoryChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  handleAccessoryChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  handleSizeChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  handlePriceRangeCheckboxChange: (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => void;
-  chooseColor: (e: React.MouseEvent<HTMLLIElement>) => void;
-}
+import { IFilterNames } from "@/types/ProjectTypes";
+
 const FilterNames = ({
   categoryCounts,
   brandCounts,

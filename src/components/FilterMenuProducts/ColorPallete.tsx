@@ -1,9 +1,7 @@
 import React from "react";
 import style from "./style.module.css";
-interface IColors {
-  color: string;
-  colorPicker: (e: any) => void;
-}
+import { IColors } from "@/types/ProjectTypes";
+
 const ColorPallete = ({ color, colorPicker }: IColors) => {
   return (
     <div
