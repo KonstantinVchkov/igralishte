@@ -223,7 +223,8 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
           </Link>
         </div>
         <div className={style.ClientProfile} onClick={toggleHamMenu}>
-          <FontAwesomeIcon icon={faUser} style={{ width: "30px" }} />
+          {/* <FontAwesomeIcon icon={faUser} style={{ width: "30px" }} /> */}
+          <img src="/images/icons/ph_user-light.png" alt="user-icon-img" />
           <Link
             href={
               loggedIn

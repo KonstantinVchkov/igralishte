@@ -1,36 +1,43 @@
-{
-  "giftCards": [
-    {
-      "id": "1",
-      "title": "Сино Небо Фустани",
-      "body": "Подарете ја оваа удобна и стилска маица во сино, идеална за секојдневни прилики или лежерни викенди.",
-      "postId": "1"
+{"giftPrices": {
+  "choosePrice": "Одбери цена на подарок картичка",
+  "prices": [500, 1000, 1500, 2500, 3500,4500,6000]
+},
+    "giftCards": {
+      "cards": [
+        {
+          "id": "1",
+          "title": "Сино Небо Фустани",
+          "img": "/giftImages/firstGiftCard.png",
+          "body": "Подарете ја оваа удобна и стилска маица во сино, идеална за секојдневни прилики или лежерни викенди.",
+          "postId": "1"
+        },
+        {
+          "id": "2",
+          "title": "Празнична Изненадување Картичка",
+          "img": "/giftImages/secondGiftCard.png",
+          "body": "Изненадете го некој со оваа мистериозна гифт картичка што носи вредност и можност за избор на совршен подарок.",
+          "postId": "1"
+        },
+        {
+          "id": "3",
+          "title": "Вечер под Ѕвездите",
+          "img": "/giftImages/firstGiftCard.png",
+          "body": "Оваа гифт картичка е вашиот избор за подарување на посебна вечер. Поклонете ја за незаборавни моменти.",
+          "postId": "1"
+        },
+        {
+          "id": "4",
+          "title": "Авантуристички Дух",
+          "img": "/giftImages/secondGiftCard.png"
+        },
+        {
+          "id": "5",
+          "title": "Гурманско Уживање",
+          "img": "/giftImages/thirdGiftCard.png"
+        }
+      ]
     },
-    {
-      "id": "2",
-      "title": "Празнична Изненадување Картичка",
-      "body": "Изненадете го некој со оваа мистериозна гифт картичка што носи вредност и можност за избор на совршен подарок.",
-      "postId": "1"
-    },
-    {
-      "id": "3",
-      "title": "Вечер под Ѕвездите",
-      "body": "Оваа гифт картичка е вашиот избор за подарување на посебна вечер. Поклонете ја за незаборавни моменти.",
-      "postId": "1"
-    },
-    {
-      "id": "4",
-      "title": "Авантуристички Дух",
-      "body": "Поклонете авантура со оваа гифт картичка, идеална за љубителите на отворено и нови искуства.",
-      "postId": "1"
-    },
-    {
-      "id": "5",
-      "title": "Гурманско Уживање",
-      "body": "Испратете вкусен поздрав со оваа гифт картичка која нуди уникатно кулинарско искуство.",
-      "postId": "1"
-    }
-  ],
+
   "profile": [
     {
       "firstName": "Konstantin",
@@ -1489,9 +1496,19 @@
   "Faq": {
     "PageTitle": "FAQ",
     "firstQuestion": "Прашање број еден?",
+    "firstAnswer": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem.",
+    "secondAnswer": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem.",
+    "answers":[
+      {"answerThree": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."},
+     {"answerFour": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."},
+      {"answerFive": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."},
+     { "answerSix": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."},
+     { "answerSeven": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."},
+     { "answerEight": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."}
+    ],
     "secondQuestion": "Прашање број два?",
-    "thirdQuestion": "Прашање ",
-    "fourthQuestion": "Прашање "
+    "thirdQuestion": "Прашање број три",
+    "fourthQuestion": "Прашање број четири"
   },
   "brands": [
     {

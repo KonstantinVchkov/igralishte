@@ -8,20 +8,40 @@ const FaQInfo = ({
   secondQuestion,
   thirdQuestion,
   fourthQuestion,
+  firstAnswer,
+  secondAnswer,
 }: IFaqComp) => {
   return (
     <div className={style.FaqInfo}>
-      <div className={style.secondSection}>
+      <div className={style.firstSection}>
         <div className={style.Title}>
           <h1>{PageTitle}</h1>
           <img src="/images/icons/sparks-elements-icon.png" alt="" />
         </div>
-        <h2>{firstQuestion}</h2>
-        <p>{}</p>
-        <h2>{secondQuestion}</h2>
-        <p>{}</p>
-        <h2>{}</h2>
-        <p>{}</p>
+        <div className={style.faqCard}>
+          <h2>{firstQuestion}</h2>
+          <p>{firstAnswer}</p>
+        </div>
+        <div className={style.faqCard}>
+          <h2>{secondQuestion}</h2>
+          <p>{secondAnswer}</p>
+        </div>
+        <div className={style.faqCard}>
+          <h2>{thirdQuestion}</h2>
+          <p>{firstAnswer}</p>
+        </div>
+        <div className={style.faqCard}>
+          <h2>{fourthQuestion}</h2>
+          <p>{secondAnswer}</p>
+        </div>
+        <div className={style.faqCard}>
+          <h2>{fourthQuestion}</h2>
+          <p>{secondAnswer}</p>
+        </div>
+        <div className={style.faqCard}>
+          <h2>{firstQuestion}</h2>
+          <p>{firstAnswer}</p>
+        </div>
       </div>
     </div>
   );

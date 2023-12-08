@@ -8,9 +8,7 @@ const FAQ: NextPage<IFaqPage> = ({ responseData }) => {
   return (
     <>
       <FaQInfo
-        PageTitle={responseData.PageTitle}
-        firstQuestion={responseData.firstQuestion}
-        secondQuestion={responseData.secondQuestion}
+      {...responseData}
       />
     </>
   );

@@ -1,16 +1,52 @@
-.FaqInfo{
-    width: 360px;
-    margin: 0px auto;
-    background-color: #FFFFFF;
+.FaqInfo {
+  margin: 15px auto;
+  background-color: #ffffff;
+  border: 1px solid #c2c2c2;
+  width: 300px;
+  top: 266px;
+  left: 30px;
+  border-radius: 4.62px;
+  border: 0.46px;
+  box-shadow: 0px 0px 1.384615182876587px 0px #c2c2c2;
+}
+.faqCard {
+  width: 263px;
+  margin: 5px auto;
+  border-bottom: 1px solid #c2c2c2;
+  font-family: Cormorant Infant;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.011em;
+  text-align: left;
+  padding: 10px 10px;
+}
+.faqCard p {
+  color: #c2c2c2;
+  font-family: Cormorant Garamond;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: -0.011em;
+  text-align: left;
+  color: black;
+}
+.faqCard p:nth-child(3n),.faqCard h2:nth-child(3n){
+    width: 263px;
+}
+.FaqInfo .faqCard:nth-child(3n) {
+  background: #fff6f6;
+}
+.faqCard h2 {
+  color: #8a8328;
+}
+.Title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.Title{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.secondSection{
-    width: 300px;
-    margin: 15px auto;
+.secondSection {
+  width: 300px;
+  margin: 15px auto;
 }

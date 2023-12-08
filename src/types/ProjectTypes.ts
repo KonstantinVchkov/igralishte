@@ -85,11 +85,11 @@ export interface IBannerTop {
 export interface IFaqComp {
   PageTitle: string;
   firstQuestion: string;
-  firstAnswer?: string;
-  secondAnswer?: string;
+  firstAnswer: string;
+  secondAnswer: string;
   secondQuestion: string;
-  thirdQuestion?: string;
-  fourthQuestion?: string;
+  thirdQuestion: string;
+  fourthQuestion: string;
 }
 export interface IFaqPage {
   responseData: IFaqComp;
@@ -201,7 +201,6 @@ export interface IFilterCheckbox {
   checked: boolean; 
 }
 export interface IFilterNames {
-  // colorPicked:boolean;
   categoryCounts: Array<{ name: string; count: number }>;
   brandCounts: Array<{ name: string; count: number }>;
   uniqueAccessories: Array<{ name: string }>;

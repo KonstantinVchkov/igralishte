@@ -1,0 +1,31 @@
+.GiftPage {
+  width: 360px;
+  margin: auto;
+}
+
+.giftCard,
+.GiftCardPrices,
+.GiftPage h1 {
+  font-family: Century;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 33px;
+  letter-spacing: -0.011em;
+  text-align: center;
+  width: 300px;
+  margin: 25px auto;
+}
+.giftCard,.Price{
+    transition: all .2s ease-in-out; 
+}
+.giftCard:hover,.Price:hover{
+    transform: scale(1.1);
+}
+.Price {
+border-radius: 18px;
+border: 1.8px solid #C2C2C2;
+box-shadow: 0px 0px 5.399999618530273px 0px #C2C2C2;
+width: 250px;
+margin: 10px auto;
+
+}
