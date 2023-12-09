@@ -32,6 +32,7 @@ body {
 }
 .accordion-header .accordion-button {
   justify-content: space-between;
+  color: #8a8328 !important;
 }
 h1,
 h2,
@@ -54,7 +55,6 @@ a {
   width: 80% !important;
 }
 
-
 .offcanvas,
 .offcanvas-header {
   width: 380px !important;
@@ -72,10 +72,10 @@ a {
   height: 845px;
   margin: 0;
 }
-.modal-body{
+.modal-body {
   margin: 0 auto;
 }
-.modal-title{
+.modal-title {
   text-align: center;
   margin: 10px auto;
   display: flex;
@@ -86,4 +86,3 @@ a {
 .modal-content {
   height: 100%;
 }
-
