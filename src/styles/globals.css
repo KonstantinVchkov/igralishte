@@ -24,7 +24,15 @@ body {
   padding: 0;
   width: 380px;
 }
-
+.accordion-header .accordion-button::after {
+  content: none !important;
+}
+.accordion-item {
+  margin: 12px 0px;
+}
+.accordion-header .accordion-button {
+  justify-content: space-between;
+}
 h1,
 h2,
 h3,
