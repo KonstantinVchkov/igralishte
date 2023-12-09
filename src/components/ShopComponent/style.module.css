@@ -1,0 +1,85 @@
+.ShopCarts {
+  width: 360px;
+  text-align: center;
+}
+.ItemNames,
+.discountInfo,
+.deliveryPrice,
+.SecondSection {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px auto;
+}
+.thirdSection {
+  width: 155px;
+}
+.thirdSection .goldenBtn{
+    margin-right: 10px;
+    font-family: Century;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.011em;
+    text-align: left;
+}
+.thirdSection {
+  display: flex;
+  align-items: center;
+  margin: 10px 10px;
+}
+.SecondSection {
+  color: black;
+  border-bottom: 1px solid #fdd292;
+  padding: 10px 0px;
+}
+.SecondSection span {
+  font-family: Century;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: -0.011em;
+  text-align: left;
+}
+.SecondSection h1 {
+  font-family: Century;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: -0.011em;
+  text-align: center;
+}
+.deliveryPrice {
+  color: #8a8328;
+}
+.discountInfo {
+  color: #ff5b29;
+}
+.ItemNames p,
+.discountInfo p,
+.deliveryPrice p {
+  font-family: Century;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.011em;
+  text-align: left;
+}
+.InfoSection {
+  position: relative;
+  /* width: 360px; */
+}
+.discountInfo::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1.8px;
+  background: linear-gradient(
+    99.4deg,
+    #fff0bf -10.68%,
+    #efc990 18.14%,
+    #fdd292 43.87%,
+    rgba(240, 199, 73, 0.42) 81.17%,
+    #d4af37 100%
+  );
+  bottom: -10px;
+}

@@ -2,14 +2,12 @@ import ShopCart from "@/components/ShopComponent/ShopCart";
 import { GetServerSideProps, NextPage } from "next";
 import React, { useState } from "react";
 import axios from "axios";
-import Product, { IProductProps } from "@/components/Products/Product";
+import Product from "@/components/Products/Product";
 import { getPaginatedProducts } from "@/utils/paginationFunction";
 import style from "../components/Products/style.module.css";
 import Pagination from "@/components/Pagination/Pagination";
+import { IShopCart } from "@/types/ProjectTypes";
 
-interface IShopCart {
-  otherProducts:IProductProps[]
-}
 const ShoppingCart: NextPage<IShopCart> = ({otherProducts}) => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;

@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import style from './style.module.css'
 import React from 'react'
 interface IButtonComponent{
@@ -6,8 +7,16 @@ interface IButtonComponent{
 
 }
 const ButtonComp = ({text,handleClick}:IButtonComponent) => {
+  const router = useRouter()
+  const addClassName = () => {
+    if(router.pathname === '/orderpage'){
+     return style.orderPageGoldenBtn
+    } else {
+     return style.goldenBtn
+    }
+  }
   return (
-    <div className={style.goldenBtn}>
+    <div className={addClassName()}>
         <button onClick={handleClick}>{text}</button>
     </div>
   )

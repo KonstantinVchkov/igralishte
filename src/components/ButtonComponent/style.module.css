@@ -1,8 +1,25 @@
-.goldenBtn button {
-    width: 100%;
-    background: linear-gradient(99.4deg, #FFF0BF -10.68%, #EFC990 18.14%, #FDD292 43.87%, rgba(240, 199, 73, 0.42) 81.17%, #D4AF37 100%),
-    linear-gradient(0deg, #C2C2C2, #C2C2C2);
-    height: 40px;
-    border-radius: 10px;    
-
+.goldenBtn button,.orderPageGoldenBtn button {
+  width: 100%;
+  background: linear-gradient(
+      99.4deg,
+      #fff0bf -10.68%,
+      #efc990 18.14%,
+      #fdd292 43.87%,
+      rgba(240, 199, 73, 0.42) 81.17%,
+      #d4af37 100%
+    ),
+    linear-gradient(0deg, #c2c2c2, #c2c2c2);
+  height: 40px;
+  border-radius: 10px;
+  border: 1.21px solid #c2c2c2;
+  box-shadow: 0px 0px 3.638223648071289px 0px #c2c2c2;
+}
+.orderPageGoldenBtn {
+  width: 155px;
+  font-family: Century;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.011em;
+  text-align: left;
 }

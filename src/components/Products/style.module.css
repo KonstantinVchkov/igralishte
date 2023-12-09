@@ -72,6 +72,9 @@
   background-color: #666560;
   color: #c2c2c2;
 }
+.paginatedContainer nav {
+  margin: 5px auto;
+}
 .boxes {
   margin: 10px 0px;
 }

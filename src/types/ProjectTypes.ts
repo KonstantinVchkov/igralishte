@@ -6,6 +6,7 @@ export interface Props {
   children: React.ReactNode;
 }
 
+
 export interface IAuthentication {
   email: string;
   password: string;
@@ -155,6 +156,7 @@ export interface IProductCardProps {
 }
 export interface IProductProps {
   id: string;
+  deliveryAdress?:number;
   images: string[];
   price: string;
   name: string;
@@ -231,3 +233,6 @@ export type OpenSections = {
   Brands: string;
   Accessories: string;
 };
+export interface IShopCart {
+  otherProducts:IProductProps[]
+}
