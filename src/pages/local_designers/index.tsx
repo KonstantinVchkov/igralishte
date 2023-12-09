@@ -15,18 +15,16 @@ const LocalDesigner: NextPage<ILDesignerPageProps> = ({ brandData }) => {
   return (
     <div className={style.designers_page}>
       {brandData.map((brand) => (
-        <Link
-          key={brand.id}
-          href={`http://localhost:3000/local_designers/${brand.id}`}
-        >
+
           <LocalDesignerComponent
+          key={brand.id}
             detailClick={() => handleFilter(`${brand.id}`)}
             brandName={brand.brandName}
             brandDescription={brand.brandDescription}
             id={brand.id}
             brandImage={brand.brandImage}
           />
-        </Link>
+
       ))}
     </div>
   );

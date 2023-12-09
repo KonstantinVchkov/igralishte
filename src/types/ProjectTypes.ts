@@ -66,7 +66,6 @@ export interface IHomeCarousel {
 }
 export interface ICarouselData {
   products: IHomeCarousel[];
-  // interval?:number
   handleClick: (productId: string) => void;
 }
 export interface IHomeData {
@@ -80,8 +79,9 @@ export interface IBannerTop {
   midSection?: boolean;
   infoCircleTitle?: string;
   infoCircleParagraph?: string;
-  onClick: () => void;
   style: any;
+  iconChange?:boolean;
+  onClick: () => void;
 }
 export interface IFaqComp {
   PageTitle: string;

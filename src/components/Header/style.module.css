@@ -5,6 +5,10 @@
   margin: 5px 10px;
   width: 100%;
 }
+.Header{
+  width: 360px;
+  margin: 0px auto;
+}
 
 .offCanvasFooter img {
   width: 30px;

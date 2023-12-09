@@ -14,6 +14,7 @@ export default function Home({ responseData }: IHomeData) {
     midSection: "midCircleI",
     bottomSection: "bottomCircleI",
   });
+  const [sparkle,setSparkle] = useState(false)
   const handleStyleClick = (section: string) => {
     if (section === "bottomCircleI") {
       setSectionStyles((prevStyles) => ({
@@ -35,6 +36,7 @@ export default function Home({ responseData }: IHomeData) {
         infoCircle:
           prevStyles.infoCircle === "InfoCircle" ? "orange" : "InfoCircle",
       }));
+      setSparkle(prevSparkle => !prevSparkle);
     }
   };
   const itemChoosed = (productId: string) => {
@@ -43,6 +45,7 @@ export default function Home({ responseData }: IHomeData) {
   return (
     <div className={styleHome.HomePage}>
       <BannerBlock
+        iconChange={sparkle}
         img={"/images/banner-images/girl-top-banner.jpg"}
         imgText={"/images/icons/Ново.png"}
         vectorIcon="/images/icons/Vector.png"

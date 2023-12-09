@@ -1,6 +1,13 @@
 .designers_page {
   width: 380px;
   margin: 0px auto;
+  background: linear-gradient(
+    180deg,
+    #ffdbdb 0.05%,
+    #fdfdfd 93.1%,
+    #fdfdfd 110.6%,
+    #8a8328 152.03%
+  );
 }
 .LocalDesigner {
   width: 300px;
@@ -14,9 +21,8 @@
   width: 300px;
   margin: 10px auto;
   font-family: Cormorant Garamond;
-  font-synthesis-weight: 500;
-  size: 16px;
   font-weight: 500;
+  size: 16px;
   line-height: 24px;
   letter-spacing: -1.1%;
   color: black;
@@ -38,7 +44,7 @@
   width: 140px;
   margin: 10px auto;
 }
-.paginatedContainer nav{
+.paginatedContainer nav {
   margin: 5px auto;
 }
 .textTitle {

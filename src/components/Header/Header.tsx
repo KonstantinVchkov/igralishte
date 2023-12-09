@@ -15,7 +15,7 @@ const Header = () => {
   const showAnouncementBar = showOnRoute.includes(pathname);
 
   return (
-    <div>
+    <div className={style.Header}>
       <NavBar
         hambMenu={"/images/icons/hamburger-menu.png"}
         searchFilter={"/images/icons/navSearchIcon.png"}
