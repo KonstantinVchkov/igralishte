@@ -1,16 +1,23 @@
 import React from "react";
 import style from "./style.module.css";
-export interface IContactComponent {
-  PageTitle: string;
-  image: string;
-  title: string;
-  subtitle: string;
-  contactInfo: string;
-  number:string;
-  workTime:string;
-  mobNumber:string;
-}
-const ContactusComponent = ({PageTitle,image,title,subtitle,contactInfo,number,workTime,mobNumber}:IContactComponent) => {
+import { IContactComponent } from "@/types/ProjectTypes";
+import ButtonComp from "@/components/ButtonComponent/ButtonComp";
+import Link from "next/link";
+import router from "next/router";
+
+const ContactusComponent = ({
+  PageTitle,
+  image,
+  title,
+  subtitle,
+  contactInfo,
+  number,
+  workTime,
+}: IContactComponent) => {
+  const openShop = () => {
+    console.log("go to home page");
+    router.push("/products");
+  };
   return (
     <div className={style.ContactInfo}>
       <div className={style.title}>
@@ -24,6 +31,9 @@ const ContactusComponent = ({PageTitle,image,title,subtitle,contactInfo,number,w
         <p>{contactInfo}</p>
         <p>{number}</p>
         <p>{workTime}</p>
+      </div>
+      <div className={style.btnComp}>
+        <ButtonComp text={"Кон Продавницата"} handleClick={openShop} />
       </div>
     </div>
   );

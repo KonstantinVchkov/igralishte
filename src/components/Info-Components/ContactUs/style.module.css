@@ -1,16 +1,44 @@
-.ContactInfo{
-    width: 360px;
-    margin: 0px auto;
-    background-color: #FFFFFF;
+.ContactInfo {
+  width: 360px;
+  margin: 0px auto;
+  background-color: #ffffff;
 }
 
-.title{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.secondSection{
-    width: 300px;
-    margin: 15px auto;
+.secondSection,
+.btnComp {
+  width: 300px;
+  margin: 15px auto;
+}
+.secondSection h2 {
+  font-family: Century;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 33px;
+  letter-spacing: -0.011em;
+  text-align: center;
+}
+.secondSection h2 p {
+    margin: 15px 5px;
+}
+.secondSection p {
+  font-family: Cormorant Garamond;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: -0.011em;
+  text-align: center;
+}
+.btnComp {
+  font-family: Cormorant Garamond;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: -0.011em;
+  text-align: left;
 }

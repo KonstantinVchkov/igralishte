@@ -10,6 +10,15 @@
   justify-content: center;
   margin: 15px 0px;
 }
+.secondSection h2 {
+  font-family: Century;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 33px;
+  letter-spacing: -0.011em;
+  text-align: center;
+}
+
 .buttons {
   background: linear-gradient(#c2c2c2, #fff6f6);
   width: 300px;
@@ -36,9 +45,18 @@
   border: 1px solid #ffdbdb;
   margin: 10px auto;
 }
-
+.secondSection {
+  width: 300px;
+  margin: 0px auto;
+}
 .secondSection p {
   margin: 15px 0px;
+  font-family: Cormorant Garamond;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: -0.011em;
+  text-align: left;
 }
 
 .textBold {

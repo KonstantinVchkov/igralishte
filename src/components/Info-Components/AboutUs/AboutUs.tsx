@@ -21,14 +21,11 @@ const AboutUsInfo = ({
   const [aboutUs, setAboutUs] = useState(true);
   const [buttonStoryText, setButtonStoryText] = useState("");
   const [ButtonWorkText, setButtonWorkText] = useState("");
-  // const [workButtonText, setWorkButtonText] = useState("Нашата Работа");
   const storyClick = () => {
     setOurStory(!ourStory);
     setAboutUs(ourStory);
     setOurWork(false);
     setButtonStoryText(ourStory ? "" : "textBold");
-    // setStoryButtonText(ourStory ? "Нашата Приказна" : "За нас");
-    // setWorkButtonText("Нашата Работа");
   };
 
   const workClick = () => {
@@ -36,9 +33,6 @@ const AboutUsInfo = ({
     setAboutUs(ourWork);
     setOurStory(false);
     setButtonWorkText(ourWork ? "" : "textBold");
-
-    // setWorkButtonText(ourWork ? "Нашата Работа" : "За нас");
-    // setStoryButtonText("Нашата Приказна");
   };
   return (
     <div className={style.AboutSection}>

@@ -154,6 +154,16 @@ export interface IProductCardProps {
   firstAddToCart?: () => void;
   handleShopping: () => void;
 }
+export interface IContactComponent {
+  PageTitle: string;
+  image: string;
+  title: string;
+  subtitle: string;
+  contactInfo: string;
+  number:string;
+  workTime:string;
+  mobNumber:string;
+}
 export interface IProductProps {
   id: string;
   deliveryAdress?:number;
