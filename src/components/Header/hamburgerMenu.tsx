@@ -74,6 +74,10 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
   useEffect(() => {
     checkLoginStatus();
   }, []);
+  const logout = () => {
+    localStorage.removeItem('user')
+    setLoggedIn(false)
+  }
 
   return (
     <Offcanvas
@@ -223,7 +227,6 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
           </Link>
         </div>
         <div className={style.ClientProfile} onClick={toggleHamMenu}>
-          {/* <FontAwesomeIcon icon={faUser} style={{ width: "30px" }} /> */}
           <img src="/images/icons/ph_user-light.png" alt="user-icon-img" />
           <Link
             href={
@@ -232,7 +235,7 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
                 : "http://localhost:3000/register"
             }
           >
-            {loggedIn ? <span>Мој Профил</span> : <span>Регистрирај се</span>}
+            {loggedIn ? <span>Мој Профил / <span onClick={logout}>Одјави се</span></span> : <span>Регистрирај се</span>}
           </Link>
           {!loggedIn && <span> / </span>}
           {!loggedIn && (

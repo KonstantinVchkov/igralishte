@@ -11,7 +11,9 @@ const ProfileSetup = () => {
   };
   return (
     <div className={style.ProfileSetup}>
-      <LogoComponent />
+      <div className={style.logoUp}>
+        <LogoComponent />
+      </div>
       <form
       //  onSubmit={handleSubmit(onSubmit)}
       >
@@ -22,18 +24,24 @@ const ProfileSetup = () => {
             console.log(e.target.value);
           }}
         />
-        <button>Прикачи слика</button>
+        <button className={style.uploadImg}>Прикачи слика</button>
         <label htmlFor="adress">Адреса</label>
         <input type="text" placeholder="email" />
+        <label htmlFor="password">Промени го пасвордот</label>
+        <input type="password" placeholder="password" />
+        <label htmlFor="adress">Адреса</label>
+        <input type="text" placeholder="Адреса на живеење" />
         <label htmlFor="number">Телефонски Број</label>
         <input type="number" placeholder="телефонски број" />
         <label htmlFor="adress">Биографија</label>
         <textarea name="biography" id=""></textarea>
-        <button>Заврши</button>
+        <div className={style.profileButtons}>
+          <button className={style.btnDone}>Зачувај</button>
+          <Link href={"/"}>
+            <p>Прескокни</p>
+          </Link>
+        </div>
       </form>
-      <Link href={"/"}>
-        <p>Прескокни</p>
-      </Link>
     </div>
   );
 };

@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 export default function App({ Component, pageProps, }: AppProps) {
   const router = useRouter();
   const { pathname } = router;
-  const hideOnRoutes = ["/login", "/register", "profile_setup"];
+  const hideOnRoutes = ["/login", "/register", "/profile_setup"];
   const breadCrumbPages = [
     "/AboutUs",
     "/FAQ",
