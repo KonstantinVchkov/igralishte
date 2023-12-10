@@ -30,7 +30,14 @@ body {
 }
 .accordion-header .accordion-button {
   justify-content: space-between;
+  background-color: inherit;
   color: #8a8328 !important;
+}
+.submision-modal {
+  background-color: #FFF6F6;
+}
+.accordion-header  {
+  border: none;
 }
 h1,
 h2,

@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Modal } from "react-bootstrap";
 import style from "../style.module.css";
+import ButtonComp from "@/components/ButtonComponent/ButtonComp";
 interface IOrderFormModal {
   showPopUp: boolean;
   closeModal: () => void;
@@ -86,11 +87,9 @@ const OrderFormModal = ({
           />
         </form>
         <Modal.Footer>
-          <Button variant="secondary" onClick={closeModal}>
-            Close
-          </Button>
-          <button type="submit" onClick={submitForm} disabled={submitted}>
-            Submit
+          <ButtonComp text={"Нарачај"} handleClick={submitForm} />
+          <button style={{textDecoration:'underline'}} onClick={closeModal}>
+            Откажи
           </button>
         </Modal.Footer>
       </Modal.Body>

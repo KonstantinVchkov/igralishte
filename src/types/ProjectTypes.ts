@@ -216,7 +216,7 @@ export interface IFilterNames {
   categoryCounts: Array<{ name: string; count: number }>;
   brandCounts: Array<{ name: string; count: number }>;
   uniqueAccessories: Array<{ name: string }>;
-  searchValue:() => void;
+  searchValue:(e:React.ChangeEvent<HTMLInputElement>) => void;
   toggleDropItems: {
     sizes: string[];
     priceRange: Array<{ min?: number; max: number; label: string }>;
@@ -246,4 +246,8 @@ export type OpenSections = {
 };
 export interface IShopCart {
   otherProducts:IProductProps[]
+}
+export interface ISortFilter{
+  handleChange:(e:React.ChangeEvent<HTMLSelectElement>) => void;
+  valueTake?:string   
 }

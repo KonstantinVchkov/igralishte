@@ -24,7 +24,7 @@ const ProductDetailCard = ({
   handleShopping,
   addToCart,
   firstAddToCart,
-  btnChangeColor,
+  btnChangeColor
 }: IProductCardProps) => {
   console.log("changing btn", btnChangeColor);
   const quantityClick = (value: string) => {

@@ -3,7 +3,6 @@ import style from "./style.module.css";
 import SearchFilter from "../Header/SearchFilter";
 import ColorPallete from "./ColorPallete";
 import { IFilterNames } from "@/types/ProjectTypes";
-import  router from "next/router";
 
 const FilterNames = ({
   categoryCounts,
@@ -22,7 +21,7 @@ const FilterNames = ({
   handlePriceRangeCheckboxChange,
   handleSizeChange,
   chooseColor,
-  searchValue
+  searchValue,
 }: IFilterNames) => {
   const [selectedColor, setSelectedColor] = useState("");
 
@@ -33,9 +32,6 @@ const FilterNames = ({
       setSelectedColor(color);
     }
   };
-  // const handleSearch = () => {
-  //   router.push(``)
-  // }
   return (
     <>
       <div className={style.searchBar}>
@@ -62,8 +58,8 @@ const FilterNames = ({
       <div className={style.FilterType}>
         <p>Категорија</p>
         <ul>
-          {categoryCounts.map((category, idx) => (
-            <li key={idx}>
+          {categoryCounts.map((category) => (
+            <li key={category.name}>
               <input
                 type="checkbox"
                 value={category.name}
@@ -78,8 +74,8 @@ const FilterNames = ({
         </ul>
         <p>Брендови</p>
         <ul>
-          {brandCounts.map((category, idx) => (
-            <li key={idx}>
+          {brandCounts.map((category) => (
+            <li key={category.name}>
               <input
                 type="checkbox"
                 value={category.name}
@@ -127,24 +123,22 @@ const FilterNames = ({
         </ul>
         <p>Боја</p>
         <div className={style.colorPaletteContainer}>
-          {colors.map((color, idx) => (
-            <>
-              <div
-                key={idx}
-                className={
-                  selectedColor === color.name ? `${style.borderSquare}` : ""
-                }
-                onClick={() => {
-                  highlightColorDiv(color.name);
-                }}
-              >
-                <ColorPallete
-                  color={color.name}
-                  colorPicker={(e) => chooseColor(e)}
-                  colorPicked={selectedColor === color.name}
-                />
-              </div>
-            </>
+          {colors.map((color) => (
+            <div
+              key={color.name}
+              className={
+                selectedColor === color.name ? `${style.borderSquare}` : ""
+              }
+              onClick={() => {
+                highlightColorDiv(color.name);
+              }}
+            >
+              <ColorPallete
+                color={color.name}
+                colorPicker={(e) => chooseColor(e)}
+                colorPicked={selectedColor === color.name}
+              />
+            </div>
           ))}
         </div>
         <p>Цена</p>

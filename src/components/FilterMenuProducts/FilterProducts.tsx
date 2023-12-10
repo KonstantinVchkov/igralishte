@@ -21,6 +21,7 @@ const FilterProducts = ({ data }: IFilteredData) => {
     useState<string[]>([]);
   const [sizesCategories, setSizesCategories] = useState<string[]>([]);
   const [colorPickCat, setColorPickCat] = useState<string[]>([]);
+  const [searchBarValue,setSearchBarValue] = useState<string>('')
   const [isColorPicked, setIsColorPicked] = useState(false);
   const [selectedPriceRange, setSelectedPriceRange] = useState("");
   const resetFilters = () => {
@@ -30,17 +31,19 @@ const FilterProducts = ({ data }: IFilteredData) => {
     setSizesCategories([]);
     setColorPickCat([]);
     setSelectedPriceRange("");
+    setSearchBarValue('')
   };
   const toggleHamMenu = () => {
     setOpenMenu(!openMenu);
   };
   const filterSideBar = () => {
     setShow(!show);
+    router.push({})
   };
   const sortItems = (e: React.ChangeEvent<HTMLSelectElement>) => {
     e.preventDefault();
     const value = e.target.value;
-    if (value === "default") {
+    if (value ) {
       router.push({});
     }
     router.push(`/products?condition_like=${value}`);
@@ -93,7 +96,11 @@ const FilterProducts = ({ data }: IFilteredData) => {
         } else {
           setSizesCategories([...sizesCategories, value]);
         }
-      // break;
+      
+      break;
+      case "searchBar":
+        setSearchBarValue(e.target.value);
+        break;
       default:
         break;
     }
@@ -125,9 +132,6 @@ const FilterProducts = ({ data }: IFilteredData) => {
       setSelectedPriceRange("");
     }
   };
-  // const handleSearch = () => {
-  //   router.push(`/products?`)
-  // }
   const handleFiltering = () => {
     let queryParams = [];
 
@@ -158,6 +162,9 @@ const FilterProducts = ({ data }: IFilteredData) => {
       const [minPrice, maxPrice] = selectedPriceRange.split("-").map(String);
       queryParams.push(`price_gte=${minPrice}&price_lte=${maxPrice}`);
     }
+    if(searchBarValue) {
+      queryParams.push(`category_like=${searchBarValue}`);
+    }
 
     const queryString = queryParams.join("&");
     if (queryString) {
@@ -166,7 +173,6 @@ const FilterProducts = ({ data }: IFilteredData) => {
     resetFilters();
     setShow(false);
   };
-  // input search only left
   return (
     <div className={style.FilteredMenu}>
       <div className={style.firstSection}>
@@ -193,7 +199,9 @@ const FilterProducts = ({ data }: IFilteredData) => {
           />
           <Offcanvas.Body>
             <FilterNames
-            searchValue={handleFiltering}
+              searchValue={(e) => {
+                filterChoose('searchBar',e)
+              }}
               categoryCounts={categoryCounts}
               brandCounts={brandCounts}
               uniqueAccessories={uniqueAccessories}
@@ -221,7 +229,6 @@ const FilterProducts = ({ data }: IFilteredData) => {
             />
           </Offcanvas.Body>
           <ButtonComp text={"Филтрирај"} handleClick={handleFiltering} />
-
           <button className={style.closeBtn} onClick={filterSideBar}>
             Откажи
           </button>

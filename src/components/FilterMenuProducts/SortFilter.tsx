@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import style from './style.module.css'
-import { IProductProps } from "../Products/Product";
-interface ISortFilter{
-    handleChange:(e:React.ChangeEvent<HTMLSelectElement>) => void;
-    valueTake?:string   
-}
+import { ISortFilter } from "@/types/ProjectTypes";
+
 const SortFilter = ({handleChange,valueTake}:ISortFilter) => {
-    // const [sortNew,setSortNew] = useState('')
-    // console.log(sortNew)
   return (
     <div className={style.sortFilter}>
       {" "}

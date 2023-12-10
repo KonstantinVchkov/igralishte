@@ -1,4 +1,5 @@
-import { IProductProps } from "@/components/Products/Product";
+import { IProductProps } from "@/types/ProjectTypes";
+
 
 export const getPaginatedProducts = (
     products: IProductProps[],

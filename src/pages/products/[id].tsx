@@ -131,7 +131,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const productId = query.id as string;
   const res = await axios.get(`http://localhost:3001/products/${productId}`);
   const otherProductsRes = await axios.get("http://localhost:3001/products");
-  const otherProducts = otherProductsRes.data; // Assuming this is an array
+  const otherProducts = otherProductsRes.data; 
 
   const detailProduct = res.data;
   return {
