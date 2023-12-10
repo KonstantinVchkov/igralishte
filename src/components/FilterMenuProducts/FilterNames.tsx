@@ -3,6 +3,7 @@ import style from "./style.module.css";
 import SearchFilter from "../Header/SearchFilter";
 import ColorPallete from "./ColorPallete";
 import { IFilterNames } from "@/types/ProjectTypes";
+import  router from "next/router";
 
 const FilterNames = ({
   categoryCounts,
@@ -21,6 +22,7 @@ const FilterNames = ({
   handlePriceRangeCheckboxChange,
   handleSizeChange,
   chooseColor,
+  searchValue
 }: IFilterNames) => {
   const [selectedColor, setSelectedColor] = useState("");
 
@@ -31,6 +33,9 @@ const FilterNames = ({
       setSelectedColor(color);
     }
   };
+  // const handleSearch = () => {
+  //   router.push(``)
+  // }
   return (
     <>
       <div className={style.searchBar}>
@@ -38,9 +43,7 @@ const FilterNames = ({
           <input
             type="text"
             placeholder="Пребарувај..."
-            onChange={(e: any) => {
-              console.log(e.target.value);
-            }}
+            onChange={searchValue}
           />
           <img
             src={`/images/fluent_search.svg`}

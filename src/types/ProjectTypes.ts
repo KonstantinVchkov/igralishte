@@ -216,6 +216,7 @@ export interface IFilterNames {
   categoryCounts: Array<{ name: string; count: number }>;
   brandCounts: Array<{ name: string; count: number }>;
   uniqueAccessories: Array<{ name: string }>;
+  searchValue:() => void;
   toggleDropItems: {
     sizes: string[];
     priceRange: Array<{ min?: number; max: number; label: string }>;

@@ -86,13 +86,6 @@
 .fourthSection p {
   margin: 10px 0px;
 }
-.ProductsPage {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  width: 380px;
-  margin: 0px auto;
-}
 .paginatedContainer {
   width: 380px;
   display: flex;
@@ -101,6 +94,13 @@
 .paginatedProduct {
   width: 140px;
   margin: 10px auto;
+}
+.ProductsPage {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 330px;
+  margin: 0 auto;
 }
 
 .SingleProduct {
@@ -111,6 +111,7 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr);
 }
+
 .ImagesSection {
   height: 200px;
   display: flex;

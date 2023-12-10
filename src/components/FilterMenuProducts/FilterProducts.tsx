@@ -125,7 +125,9 @@ const FilterProducts = ({ data }: IFilteredData) => {
       setSelectedPriceRange("");
     }
   };
-
+  // const handleSearch = () => {
+  //   router.push(`/products?`)
+  // }
   const handleFiltering = () => {
     let queryParams = [];
 
@@ -164,7 +166,7 @@ const FilterProducts = ({ data }: IFilteredData) => {
     resetFilters();
     setShow(false);
   };
-
+  // input search only left
   return (
     <div className={style.FilteredMenu}>
       <div className={style.firstSection}>
@@ -191,6 +193,7 @@ const FilterProducts = ({ data }: IFilteredData) => {
           />
           <Offcanvas.Body>
             <FilterNames
+            searchValue={handleFiltering}
               categoryCounts={categoryCounts}
               brandCounts={brandCounts}
               uniqueAccessories={uniqueAccessories}
@@ -215,7 +218,7 @@ const FilterProducts = ({ data }: IFilteredData) => {
               handleBrandCategoryChange={(e) => filterChoose("brand", e)}
               handleAccessoryChange={(e) => filterChoose("accessory", e)}
               handleSizeChange={(e) => filterChoose("size", e)}
-                          />
+            />
           </Offcanvas.Body>
           <ButtonComp text={"Филтрирај"} handleClick={handleFiltering} />
 
