@@ -12,7 +12,7 @@ const BannerBlock = ({
   infoCircleTitle = `Valentines gal Колекција`,
   onClick,
   style: bannerStyle,
-  iconChange
+  iconChange,
 }: IBannerTop) => {
   return (
     <div className={style.TopSection}>
@@ -28,13 +28,25 @@ const BannerBlock = ({
           <img src={imgText} alt="image-text" />
         </div>
       )}
-      <div className={`${style.sparkle} ${midSection || bottom ? `${style.noneSParkle}` : ''}`}>
-        <img src={iconChange ? '/images/red-sparkle.svg' : '/images/gold-sparkle.svg'} alt="" />
+      <div
+        className={`${style.sparkle} ${
+          midSection || bottom ? `${style.noneSParkle}` : ""
+        }`}
+      >
+        <img
+          src={
+            iconChange ? "/images/red-sparkle.svg" : "/images/gold-sparkle.svg"
+          }
+          alt=""
+        />
       </div>
       <div onClick={onClick} className={`${style[bannerStyle]}`}>
         <div className={style.sparkImg}>
-        <img src={midSection || bottom ? `/images/icons/star-icon.png` : ''} className={style.sparkleImg} alt="" />
-
+          <img
+            src={midSection || bottom ? `/images/icons/star-icon.png` : ""}
+            className={style.sparkleImg}
+            alt=""
+          />
         </div>
         <InfoCircle
           title={infoCircleTitle}
@@ -42,6 +54,11 @@ const BannerBlock = ({
           arrowImg={"/images/icons/black-arrow-right.png"}
         />
       </div>
+      {bottom && (
+        <div className={style.blackSparkImg}>
+          <img src="/images/starBlackBottomIcon.svg" alt="" />
+        </div>
+      )}
     </div>
   );
 };

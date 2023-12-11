@@ -1,43 +1,51 @@
-{"giftPrices": {
-  "choosePrice": "Одбери цена на подарок картичка",
-  "prices": [500, 1000, 1500, 2500, 3500,4500,6000]
-},
-    "giftCards": {
-      "cards": [
-        {
-          "id": "1",
-          "title": "Сино Небо Фустани",
-          "img": "/giftImages/firstGiftCard.png",
-          "body": "Подарете ја оваа удобна и стилска маица во сино, идеална за секојдневни прилики или лежерни викенди.",
-          "postId": "1"
-        },
-        {
-          "id": "2",
-          "title": "Празнична Изненадување Картичка",
-          "img": "/giftImages/secondGiftCard.png",
-          "body": "Изненадете го некој со оваа мистериозна гифт картичка што носи вредност и можност за избор на совршен подарок.",
-          "postId": "1"
-        },
-        {
-          "id": "3",
-          "title": "Вечер под Ѕвездите",
-          "img": "/giftImages/firstGiftCard.png",
-          "body": "Оваа гифт картичка е вашиот избор за подарување на посебна вечер. Поклонете ја за незаборавни моменти.",
-          "postId": "1"
-        },
-        {
-          "id": "4",
-          "title": "Авантуристички Дух",
-          "img": "/giftImages/secondGiftCard.png"
-        },
-        {
-          "id": "5",
-          "title": "Гурманско Уживање",
-          "img": "/giftImages/thirdGiftCard.png"
-        }
-      ]
-    },
-
+{
+  "giftPrices": {
+    "choosePrice": "Одбери цена на подарок картичка",
+    "prices": [
+      500,
+      1000,
+      1500,
+      2500,
+      3500,
+      4500,
+      6000
+    ]
+  },
+  "giftCards": {
+    "cards": [
+      {
+        "id": "1",
+        "title": "Сино Небо Фустани",
+        "img": "/giftImages/firstGiftCard.png",
+        "body": "Подарете ја оваа удобна и стилска маица во сино, идеална за секојдневни прилики или лежерни викенди.",
+        "postId": "1"
+      },
+      {
+        "id": "2",
+        "title": "Празнична Изненадување Картичка",
+        "img": "/giftImages/secondGiftCard.png",
+        "body": "Изненадете го некој со оваа мистериозна гифт картичка што носи вредност и можност за избор на совршен подарок.",
+        "postId": "1"
+      },
+      {
+        "id": "3",
+        "title": "Вечер под Ѕвездите",
+        "img": "/giftImages/firstGiftCard.png",
+        "body": "Оваа гифт картичка е вашиот избор за подарување на посебна вечер. Поклонете ја за незаборавни моменти.",
+        "postId": "1"
+      },
+      {
+        "id": "4",
+        "title": "Авантуристички Дух",
+        "img": "/giftImages/secondGiftCard.png"
+      },
+      {
+        "id": "5",
+        "title": "Гурманско Уживање",
+        "img": "/giftImages/thirdGiftCard.png"
+      }
+    ]
+  },
   "profile": [
     {
       "firstName": "Konstantin",
@@ -78,6 +86,22 @@
       "password": "Cipiripilusijana22!",
       "repeatPassword": "Cipiripilusijana22!",
       "id": 5
+    },
+    {
+      "firstName": "Konstantin",
+      "lastName": "Vckov",
+      "email": "kvckov@yahoo.com",
+      "password": "Samsung231!",
+      "repeatPassword": "Samsung231!",
+      "id": 6
+    },
+    {
+      "firstName": "Konstantin",
+      "lastName": "vckov",
+      "email": "kvckov@yahoo.com",
+      "password": "Samsung231!",
+      "repeatPassword": "Samsung231!",
+      "id": 7
     }
   ],
   "products": [
@@ -86,7 +110,7 @@
       "brand": "Pinc Partywear",
       "name": "Azure Summer Tee",
       "category": "Фустани",
-      "deliveryAdress":150,
+      "deliveryAdress": 150,
       "color": "blue",
       "size": [
         "S",
@@ -135,7 +159,7 @@
       "sizeDescription": "Small - Bust: 34-36 inches, Length: 26 inches. Slim fit.",
       "price": 42.99,
       "discount": "50%",
-      "deliveryAdress":150,
+      "deliveryAdress": 150,
       "size": [
         "S",
         "M",
@@ -174,7 +198,7 @@
       "brand": "Pinc Partywear",
       "name": "Vintage Denim Jacket",
       "category": "jacket",
-      "deliveryAdress":150,
+      "deliveryAdress": 150,
       "color": "yellow",
       "size": [
         "S",
@@ -220,7 +244,7 @@
       "brand": "Pinc Partywear",
       "name": "Elegant Silk Blouse",
       "category": "Блузи",
-      "deliveryAdress":150,
+      "deliveryAdress": 150,
       "color": "white",
       "size": [
         "S",
@@ -353,7 +377,7 @@
       "id": "7",
       "brand": "Зш да не",
       "name": "Classic Leather Belt",
-      "deliveryAdress":150,
+      "deliveryAdress": 150,
       "category": "Блузи",
       "accessory": "Каиш",
       "color": "lightblue",
@@ -412,7 +436,7 @@
       "sizeDescription": "Large - Waist: 34-36 inches, Length: 32 inches. Slim fit.",
       "price": 34.99,
       "discount": "50%",
-      "deliveryAdress":150,
+      "deliveryAdress": 150,
       "material": [
         "Stretch Denim"
       ],
@@ -493,7 +517,7 @@
       "sizeDescription": "Medium - Bust: 36-38 inches, Waist: 28-30 inches, Length: 40 inches.",
       "price": 59.99,
       "discount": "50%",
-      "deliveryAdress":150,
+      "deliveryAdress": 150,
       "material": [
         "Velvet"
       ],
@@ -569,8 +593,7 @@
       "id": "12",
       "name": "Ultimate White Sneakers",
       "category": "footwear",
-      "deliveryAdress":150,
-
+      "deliveryAdress": 150,
       "brand": "Factory Girl",
       "size": [
         "42",
@@ -667,8 +690,7 @@
       "sizeDescription": "Small - Waist: 26-28 inches, Length: 32 inches. Flowy fit.",
       "price": 34.99,
       "discount": "50%",
-      "deliveryAdress":150,
-
+      "deliveryAdress": 150,
       "color": "yellow",
       "material": [
         "Rayon",
@@ -713,8 +735,7 @@
       "price": 59.99,
       "discount": "50%",
       "color": "white",
-      "deliveryAdress":150,
-
+      "deliveryAdress": 150,
       "material": [
         "Velvet",
         "Polyester Lining"
@@ -796,8 +817,7 @@
       "price": 19.99,
       "discount": "50%",
       "color": "gray",
-      "deliveryAdress":150,
-
+      "deliveryAdress": 150,
       "material": [
         "Cotton Blend"
       ],
@@ -838,7 +858,7 @@
       "price": 39.99,
       "discount": "50%",
       "color": "lightblue",
-      "deliveryAdress":150,
+      "deliveryAdress": 150,
       "material": [
         "Wool",
         "Acrylic"
@@ -880,7 +900,7 @@
       "price": 49.99,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, repellendus!",
       "discount": "50%",
-      "deliveryAdress":150,
+      "deliveryAdress": 150,
       "color": "black",
       "material": [
         "Polyester",
@@ -964,7 +984,7 @@
       "sizeDescription": "Medium - Chest: 38-40 inches, Length: 28 inches. Comfortable fit.",
       "price": 24.99,
       "discount": "50%",
-      "deliveryAdress":150,
+      "deliveryAdress": 150,
       "color": "green",
       "material": [
         "Cotton Blend"
@@ -1004,7 +1024,7 @@
       ],
       "sizeDescription": "Size 34 - Waist: 34 inches, Inseam: 32 inches. Straight fit.",
       "price": 39.99,
-      "deliveryAdress":150,
+      "deliveryAdress": 150,
       "discount": "50%",
       "color": "pink",
       "material": [
@@ -1083,8 +1103,7 @@
       "brand": "Ред",
       "name": "Trekker Thermal Jacket",
       "category": "jacket",
-      "deliveryAdress":150,
-
+      "deliveryAdress": 150,
       "size": [
         "XL"
       ],
@@ -1167,7 +1186,7 @@
       "name": "Classic Canvas Sneakers",
       "brand": "Наш",
       "category": "footwear",
-      "deliveryAdress":150,
+      "deliveryAdress": 150,
       "size": [
         "39"
       ],
@@ -1208,8 +1227,7 @@
     {
       "id": "27",
       "name": "Ballet Flats Essentials",
-      "deliveryAdress":150,
-
+      "deliveryAdress": 150,
       "brand": "Наш",
       "category": "footwear",
       "size": [
@@ -1295,8 +1313,7 @@
       "name": "Islander Board Shorts",
       "brand": "Urma",
       "category": "Шорцеви",
-      "deliveryAdress":150,
-
+      "deliveryAdress": 150,
       "size": [
         "L"
       ],
@@ -1337,8 +1354,7 @@
       "id": "30",
       "brand": "Candle nest",
       "name": "Блуза армагедон",
-      "deliveryAdress":150,
-
+      "deliveryAdress": 150,
       "category": "Блузи",
       "size": [
         "One Size"
@@ -1380,8 +1396,7 @@
       "id": "31",
       "brand": "Beyond green",
       "name": "Панталони",
-      "deliveryAdress":150,
-
+      "deliveryAdress": 150,
       "category": "Блузи",
       "size": [
         "One Size"
@@ -1430,8 +1445,7 @@
       "sizeDescription": "Large capacity, dimensions: 22 x 12 x 10 inches.",
       "price": 59.99,
       "discount": "50%",
-      "deliveryAdress":150,
-
+      "deliveryAdress": 150,
       "color": "gray",
       "material": [
         "Canvas",
@@ -1464,7 +1478,7 @@
     },
     {
       "id": "33",
-      "deliveryAdress":150,
+      "deliveryAdress": 150,
       "brand": "Candle nest",
       "name": "Black bag",
       "category": "Блузи",
@@ -1506,7 +1520,7 @@
     },
     {
       "id": "34",
-      "deliveryAdress":150,
+      "deliveryAdress": 150,
       "brand": "Candle nest",
       "name": "Black bag",
       "category": "Блузи",
@@ -1548,7 +1562,7 @@
     },
     {
       "id": "35",
-      "deliveryAdress":150,
+      "deliveryAdress": 150,
       "brand": "Candle nest",
       "name": "Black bag",
       "category": "Блузи",
@@ -1590,7 +1604,7 @@
     },
     {
       "id": "36",
-      "deliveryAdress":150,
+      "deliveryAdress": 150,
       "brand": "Candle nest",
       "name": "Black bag",
       "category": "Блузи",
@@ -1657,13 +1671,25 @@
     "firstQuestion": "Прашање број еден?",
     "firstAnswer": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem.",
     "secondAnswer": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem.",
-    "answers":[
-      {"answerThree": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."},
-     {"answerFour": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."},
-      {"answerFive": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."},
-     { "answerSix": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."},
-     { "answerSeven": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."},
-     { "answerEight": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."}
+    "answers": [
+      {
+        "answerThree": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."
+      },
+      {
+        "answerFour": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."
+      },
+      {
+        "answerFive": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."
+      },
+      {
+        "answerSix": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."
+      },
+      {
+        "answerSeven": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."
+      },
+      {
+        "answerEight": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque maiores eos asperiores optio suscipit itaque ex explicabo, velit aut ut voluptas aliquam molestias aperiam, consequatur maxime, id sint quisquam omnis cupiditate fugiat aliquid doloremque dignissimos tempora in? Inventore iste vel culpa laborum doloribus rem alias cumque modi. Fugiat, consectetur exercitationem."
+      }
     ],
     "secondQuestion": "Прашање број два?",
     "thirdQuestion": "Прашање број три",

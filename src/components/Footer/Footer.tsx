@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./style.module.css";
 import Link from "next/link";
 import ButtonComp from "../ButtonComponent/ButtonComp";
 
 const Footer = () => {
+  const [memberValue, setEmailValue] = useState("");
+
   const handleJoin = () => {
     console.log("mail submitted");
+    if (memberValue) {
+      localStorage.setItem("userEmail", memberValue);
+      setEmailValue('')
+    }
   };
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmailValue(e.target.value);
+  };
+
   return (
     <div className={style.Footer}>
       <div className={style.textSection}>
@@ -18,7 +28,7 @@ const Footer = () => {
       </div>
       <div className={style.infoSection}>
         <label htmlFor="email">E-mail Адреса:</label>
-        <input type="text" />
+        <input type="text" value={memberValue} onChange={handleEmailChange} />
         <div className={style.goldenBtn}>
           <ButtonComp text={"Зачлени се"} handleClick={handleJoin} />
         </div>
@@ -53,7 +63,10 @@ const Footer = () => {
             src="/images/icons/instagram-icon.png"
             alt="instagram-social-media"
           />{" "}
-          <Link href={"https://www.instagram.com/igraliste.sk/"} target="_blank">
+          <Link
+            href={"https://www.instagram.com/igraliste.sk/"}
+            target="_blank"
+          >
             <span className="ml-2">igralishte.sk</span>
           </Link>
         </div>

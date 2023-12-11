@@ -42,7 +42,9 @@ const RegisterForm = ({ onRegisterSuccess }: IRegisterForm) => {
 
   return (
     <div className={style.firstSideReg}>
-      <LogoComponent />
+      <div className={style.logoRegisterComp}>
+        <LogoComponent />
+      </div>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <div className={style.formGroup}>
           <label htmlFor="firstName">Име</label>

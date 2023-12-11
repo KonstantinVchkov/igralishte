@@ -4,22 +4,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 360px;
-  height: 1186px;
   flex-direction: column;
+  height: 1186px;
   background-color: #fff6f6;
-  margin: 0px auto;
 }
 .firstSideReg form {
   display: flex;
   flex-direction: column;
-  margin: 5px 5px;
-  width: 100%;
+  margin: 5px auto;
+  width: 360px;
   height: 100%;
 }
-.firstSideReg form div {
-  margin: 5px auto;
-  width: 100%;
+.firstSideReg form .formGroup {
+  margin: 15px auto;
+  width: 300px;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 .firstSideReg form label {
   padding-left: 17px;
@@ -28,9 +32,10 @@
   border: 1px solid #a9a9a9;
   padding: 5px;
   border-radius: 5px;
-  margin: 5px 15px;
+  margin: 5px auto;
+  height: 40px;
   background-color: inherit;
-  width: 100%;
+  width: 300px;
 }
 
 .registerPage button {
@@ -81,10 +86,9 @@
   letter-spacing: 0em;
   text-align: left;
 }
-.logoUp{
+.logoUp {
   position: absolute;
   top: 10%;
-
 }
 .ProfileSetup form input,
 .ProfileSetup form textarea {
@@ -95,7 +99,7 @@
   padding: 5px;
   margin: 15px 5px;
 }
-.profileButtons{
+.profileButtons {
   display: flex;
   align-items: center;
   margin: 10px 5px;
@@ -104,7 +108,7 @@
   text-decoration: underline;
   margin-left: 5px;
 }
-.btnDone {
+.btnDone,.formGroup .submitButton {
   width: 220px;
   height: 40px;
   border-radius: 13px;
@@ -116,6 +120,9 @@
   line-height: 18px;
   letter-spacing: 0em;
   text-align: center;
+}
+.logoRegisterComp{
+  margin: 20px auto;
 }
 .ProfileSetup form textarea {
   height: 80px;

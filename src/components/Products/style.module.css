@@ -112,6 +112,7 @@
   grid-template-columns: repeat(1, 1fr);
 }
 
+
 .ImagesSection {
   height: 200px;
   display: flex;

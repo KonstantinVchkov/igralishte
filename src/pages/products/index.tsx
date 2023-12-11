@@ -47,8 +47,9 @@ const Products = ({
   );
 
   const renderProduct = (product: IProductProps, index: number) => {
-    const isSingle = index % 7 === 2;
-    const isFourGrid = index > 2 && (index - 3) % 7 >= 0 && (index - 3) % 7 < 4;
+    const isSingle = index % 5 === 2;
+    const isFourGrid = index >= 3 && (index - 3) % 7 < 4;
+
     let productComponent = (
       <Product
         key={product.id}
