@@ -2,7 +2,6 @@ import React from "react";
 import style from "./style.module.css";
 import { IContactComponent } from "@/types/ProjectTypes";
 import ButtonComp from "@/components/ButtonComponent/ButtonComp";
-import Link from "next/link";
 import router from "next/router";
 
 const ContactusComponent = ({

@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import SubmissionModal from "./modals/SubmissionModal";
 import OrderFormModal from "./modals/OrderFormModal";
-interface IOrderForm {
-  popUp: boolean;
-  handleClose: () => void;
-}
+import { IOrderForm } from "@/types/ProjectTypes";
 
 const OrderForm = ({ popUp, handleClose }: IOrderForm) => {
   const [values, setValues] = useState({

@@ -1,44 +1,41 @@
-import React, { useState } from 'react'
-import style from '../components/Header/style.module.css'
-import { GetServerSideProps } from 'next'
-import axios from 'axios'
-import { IProductProps } from '@/types/ProjectTypes'
-import SearchFilter from '@/components/Header/SearchFilter'
+import React, { useEffect, useState } from "react";
+import style from "../components/Header/style.module.css";
+import { GetServerSideProps, NextPage } from "next";
+import axios from "axios";
+import { IProductProps, ISearchProducts } from "@/types/ProjectTypes";
+import SearchFilter from "@/components/Header/SearchFilter";
 
 
-interface ISearchProducts {
-    dataProducts:IProductProps[]
-}
-const SearchProducts = ({dataProducts}:ISearchProducts) => {
-  const [searchQuery, setSearchQuery] = useState('');
+const SearchProducts:NextPage<ISearchProducts> = ({ dataProducts }) => {
 
-  // Fetch data based on searchQuery
-  // You can use useEffect here to fetch data when searchQuery changes
-  // Or call a function to fetch data directly in handleSearchSubmit
-
-  const handleSearchSubmit = (query: string) => {
-    setSearchQuery(query);
-    // Fetch data based on `query` here if not using useEffect
-  };
+  const [filterProducts,setFilteredProducts] = useState<IProductProps[]>([])
+  useEffect(() => {
+    // const filter = dataProducts
+    setFilteredProducts(dataProducts)
+  },[dataProducts])
   return (
     <div className={style.searchProductsHamb}>
-        <SearchFilter show={false} products={dataProducts} handleClose={function (): void {
-        throw new Error('Function not implemented.')
-      } } />
+      <SearchFilter
+        show={false}
+        products={filterProducts}
+        handleClose={() => console.log("close button clicked")}
+        // handleFilter={handleFilter}
+      />
     </div>
-  )
-}
+  );
+};
 
-export default SearchProducts
 
-export const getServerSideProps:GetServerSideProps = async (query) => {
-  console.log('all queries:',query)
-  
-    const res = 'http://localhost:3001/products'
-    const dataProducts = (await axios.get(res)).data
-    return{
-        props:{
-            dataProducts
-        }
-    }
-}
+export default SearchProducts;
+
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+  console.log("all queries:", query.category);
+
+  const res = `http://localhost:3001/products?category=${query.category}`;
+  const dataProducts = (await axios.get(res)).data;
+  return {
+    props: {
+      dataProducts,
+    },
+  };
+};

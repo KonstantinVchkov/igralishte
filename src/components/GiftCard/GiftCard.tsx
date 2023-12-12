@@ -1,11 +1,7 @@
 import React from "react";
 import style from "./style.module.css";
-export interface IGiftCard {
-  img: string;
-  imgText: string;
-  choosePrice?: string;
-  prices?: number[];
-}
+import { IGiftCard } from "@/types/ProjectTypes";
+
 
 const GiftCard = ({ img }: IGiftCard) => {
   return (

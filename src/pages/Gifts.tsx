@@ -1,9 +1,10 @@
-import GiftCard, { IGiftCard } from "@/components/GiftCard/GiftCard";
+import GiftCard from "@/components/GiftCard/GiftCard";
 import axios from "axios";
 import { GetStaticProps, NextPage } from "next";
 import React from "react";
 import style from "../components/GiftCard/style.module.css";
 import Prices from "@/components/GiftCard/Prices";
+import { IGiftCard } from "@/types/ProjectTypes";
 export interface IGiftsPage {
   giftCardsData: IGiftCard[];
   giftPrices: IGiftCard;

@@ -9,6 +9,7 @@ import SortFilter from "./SortFilter";
 import ButtonComp from "../ButtonComponent/ButtonComp";
 import FilterNames from "./FilterNames";
 import { IFilteredData } from "@/types/ProjectTypes";
+import { transformNameProperty } from "@/utils/transformToString";
 
 const FilterProducts = ({ data }: IFilteredData) => {
   const [show, setShow] = useState(false);
@@ -173,6 +174,10 @@ const FilterProducts = ({ data }: IFilteredData) => {
     resetFilters();
     setShow(false);
   };
+  const transformedCategoryCounts = transformNameProperty(categoryCounts);
+  const transformedBrandCounts = transformNameProperty(brandCounts);
+  const transformedUniqueAccessories = transformNameProperty(uniqueAccessories);
+  const transformedColorsCounts = transformNameProperty(colors)
   return (
     <div className={style.FilteredMenu}>
       <div className={style.firstSection}>
@@ -202,9 +207,9 @@ const FilterProducts = ({ data }: IFilteredData) => {
               searchValue={(e) => {
                 filterChoose('searchBar',e)
               }}
-              categoryCounts={categoryCounts}
-              brandCounts={brandCounts}
-              uniqueAccessories={uniqueAccessories}
+              categoryCounts={transformedCategoryCounts}
+              brandCounts={transformedBrandCounts}
+              uniqueAccessories={transformedUniqueAccessories}
               toggleDropItems={{
                 sizes: selectedCategories,
                 priceRange: [
@@ -214,7 +219,7 @@ const FilterProducts = ({ data }: IFilteredData) => {
                   { label: "Над 80$ Ден", max: 300 },
                 ],
               }}
-              colors={colors}
+              colors={transformedColorsCounts}
               selectedCategories={selectedCategories}
               brandSelectedCategories={brandSelectedCategories}
               accessoriesSelectedCategories={accessoriesSelectedCategories}

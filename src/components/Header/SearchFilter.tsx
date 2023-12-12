@@ -8,13 +8,19 @@ import { IProductProps, ISearchMenu } from "@/types/ProjectTypes";
 import router from "next/router";
 import axios from "axios";
 import { GetServerSideProps } from "next";
-const SearchFilter = ({ show, handleClose,products }: ISearchMenu) => {
-  console.log('this are the products',products)
+import Product from "../Products/Product";
+const SearchFilter = ({
+  show,
+  handleClose,
+  products,
+  handleFilter,
+}: ISearchMenu) => {
+  console.log("Products in SearchFilter:", products);
   const [searchedProduct, setSearchProducts] = useState<string>("");
-  // const [products, setProducts] = useState<IProductProps[]>([]);
-  // console.log(products);
   const searchProducts = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchProducts(e.target.value);
+    const searchTerm = e.target.value;
+    setSearchProducts(searchTerm);
+    // handleFilter?.(searchTerm);
   };
 
   const submitSearchproducts = (e: any) => {
@@ -23,18 +29,6 @@ const SearchFilter = ({ show, handleClose,products }: ISearchMenu) => {
       `http://localhost:3000/searchProducts?category=${searchedProduct}`
     );
   };
-  // useEffect(() => {
-  //   const fetchProducts = async () => {
-  //     try {
-  //       const response = await axios.get("http://localhost:3001/products");
-
-  //       setProducts(response.data);
-  //     } catch (error) {
-  //       console.error("Error fetching products:", error);
-  //     }
-  //   };
-  //   fetchProducts();
-  // }, []);
   return (
     <>
       <Offcanvas
@@ -43,7 +37,7 @@ const SearchFilter = ({ show, handleClose,products }: ISearchMenu) => {
         placement="end"
         className={style.fullWidthOffcanvas}
       >
-        <Offcanvas.Body>
+        <Offcanvas.Body className="color-black">
           <Form onSubmit={submitSearchproducts}>
             <Form.Group className="d-flex align-items-center justify-content-center">
               <FontAwesomeIcon
@@ -61,6 +55,8 @@ const SearchFilter = ({ show, handleClose,products }: ISearchMenu) => {
               />
             </Form.Group>
           </Form>
+          {products &&
+            products.map((item) => <Product key={item.id} {...item} />)}
         </Offcanvas.Body>
       </Offcanvas>
     </>
@@ -68,11 +64,3 @@ const SearchFilter = ({ show, handleClose,products }: ISearchMenu) => {
 };
 
 export default SearchFilter;
-
-export const getServerSideProps:GetServerSideProps = async () => {
-  return{
-    props:{
-      
-    }
-  }
-}

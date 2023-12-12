@@ -18,7 +18,6 @@ export default function App({ Component, pageProps, }: AppProps) {
   ];
   const showHeaderAndFooter = !hideOnRoutes.includes(pathname);
   const showBreadCrumb = breadCrumbPages.includes(pathname);
-  // const globalWidth = 
   return (
     <div>
       {showHeaderAndFooter && <Header />}

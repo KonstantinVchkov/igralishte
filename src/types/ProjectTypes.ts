@@ -30,8 +30,8 @@ export interface IHamMenu {
 
 export interface ISearchMenu {
   show: boolean;
-  products?:IProductProps[]
-  // handleChange:(e:React.ChangeEvent<HTMLInputElement>) => void;
+  products?: IProductProps[];
+  handleFilter?: (searchTerm: string) => void;
   handleClose: () => void;
 }
 export interface ReturnType<T> {
@@ -164,6 +164,59 @@ export interface IContactComponent {
   workTime: string;
   mobNumber: string;
 }
+export interface ISearchProducts {
+  dataProducts: IProductProps[];
+}
+export interface IRenderPagination {
+  itemsPerPage: number;
+  totalItems: number;
+  paginate: (number: number) => void;
+  currentPage: number;
+}
+export interface IInfoCircle {
+  title: string;
+  paragraph: string;
+  arrowImg: string;
+}
+export interface IOurWork {
+  aboutWorkTitle:string;
+  aboutWorkText:string;
+  imgWork:string;
+}
+export interface IOurStory {
+  aboutStoryTitle:string;
+  aboutStoryText:string;
+  imgStory:string;
+}
+export interface IOrderFormModal {
+  showPopUp: boolean;
+  closeModal: () => void;
+  submitForm: () => void;
+  handlingChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  firstName: string;
+  lastName: string;
+  number: number;
+  email: string;
+  adress: string;
+  submitted: boolean;
+}
+export interface IGiftCard {
+  img: string;
+  imgText: string;
+  choosePrice?: string;
+  prices?: number[];
+}
+export interface IRegisterForm {
+  onRegisterSuccess: () => void;
+}
+export interface IOrderForm {
+  popUp: boolean;
+  handleClose: () => void;
+}
+export interface ISubmissionModal {
+  submissionPopUp: boolean;
+  handleClick: () => void;
+}
 export interface IProductProps {
   id: string;
   deliveryAdress?: number;
@@ -176,6 +229,10 @@ export interface IProductProps {
   size: string;
   color: string;
   click: () => void;
+}
+export interface IButtonComponent {
+  text: string;
+  handleClick: () => void;
 }
 export interface ICustomerBar {
   cartAmount: number;
@@ -213,8 +270,9 @@ export interface IFilterCheckbox {
   checked: boolean;
 }
 export interface IFilterNames {
-  categoryCounts: Array<{ name: string; count: number }>;
-  brandCounts: Array<{ name: string; count: number }>;
+  categoryCounts: Array<{ name: string | number | undefined; count?: number }>;
+  brandCounts: Array<{ name: string | number | undefined; count?: number }>;
+
   uniqueAccessories: Array<{ name: string }>;
   searchValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
   toggleDropItems: {
@@ -256,5 +314,5 @@ export interface handleNav {
   category?: string;
   accessory?: string;
   id?: string;
-  other?:string;
+  other?: string;
 }

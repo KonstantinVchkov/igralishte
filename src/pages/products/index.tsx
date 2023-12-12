@@ -10,7 +10,6 @@ import AnnouncementBar from "@/components/Header/AnnouncementBar";
 import Pagination from "@/components/Pagination/Pagination";
 import { getPaginatedProducts } from "@/utils/paginationFunction";
 import { IProductsPage } from "@/types/ProjectTypes";
-import SearchFilter from "@/components/Header/SearchFilter";
 const Products = ({
   productsData,
   filteredCatFromHamMenu,

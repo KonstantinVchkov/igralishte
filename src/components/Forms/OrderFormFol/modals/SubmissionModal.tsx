@@ -1,11 +1,9 @@
 import ButtonComp from "@/components/ButtonComponent/ButtonComp";
+import { ISubmissionModal } from "@/types/ProjectTypes";
 import Link from "next/link";
 import React from "react";
-import { Button, Modal } from "react-bootstrap";
-export interface ISubmissionModal {
-  submissionPopUp: boolean;
-  handleClick: () => void;
-}
+import {  Modal } from "react-bootstrap";
+
 const SubmissionModal = ({
   submissionPopUp,
   handleClick,

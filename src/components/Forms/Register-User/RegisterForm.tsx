@@ -3,12 +3,10 @@ import style from "./style.module.css";
 import LogoComponent from "@/components/Header/logo";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { FormValues } from "@/types/ProjectTypes";
+import { FormValues, IRegisterForm } from "@/types/ProjectTypes";
 import axios from "axios";
 import { schema } from "@/utils/validationForm";
-interface IRegisterForm {
-  onRegisterSuccess: () => void;
-}
+
 const RegisterForm = ({ onRegisterSuccess }: IRegisterForm) => {
   const {
     register,

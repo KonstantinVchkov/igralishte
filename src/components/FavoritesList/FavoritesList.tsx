@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Product, { IProductProps } from "../Products/Product";
+import Product from "../Products/Product";
 import style from "./style.module.css";
 import CustomerInteractionBar from "../ShoppingControlsMenu/CustomerInteractionBar";
+import { IProductProps } from "@/types/ProjectTypes";
 const FavoritesList = () => {
   const [favorites, setFavorites] = useState<IProductProps[]>([]);
   const [cartItems,setItemsInCart] = useState([])

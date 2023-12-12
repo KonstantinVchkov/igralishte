@@ -1,10 +1,7 @@
 import React from 'react'
 import style from "./style.module.css"
-export interface IOurWork {
-  aboutWorkTitle:string;
-  aboutWorkText:string;
-  imgWork:string;
-}
+import { IOurWork } from '@/types/ProjectTypes'
+
 const OurWork = ({aboutWorkTitle,aboutWorkText,imgWork}:IOurWork) => {
   return (
     <div className={style.secondSection}>

@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./style.module.css";
-import { IGiftCard } from "./GiftCard";
+import { IGiftCard } from "@/types/ProjectTypes";
+
 
 const Prices = ({ choosePrice, prices }: IGiftCard) => {
   return (

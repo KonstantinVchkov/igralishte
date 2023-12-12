@@ -1,10 +1,6 @@
+import { IRenderPagination } from "@/types/ProjectTypes";
 import style from "./style.module.css";
-interface IRenderPagination {
-  itemsPerPage: number;
-  totalItems: number;
-  paginate: (number: number) => void;
-  currentPage: number;
-}
+
 const Pagination = ({
   itemsPerPage,
   totalItems,

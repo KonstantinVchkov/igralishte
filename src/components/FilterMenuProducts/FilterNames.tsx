@@ -58,35 +58,41 @@ const FilterNames = ({
       <div className={style.FilterType}>
         <p>Категорија</p>
         <ul>
-          {categoryCounts.map((category) => (
-            <li key={category.name}>
-              <input
-                type="checkbox"
-                value={category.name}
-                onChange={(e) => {
-                  handleCategoryChange(e);
-                }}
-                checked={selectedCategories.includes(category.name)}
-              />
-              {category.name} <span>({category.count})</span>
-            </li>
-          ))}
+          {categoryCounts.map(
+            (category) =>
+              typeof category.name === "string" && (
+                <li key={category.name}>
+                  <input
+                    type="checkbox"
+                    value={category.name}
+                    onChange={(e) => {
+                      handleCategoryChange(e);
+                    }}
+                    checked={selectedCategories.includes(category.name)}
+                  />
+                  {category.name} <span>({category.count})</span>
+                </li>
+              )
+          )}
         </ul>
         <p>Брендови</p>
         <ul>
-          {brandCounts.map((category) => (
-            <li key={category.name}>
-              <input
-                type="checkbox"
-                value={category.name}
-                onChange={(e) => {
-                  handleBrandCategoryChange(e);
-                }}
-                checked={brandSelectedCategories.includes(category.name)}
-              />{" "}
-              {category.name} <span>({category.count})</span>
-            </li>
-          ))}
+          {brandCounts.map(
+            (category) =>
+              typeof category.name === "string" && (
+                <li key={category.name}>
+                  <input
+                    type="checkbox"
+                    value={category.name}
+                    onChange={(e) => {
+                      handleBrandCategoryChange(e);
+                    }}
+                    checked={brandSelectedCategories.includes(category.name)}
+                  />{" "}
+                  {category.name} <span>({category.count})</span>
+                </li>
+              )
+          )}
         </ul>
         <p>Аксесоари</p>
         <ul>

@@ -1,5 +1,5 @@
 import { GetServerSideProps, NextPage } from "next";
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import style from "../../components/Products/style.module.css";
 import ProductDetailCard from "@/components/Products/ProductdetailCard";
 import axios from "axios";

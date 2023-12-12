@@ -2,18 +2,8 @@ import React from "react";
 import { Button, Modal } from "react-bootstrap";
 import style from "../style.module.css";
 import ButtonComp from "@/components/ButtonComponent/ButtonComp";
-interface IOrderFormModal {
-  showPopUp: boolean;
-  closeModal: () => void;
-  submitForm: () => void;
-  handlingChange: (e:React.ChangeEvent<HTMLInputElement>) => void;
-  firstName: string;
-  lastName: string;
-  number: number;
-  email: string;
-  adress: string;
-  submitted: boolean;
-}
+import { IOrderFormModal } from "@/types/ProjectTypes";
+
 const OrderFormModal = ({
   showPopUp,
   closeModal,
