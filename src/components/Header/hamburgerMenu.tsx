@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
 import style from "./style.module.css";
-import { IHamMenu, OpenSections } from "@/types/ProjectTypes";
+import { IHamMenu, OpenSections, handleNav } from "@/types/ProjectTypes";
 import NavBar from "./NavBar";
 import { Offcanvas } from "react-bootstrap";
 import { toggleDropItems } from "./menuItemsData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronDown,
-  faChevronUp,
-  faUser,
-} from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import router from "next/router";
 import Link from "next/link";
 
@@ -31,21 +27,20 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
   };
 
   const handleNavigation = (
-    type: "brand" | "category" | "accessory",
-    item: { name?: string; category?: string; accessory?: string; id?: string }
+    type: "brand" | "category" | "accessory" | "other",
+    item: handleNav
   ) => {
     const itemName = item.name ?? "";
     const itemCategory = item.category ?? "";
     const itemId = item.id ?? "";
     const itemAccessory = item.accessory ?? "";
-
     let basePath = "/";
 
     if (type === "brand") {
       basePath = "/local_designers";
     } else if (type === "category" || type === "accessory") {
       basePath = "/products";
-    }
+    } 
 
     let itemPath = basePath;
 
@@ -57,6 +52,8 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
       itemPath = `${basePath}?category=${encodeURIComponent(itemCategory)}`;
     } else if (type === "accessory") {
       itemPath = `${basePath}?accessory=${encodeURIComponent(itemAccessory)}`;
+    } else if (type === "other") {
+      itemPath = `http://localhost:3000/Gifts`;
     }
 
     if (itemName === "Види ги сите" || itemCategory === "Види ги сите") {
@@ -75,9 +72,11 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
     checkLoginStatus();
   }, []);
   const logout = () => {
-    localStorage.removeItem('user')
-    setLoggedIn(false)
-  }
+    localStorage.removeItem("user");
+    setLoggedIn(false);
+    router.push('/')
+    toggleHamMenu()
+  };
 
   return (
     <Offcanvas
@@ -205,8 +204,12 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
             )}
             <ul>
               {toggleDropItems.other.map((item, index) => (
-                <li className="m-2 cursor-pointer" key={index}>
-                  {item}
+                <li onClick={() => {
+                  handleNavigation('other',{
+                    name: item.name
+                  })
+                }} className="m-2 cursor-pointer" key={index}>
+                  {item.name}
                 </li>
               ))}
             </ul>
@@ -235,7 +238,13 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
                 : "http://localhost:3000/register"
             }
           >
-            {loggedIn ? <span>Мој Профил / <span onClick={logout}>Одјави се</span></span> : <span>Регистрирај се</span>}
+            {loggedIn ? (
+              <span>
+                Мој Профил / <span onClick={logout}>Одјави се</span>
+              </span>
+            ) : (
+              <span>Регистрирај се</span>
+            )}
           </Link>
           {!loggedIn && <span> / </span>}
           {!loggedIn && (

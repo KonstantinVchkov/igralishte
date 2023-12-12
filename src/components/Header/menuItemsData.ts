@@ -34,5 +34,9 @@ export const toggleDropItems = {
     { accessory: "Накит" },
   ],
   sizes: ["XS", "S", "M", "L", "XL"],
-  other: ["LifeStyle", "Подари Картичка*", "Попуст"],
+  other: [
+    { id: 1, name: "LifeStyle" },
+    { id: 2, name: "Подари Картичка*" },
+    { id: 3, name: "Попуст" },
+  ],
 };
