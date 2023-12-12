@@ -1,20 +1,40 @@
-import React, { useState } from "react";
-import {  Offcanvas, Form } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Offcanvas, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import style from "./style.module.css";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import FontAwesomeIcon
-import { ISearchMenu } from "@/types/ProjectTypes";
+import { IProductProps, ISearchMenu } from "@/types/ProjectTypes";
 import router from "next/router";
-const SearchFilter = ({ show, handleClose }: ISearchMenu) => {
+import axios from "axios";
+import { GetServerSideProps } from "next";
+const SearchFilter = ({ show, handleClose,products }: ISearchMenu) => {
+  console.log('this are the products',products)
   const [searchedProduct, setSearchProducts] = useState<string>("");
-  const searchProducts = (e:React.ChangeEvent<HTMLInputElement>) => {
-      setSearchProducts(e.target.value)
-  }
-  const submitSearchproducts = (e:any) => {
-    e.preventDefault()
-    router.push(`http://localhost:3000/searchProducts?category=${searchedProduct}`)
-  }
+  // const [products, setProducts] = useState<IProductProps[]>([]);
+  // console.log(products);
+  const searchProducts = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchProducts(e.target.value);
+  };
+
+  const submitSearchproducts = (e: any) => {
+    e.preventDefault();
+    router.push(
+      `http://localhost:3000/searchProducts?category=${searchedProduct}`
+    );
+  };
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     try {
+  //       const response = await axios.get("http://localhost:3001/products");
+
+  //       setProducts(response.data);
+  //     } catch (error) {
+  //       console.error("Error fetching products:", error);
+  //     }
+  //   };
+  //   fetchProducts();
+  // }, []);
   return (
     <>
       <Offcanvas
@@ -48,3 +68,11 @@ const SearchFilter = ({ show, handleClose }: ISearchMenu) => {
 };
 
 export default SearchFilter;
+
+export const getServerSideProps:GetServerSideProps = async () => {
+  return{
+    props:{
+      
+    }
+  }
+}

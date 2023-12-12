@@ -10,6 +10,7 @@ import AnnouncementBar from "@/components/Header/AnnouncementBar";
 import Pagination from "@/components/Pagination/Pagination";
 import { getPaginatedProducts } from "@/utils/paginationFunction";
 import { IProductsPage } from "@/types/ProjectTypes";
+import SearchFilter from "@/components/Header/SearchFilter";
 const Products = ({
   productsData,
   filteredCatFromHamMenu,
@@ -45,7 +46,6 @@ const Products = ({
     currentPage,
     itemsPerPage
   );
-
   const renderProduct = (product: IProductProps, index: number) => {
     const isSingle = index % 5 === 2;
     const isFourGrid = index >= 3 && (index - 3) % 7 < 4;

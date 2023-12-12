@@ -31,6 +31,7 @@ export interface IHamMenu {
 
 export interface ISearchMenu {
   show: boolean;
+  products?:IProductProps[]
   // handleChange:(e:React.ChangeEvent<HTMLInputElement>) => void;
   handleClose: () => void;
 }
