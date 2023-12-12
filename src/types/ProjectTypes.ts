@@ -6,7 +6,6 @@ export interface Props {
   children: React.ReactNode;
 }
 
-
 export interface IAuthentication {
   email: string;
   password: string;
@@ -80,7 +79,7 @@ export interface IBannerTop {
   infoCircleTitle?: string;
   infoCircleParagraph?: string;
   style: any;
-  iconChange?:boolean;
+  iconChange?: boolean;
   onClick: () => void;
 }
 export interface IFaqComp {
@@ -160,13 +159,13 @@ export interface IContactComponent {
   title: string;
   subtitle: string;
   contactInfo: string;
-  number:string;
-  workTime:string;
-  mobNumber:string;
+  number: string;
+  workTime: string;
+  mobNumber: string;
 }
 export interface IProductProps {
   id: string;
-  deliveryAdress?:number;
+  deliveryAdress?: number;
   images: string[];
   price: string;
   name: string;
@@ -202,21 +201,21 @@ export interface IBrandDetail {
   otherProducts: IProductProps[];
 }
 export interface IColors {
-  colorPicked:boolean;
+  colorPicked: boolean;
   color: string;
   colorPicker: (e: any) => void;
 }
 export interface IFilterCheckbox {
-  label: string; 
-  count: number; 
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void; 
-  checked: boolean; 
+  label: string;
+  count: number;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  checked: boolean;
 }
 export interface IFilterNames {
   categoryCounts: Array<{ name: string; count: number }>;
   brandCounts: Array<{ name: string; count: number }>;
   uniqueAccessories: Array<{ name: string }>;
-  searchValue:(e:React.ChangeEvent<HTMLInputElement>) => void;
+  searchValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
   toggleDropItems: {
     sizes: string[];
     priceRange: Array<{ min?: number; max: number; label: string }>;
@@ -245,9 +244,16 @@ export type OpenSections = {
   Accessories: string;
 };
 export interface IShopCart {
-  otherProducts:IProductProps[]
+  otherProducts: IProductProps[];
 }
-export interface ISortFilter{
-  handleChange:(e:React.ChangeEvent<HTMLSelectElement>) => void;
-  valueTake?:string   
+export interface ISortFilter {
+  handleChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  valueTake?: string;
+}
+export interface handleNav {
+  name?: string;
+  category?: string;
+  accessory?: string;
+  id?: string;
+  other?:string;
 }
