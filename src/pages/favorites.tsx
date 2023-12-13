@@ -7,6 +7,7 @@ import axios from "axios";
 import Pagination from "@/components/Pagination/Pagination";
 import style from "../components/Products/style.module.css";
 import { IProductProps } from "@/types/ProjectTypes";
+import Link from "next/link";
 
 interface IFavorites {
   otherProducts: IProductProps[];
@@ -21,12 +22,14 @@ const Favorites: NextPage<IFavorites> = ({ otherProducts }) => {
     itemsPerPage
   );
   return (
-    <>
+    <div className={style.FavoritesPage}>
       <FavoritesList />
       <div className={style.paginatedContainer}>
         {paginatedProducts.map((product) => (
           <div className={style.paginatedProduct} key={product.id}>
-            <Product {...product} />
+            <Link href={`http://localhost:3000/products/${product.id}`}>
+              <Product {...product} />
+            </Link>
           </div>
         ))}
         <Pagination
@@ -36,7 +39,7 @@ const Favorites: NextPage<IFavorites> = ({ otherProducts }) => {
           currentPage={currentPage}
         />
       </div>
-    </>
+    </div>
   );
 };
 

@@ -8,6 +8,7 @@ import { IBrandDetail } from "@/types/ProjectTypes";
 import { getPaginatedProducts } from "@/utils/paginationFunction";
 import Product from "@/components/Products/Product";
 import Pagination from "@/components/Pagination/Pagination";
+import Link from "next/link";
 
 const LocalDesignerDetail: NextPage<IBrandDetail> = ({
   brandDetail,
@@ -31,7 +32,9 @@ const LocalDesignerDetail: NextPage<IBrandDetail> = ({
       <div className={style.paginatedContainer}>
         {paginatedProducts.map((product) => (
           <div className={style.paginatedProduct} key={product.id}>
-            <Product {...product} />
+            <Link href={`http://localhost:3000/products/${product.id}`}>
+              <Product {...product} />
+            </Link>
           </div>
         ))}
         <Pagination

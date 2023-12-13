@@ -1,14 +1,10 @@
-import ContactusComponent, {
-  IContactComponent,
-} from "@/components/Info-Components/ContactUs/ContactUs";
+import ContactusComponent from "@/components/Info-Components/ContactUs/ContactUs";
+import { IContactPage } from "@/types/ProjectTypes";
 import axios from "axios";
 import { GetStaticProps, NextPage } from "next";
 import React from "react";
-interface IContactPage {
-  contactRes: IContactComponent;
-}
-const ContactUs: NextPage<IContactPage> = ({ contactRes }) => {
 
+const ContactUs: NextPage<IContactPage> = ({ contactRes }) => {
   return (
     <div>
       <ContactusComponent

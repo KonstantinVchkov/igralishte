@@ -7,8 +7,9 @@ import { getPaginatedProducts } from "@/utils/paginationFunction";
 import style from "../components/Products/style.module.css";
 import Pagination from "@/components/Pagination/Pagination";
 import { IShopCart } from "@/types/ProjectTypes";
+import Link from "next/link";
 
-const ShoppingCart: NextPage<IShopCart> = ({otherProducts}) => {
+const ShoppingCart: NextPage<IShopCart> = ({ otherProducts }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
@@ -18,12 +19,14 @@ const ShoppingCart: NextPage<IShopCart> = ({otherProducts}) => {
     itemsPerPage
   );
   return (
-    <div>
+    <div className={style.orderPage}>
       <ShopCart />
       <div className={style.paginatedContainer}>
         {paginatedProducts.map((product) => (
           <div className={style.paginatedProduct} key={product.id}>
-            <Product {...product} />
+            <Link href={`http://localhost:3000/products/${product.id}`}>
+              <Product {...product} />
+            </Link>
           </div>
         ))}
         <Pagination

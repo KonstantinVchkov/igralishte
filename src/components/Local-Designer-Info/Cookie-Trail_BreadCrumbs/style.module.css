@@ -1,5 +1,7 @@
 .containerClass {
     display: flex;
+    width: 360px;
+    margin: 0px auto;
 }
 
 .containerClass span {

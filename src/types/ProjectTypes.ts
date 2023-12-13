@@ -164,6 +164,9 @@ export interface IContactComponent {
   workTime: string;
   mobNumber: string;
 }
+export interface IContactPage {
+  contactRes: IContactComponent;
+}
 export interface ISearchProducts {
   dataProducts: IProductProps[];
 }

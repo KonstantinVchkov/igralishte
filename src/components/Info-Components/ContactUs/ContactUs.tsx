@@ -1,8 +1,9 @@
 import React from "react";
 import style from "./style.module.css";
-import { IContactComponent } from "@/types/ProjectTypes";
+
 import ButtonComp from "@/components/ButtonComponent/ButtonComp";
 import router from "next/router";
+import { IContactComponent } from "@/types/ProjectTypes";
 
 const ContactusComponent = ({
   PageTitle,

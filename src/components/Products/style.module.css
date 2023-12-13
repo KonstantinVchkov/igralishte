@@ -3,6 +3,10 @@
   width: 360px;
   margin: 0px auto;
 }
+.orderPage,.FavoritesPage {
+  width: 360px;
+  margin: 0px auto;
+}
 .firstSection,
 .secondSection,
 .thirdSection,
@@ -71,6 +75,7 @@
   background-color: #666560;
   color: #c2c2c2;
 }
+
 .paginatedContainer nav {
   margin: 5px auto;
 }
@@ -87,9 +92,10 @@
   margin: 10px 0px;
 }
 .paginatedContainer {
-  width: 380px;
+  width: 360px;
   display: flex;
   flex-wrap: wrap;
+  margin: 0px auto;
 }
 .paginatedProduct {
   width: 140px;
