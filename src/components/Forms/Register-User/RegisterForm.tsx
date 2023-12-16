@@ -26,7 +26,7 @@ const RegisterForm = ({ onRegisterSuccess }: IRegisterForm) => {
       })
     );
     try {
-      await axios.post("http://localhost:3001/profile", formData, {
+      await axios.post("https://better-stole-lion.cyclic.app/profile", formData, {
         headers: {
           "Content-Type": "application/json",
         },

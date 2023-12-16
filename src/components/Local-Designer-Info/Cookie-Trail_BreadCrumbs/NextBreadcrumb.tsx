@@ -1,5 +1,3 @@
-// 'use client'
-
 import React from "react";
 import style from "./style.module.css";
 import { usePathname } from "next/navigation";
@@ -27,7 +25,7 @@ const NextBreadcrumb = ({
       : mappedName;
   };
   return (
-    <div>
+    <div className={style.breadCrumbDiv}>
       <ul className={style.containerClass}>
         <li className={listClasses}>
           <Link href={"/"}>Почетна</Link>

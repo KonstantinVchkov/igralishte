@@ -1,7 +1,11 @@
+.breadCrumbDiv{
+  width: 360px;
+  margin: 0px auto;
+}
 .containerClass {
     display: flex;
-    width: 360px;
-    margin: 0px auto;
+    width: 100%;
+    font-size: 15px;
 }
 
 .containerClass span {

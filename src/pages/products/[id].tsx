@@ -1,5 +1,5 @@
 import { GetServerSideProps, NextPage } from "next";
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import style from "../../components/Products/style.module.css";
 import ProductDetailCard from "@/components/Products/ProductdetailCard";
 import axios from "axios";
@@ -9,6 +9,7 @@ import Product from "@/components/Products/Product";
 import { getPaginatedProducts } from "@/utils/paginationFunction";
 import { IProductCardProps } from "@/types/ProjectTypes";
 import { IProductProps } from "@/types/ProjectTypes";
+import Link from "next/link";
 export interface IProductDetailProp {
   detailProduct: IProductCardProps;
   otherProducts: IProductProps[];
@@ -112,7 +113,9 @@ const ProductDetail: NextPage<IProductDetailProp> = ({
       <div className={style.paginatedContainer}>
         {paginatedProducts.map((product) => (
           <div className={style.paginatedProduct} key={product.id}>
-            <Product {...product} />
+            <Link href={`http://localhost:3000/products/${product.id}`}>
+              <Product {...product} />
+            </Link>
           </div>
         ))}
         <Pagination
@@ -129,9 +132,13 @@ const ProductDetail: NextPage<IProductDetailProp> = ({
 export default ProductDetail;
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const productId = query.id as string;
-  const res = await axios.get(`http://localhost:3001/products/${productId}`);
-  const otherProductsRes = await axios.get("http://localhost:3001/products");
-  const otherProducts = otherProductsRes.data; 
+  const res = await axios.get(
+    `https://better-stole-lion.cyclic.app/products/${productId}`
+  );
+  const otherProductsRes = await axios.get(
+    "https://better-stole-lion.cyclic.app/products"
+  );
+  const otherProducts = otherProductsRes.data;
 
   const detailProduct = res.data;
   return {

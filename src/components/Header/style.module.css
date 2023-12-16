@@ -102,9 +102,11 @@
   white-space: nowrap;
   box-sizing: border-box;
   background-color: #fff6f6;
-  color: #000000;
+  color: #000;
   border-top: 0.65px solid #232221;
   border-bottom: 0.65px solid #232221;
+  width: 360px;
+  margin: 0px auto;
 }
 
 .marqueeContent {

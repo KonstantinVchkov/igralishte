@@ -31,8 +31,8 @@ const LocalDesigner: NextPage<ILDesignerPageProps> = ({ brandData }) => {
 
 export default LocalDesigner;
 
-export const getServerSideProps: GetServerSideProps = async ({ query }) => {
-  const resData = await axios.get("http://localhost:3001/brands");
+export const getServerSideProps: GetServerSideProps = async () => {
+  const resData = await axios.get("https://better-stole-lion.cyclic.app/brands");
   const brandData = resData.data;
   return {
     props: {

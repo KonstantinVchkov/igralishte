@@ -112,9 +112,11 @@ export default Products;
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   try {
-    const res = await axios.get("http://localhost:3001/products");
+    const res = await axios.get(
+      "https://better-stole-lion.cyclic.app/products"
+    );
     const productsData = res.data;
-    const categoryUrl = `http://localhost:3001/products?category=${query.category}`;
+    const categoryUrl = `https://better-stole-lion.cyclic.app/products?category=${query.category}`;
     const sortQuery = query.condition_like;
     const categoryLikeQuery = Array.isArray(query.category_like)
       ? query.category_like.join("&category_like=")
@@ -138,19 +140,19 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 
     const pricePickUrl =
       priceGteQuery && priceLteQuery
-        ? `http://localhost:3001/products?price_gte=${priceGteQuery}&price_lte=${priceLteQuery}`
+        ? `https://better-stole-lion.cyclic.app/products?price_gte=${priceGteQuery}&price_lte=${priceLteQuery}`
         : null;
 
     const priceFilteredProducts = pricePickUrl
       ? (await axios.get(pricePickUrl)).data
       : [];
 
-    const categoryProductsUrl = `http://localhost:3001/products?category_like=${categoryLikeQuery}`;
-    const brandProductsUrl = `http://localhost:3001/products?brand_like=${brandLikeQuery}`;
-    const accessoryProductsUrl = `http://localhost:3001/products?accessory_like=${accessoryCategoryQuery}`;
-    const sizeProductsUrl = `http://localhost:3001/products?size_like=${sizesQuery}`;
-    const colorPickUrl = `http://localhost:3001/products?color_like=${colorQuery}`;
-    const sortProductsUrl = `http://localhost:3001/products?condition_like=${sortQuery}`;
+    const categoryProductsUrl = `https://better-stole-lion.cyclic.app/products?category_like=${categoryLikeQuery}`;
+    const brandProductsUrl = `https://better-stole-lion.cyclic.app/products?brand_like=${brandLikeQuery}`;
+    const accessoryProductsUrl = `https://better-stole-lion.cyclic.app/products?accessory_like=${accessoryCategoryQuery}`;
+    const sizeProductsUrl = `https://better-stole-lion.cyclic.app/products?size_like=${sizesQuery}`;
+    const colorPickUrl = `https://better-stole-lion.cyclic.app/products?color_like=${colorQuery}`;
+    const sortProductsUrl = `https://better-stole-lion.cyclic.app/products?condition_like=${sortQuery}`;
     const sortingProducts = (await axios.get(sortProductsUrl)).data;
     const colorFilteredProducts = (await axios.get(colorPickUrl)).data;
     const sizeProductsFiltered = (await axios.get(sizeProductsUrl)).data;

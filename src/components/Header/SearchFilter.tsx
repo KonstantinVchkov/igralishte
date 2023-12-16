@@ -32,7 +32,7 @@ const SearchFilter = ({ show, handleClose }: ISearchMenu) => {
   const submitSearchproducts = (e: any) => {
     e.preventDefault();
     axios
-      .get(`http://localhost:3001/products`)
+      .get(`https://better-stole-lion.cyclic.app/products`)
       .then((res) => {
         const filtered = res.data.filter(
           (product: any) =>

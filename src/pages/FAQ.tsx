@@ -17,7 +17,7 @@ const FAQ: NextPage<IFaqPage> = ({ responseData }) => {
 export default FAQ;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const responseData = await axios.get("http://localhost:3001/Faq");
+  const responseData = await axios.get("https://better-stole-lion.cyclic.app/Faq");
   return {
     props: {
       responseData: responseData.data,

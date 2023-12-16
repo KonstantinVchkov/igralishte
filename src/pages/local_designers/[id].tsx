@@ -53,9 +53,9 @@ export default LocalDesignerDetail;
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const queryBrand = query.id as string;
   const res = await axios.get(
-    `http://localhost:3001/brands/${queryBrand}?brandName_like=${queryBrand}`
+    `https://better-stole-lion.cyclic.app/brands/${queryBrand}?brandName_like=${queryBrand}`
   );
-  const otherProductsRes = await axios.get("http://localhost:3001/products");
+  const otherProductsRes = await axios.get("https://better-stole-lion.cyclic.app/products");
   const otherProducts = otherProductsRes.data;
   const brandDetail = res.data;
   return {
