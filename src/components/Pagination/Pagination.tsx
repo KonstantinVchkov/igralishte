@@ -36,7 +36,7 @@ const Pagination = ({
         {pageNumbers.map((number) => (
           <li key={number} className={style.pageItem}>
             <a
-              href={`http://localhost:3000/products?page=${number}`}
+              href={`/products?page=${number}`}
               onClick={(e) => handleClick(number, e)}
               className={`${style.pageLink} ${
                 currentPage === number ? `${style.active}` : ""

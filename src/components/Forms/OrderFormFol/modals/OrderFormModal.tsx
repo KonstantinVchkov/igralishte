@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Modal } from "react-bootstrap";
+import {  Modal } from "react-bootstrap";
 import style from "../style.module.css";
 import ButtonComp from "@/components/ButtonComponent/ButtonComp";
 import { IOrderFormModal } from "@/types/ProjectTypes";

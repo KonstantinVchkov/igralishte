@@ -53,7 +53,7 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
     } else if (type === "accessory") {
       itemPath = `${basePath}?accessory=${encodeURIComponent(itemAccessory)}`;
     } else if (type === "other") {
-      itemPath = `http://localhost:3000/Gifts`;
+      itemPath = `/Gifts`;
     }
 
     if (itemName === "Види ги сите" || itemCategory === "Види ги сите") {
@@ -219,13 +219,13 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
       <div className={style.offCanvasFooter}>
         <div className={style.hamMenu_ShopCart} onClick={toggleHamMenu}>
           <img src="/images/icons/shop-cart-icon.png" alt="" />
-          <Link href={"http://localhost:3000/orderpage"}>
+          <Link href={"/orderpage"}>
             <span>Кошничка</span>
           </Link>
         </div>
         <div className={style.hamMenu_favorites} onClick={toggleHamMenu}>
           <img src="/images/icons/Vector.png" alt="" />
-          <Link href={"http://localhost:3000/favorites"}>
+          <Link href={"/favorites"}>
             <span>Омилени</span>
           </Link>
         </div>
@@ -234,8 +234,8 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
           <Link
             href={
               loggedIn
-                ? "http://localhost:3000/profile_setup"
-                : "http://localhost:3000/register"
+                ? "/profile_setup"
+                : "/register"
             }
           >
             {loggedIn ? (
@@ -248,7 +248,7 @@ const HamburgerMenu = ({ open, toggleHamMenu }: IHamMenu) => {
           </Link>
           {!loggedIn && <span> / </span>}
           {!loggedIn && (
-            <Link href="http://localhost:3000/login">
+            <Link href="/login">
               <span className="mr-2">Логирај се</span>
             </Link>
           )}

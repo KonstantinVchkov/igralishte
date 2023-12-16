@@ -14,9 +14,7 @@ const NavBar = ({ hambMenu, searchFilter, toggleHamMenu }: INavbar) => {
     e.stopPropagation();
     toggleHamMenu();
   };
-  const searchProducts = (e:React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value)
-  }
+
   const toggleSearch = () => {
     setShowSearch(!showSearch);
   };

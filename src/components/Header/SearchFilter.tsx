@@ -84,7 +84,7 @@ const SearchFilter = ({ show, handleClose }: ISearchMenu) => {
                 className={style.filteredProduct}
                 onClick={handleProductClick}
               >
-                <Link href={`http://localhost:3000/products/${item.id}`}>
+                <Link href={`/products/${item.id}`}>
                   <Product {...item} />
                 </Link>
               </div>
