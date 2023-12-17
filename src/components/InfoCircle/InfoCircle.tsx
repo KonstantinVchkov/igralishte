@@ -10,7 +10,7 @@ const InfoCircle = ({ title, paragraph, arrowImg }: IInfoCircle) => {
     <div className={style.text}>
       <h3>{title}</h3>
       <p>{paragraph}</p>
-      <Link href={`http://localhost:3000/products`}>
+      <Link href={`/products`}>
         <img src={arrowImg} alt="black-arrow-icon" />
       </Link>
     </div>

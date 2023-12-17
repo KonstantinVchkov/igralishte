@@ -24,7 +24,7 @@ const ProductDetailCard = ({
   handleShopping,
   addToCart,
   firstAddToCart,
-  btnChangeColor
+  btnChangeColor,
 }: IProductCardProps) => {
   console.log("changing btn", btnChangeColor);
   const quantityClick = (value: string) => {
@@ -73,7 +73,6 @@ const ProductDetailCard = ({
               <button className={style.prev} onClick={goToPrevImage}>
                 &lt;
               </button>
-
               <button className={style.next} onClick={goToNextImage}>
                 &gt;
               </button>
@@ -102,11 +101,16 @@ const ProductDetailCard = ({
             </span>
           </p>
           <div className="d-flex align-items-center">
-            <button
-              onClick={firstAddToCart}
-              className={style.addCartBtn}
-            >
-             {btnChangeColor ? <img className={style.btnKosnicka} src="/images/icons/btn-kosnicka.png" alt="" /> : 'Додади во Кошничка'}
+            <button onClick={firstAddToCart} className={style.addCartBtn}>
+              {btnChangeColor ? (
+                <img
+                  className={style.btnKosnicka}
+                  src="/images/icons/btn-kosnicka.png"
+                  alt=""
+                />
+              ) : (
+                "Додади во Кошничка"
+              )}
             </button>
             <span className="ml-2" onClick={handleFavorite}>
               <img

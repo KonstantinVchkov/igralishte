@@ -40,7 +40,7 @@ export default function Home({ responseData }: IHomeData) {
     }
   };
   const itemChoosed = (productId: string) => {
-    router.push(`http://localhost:3000/products/${productId}`);
+    router.push(`/products/${productId}`);
   };
   return (
     <div className={styleHome.HomePage}>

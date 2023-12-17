@@ -5,7 +5,6 @@ import router from "next/router";
 import style from "../../components/Local-Designer-Info/LocalDesigner/style.module.css";
 import { ILDesignerPageProps } from "@/types/ProjectTypes";
 
-
 const LocalDesigner: NextPage<ILDesignerPageProps> = ({ brandData }) => {
   const handleFilter = (value: string) => {
     router.push(`/local_designers/${value}`);
@@ -14,16 +13,14 @@ const LocalDesigner: NextPage<ILDesignerPageProps> = ({ brandData }) => {
   return (
     <div className={style.designers_page}>
       {brandData.map((brand) => (
-
-          <LocalDesignerComponent
+        <LocalDesignerComponent
           key={brand.id}
-            detailClick={() => handleFilter(`${brand.id}`)}
-            brandName={brand.brandName}
-            brandDescription={brand.brandDescription}
-            id={brand.id}
-            brandImage={brand.brandImage}
-          />
-
+          detailClick={() => handleFilter(`${brand.id}`)}
+          brandName={brand.brandName}
+          brandDescription={brand.brandDescription}
+          id={brand.id}
+          brandImage={brand.brandImage}
+        />
       ))}
     </div>
   );
@@ -32,7 +29,9 @@ const LocalDesigner: NextPage<ILDesignerPageProps> = ({ brandData }) => {
 export default LocalDesigner;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const resData = await axios.get("https://better-stole-lion.cyclic.app/brands");
+  const resData = await axios.get(
+    "https://better-stole-lion.cyclic.app/brands"
+  );
   const brandData = resData.data;
   return {
     props: {

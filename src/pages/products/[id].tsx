@@ -10,6 +10,7 @@ import { getPaginatedProducts } from "@/utils/paginationFunction";
 import { IProductCardProps } from "@/types/ProjectTypes";
 import { IProductProps } from "@/types/ProjectTypes";
 import Link from "next/link";
+import router from "next/router";
 export interface IProductDetailProp {
   detailProduct: IProductCardProps;
   otherProducts: IProductProps[];
@@ -65,6 +66,7 @@ const ProductDetail: NextPage<IProductDetailProp> = ({
       if (productIndex === -1) {
         buyProduct.push(detailProduct);
         setAddToCartBtn(true);
+        router.push(`/orderpage`);
       } else {
         buyProduct.splice(productIndex, 1);
         setAddToCartBtn(false);
@@ -78,6 +80,8 @@ const ProductDetail: NextPage<IProductDetailProp> = ({
       if (productIndex === -1) {
         buyProduct.push(detailProduct);
         setIsAddToCart(true);
+        router.push(`/orderpage`);
+
       } else {
         buyProduct.splice(productIndex, 1);
         setIsAddToCart(false);
@@ -113,7 +117,7 @@ const ProductDetail: NextPage<IProductDetailProp> = ({
       <div className={style.paginatedContainer}>
         {paginatedProducts.map((product) => (
           <div className={style.paginatedProduct} key={product.id}>
-            <Link href={`http://localhost:3000/products/${product.id}`}>
+            <Link href={`/products/${product.id}`}>
               <Product {...product} />
             </Link>
           </div>

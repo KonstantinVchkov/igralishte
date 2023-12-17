@@ -5,6 +5,7 @@
 }
 .Pagination span {
   margin-right: 15px;
+  cursor: pointer;
 }
 .active{
   color: red;

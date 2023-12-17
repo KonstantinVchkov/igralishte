@@ -6,10 +6,14 @@
 .firstSection {
   display: flex;
   justify-content: space-between;
-  margin: 10px 5px;
+  margin: 10px auto;
+  width: 360px;
 }
 .borderSquare{
   border: 1px solid gold;
+}
+.sortFilter span {
+  margin-right: 10px;
 }
 .colorPaletteContainer .colorSquare {
   width: 20.14px;

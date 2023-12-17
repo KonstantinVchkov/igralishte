@@ -32,7 +32,7 @@ const LocalDesignerDetail: NextPage<IBrandDetail> = ({
       <div className={style.paginatedContainer}>
         {paginatedProducts.map((product) => (
           <div className={style.paginatedProduct} key={product.id}>
-            <Link href={`http://localhost:3000/products/${product.id}`}>
+            <Link href={`/${product.id}`}>
               <Product {...product} />
             </Link>
           </div>
