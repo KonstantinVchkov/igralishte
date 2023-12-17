@@ -73,9 +73,9 @@ a {
 }
 .modal.show .modal-dialog {
   font-family: Cormorant Infant;
-  width: 100%;
+  width: 360px ;
   height: 845px;
-  margin: 0;
+  margin: 0 auto ;
 }
 .modal-body {
   margin: 0 auto;
