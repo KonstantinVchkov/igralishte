@@ -137,10 +137,10 @@ export default ProductDetail;
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const productId = query.id as string;
   const res = await axios.get(
-    `https://better-stole-lion.cyclic.app/products/${productId}`
+    `http://localhost:3001/products/${productId}`
   );
   const otherProductsRes = await axios.get(
-    "https://better-stole-lion.cyclic.app/products"
+    "http://localhost:3001/products"
   );
   const otherProducts = otherProductsRes.data;
 

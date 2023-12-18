@@ -82,7 +82,7 @@ export default function Home({ responseData }: IHomeData) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const responseData = await axios.get("https://better-stole-lion.cyclic.app/products");
+  const responseData = await axios.get("http://localhost:3001/products");
 
   return {
     props: {

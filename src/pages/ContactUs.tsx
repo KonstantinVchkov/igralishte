@@ -24,7 +24,7 @@ const ContactUs: NextPage<IContactPage> = ({ contactRes }) => {
 export default ContactUs;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const contactRes = await axios.get("https://better-stole-lion.cyclic.app//ContactUs");
+  const contactRes = await axios.get("http://localhost:3001/ContactUs/ContactUs");
   return {
     props: {
       contactRes: contactRes.data,

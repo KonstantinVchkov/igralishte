@@ -30,7 +30,7 @@ export default LocalDesigner;
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const resData = await axios.get(
-    "https://better-stole-lion.cyclic.app/brands"
+    "http://localhost:3001/brands"
   );
   const brandData = resData.data;
   return {

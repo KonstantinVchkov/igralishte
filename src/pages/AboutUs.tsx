@@ -25,7 +25,7 @@ const AboutUs: NextPage<IAboutPage> = ({ responseData }) => {
 export default AboutUs;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const responseData = await axios.get("https://better-stole-lion.cyclic.app/AboutUs");
+  const responseData = await axios.get("http://localhost:3001/AboutUs/AboutUs");
   return {
     props: {
       responseData: responseData.data,
