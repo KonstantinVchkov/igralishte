@@ -138,7 +138,6 @@ export interface IProductCardProps {
   description: string;
   sizeDescription: string;
   price: string;
-  initialProduct:string[];
   discount: string;
   condition: string;
   size: string[];
