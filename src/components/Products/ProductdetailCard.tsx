@@ -25,16 +25,27 @@ const ProductDetailCard = ({
   addToCart,
   firstAddToCart,
   btnChangeColor,
+  initialProduct,
 }: IProductCardProps) => {
-  console.log("changing btn", btnChangeColor);
-  const quantityClick = (value: string) => {
-    if (value === "minus") {
-      console.log("ova e minus buttonce");
-    } else {
-      console.log("ova e buttonce za dodavanje");
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+  const [totalProducts, setTotalProducts] = useState([initialProduct]);
+  console.log(totalProducts)
+  const updateTotalProducts = (newQuantity: number) => {
+    const updatedProducts = new Array(newQuantity).fill(initialProduct);
+    setTotalProducts(updatedProducts);
+
+    localStorage.setItem("selectedProducts", JSON.stringify(updatedProducts));
+  };
+  const quantityClick = (value: any) => {
+    if (value === "minus" && quantity > 1) {
+      setQuantity(quantity - 1);
+      updateTotalProducts(quantity - 1);
+    } else if (value === "plus") {
+      setQuantity(quantity + 1);
+      updateTotalProducts(quantity + 1);
     }
   };
-  const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   const goToPrevImage = () => {
     // za da se naprai genericka samo se stava tuka eden tip vnatre vo zagradite i se prai genericka funkcijata i vo odnos na logikata,i isto taka dokolku se raboti za next se koristi logikata za next,dokolku e za prev se koristi logikata za prev
@@ -91,7 +102,7 @@ const ProductDetailCard = ({
             >
               -
             </span>{" "}
-            <span>1</span>{" "}
+            <span>{totalProducts.length}</span>{" "}
             <span
               onClick={() => {
                 quantityClick("plus");
