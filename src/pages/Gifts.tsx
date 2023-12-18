@@ -24,7 +24,7 @@ const gifts: NextPage<IGiftsPage> = ({ giftCardsData, giftPrices }) => {
 export default gifts;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const resUrl = "http://localhost:3001/giftCards/";
+  const resUrl = "http://localhost:3001/";
   const giftCardsResponse = (await axios.get(`${resUrl}giftCards`)).data;
   const giftPrices = (await axios.get(`${resUrl}giftPrices`)).data;
 

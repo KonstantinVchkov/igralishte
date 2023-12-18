@@ -35,7 +35,7 @@ const ProductDetailCard = ({
     const updatedProducts = new Array(newQuantity).fill(initialProduct);
     setTotalProducts(updatedProducts);
 
-    localStorage.setItem("selectedProducts", JSON.stringify(updatedProducts));
+    // localStorage.setItem("selectedProducts", JSON.stringify(updatedProducts));
   };
   const quantityClick = (value: any) => {
     if (value === "minus" && quantity > 1) {
@@ -102,7 +102,7 @@ const ProductDetailCard = ({
             >
               -
             </span>{" "}
-            <span>{totalProducts.length}</span>{" "}
+            <span>1</span>{" "}
             <span
               onClick={() => {
                 quantityClick("plus");

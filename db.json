@@ -54,6 +54,14 @@
       "password": "Izvorska!1",
       "repeatPassword": "Izvorska!1",
       "id": 1
+    },
+    {
+      "firstName": "Konstantin",
+      "lastName": "Vchkov",
+      "email": "kvckov@yahoo.com",
+      "password": "Tinko123!",
+      "repeatPassword": "Tinko123!",
+      "id": 2
     }
   ],
   "products": [

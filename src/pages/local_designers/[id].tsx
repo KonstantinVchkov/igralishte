@@ -55,7 +55,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const res = await axios.get(
     `http://localhost:3001/brands/${queryBrand}?brandName_like=${queryBrand}`
   );
-  const otherProductsRes = await axios.get("http://localhost:3001/products/products");
+  const otherProductsRes = await axios.get("http://localhost:3001/products");
   const otherProducts = otherProductsRes.data;
   const brandDetail = res.data;
   return {
