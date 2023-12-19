@@ -10,6 +10,7 @@ import AnnouncementBar from "@/components/Header/AnnouncementBar";
 import Pagination from "@/components/Pagination/Pagination";
 import { getPaginatedProducts } from "@/utils/paginationFunction";
 import { IProductsPage } from "@/types/ProjectTypes";
+import { PRODUCTS_API } from "@/utils/API_URLS";
 const Products = ({
   productsData,
   filteredCatFromHamMenu,
@@ -112,11 +113,12 @@ export default Products;
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   try {
-    const res = await axios.get(
-      "http://localhost:3001/products"
-    );
+    if (typeof PRODUCTS_API === "undefined") {
+      return { props: { error: "API endpoint is undefined" } };
+    }
+    const res = await axios.get(PRODUCTS_API);
     const productsData = res.data;
-    const categoryUrl = `http://localhost:3001/products?category=${query.category}`;
+    const categoryUrl = `${PRODUCTS_API}?category=${query.category}`;
     const sortQuery = query.condition_like;
     const categoryLikeQuery = Array.isArray(query.category_like)
       ? query.category_like.join("&category_like=")
@@ -140,19 +142,19 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 
     const pricePickUrl =
       priceGteQuery && priceLteQuery
-        ? `http://localhost:3001/products?price_gte=${priceGteQuery}&price_lte=${priceLteQuery}`
+        ? `${PRODUCTS_API}?price_gte=${priceGteQuery}&price_lte=${priceLteQuery}`
         : null;
 
     const priceFilteredProducts = pricePickUrl
       ? (await axios.get(pricePickUrl)).data
       : [];
 
-    const categoryProductsUrl = `http://localhost:3001/products?category_like=${categoryLikeQuery}`;
-    const brandProductsUrl = `http://localhost:3001/products?brand_like=${brandLikeQuery}`;
-    const accessoryProductsUrl = `http://localhost:3001/products?accessory_like=${accessoryCategoryQuery}`;
-    const sizeProductsUrl = `http://localhost:3001/products?size_like=${sizesQuery}`;
-    const colorPickUrl = `http://localhost:3001/products?color_like=${colorQuery}`;
-    const sortProductsUrl = `http://localhost:3001/products?condition_like=${sortQuery}`;
+    const categoryProductsUrl = `${PRODUCTS_API}?category_like=${categoryLikeQuery}`;
+    const brandProductsUrl = `${PRODUCTS_API}?brand_like=${brandLikeQuery}`;
+    const accessoryProductsUrl = `${PRODUCTS_API}?accessory_like=${accessoryCategoryQuery}`;
+    const sizeProductsUrl = `${PRODUCTS_API}?size_like=${sizesQuery}`;
+    const colorPickUrl = `${PRODUCTS_API}?color_like=${colorQuery}`;
+    const sortProductsUrl = `${PRODUCTS_API}?condition_like=${sortQuery}`;
     const sortingProducts = (await axios.get(sortProductsUrl)).data;
     const colorFilteredProducts = (await axios.get(colorPickUrl)).data;
     const sizeProductsFiltered = (await axios.get(sizeProductsUrl)).data;

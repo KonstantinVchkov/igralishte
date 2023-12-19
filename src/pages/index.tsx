@@ -3,10 +3,10 @@ import { GetStaticProps } from "next";
 import styleHome from "../styles/styleHome.module.css";
 import BannerBlock from "@/components/Banner/BannerBlock";
 import HomeCarousel from "@/components/Carousel/Carousel";
-import {  useState } from "react";
+import { useState } from "react";
 import { IHomeData } from "@/types/ProjectTypes";
 import router from "next/router";
-
+import { PRODUCTS_API } from "@/utils/API_URLS";
 
 export default function Home({ responseData }: IHomeData) {
   const [sectionStyles, setSectionStyles] = useState({
@@ -14,7 +14,7 @@ export default function Home({ responseData }: IHomeData) {
     midSection: "midCircleI",
     bottomSection: "bottomCircleI",
   });
-  const [sparkle,setSparkle] = useState(false)
+  const [sparkle, setSparkle] = useState(false);
   const handleStyleClick = (section: string) => {
     if (section === "bottomCircleI") {
       setSectionStyles((prevStyles) => ({
@@ -36,7 +36,7 @@ export default function Home({ responseData }: IHomeData) {
         infoCircle:
           prevStyles.infoCircle === "InfoCircle" ? "orange" : "InfoCircle",
       }));
-      setSparkle(prevSparkle => !prevSparkle);
+      setSparkle((prevSparkle) => !prevSparkle);
     }
   };
   const itemChoosed = (productId: string) => {
@@ -82,7 +82,10 @@ export default function Home({ responseData }: IHomeData) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const responseData = await axios.get("http://localhost:3001/products");
+  if (typeof PRODUCTS_API === "undefined") {
+    return { props: { error: "API endpoint is undefined" } };
+  }
+  const responseData = await axios.get(PRODUCTS_API);
 
   return {
     props: {

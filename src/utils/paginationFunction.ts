@@ -1,6 +1,5 @@
 import { IProductProps } from "@/types/ProjectTypes";
 
-
 export const getPaginatedProducts = (
     products: IProductProps[],
     currentPage: number,

@@ -11,6 +11,7 @@ import { IProductCardProps } from "@/types/ProjectTypes";
 import { IProductProps } from "@/types/ProjectTypes";
 import Link from "next/link";
 import router from "next/router";
+import { PRODUCTS_API } from "@/utils/API_URLS";
 export interface IProductDetailProp {
   detailProduct: IProductCardProps;
   otherProducts: IProductProps[];
@@ -81,7 +82,6 @@ const ProductDetail: NextPage<IProductDetailProp> = ({
         buyProduct.push(detailProduct);
         setIsAddToCart(true);
         router.push(`/orderpage`);
-
       } else {
         buyProduct.splice(productIndex, 1);
         setIsAddToCart(false);
@@ -135,13 +135,12 @@ const ProductDetail: NextPage<IProductDetailProp> = ({
 
 export default ProductDetail;
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+  if (typeof PRODUCTS_API === "undefined") {
+    return { props: { error: "API endpoint is undefined" } };
+  }
   const productId = query.id as string;
-  const res = await axios.get(
-    `http://localhost:3001/products/${productId}`
-  );
-  const otherProductsRes = await axios.get(
-    "http://localhost:3001/products"
-  );
+  const res = await axios.get(`${PRODUCTS_API}/${productId}`);
+  const otherProductsRes = await axios.get(PRODUCTS_API);
   const otherProducts = otherProductsRes.data;
 
   const detailProduct = res.data;

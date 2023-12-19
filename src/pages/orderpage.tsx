@@ -8,6 +8,7 @@ import style from "../components/Products/style.module.css";
 import Pagination from "@/components/Pagination/Pagination";
 import { IShopCart } from "@/types/ProjectTypes";
 import Link from "next/link";
+import { PRODUCTS_API } from "@/utils/API_URLS";
 
 const ShoppingCart: NextPage<IShopCart> = ({ otherProducts }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -42,7 +43,10 @@ const ShoppingCart: NextPage<IShopCart> = ({ otherProducts }) => {
 
 export default ShoppingCart;
 export const getServerSideProps: GetServerSideProps = async () => {
-  const otherProductsRes = await axios.get("http://localhost:3001/products");
+  if (typeof PRODUCTS_API === "undefined") {
+    return { props: { error: "API endpoint is undefined" } };
+  }
+  const otherProductsRes = await axios.get(PRODUCTS_API);
   const otherProducts = otherProductsRes.data;
 
   return {

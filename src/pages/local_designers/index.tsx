@@ -4,6 +4,7 @@ import { GetServerSideProps, NextPage } from "next";
 import router from "next/router";
 import style from "../../components/Local-Designer-Info/LocalDesigner/style.module.css";
 import { ILDesignerPageProps } from "@/types/ProjectTypes";
+import { BRANDS_API } from "@/utils/API_URLS";
 
 const LocalDesigner: NextPage<ILDesignerPageProps> = ({ brandData }) => {
   const handleFilter = (value: string) => {
@@ -29,9 +30,10 @@ const LocalDesigner: NextPage<ILDesignerPageProps> = ({ brandData }) => {
 export default LocalDesigner;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const resData = await axios.get(
-    "http://localhost:3001/brands"
-  );
+  if (typeof BRANDS_API === "undefined") {
+    return { props: { error: "API endpoint is undefined" } };
+  }
+  const resData = await axios.get(BRANDS_API);
   const brandData = resData.data;
   return {
     props: {

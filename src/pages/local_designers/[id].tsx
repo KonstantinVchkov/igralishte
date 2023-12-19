@@ -9,6 +9,7 @@ import { getPaginatedProducts } from "@/utils/paginationFunction";
 import Product from "@/components/Products/Product";
 import Pagination from "@/components/Pagination/Pagination";
 import Link from "next/link";
+import { BRANDS_API, PRODUCTS_API } from "@/utils/API_URLS";
 
 const LocalDesignerDetail: NextPage<IBrandDetail> = ({
   brandDetail,
@@ -51,11 +52,18 @@ const LocalDesignerDetail: NextPage<IBrandDetail> = ({
 export default LocalDesignerDetail;
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+  if (
+    typeof BRANDS_API === "undefined" ||
+    typeof PRODUCTS_API === "undefined"
+  ) {
+    return { props: { error: "API endpoint is undefined" } };
+  }
+
   const queryBrand = query.id as string;
   const res = await axios.get(
-    `http://localhost:3001/brands/${queryBrand}?brandName_like=${queryBrand}`
+    `${BRANDS_API}/${queryBrand}?brandName_like=${queryBrand}`
   );
-  const otherProductsRes = await axios.get("http://localhost:3001/products");
+  const otherProductsRes = await axios.get(PRODUCTS_API);
   const otherProducts = otherProductsRes.data;
   const brandDetail = res.data;
   return {

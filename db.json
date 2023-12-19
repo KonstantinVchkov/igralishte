@@ -62,6 +62,22 @@
       "password": "Tinko123!",
       "repeatPassword": "Tinko123!",
       "id": 2
+    },
+    {
+      "firstName": "Branko",
+      "lastName": "Vchkov",
+      "email": "mario@gmail.com",
+      "password": "Tinko123!",
+      "repeatPassword": "Tinko123!",
+      "id": 3
+    },
+    {
+      "firstName": "O",
+      "lastName": "Vc",
+      "email": "o@gmail.com",
+      "password": "Rhino123!",
+      "repeatPassword": "Rhino123!",
+      "id": 4
     }
   ],
   "products": [

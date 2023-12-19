@@ -6,6 +6,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { FormValues, IRegisterForm } from "@/types/ProjectTypes";
 import axios from "axios";
 import { schema } from "@/utils/validationForm";
+import { API_POST } from "@/utils/API_URLS";
+
 
 const RegisterForm = ({ onRegisterSuccess }: IRegisterForm) => {
   const {
@@ -25,8 +27,12 @@ const RegisterForm = ({ onRegisterSuccess }: IRegisterForm) => {
         email: formData.email,
       })
     );
+    if (typeof API_POST === "undefined") {
+      console.error("API endpoint is undefined.");
+      return;
+    }
     try {
-      await axios.post("http://localhost:3001/profile", formData, {
+      await axios.post(API_POST, formData, {
         headers: {
           "Content-Type": "application/json",
         },

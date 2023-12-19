@@ -2,6 +2,7 @@ import AboutUsInfo from "@/components/Info-Components/AboutUs/AboutUs";
 import { GetStaticProps, NextPage } from "next";
 import axios from "axios";
 import { IAboutPage } from "@/types/ProjectTypes";
+import { ABOUTUS_API } from "@/utils/API_URLS";
 
 const AboutUs: NextPage<IAboutPage> = ({ responseData }) => {
   return (
@@ -25,7 +26,10 @@ const AboutUs: NextPage<IAboutPage> = ({ responseData }) => {
 export default AboutUs;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const responseData = await axios.get("http://localhost:3001/AboutUs");
+  if (typeof ABOUTUS_API === "undefined") {
+    return { props: { error: "API endpoint is undefined" } };
+  }
+  const responseData = await axios.get(ABOUTUS_API);
   return {
     props: {
       responseData: responseData.data,
