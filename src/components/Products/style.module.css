@@ -217,5 +217,8 @@
   position: fixed;
   z-index: 1;
   top: 70%;
-  left: 85%;
+  width: 360px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
 }
