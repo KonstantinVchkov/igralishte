@@ -4,7 +4,7 @@ import NextBreadcrumb from "@/components/Local-Designer-Info/Cookie-Trail_BreadC
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
-
+import { Analytics } from '@vercel/analytics/react';
 export default function App({ Component, pageProps, }: AppProps) {
   const router = useRouter();
   const { pathname } = router;
@@ -23,6 +23,7 @@ export default function App({ Component, pageProps, }: AppProps) {
       {showHeaderAndFooter && <Header />}
       {showBreadCrumb && <NextBreadcrumb separator={<span>{">"}</span>} />}
       <Component {...pageProps}  />
+      <Analytics />
       {showHeaderAndFooter && <Footer />}
     </div>
   );
